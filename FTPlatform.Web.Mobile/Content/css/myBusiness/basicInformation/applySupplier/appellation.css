@@ -1,0 +1,132 @@
+.call_box{
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+    margin-top: 20px;
+    background: #fff;	
+}
+.call_box ul{
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+}
+.call_box ul li{
+	width: 100%;
+	padding: 11px 15px;
+	border-bottom: 1px solid #ddd;
+	font-size: 0.32rem;
+	color: #444;
+	position: relative;
+}
+
+.call_li2:before{
+	content: "\2713";
+	position: absolute;
+	left: 30%;
+	color: #ff6525;
+}
+.sidebar_box{
+	width: 100%;
+	position: absolute;
+    top: 85px;
+    right: 0px;
+    height: 80%;
+    z-index: 999;
+   /*display: none;*/
+}
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #333;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: none;
+}
+/*----—°‘Òµÿ÷∑-------*/
+
+.head-address-ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	overflow: hidden;
+	background-color: white;
+	font-size: 0.30rem;
+	height: 44px;
+	position: fixed;
+	top: 44px;
+	z-index: 99;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+
+.head-address-ul li {
+	width: 25%;
+	display: block;
+	float: left;
+	height: 44px;
+	line-height: 50px;
+	text-align: center;
+	position: relative;
+}
+
+.head-address-li {
+	color: #f23030;
+}
+
+.address-container {
+	margin: 0;
+	overflow: hidden;
+	height: 100%;
+	width: 100%;
+}
+
+.address-ul,
+.area {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+	width: 100%;
+	height: auto;
+	font-size: 0.30rem;
+	color: #232326;
+	position: absolute;
+	overflow: hidden;
+	background: #fff;
+}
+
+.provice {
+	left: 0;
+}
+
+.address-ul li,
+.area li {
+	height: 44px;
+	line-height: 44px;
+	padding-left: 10px;
+	border-bottom: 1px solid #ddd;
+}
+
+.checked-color {
+	color: #f23030;
+}
+
+.area {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 0%;
+}
+
+#headAddressUl .border {
+	width: 90%;
+	margin: 0 auto;
+	height: 2px;
+	background: #f23030;
+	display: block;
+	position: absolute;
+	bottom: 1px;
+}

@@ -1,0 +1,127 @@
+﻿@{
+    ViewBag.Title = "需求详情";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/content/css/pulli.css" />
+    <link rel="stylesheet" href="/content/css/demand/NoLogIn.css" />
+}
+@section foot{
+    <script src="~/dist/demand.detail.bundle.js"></script>
+}
+<div id="container" v-cloak>
+    <popup v-model="IsPopupVisiable" position="bottom" style="width:100%;height:2.00rem;text-align:center;padding:0.40rem 0px">
+        <div>
+            <p style="margin-bottom:0.20rem" v-html="PopupMessage"></p>
+            <div>
+                <button v-on:click="HidePopup">取消</button>
+                <button v-on:click="PopupRedirect">确定</button>
+            </div>
+        </div>
+    </popup>
+    <preview ref="preview"></preview>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+        <h1 class="mui-title">需求详情</h1>
+        <a class="mui-icon-right-nav mui-pull-right" v-on:click="Follow">
+            <img v-if="!demand.IsFollowed" src="/content/image/attention.png" />
+            <img v-else="demand.IsFollowed" src="/content/image/heart.png" />
+        </a>
+    </header>
+    <div class="mui-content l-scrollable" style="background: #fff;padding-bottom:1.00rem">
+        <img v-bind:src="demand.ImgUrl" v-on:click="ShowPreview" class="details_img" />
+        <div class="details_box">
+            <em class="em_title">{{demand.Title}}</em>
+            <div class="details_p">
+                <p class="d_p_text">
+                    需求标签：
+                    <template v-if="demand.BusinessNewCategory!=null">
+                        <span v-if="demand.BusinessNewCategory.BusinessClassLevel1!=null">
+                            {{demand.BusinessNewCategory.BusinessClassLevelName1}}
+                        </span>
+                        <span v-if="demand.BusinessNewCategory.BusinessClassLevel2!=null">
+                            >{{demand.BusinessNewCategory.BusinessClassLevelName2}}
+                        </span>
+                        <span v-if="demand.BusinessNewCategory.BusinessClassLevel3!=null">
+                            >{{demand.BusinessNewCategory.BusinessClassLevelName3}}
+                        </span>
+
+                    </template>
+                </p>
+                <p class="d_p_text">
+                    需求类型：
+                    <span v-for="item in demand.RequirementType">
+                        {{RequirementType[item]}}
+                        <span v-if="demand.RequirementType.indexOf(item)!=(demand.RequirementType.length-1)">，</span>
+                    </span>
+                </p>
+                <p class="d_p_text">
+                    需求解决方式：
+                    <span v-for="item in demand.Solution">
+                        {{Solution[item]}}
+                        <span v-if="demand.Solution.indexOf(item)!=(demand.Solution.length-1)">，</span>
+                    </span>
+                </p>
+                <p class="d_p_text LogIn">投入预算：{{InputBudget[demand.InputBudget]}}</p>
+                <p class="d_p_text">期望完成时间 ： {{ExpectedFinishTime[demand.ExpectedFinishTime]}}</p>
+            </div>
+            <div class="developmentBg" style="margin-bottom: 0px;">详情</div>
+            <ul class="details_content">
+                <li>
+                    <p class="d_p_text">需求背景及成因</p>
+                    <p class="d_p_text" v-html="demand.BackgroundCauses"></p>
+                </li>
+                <li>
+                    <p class="d_p_text">现状描述</p>
+                    <p class="d_p_text" v-html="demand.Description"></p>
+                </li>
+                <li>
+                    <p class="d_p_text">当前参数</p>
+                    <p class="d_p_text" v-html="demand.ArgsDesc"></p>
+                </li>
+                <li>
+                    <p class="d_p_text">期望要求</p>
+                    <p class="d_p_text" v-html="demand.ExpectDesc"></p>
+                </li>
+                <li>
+                    <p class="d_p_text">预期参数</p>
+                    <p class="d_p_text" v-html="demand.AnticipateDesc"></p>
+                </li>
+            </ul>
+            <div class="developmentBg" style="margin-top: 0px;">近期需求，等您来解决！</div>
+            <ul class="recommend">
+                <li v-for="item in demands" v-on:click="Detail(item.Id)">
+                    <img v-bind:src="item.ImgUrl" />
+                    <p class="recommend_text">{{item.Title}}</p>
+                    <p class="recommend_p" v-html="item.Description"></p>
+                    <div class="research_footer1">
+                        <div class="money-tb budget" style="width:63%">
+                            投入预算:
+                            <span>{{InputBudget[item.InputBudget]}}</span>
+                        </div>
+                        <div class="money-tb focus budget" style="float:right;width:37%">
+                            关注数:<span>{{item.FollowNum}}</span>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="Iwant" v-cloak>
+                <a v-cloak class="mui-btn  mui-btn-block" v-bind:class="[ButtonColor?'mui-btn-blue':'mui-btn-gray']" v-on:click="Solve()" v-html="Button"></a>
+            </div>
+        </div>
+        <div id="mask"></div>
+        <div class="popup">
+            <div class="btn_box">
+                <a class="bttn disappear">X</a>
+            </div>
+            <p class="p_text">请先登录，才能关注该需求!</p>
+            <div class="btn_footer">
+                <div class="btn_footer1">
+                    <button type="button" class="mui-btn mui-btn-blue mui-btn-block confirm ">去登录</button>
+                    <button type="button" class="mui-btn  mui-btn-block cancel disappear" style="background: #ddd;">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <rigthsidebar v-cloak></rigthsidebar>
+</div>

@@ -1,0 +1,246 @@
+﻿html,body,.mui-content{
+    background:#fff
+}
+.mui-bar {
+    border-bottom: 1px solid #ddd;
+}
+.ShopIn{
+    overflow:hidden;
+    width:100%;
+}
+.protocol_box{
+    padding:0.50rem 2%;
+    overflow:hidden
+}
+.protocol_box h3{
+    font-size: 0.30rem;
+    font-weight: 800;
+    color: #595757;
+    margin-bottom: 10px;
+    text-align:center
+}
+.protocol_box p{
+    font-size:0.28rem;
+    color:#444;
+    /*line-height:0.40rem;*/
+    /*text-indent:2em;*/
+    margin-bottom:0
+}
+.ShopIn .mui-bar-tab {
+    line-height: 0.80rem;
+    height: 0.80rem;
+    background: #0e5bb5;
+    text-align: center;
+    color: #fff;
+    font-size: 0.30rem;
+}
+/*-------*/
+.settled_box{
+    overflow:hidden;
+    width:100%;
+}
+.shop_info,.contact_info{
+    overflow:hidden;
+    width:100%;
+    border-bottom:0.15rem solid #f5f5f5
+}
+.shop_info li,.contact_info li{
+    padding:0.20rem;
+     font-size:0.28rem;
+     color:#444;
+     border-bottom:1px solid #ddd;
+     overflow:hidden
+}
+.oSapn{
+    display:block;
+    float:left;
+    font-size:0.28rem;
+}
+.oSapn{
+    color:#d90000;
+    padding-top:0.20rem
+}
+ .span_text{
+     font-size:0.28rem;
+    color:#444;
+    display:inline-block;
+    line-height:21px
+}
+ .spanTop{
+     margin-top:7px
+ }
+.shop_info li input[type='text'],.contact_info li input[type='text']{
+    font-size:0.28rem;
+    color:#444;
+    margin-bottom:0;
+    padding:0;
+    height:0.70rem;
+    padding-left:0.20rem;
+    text-align:right;
+    border:none
+}
+.shop_info li:nth-child(1) input{
+    width:80%;   
+}
+.shop_info li:nth-child(2) input{
+    width:64%;
+}
+.shop_info li:nth-child(3) input{
+    width:72%;   
+}
+.shop_info li:last-child,.contact_info li:last-child{
+    border-bottom:none
+}
+.contact_info li:nth-child(1) input{
+    width:80%;   
+}
+.contact_info li:nth-child(2) input{
+    width:84%;
+}
+.contact_info li:nth-child(3) input{
+    width:88%;   
+}
+.contact_info li:nth-child(4) input{
+    width:80%;   
+}
+.card_img{
+    width:0.70rem !important;
+    height:0.70rem !important;
+    float:right;
+    border-radius:50%
+}
+.li_title{
+    font-size:0.28rem;
+    color:#444;
+    line-height:0.70rem
+}
+.upload_box,.upload_logo{
+    /*overflow:hidden;*/
+    float:left;
+    display:inline-block
+}
+.upload_logo{
+    float:right
+}
+.upload_box li,.upload_logo li{
+    display:inline-block;
+    overflow:visible;
+    float:left;
+    position:relative;
+    margin-right:0.15rem;
+    padding:0
+}
+.upload_box li img{
+     width:1.19rem !important;
+    height:1.19rem !important;
+}
+.logo_box{
+    overflow:hidden;
+    float:right;
+    display:inline-block;
+    position:relative
+}
+.click_up{
+     overflow:hidden;
+    float:left;
+    display:inline-block;
+    margin-right:0.15rem;
+    position:relative
+}
+.textfield{
+    width:1.19rem !important;
+    height:1.19rem !important;    
+}
+.shop_info li .click_up input[type='file'],.shop_info li .logo_box input[type='file']{
+    width:100%;
+    height:100%;
+    position:absolute;
+    opacity:0;
+    filter:alpha(opacity=0);
+    top:0
+}
+.img_colse{
+    width:0.30rem;
+    height:0.30rem;
+    display:block;
+    position:absolute;
+    top:-0.10rem;
+    right:-0.10rem;
+    color:#fff;
+    background:#0e5bb5;
+    line-height:0.30rem;
+    text-align:center;
+    font-size:0.24rem;
+    border-radius:50%;
+
+}
+ .shop_info li .upload_box li{
+        border-bottom:none
+    }
+
+.span_title{
+    font-size:0.26rem;
+    color:#666;
+    float:left;
+    display:block;
+    line-height:1.19rem
+}
+input[type='file']{
+    width:50%;float:right
+}
+.submit_btn{
+    font-size:0.30rem;
+    line-height:0.90rem;
+    height:0.910rem;
+    color:#fff;
+    text-align:center;
+    background:#0e5bb5;
+    margin-top:0.40rem;
+    margin-bottom:1.00rem
+}
+
+/*---提示消息----*/
+.successful {
+	padding-top: 1.50rem;
+}
+
+.successful img {
+	width: 2.10rem;
+	height: 2.10rem;
+	margin: 0 auto;
+}
+
+.successful p {
+	font-size: 0.38rem;
+	color: #ff7e00;
+	text-align: center;
+	margin-top: 0.50rem;
+	margin-bottom: 0px;
+}
+
+.successful span {
+	display: block;
+	margin: 0 auto;
+	font-size: 0.26rem;
+	color: #969696;
+	text-align: center;
+}
+/*-*/
+    .Upload{
+        position:absolute;right:0;
+        top:0.20rem
+    }
+    .upload_img_box{
+        float:right;
+        display:inline-block;
+        overflow:hidden
+    }
+    .up_img{
+        width: 0.70rem !important;
+        height: 0.70rem !important;
+        float: right;
+    }
+    .em_title{
+        float:right;
+        color:#888
+    }

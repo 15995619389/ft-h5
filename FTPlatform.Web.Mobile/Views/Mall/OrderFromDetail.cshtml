@@ -1,0 +1,100 @@
+﻿@{
+    ViewBag.Title = "订单详细";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/shop/smart.css" rel="stylesheet" />
+    <link href="~/Content/css/shop/product.css" rel="stylesheet" />
+    <link href="~/Content/css/shop/buttonClass.css" rel="stylesheet" />
+    <style type="text/css">
+        .layui-layer {
+            background-color: #fff;
+        }
+
+        .layui-layer-hui .layui-layer-content {
+            background-color: rgba(0,0,0,.6);
+        }
+
+        .message textarea {
+            font-size: 13px;
+        }
+
+        .mui-bar-nav ~ .mui-content {
+            padding-top: 44px;
+        }
+    </style>
+}
+@section foot{
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/Content/Plugins/layer/layui.all.js"></script>
+    <script src="~/dist/mall.orderfromdetail.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav head_box head-secd" style="border-bottom: #ddd solid 1px;">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" id="retUrl" href="javascript:;"></a>
+    <h1 class="mui-title">兑换详情</h1>
+</header>
+<div class="mui-content whit-content" v-cloak>
+    <!--支付成功-->
+    <input type="hidden" value="@ViewBag.Code" id="Code" />
+    <section class="custom-wrap">
+        <div class="progres-bar">{{order.OrderStatus|type}}</div>
+        <div class="custom-list order-inner" v-if="order.Modity!=null">
+            <div class="subject">
+                <div class="sub-pro" v-on:click="modityDteail(order.Modity.ModityCode)">
+                    <img v-bind:src="order.Modity.ModityImg.Url+order.Modity.ModityImg.ImgName+order.Modity.ModityImg.ImgFix" />
+                </div>
+                <div class="sub-text" v-on:click="modityDteail(order.Modity.ModityCode)">
+                    <h4>{{order.Modity.ModityName}}</h4>
+                    <p>{{order.Modity.ModityAbstract}}</p>
+                </div>
+                <div class="sub-numbs">
+                    <p><b>{{order.Modity.FactScore}}</b></p>
+                    <p><del>{{order.Modity.ComputeScore}}</del></p>
+                    <p>X{{order.Numbers}}</p>
+                </div>
+                <div class="progress" style="margin-right: 0;" v-if="order.OrderStatus==2 || order.OrderStatus==3"><a v-bind:href="'/mall/schedule/'+order.OrderCode">进度查询</a></div>
+            </div>
+            <div class="consignee-box" v-if="order.Modity.ModityType==3">
+                <p>充值号码：{{order.RecTelephone}}</p>
+                <p v-if="order.OrderStatus==0">折后实付款：<b class="org-b">{{needScore}}</b>智币</p>
+                <p v-else-if="order.OrderStatus!=9">实付款：<b class="org-b" v-show="order.FactScore!=0">{{order.FactScore}}<span style="color:#444;font-size:0.24rem">智币</span></b> &nbsp;<b class="org-b" v-show="order.FactMoney!=0">{{order.FactMoney}}<span style="color:#444;font-size:0.24rem">现金</span></b></p>
+            </div>
+            <div class="consignee-box" v-else>
+                <p>联系电话：{{order.Telephone}}</p>
+                <p>收货地址：{{order.Address}}</p>
+                <p v-if="order.OrderStatus==0">折后实付款：<b class="org-b">{{needScore}}</b>智币</p>
+                <p v-else-if="order.OrderStatus!=9">实付款：<b class="org-b" v-show="order.FactScore!=0">{{order.FactScore}}<span style="color:#444;font-size:0.24rem">智币</span></b> &nbsp;<b class="org-b" v-show="order.FactMoney!=0">{{order.FactMoney}}<span style="color:#444;font-size:0.24rem">现金</span></b></p>
+            </div>
+            <div class="message">
+                <form>
+                    <label>留言:</label>
+                    @*<textarea disabled="disabled" contenteditable="true">{{order.Message}}</textarea>*@
+                    <div style="font-size:13px; line-height: 1.5em;margin:1em">{{order.Message}}</div>
+                </form>
+            </div>
+            <div style="height: 10px;background: #f9f9f9;"></div>
+            <div class="ord-inform">
+                <p>订单编号：{{order.OrderCode}}</p>
+                <p v-show="order.DefrayalWay!=null && order.FactMoney!=0">支付编号：{{order.DefrayalWay}}</p>
+                <p v-if="order.TurnoverTime!=null">成交时间：{{order.TurnoverTime|formatDate}}</p>
+                <div class="payment" v-if="order.OrderStatus==0">
+                    <a href="javascript:;" class="cancel" v-on:click="CancelOrder">取消订单</a>
+                    <a href="javascript:;" class="pay" v-on:click="PayCue(order.OrderCode)">付款</a>
+                </div>
+                <div class="payment" v-else-if="order.OrderStatus==9">
+                    <a href="javascript:;" class="cancel" v-on:click="CancelOrder">取消订单</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div id="dloag1" style='text-align:center;font-size:13px;display:none;margin-top:10%'>
+        <p style='color: rebeccapurple;'>兑换需支付<span style="color:#ff6525;" id="score1" v-text="cue.needScore"></span>智币<span style="color:#ff6525;" id="money" v-text="cue.suppleMoney"></span>现金.</p>
+        <p style='color: rebeccapurple;'>是否立即支付?</p>
+    </div>
+    <div id="dloag2" style='text-align:center;font-size:13px;display:none;margin-top:10%'>
+        <p style='color: rebeccapurple;'>兑换需支付<span style="color:#ff6525;" id="score2" v-text="cue.noNeedScore"></span>智币,</p>
+        <p style='color: rebeccapurple;'>是否立即支付?</p>
+    </div>
+</div>
+<div id="data"></div>

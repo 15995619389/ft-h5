@@ -1,0 +1,144 @@
+﻿@{
+    ViewBag.Title = "航天搭载";
+    ViewBag.Description = "飞天众智（www.techina2025.com）为社会各界提供航天搭载服务，可利用航天运载系列搭载条件提供生物菌种、农林植物种子、高性能材料等进行科学实验和产品开发。";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/unique/spaceflight.css" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+    <script>
+        $(function () {
+            $("#fun_navback").on("click", function () {
+                document.referrer === '' ? window.location.href = "http://" + window.location.host : window.history.go(-1);
+            });
+        });
+    </script>
+}
+
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="fun_navback"></a>
+    <h1 class="mui-title">航天搭载</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage">
+        <img src="~/Content/image/recommend/reback.png" />
+    </a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content l-scrollable" style="background: #fff;padding-bottom:44px">
+    <rightsidebar></rightsidebar>
+    <img src="~/Content/image/MilitaryCivilian/space.png" class="space_bg" />
+    <div class="CompanyName">
+        <h3>航天搭载</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <p class="platform_text">飞天众智（www.techina2025.com）为社会各界提供航天搭载服务，可利用航天运载系列搭载条件提供生物菌种、农林植物种子、高性能材料等进行科学实验和产品开发。</p>
+    <div class="introduce">
+        <img src="~/Content/image/MilitaryCivilian/introduce_bg.png" class="introduce_bg" />
+        <p class="p_text">生物菌种</p>
+        <p class="p_text1">农林植物种子</p>
+        <p class="p_text2">航天搭载</p>
+        <p class="p_text3">高性能材料</p>
+        <p class="p_text4">其他商业产品</p>
+    </div>
+    <div class="CompanyName">
+        <h3>空间生物技术</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <p class="platform_text2">空间微重力环境会促使微生物菌株产生变异，将这种变异后的菌株通过地面筛选实验，获取发生有益变异的突变菌并将其应用于产业化，大量的实践表明这是一个非常有效的技术途径，但空间资源有限，实验费用昂贵，而微生物占用空间资源很少，但样本量却很大，容易获得预期的变异。微生物繁殖快，生殖周期短，容易在短时间内完成变异菌株的遗传稳定性考察。所以，近年来微生物空间诱变育种已越来越引起有关方面的重视，产业化步伐也在不断加快。</p>
+    <p class="platform_text3">空间环境条件下，微生物生长具有与地面不同的模式。</p>
+    <p class="platform_text3">这一特性可用在：</p>
+    <ul class="features">
+        <li class="li1">
+            <div class="features_img"><img src="~/Content/image/MilitaryCivilian/features_bg1.png" /></div>
+            <p class="">空间环境</p>
+        </li>
+        <li class="li2">
+            <div class="features_img"><img src="~/Content/image/MilitaryCivilian/features_bg2.png" /></div>
+            <p class="">直接在空间环境中生产高产微生物药物，或产生新的药物</p>
+        </li>
+        <li class="li3">
+            <div class="features_img"><img src="~/Content/image/MilitaryCivilian/features_bg3.png" /></div>
+            <p class="">利用空间环境对微生物进行诱变育种，筛选出高产菌株，或产新药物的菌株</p>
+        </li>
+        <li class="li4">
+            <div class="features_img"><img src="~/Content/image/MilitaryCivilian/features_bg4.png" /></div>
+            <p class="">把航天制药技术用于地面来开发和改进微生物医药产品并为之服务</p>
+        </li>
+    </ul>
+    <p class="platform_text3">空间生物技术未来将从以下几方面获得发展：</p>
+    <ul class="biotechnology">
+        <li>
+            <span>1</span>
+            <p class="biotechnology_text">通过空间生物分离技术获得高附加值的蛋白、多肽、氨基酸类药物；</p>
+        </li>
+        <li>
+            <span>2</span>
+            <p class="biotechnology_text">通过空间细胞培养技术以获得地面很难诱导成功的胚胎干细胞等；</p>
+        </li>
+        <li>
+            <span>3</span>
+            <p class="biotechnology_text">通过空间大分子结晶技术以获得纯度更高的蛋白质结晶，是空间生物技术中最具潜力的技术之一；</p>
+        </li>
+        <li>
+            <span>4</span>
+            <p class="biotechnology_text">通过植物育种技术获得对人类有益的植物代谢产物。</p>
+        </li>
+    </ul>
+    <img src="~/Content/image/MilitaryCivilian/DNA.png" class="DNA" />
+    <div class="CompanyName">
+        <h3>空间生物产品</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <p class="platform_text">空间生物产品是指源自于生物材料、采用空间生物技术手段获得的具有生物活性的物质，即通过空间诱变或模拟微重力处理过的微生物（细菌、噬菌体、立克次体、病毒等）及其代谢产物、植物及其代谢产物、寄生虫和处理过的动物的毒素、血液或组织等，直接制成或用现代生物技术、化学方法制成，作为保健、预防、治疗、诊断特定疾病或其它有关疾病的营养和保健食品、药品、制剂等，通称空间生物产品。</p>
+    <p class="platform_text3">空间生物产品分类：</p>
+    <ul class="classify">
+        <li class="li_border"><img src="~/Content/image/MilitaryCivilian/classify1.png" /></li>
+        <li>
+            <p style="font-size: 0.30rem;">01</p>
+            <p>营养和保健食品</p>
+        </li>
+        <li class="li_border"><img src="~/Content/image/MilitaryCivilian/classify2.png" /></li>
+        <li>
+            <p style="font-size: 0.30rem;">02</p>
+            <p>疫苗</p>
+        </li>
+    </ul>
+    <ul class="classify_two">
+        <li>
+            <p style="font-size: 0.30rem;">03</p>
+            <p>类毒素</p>
+        </li>
+        <li class="li_border1"><img src="~/Content/image/MilitaryCivilian/classify_two1.png" /></li>
+        <li>
+            <p style="font-size: 0.30rem;">04</p>
+            <p>免疫血清</p>
+        </li>
+        <li class="li_border1"><img src="~/Content/image/MilitaryCivilian/classify_two2.png" /></li>
+    </ul>
+    <ul class="classify">
+        <li class="li_border"><img src="~/Content/image/MilitaryCivilian/classify3.png" /></li>
+        <li>
+            <p style="font-size: 0.30rem;">05</p>
+            <p>空间生物技术制品</p>
+        </li>
+        <li class="li_border"><img src="~/Content/image/MilitaryCivilian/classify4.png" /></li>
+        <li>
+            <p style="font-size: 0.30rem;">06</p>
+            <p>菌类</p>
+        </li>
+    </ul>
+    <!--公司备案，版权所有-->
+    <footer class="company_footer" style="width:100%;height:auto;overflow:hidden;padding:0.30rem 0;background:#f4f4f4;font-size:0.24rem;text-align:center;color:#999">
+        © 2016-<span>@DateTime.Now.Year</span>飞天众智平台&nbsp;|&nbsp;<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" style="color:#999">沪ICP备16043947号-2</a>
+    </footer>
+</div>
+
+<share ref="share"></share>

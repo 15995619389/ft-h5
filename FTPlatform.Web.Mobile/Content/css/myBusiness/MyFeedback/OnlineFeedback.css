@@ -1,0 +1,103 @@
+html{
+	background: #fff;
+}
+p,body{
+	line-height: 0.40rem;
+}
+p{
+	margin-bottom: 0px;
+}
+.problem{
+	background: #f2f1f7;
+	padding: 0.20rem 0px;
+	height: auto;
+	overflow: hidden;
+}
+.problem_title,.description{
+	padding: 0.20rem 3%;
+	overflow: hidden;
+	height: auto;
+	border-top:1px solid #ddd;
+	font-size: 0.32rem;
+	color: #0e5bb5;
+	background: #fff;
+}
+
+.problem_title img {
+    display: block;
+    width: .33rem;
+    height: .30rem;
+    float: left;
+   margin-right: 3%;
+    margin-top: 0.05rem;
+}
+.description_title{
+	color: #0e5bb5;
+	font-size: 0.32rem;
+	width: 100%;
+	margin-bottom: 0.20rem;
+}
+.text{
+	font-size: 0.28rem;
+	color: #444444;
+	border: none;
+	padding:0.10rem;
+	line-height: 0.38rem;
+}
+.CustomerFeedback{
+	background: #fff;
+	overflow: hidden;
+	height: auto;
+}
+.description span{
+	padding: 0.10rem 0.30rem;
+	font-size: 0.28rem;
+	display: block;
+	float: left;
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+	color: #444444;
+	margin-right: 0.15rem;
+	margin-bottom: 0.20rem;
+}
+.description span:nth-child(4){
+	margin-right: 0px;
+}
+.description .text_color{
+	color: #ff6525;
+	border-color:#ff6525;
+}
+.btn{
+	padding: 0 3%;
+	height: auto;
+	overflow: hidden;
+	margin-top: 0.20rem;
+}
+.btn button{
+	width: 100%;
+}
+/*--htmlÒÆ¹ýÀ´css---*/
+.btn_box {
+        text-align: center;
+        font-size: 0.28rem;
+        color: #595757;
+        padding-top: 0.10rem;
+        padding-bottom: 0.10rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        overflow: hidden;
+        height: auto;
+        width: 100%;
+    }
+
+    .textarea {
+        width: 90%;
+        min-height: 1.8rem;
+        margin-top: 11px;
+        margin-bottom: 11px;
+        margin-left: 5%;
+    }
+    .mui-btn-blue{
+        background:#0e5bb5;
+        border-color:#0e5bb5
+    }

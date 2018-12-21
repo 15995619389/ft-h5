@@ -1,0 +1,22 @@
+﻿
+@{
+    ViewBag.Title = "提交成功";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;border-bottom: 1px solid #ddd;">
+    <a id="back" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">@ViewBag.Title</h1>
+</header>
+<link rel="stylesheet" href="/Content/css/myBusiness/myReward/upgrade/submitted.css" />
+<div class="mui-content">
+    <foot></foot>
+    <div class="box_img">
+        <img src="/Content/image/submit.png" />
+        <h3 class="p_text1">提交成功</h3>
+        <p class="p_text2">我们已收到您的登记信息，将在5个工作日</p>
+        <p class="p_text3">内审核完成。</p>
+    </div>
+</div>
+@section foot{
+    <script src="~/dist/agent.submited.bundle.js"></script>
+    }

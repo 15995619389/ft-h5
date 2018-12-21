@@ -1,0 +1,25 @@
+{
+    "extends": "standard",
+    "plugins": [
+        "vue"
+    ],
+    "globals": {
+        "window": true,
+        "define": true,
+        "$": true
+    },
+    "rules": {
+        "no-console":"error",
+        "no-empty":"error",
+        "no-extra-semi":"error",
+        "no-unused-labels":"error",
+        "require-yield":"error",
+        "space-before-function-paren": ["error", {"anonymous": "always", "named": "never", "asyncArrow": "always"}],
+        "eqeqeq": "off",
+        "indent": ["error", 4, {
+            "SwitchCase": 1
+        }],
+        "camelcase":"off",
+        "no-new":"off"
+    }
+}

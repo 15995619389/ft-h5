@@ -1,0 +1,303 @@
+﻿
+.mui-bar{
+    border-bottom:1px solid #ddd
+}
+.administer {
+    display: inline-block;
+    float: right;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+    color: #000;
+}
+/*-----发票----*/
+.invoice_content,.administer_content {
+    overflow: hidden;
+    width: 100%;
+}
+.defaultAddress {
+    font-size: 0.26rem;
+    color: #fe6400;
+}
+.invoice_list {
+    overflow: hidden;
+    width: 100%;
+}
+
+.invoice_list li {
+   overflow: hidden;
+   padding: 0.20rem 0;
+   margin-bottom: 0.15rem ;
+   background:#fff;
+   border-bottom:1px solid #ddd
+}
+
+.invoice_list li p {
+    margin-top: 0.10rem;
+    font-size: 0.28rem;
+    margin-bottom: 0;
+}
+
+.invoice_list li p span {
+   color: #444;
+}
+.invoice_list li .invoice_con p{
+    margin-top:0
+}
+.invoice_con{
+    overflow:hidden;
+    padding: 0 0.20rem 0.10rem;
+    border-bottom: 1px dashed #ddd;
+}
+.subtract {
+    background: #ddd;
+}
+/*-管理发票-*/
+.govern li{
+    width:100%;
+    padding:0.20rem 0;
+    overflow:hidden;
+    height:auto;
+    margin-bottom:0.10rem;
+    background:#fff
+}
+.govern .name_box{
+    padding:0 0.20rem
+}
+.govern .address_text{
+    border-bottom:1px dashed #ddd;
+    padding:0 0.20rem 0.20rem
+}
+.name_box {
+    overflow: hidden;
+    color: #444;
+    font-size: 0.28rem;
+}
+.name_box span{
+    color:#999
+}
+.select_address{
+    /*overflow:hidden;*/
+    padding:0.20rem 0.20rem 0;
+}
+.radio{
+    float:left;
+    font-size:0.26rem;
+}
+.radio sapn{
+    color:#444
+}
+.radio .text_color{
+color:#fe6400
+}
+.radio i {
+        display: inline-block;
+        float: left;
+        width: 0.30rem;
+        height: 0.30rem;
+        background: url('../../image/high/radio.png') no-repeat;
+        background-size:100% 100%;
+        margin-top:4px;
+        margin-right:5px
+    }
+.radio .user_chekbox{
+    background: url('../../image/high/user_chekbox.png') no-repeat;
+    background-size:100% 100%;
+}
+/*----*/
+.SetUp{
+        margin-top:0.20rem;
+        padding: 0.20rem;
+        border-bottom: 1px solid #ddd;
+        font-size: 0.28rem;
+        color: #444;
+        overflow: hidden;
+        background:#fff;
+     }
+    .SetUp span {
+        display: block;
+        float: left;
+    }
+    .SetUp .radio{
+        float: right;
+        font-size: 0.26rem;
+    }
+/*------*/
+.list_btn{
+    float:right;
+}
+.list_btn .mui-btn-gray{
+    color:#a5a7a8
+}
+.list_btn .mui-btn-blue{
+    color:#0e5bb5;
+    border:1px solid #0e5bb5  
+}
+.list_btn button{
+    padding:0.08rem 15px;
+    margin-left:10px;
+    font-size:0.26rem
+}
+.administer_content .mui-bar-tab{
+    line-height:0.80rem;
+    height:0.80rem;
+    background:#0e5bb5;text-align:center;
+    color:#fff;
+    font-size:0.30rem
+}
+/*----编辑----*/
+.invoice_box_one{
+    overflow:hidden;
+    padding:0.20rem;
+    margin-bottom: 0.15rem;
+    background:#fff
+}
+.invoice_title{
+    overflow:hidden;
+    font-size:0.28rem;
+    color:#444;
+    margin:0 0 0.20rem;
+}
+.invoice_type li{
+    width:48%;
+    float:left;
+   border:1px solid #ddd;
+   font-size:0.26rem;
+   color:#444;
+   height:0.60rem;
+   line-height:0.60rem;
+   text-align:center;
+   border-radius:3px
+}
+.invoice_type .text_color,.invoice_typeTwo .text_color{
+    border:1px solid #fe6400;
+    color:#fe6400
+}
+
+.invoice_type li:last-child{
+    float:right
+}
+.ordinary_invoice{
+    overflow:hidden;
+}
+.invoiceTitle{
+    overflow:hidden;
+    padding:0.20rem;
+}
+.invoice_typeTwo li{
+    width:30%;
+    float:left;
+    line-height:0.70rem;
+    height:0.70rem;
+    border:1px solid #ddd;
+    color:#444;
+    font-size:0.28rem;
+    text-align:center;
+    border-radius:3px;
+    margin-right:10px
+}
+/*-单位-*/
+.personal_invoice{
+    overflow:hidden;
+}
+.personal_invoice .user_name{
+    padding:0.20rem 0.20rem;
+    overflow:hidden;
+}
+.user_name input[type='text']{
+font-size:0.28rem;
+    color:#444;
+    background:#f5f5f5;
+    height:auto;
+    padding:0.10rem 0.20rem;
+    border:none;
+    margin-bottom:0
+}
+.Identification{
+    border-top:1px solid #ddd;
+    padding:0.20rem;
+}
+.Identification_h3{
+    margin:0 0 0.20rem;
+    font-size:0.28rem;
+    color:#444
+}
+.Identification_text{
+    padding-bottom:0.30rem;
+    overflow:hidden
+}
+.Identification_text input[type='text']{
+    font-size: 0.28rem;
+    color: #444;
+    background: #f5f5f5;
+    height: auto;
+    padding: 0.10rem 0;
+    border: none;
+    margin-bottom: 0;
+    padding-left:0.20rem
+}
+.invoiceCon{
+    font-size:0.28rem;
+    color:#444;
+    padding:0.20rem;
+    margin:0.15rem 0;
+}
+.submint_info{
+    position:absolute;
+    bottom:0.50rem;
+    overflow:hidden;
+    padding:0.20rem;
+    width:100%
+}
+.submint_info .mui-btn-blue,.VAT_btn .mui-btn-blue{
+    background:#0e5bb5;
+    border:1px solid #0e5bb5;
+}
+.invoiceCon,.Identification,.invoiceTitle,.user_name{
+    background:#fff
+}
+.VAT_invoice{
+    overflow:hidden;
+}
+.VAT_invoice li{
+    padding:0.20rem;
+    font-size:0.28rem;
+    color:#444;
+    border-bottom:1px solid #ddd;
+    overflow:hidden;
+    background:#fff
+}
+.VAT_invoice li span{
+    display:inline-block;
+    float:left
+} 
+.VAT_invoice li input{
+    height:auto;
+    padding:0;
+    font-size:0.28rem;
+    color:#999;
+    float:left;
+    margin-bottom:0;
+    border:none;
+    width:77%
+}
+.VAT_btn{
+    overflow:hidden;
+    padding:0.20rem;
+    width:100%;
+    margin-top:0.30rem
+}
+/*--meiyou shuju-*/
+.oEm {
+        color: red;
+    }
+    .invoiceNoData{
+        background:#efeff4;
+    }
+    .invoiceNoData li{
+     text-align:center;
+     background:#efeff4;
+     border-bottom:none;
+     color: rgb(170, 170, 170);
+     font-size:16px
+    }

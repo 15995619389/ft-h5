@@ -1,0 +1,285 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    ViewBag.Title = "商家入驻";
+}
+@section head{
+    <link rel="stylesheet" href="~/content/css/high/sellersettled.css" />
+}
+@section foot{
+    <script src="~/dist/high.sellersettled.bundle.js"></script>
+}
+<div id="container" v-cloak>
+    <!--入驻协议-->
+    <div class="ShopIn" v-show="PanelType==1">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+            <h1 class="mui-title">阅读入驻协议 </h1>
+        </header>
+        <nav class="mui-bar mui-bar-tab" v-on:click="SettledNext(2)" style="border:none">
+            同意协议并继续
+        </nav>
+        <div class="mui-content l-scrollable">
+            <div class="protocol_box">
+                <h3>
+                    请仔细阅读以下供应商入驻服务协议及规则：
+                </h3>
+                <p>
+                    用户使用“飞天众智供应商在线入驻系统”前请认真阅读并理解本协议内容，本协议内容中以加粗方式显著标识的条款，请用户着重阅读、慎重考虑。
+                </p>
+                <p>
+                    <b>
+                        1.本协议的订立
+                    </b>
+                </p>
+                <p>
+                    在本网站（www.techina2025.com）依据《飞天众智用户注册协议》登记注册，且符合本网站商家入驻标准的用户（以下简称“商家”），在同意本协议全部条款后，方有资格使用“飞天众智供应商在线入驻系统”（以下简称“入驻系统”） 申请入驻。一经商家点击“我已阅读并且同意以上服务协议”按键，即意味着商家同意与本网站签订本协议并同意受本协议约束。
+                </p>
+                <p>
+                    <b>
+                        2. 入驻系统使用说明
+                    </b>
+                </p>
+                <p>
+                    2.1 商家通过入驻系统提出入驻申请，并按照要求填写商家信息、提供商家资质资料后，由本网站审核并与有合作意向的商家联系协商合作相关事宜，商家可申请开通相关系统操作权限。
+                </p>
+                <p>
+                    2.2 商家以及本网站通过入驻系统做出的申请、资料提交及确认等各类沟通，仅为双方合作的意向以及本网站对商家资格审核的必备程序，除遵守本协议各项约定外，对双方不产生法律约束力。
+                </p>
+                <p>
+                    <b>
+                        3.商家权利义务
+                    </b>
+                </p>
+                <p>
+                    3.1 商家应查看本网站公示的入驻商家标准，并确保资质符合本网站公示的基本要求，商家知悉并理解本网站将结合自身业务发展情况对商家进行选择。
+                </p>
+                <p>
+                    3.2 商家应按照本网站要求诚信提供入驻申请所需资料并如实填写相关信息，商家应确保提供的申请资料及信息真实、准确、完整、合法有效，经本网站审核通过后，商家不得擅自修改替换相应资料及主要信息。如商家提供的申请资料及信息不合法、不真实、不准确的，商家需承担因此引起的相应责任及后果，并且本网站有权立即终止商家使用入驻系统的权利。
+                </p>
+                <p>
+                    3.3 商家使用入驻系统提交的所有内容应不含有木马等软件病毒、政治宣传、或其他任何形式的“垃圾信息”、违法信息，且商家应按本网站规则使用入驻系统，不得从事影响或可能影响本网站或入驻系统正常运营的行为，否则，本网站有权清除前述内容，并有权立即终止商家使用入驻系统的权利。
+                </p>
+                <p>
+                    3.4 商家应注意查看入驻系统公示的入驻申请结果，如审核通过的商家，则按照本网站工作人员的通知按要求办理入驻的相关手续；如审批未通过的商家，则可自本网站通过入驻系统将审批结果告知商家（需商家登陆入驻系统查看）之日起 15 日内提出异议并提供相应资料，如审批仍未通过的，则商家同意提交的申请资料及信息本网站无需返还，由本网站自行处理。
+                </p>
+                <p>
+                    3.5 商家不得以任何形式擅自转让或授权他人使用自己在本网站的用户帐号使用入驻系统，否则由此产生的不利后果均由商家自行承担。
+                </p>
+                <p>
+                    <b>
+                        4.本网站权利义务
+                    </b>
+                </p>
+                <p>
+                    4.1 本网站开发的入驻系统仅为商家申请入驻的平台，商家正式入驻后，将在商家入驻系统中进行相关操作。
+                </p>
+                <p>
+                    4.2 本网站有权对商家提供的资料及信息进行审核，并有权结合自身业务情况对合作商家进行选择；本网站对商家提交资料及信息的审核均不代表本网站对审核内容的真实、合法、准确、完整性作出的确认，商家应对提供资料及信息承担相应的法律责任。
+                </p>
+                <p>
+                    4.3 无论商家是否通过本网站的审核，本网站有权对商家提供的资料及信息予以留存并随时查阅，同时，本网站有义务对商家提供的资料予以保密，但国家行政机关、司法机关等国家机构调取资料的除外。
+                </p>
+                <p>
+                    4.4 本网站会尽力维护本系统信息的安全，但法律规定的不可抗力，以及因为黑客入侵、计算机病毒侵入发作等原因造成商家资料泄露、丢失、被盗用、被篡改的，本网站不承担任何责任。
+                </p>
+                <p>
+                    4.5 本网站应在现有技术支持的基础上确保入驻系统的正常运营，尽量避免入驻系统服务的中断给商家带来的不便。
+                </p>
+                <p>
+                    <b>
+                        5.知识产权
+                    </b>
+                </p>
+                <p>
+                    5.1 本网站开发的入驻系统及其包含的各类信息的知识产权归本网站所有者所有，受国家法律保护,本网站有权不时地对入驻系统的内容进行修改，并在入驻系统中公示，无须另行通知商家。
+                </p>
+                <p>
+                    5.2 在法律允许的最大限度范围内，本网站所有者对本协议及入驻系统涉及的内容拥有解释权。
+                </p>
+                <p>
+                    5.3 商家未经本网站所有者书面许可，不得擅自使用、非法全部或部分的复制、转载、抓取入驻系统中的信息，否则由此给本网站造成的损失，商家应予以全部赔偿。
+                </p>
+                <p>
+                    <b>
+                        6. 入驻系统服务的终止
+                    </b>
+                </p>
+                <p>
+                    6.1 商家自行终止入驻申请，或商家经本网站审批未通过的，则入驻系统服务自行终止。
+                </p>
+                <p>
+                    6.2 商家使用本网站或入驻系统时，如违反相关法律法规或者违反本协议规定的，本网站有权随时终止商家使用入驻系统。
+                </p>
+                <p>
+                    <b>
+                        7.本协议的修改
+                    </b>
+                </p>
+                <p>
+                    本协议可由本网站随时修订，并将修订后的协议公告于本网站及入驻系统，修订后的条款内容自公告时起生效，并成为本协议的一部分。
+                </p>
+                <p>
+                    <b>
+                        8.法律适用与争议解决
+                    </b>
+                </p>
+                <p>
+                    8.1 本协议适用中华人民共和国法律。
+                </p>
+                <p>
+                    8.2 因本协议产生的任何争议，由双方协商解决，协商不成的，任何一方有权向飞天众智所在地有管辖权的法院提起诉讼。
+                </p>
+            </div>
+        </div>
+    </div>
+    <!--填写入驻信息--->
+    <div class="settled_box" v-show="PanelType==2">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="SettledNext(1)"></a>
+            <h1 class="mui-title">填写入驻信息</h1>
+        </header>
+        <div class="mui-content l-scrollable">
+            <ul class="shop_info">
+                <li>
+                    <span class="oSapn">*</span>
+                    <span class="span_text">企业名称</span>
+                    <input type="text" placeholder="请填写企业名称" v-model.trim="Merchant.CompanyName" />
+                </li>
+                <li>
+                    <span class="oSapn">*</span>
+                    <span class="span_text">统一社会信用代码</span>
+                    <input type="text" placeholder="请输入统一社会信用代码" v-model.trim="Merchant.SocialCreditCode" />
+                </li>
+                <li style="position:relative">
+                    <span class="oSapn">*</span>
+                    <span class="span_text spanTop">企业营业执照</span>
+                    <div class="logo_box" v-if="BusinessLicenseImg==null">
+                        <img src="/content/image/from_img.png" class="card_img" />
+                        <input type="file" accept="image/*" id="BusinessLicense" imagetype="1" style="position:absolute;top:0;opacity:0" />
+                    </div>
+                    <ol class="upload_logo" v-else>
+                        <li>
+                            <img v-bind:src="domain+BusinessLicenseImg.ImgPath" v-on:click="ShowPreview(domain+BusinessLicenseImg.ImgPath)" class="card_img" />
+                            <span class="img_colse" v-on:click="RemoveImg(1)">X</span>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <ul class="contact_info">
+                <li>
+                    <span class="oSapn">*</span>
+                    <span class="span_text">联系地址</span>
+                    <input type="text" placeholder="请填写联系地址" v-model.trim="Merchant.ContactAddress" />
+                </li>
+                <li>
+                    <span class="oSapn">*</span>
+                    <span class="span_text">联系人</span>
+                    <input type="text" placeholder="请输入联系人" v-model.trim="Merchant.Contact" />
+                </li>
+                <li>
+                    <span class="oSapn">*</span>
+                    <span class="span_text">职位</span>
+                    <input type="text" placeholder="请输入职位" v-model.trim="Merchant.Position" />
+                </li>
+                <li>
+                    <span class="oSapn">*</span>
+                    <span class="span_text">联系方式</span>
+                    <input type="text" placeholder="请输入联系方式" v-model.trim="Merchant.ContactWay" />
+                </li>
+            </ul>
+            <ul class="shop_info">
+                <li style="position:relative">
+                    <span class="oSapn">*</span>
+                    <span class="span_text spanTop">个人名片</span>
+                    <div class="logo_box" v-if="BusinessCardImg==null">
+                        <img src="/content/image/from_img.png" class="card_img" />
+                        <input type="file" id="BusinessCard" accept="image/*" imagetype="2" style="position:absolute;top:0;opacity:0" />
+                    </div>
+                    <ol class="upload_logo" v-else>
+                        <li>
+                            <img v-bind:src="domain+BusinessCardImg.ImgPath" v-on:click="ShowPreview(domain+BusinessCardImg.ImgPath)" class="card_img" />
+                            <span class="img_colse" v-on:click="RemoveImg(2)">X</span>
+                        </li>
+                    </ol>
+                </li>
+                <li style="position:relative">
+                    <span class="span_text spanTop">企业logo</span>
+                    <div class="logo_box" v-if="CompanyLogoImg==null">
+                        <img src="/content/image/from_img.png" class="card_img" />
+                        <input type="file" id="CompanyLogo" accept="image/*" imagetype="3" style="position:absolute;top:0;opacity:0" />
+                    </div>
+                    <ol class="upload_logo" v-else>
+                        <li>
+                            <img v-bind:src="domain+CompanyLogoImg.ImgPath" v-on:click="ShowPreview(domain+CompanyLogoImg.ImgPath)" class="card_img" />
+                            <span class="img_colse" v-on:click="RemoveImg(3)">X</span>
+                        </li>
+                    </ol>
+                </li>
+                <li>
+                    <div class="li_title">其他资质证书</div>
+                    <ol class="upload_box" v-if="OtherCertificatesImg.length>0">
+                        <li v-for="(other,index) in OtherCertificatesImg">
+                            <img v-bind:src="domain+other.ImgPath" v-on:click="ShowPreview(domain+other.ImgPath)" class="upload_img" />
+                            <span class="img_colse" v-on:click="RemoveImg(4,index)">X</span>
+                        </li>
+                    </ol>
+                    <div class="click_up" v-if="OtherCertificatesImg.length<3">
+                        <img src="/content/image/from_img.png" class="textfield" />
+                        <input type="file" accept="image/*" id="OtherCertificates" imagetype="4" />
+                    </div>
+                    <span class="span_title">(最多上传3张)</span>
+                </li>
+            </ul>
+            <ul class="shop_info">
+                <li>
+                    <span class="oSapn">*</span>
+                    <span class="span_text">开户银行</span>
+                    <input type="text" placeholder="请填写开户银行" v-model.trim="Merchant.BankName" />
+                </li>
+                <li>
+                    <span class="oSapn">*</span>
+                    <span class="span_text">户名</span>
+                    <input type="text" placeholder="请输入户名" style="width:88%" v-model.trim="Merchant.BankAccount" />
+                </li>
+                <li>
+                    <span class="oSapn">*</span>
+                    <span class="span_text">卡号</span>
+                    <input type="text" placeholder="请输入卡号" style="width:88%" v-model.trim="Merchant.CardNo" onkeyup="if(this.value.length==1){this.value=this.value.replace(/[^1-9]/g,'')}else{this.value=this.value.replace(/\D/g,'')}" />
+                </li>
+                <li style="position:relative">
+                    <span class="oSapn">*</span>
+                    <span class="span_text spanTop">开户证许可</span>
+                    <div class="logo_box" v-if="OpenLicenseImg==null">
+                        <img src="/content/image/from_img.png" class="card_img" />
+                        <input type="file" accept="image/*" style="position:absolute;top:0;opacity:0" id="OpenLicense" imagetype="5" />
+                    </div>
+                    <ol class="upload_logo" v-else>
+                        <li>
+                            <img v-bind:src="domain+OpenLicenseImg.ImgPath" v-on:click="ShowPreview(domain+OpenLicenseImg.ImgPath)" class="card_img" />
+                            <span class="img_colse" v-on:click="RemoveImg(5)">X</span>
+                        </li>
+                    </ol>
+                </li>
+            </ul>
+            <div class="submit_btn" v-on:click="SettledPost">
+                提&nbsp;&nbsp;&nbsp;&nbsp;交
+            </div>
+        </div>
+    </div>
+    <!--消息提示--->
+    <div class="messageinfo" v-show="PanelType==3">
+        <header class="mui-bar mui-bar-nav" style="background: #fff;">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+            <h1 class="mui-title">消息提示</h1>
+        </header>
+        <div class="mui-content" style="background: #fff;">
+            <div class="successful">
+                <img v-bind:src="SettledAudit.AuditImg" />
+                <p>{{SettledAudit.messageinfo}}</p>
+                <span v-if="SettledAudit.code!=201">{{SettledAudit.failurereason}}</span>
+                <span v-else>未通过原因：{{SettledAudit.failurereason}}。<a style="color:#0c4ca3" v-on:click="SettledNext(2)">返回修改</a></span>
+            </div>
+        </div>
+    </div>
+    <preview ref="preview"></preview>
+</div>

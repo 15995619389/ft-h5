@@ -1,0 +1,150 @@
+﻿
+@{
+    ViewBag.Title = "升级技术合伙人";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;border-bottom: 1px solid #ddd;">
+    <a href="javascript:void(0)" id="back" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">@ViewBag.Title</h1>
+</header>
+<link rel="stylesheet" href="/Content/css/myBusiness/myReward/upgrade/myReward.css" />
+<link rel="stylesheet" href="~/Content/css/cropper/cropper.css" />
+<link rel="stylesheet" href="~/Content/css/cropper/main.css" />
+<link rel="stylesheet" href="~/Content/css/UI/style.min.css" />
+<div class="mui-content" id="cont" v-cloak>
+    <foot></foot>
+    <div class="content_box" v-if="agent.AgentLevelId==2">
+        <img src="/Content/image/success.png" />
+        <p>您已是技术合伙人最高等级：中级技术合伙人</p>
+    </div>
+    <div v-if="agent.AgentLevelId!=2">
+        <div class="prompt">
+            <!--<span>!</span>-->
+            请完成以下任意一种任务才可以升级成为中级技术合伙人！
+        </div>
+        <div class="task_one">
+            <div class="task_title">
+                <div>
+                    <img src="/Content/image/task_bg.png" />
+                    <h3>任务1</h3>
+                </div>
+                <p>具有有效的《技术合伙人证书》的人员，并发布一条有效需求</p>
+            </div>
+            <div class="conditions">
+                <span class="oSpan">1、经纪人证书</span>
+                <div class="conditions_btn" id="agent">
+                    <button type="button" class="btn" v-if="AgentCertificate.AgentCertificate!=null" v-on:click="look_img()">查看</button>
+                    <button type="button" class="mui-btn-blue mui-btn-outlined" style="float: right;margin-right: 0.5rem;">立即上传</button>
+                    <input type="file" name="fileField" class="file" id="fileField" size="28" accept="image/jpeg, image/jpg, image/png, image/x-ms-bmp, image/bmp" />
+                    <div class="conditions_btnss" v-if="AgentCertificate.AgentCertificate!=null" style="display:initial"></div>
+                </div>
+            </div>
+            <div class="conditions" id="demand">
+                <span class="oSpan">2、一条有效需求</span>
+                <div class="conditions_btn">
+                    <button type="button" class="mui-btn-blue mui-btn-outlined" style="float: right;margin-right: 0.5rem;" v-on:click="Publish()">立即发布</button>
+                    <div class="conditions_btnss" v-if="demand>=1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="task_two">
+            <div class="task_title">
+                <div>
+                    <img src="/Content/image/task_bg.png" />
+                    <h3>任务2</h3>
+                </div>
+                <p>发展五个智友，并发布一条有效需求</p>
+            </div>
+            <div class="conditions" id="referee">
+                <span class="oSpan">1、五个智友</span>
+                <div class="conditions_btn">
+                    完成：<span v-html="referee"></span>                   
+                    <button type="button" class="mui-btn-blue mui-btn-outlined"  data-clipboard-action="copy" style="float: right;margin-right: 0.5rem;" id="Copy1">立即邀请</button>
+                    <div class="conditions_btnss" v-if="referee>=5" style="display:inline"></div>
+                </div>
+            </div>
+            <div class="conditions" id="demand2">
+                <span class="oSpan">2、一条有效需求</span>
+                <div class="conditions_btn">
+                    <button type="button" class="mui-btn-blue mui-btn-outlined" style="float: right;margin-right: 0.5rem;" v-on:click="Publish()">立即发布</button>
+                    <div class="conditions_btnss" v-if="demand>=1"></div>
+                </div>
+            </div>
+        </div>
+        <div class="register_now " @*v-if="num==1"*@>
+            <a><button v-on:click="WisdomSink()" type="button" disabled class="mui-btn mui-btn-blue mui-btn-block">立即登记</button></a>
+        </div>
+    </div>
+
+    @*图片查看框*@
+    <div id="showimg" style="display:none;text-align:-webkit-center;background-color:antiquewhite;margin-top:100px">
+        <img id="touxiang" v-bind:src="AgentCertificate.AgentCertificate" />
+    </div>
+</div>
+@*图片裁剪框*@
+<div id="crop-avatar" class="pop pub_suc_pop" style="display:none">
+    <div class="pop_bd" style="text-align:center">
+        <div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <form class="avatar-form" action="/agent/uploadimg" enctype="multipart/form-data" method="post">
+                        <div class="modal-body">
+                            <div class="avatar-body">
+                                <div class="avatar-upload">
+                                    <input class="avatar-src" name="avatar_src" type="hidden">
+                                    <input class="avatar-data" name="avatar_data" type="hidden">
+                                </div>
+                                <div class="row uplow">
+                                    <div style="width:100%;float:left;padding:10px;box-sizing: border-box;">
+
+                                        <div class="avatar-wrapper"></div>
+                                    </div>
+                                </div>
+                                <div class="btnright">
+                                    <a href="javascript:" class="conmit"></a>
+                                    <a href="javascript:" class="cancel"></a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+    </div>
+
+    <span href="javascript:void(0);" class="a_close" onclick="$.unblockUI();" name="close_all" id="domMessage2_close"></span>
+</div>
+<style>
+    .btn_box {
+        text-align: center;
+        font-size: 0.28rem;
+        color: #595757;
+        padding-top: 0.10rem;
+        padding-bottom: 0.10rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        overflow: hidden;
+        height: auto;
+        width: 100%;
+    }
+</style>
+<div id="mask" class="disappear"></div>
+<div class="mint-popup mint-popup-bottom" style="display:none;width: 100%; height: 2rem; text-align: center; padding: 0.4rem 0px; z-index: 2003;">
+    <div>
+    <p style="margin-bottom: 0.2rem;">请先完善个人信息，是否现在完善？</p> 
+    <div>
+        <button class="disappear">取消</button>
+         <button onclick="location.href = '/mybusiness/basicinformation'">确定</button>
+        </div>
+    </div>
+</div>
+@*分享弹框*@
+@Html.Partial("_Share")
+@section foot{
+<script src="~/Content/Plugins/layer/layui.all.js"></script>
+    <script src="~/dist/agent.updatemanger.bundle.js"></script>
+<script src="~/dist/imgcropper.bundle.js"></script>
+<script src="~/dist/share.bundle.js"></script>
+}
+

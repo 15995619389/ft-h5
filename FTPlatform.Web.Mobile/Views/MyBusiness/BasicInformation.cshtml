@@ -1,0 +1,177 @@
+﻿@{
+    ViewBag.Title = "基本信息";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/Content/css/pulli.css" />
+    <link rel="stylesheet" href="~/Content/css/cropper/cropper.css" />
+    <link rel="stylesheet" href="~/Content/css/cropper/main.css" />
+    <link rel="stylesheet" href="/Content/css/myBusiness/basicInformation/basicInformation.css" />
+}
+@section foot{
+    <script src="~/dist/member.basicinformation.bundle.js"></script>
+    <script src="~/dist/imgcropper.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness"></a>
+    <h1 class="mui-title">基本信息</h1>
+</header>
+<div class="mui-content l-scrollable" v-cloak>
+    <input type="hidden" value="@ViewBag.BMSucc" id="BMSucc" />
+    <div class="user">
+        <input type="hidden" name="type" value="2" />
+        <input type="hidden" name="content" value="ddddd" />
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell" id="tximg">
+                <a class="mui-navigate-right" style="line-height: 0.75rem;color: #444444;">
+                    <span> 用户头像</span>
+                    <input type="file" name="fileField" class="file" id="fileField" size="28" accept="image/jpeg, image/jpg, image/png, image/x-ms-bmp, image/bmp">
+                    <img v-lazy="user.AvatarUrl!=null?user.AvatarUrl:'/Content/image/m_user_default400.png'" id="touxiang" class="user_img" />
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right" v-on:click="editusername(user.UserName)">
+                    账户名称
+                    <span class="name">{{user.UserName}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="userName">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell" id="realname">
+                <a class="mui-navigate-right" v-on:click="updateinfo(1,user.RealName)">
+                    <span class="oSpan">*</span>真实姓名
+                    <span class="name" id="real">{{user.RealName}}</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right" v-on:click="updateinfo(2,user.CallPhone?user.CallPhone:'')">
+                    <span class="oSpan">*</span>联系方式
+                    <span class="phone">{{user.CallPhone?user.CallPhone:''}}</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right" v-on:click="bindemail(user.Email==null?'':user.Email)">
+                    <span class="oSpan">*</span>电子邮箱
+                    <span class="email" v-if="!user.IsEmailValid&&user.Email!=null&&user.Email!=''">(未验证)</span>
+                    <span class="email" v-if="user.Email==null||user.Email==''">未绑定</span>
+                    <span class="email" v-else>{{user.Email|email}}</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right" href="/MyBusiness/BusCategorys">
+                    <span class="oSpan">*</span>涉及行业
+                    <span class="industry">
+                        @*<template v-for="(cate,index) in user.FTBusinessNewCategory">
+                            <template v-if="cate.BusinessClassLevelName3!=null&&cate.BusinessClassLevelName3!=''">
+                                {{cate.BusinessClassLevelName3}}
+                            </template>
+                            <template v-if="(cate.BusinessClassLevelName3==null||cate.BusinessClassLevelName3=='')&&(cate.BusinessClassLevelName2!=null&&cate.BusinessClassLevelName2!='')">
+                                {{cate.BusinessClassLevelName2}}
+                            </template>
+                            <template v-if="(cate.BusinessClassLevelName3==null||cate.BusinessClassLevelName3=='')&&(cate.BusinessClassLevelName2==null||cate.BusinessClassLevelName2=='')&&(cate.BusinessClassLevelName1!=null&&cate.BusinessClassLevelName1!='')">
+                                {{cate.BusinessClassLevelName1}}
+                            </template>
+                            <template v-if="index!=(user.FTBusinessNewCategory.length-1)">
+                                /
+                            </template>
+                        </template>*@
+                        {{NewCategory}}
+                    </span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell" style="padding: 7px 15px;">
+                <a class="mui-navigate-right" v-on:click="updateinfo(3,user.CompanyName)">
+                    <span class="oSpan">*</span>工作单位
+                    <span class="unit">{{user.CompanyName}}</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="uesrUnit">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell" style="padding: 7px 15px;">
+                <a class="mui-navigate-right" v-if="status==''" v-on:click="ApplySupplier()">
+                    用户角色
+                    <span class="supplier">申请供方</span>
+                    <span class="demand" v-if="user.IsNeed">技术需求方</span>
+                </a>
+                <a class="mui-navigate-right" v-if="status==='101'" onclick="location.href='/expert/supplierdetail'">
+                    用户角色
+                    <span class="demand">技术供方</span>
+                </a>
+                <a class="mui-navigate-right" v-if="status==='102'">
+                    用户角色
+                    <span class="demand" v-if="user.IsNeed">技术需求方</span>
+                    <span class="supplier">供方审核中</span>
+                </a>
+                <a class="mui-navigate-right" v-if="status==='103'" v-on:click="UpSupplier()">
+                    用户角色
+                    <span class="demand" v-if="user.IsNeed">技术需求方</span>
+                    <span class="supplier">修改供方申请信息</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell" style="padding: 7px 15px;">
+                <a class="">
+                    会员等级
+                    <span class="level">{{user.UserLevel!=null?user.UserLevel.Name:"智童"}}</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell" style="padding: 7px 15px;">
+                <a class="mui-navigate-right" href="/mall/scoregold">
+                    我的智币
+                    <span class="my_money">{{user.Score}}</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell" style="padding: 7px 15px;">
+                <a class="mui-navigate-right" href="/mybusiness/carte">
+                    我的名片
+                </a>
+            </li>
+            <li class="mui-table-view-cell" style="padding: 7px 15px;">
+                <a class="mui-navigate-right" href="/mybusiness/setnewpwd">
+                    密码
+                    <span class="password">密码修改</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <div class="prompt" v-if="user.IsValidate != 1">
+        <p class="prompt_text"><img src="/Content/image/prompt_icon.png" />补充完以上必填项后才可以发布需求或申请供方</p>
+    </div>
+    <mt-popup v-model="popupVisible" position="right">
+        <div style="height:100%;width:100%;">
+            <div id="crop-avatar" class="pop pub_suc_pop">
+                <div class="pop_bd" style="text-align:center">
+                    <div class="modal fade" id="avatar-modal" aria-hidden="true" aria-labelledby="avatar-modal-label" role="dialog" tabindex="-1">
+                        <div class="modal-dialog modal-lg">
+                            <div class="modal-content">
+                                <form class="avatar-form" action="/my/uploadimg" enctype="multipart/form-data" method="post">
+                                    <div class="modal-body">
+                                        <div class="avatar-body">
+                                            <div class="avatar-upload">
+                                                <input class="avatar-src" name="avatar_src" type="hidden">
+                                                <input class="avatar-data" name="avatar_data" type="hidden">
+                                            </div>
+                                            <div class="row uplow">
+                                                <div style="width:100%;float:left;padding:10px;box-sizing: border-box;">
+                                                    <div class="avatar-wrapper"></div>
+                                                </div>
+                                            </div>
+                                            <div class="btnright" style="margin-bottom:10px;">
+                                                <button type="button" v-on:click="HidePopup" class="cancel mui-btn mui-btn-primary">取消</button>
+                                                <button type="button" v-on:click="HidePopup" class="conmit mui-btn mui-btn-primary">确定</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="loading" aria-label="Loading" role="img" tabindex="-1"></div>
+                </div>
+            </div>
+        </div>
+    </mt-popup>
+</div>

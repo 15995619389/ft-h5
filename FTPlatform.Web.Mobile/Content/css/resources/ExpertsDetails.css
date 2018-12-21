@@ -1,0 +1,384 @@
+p, body {
+    line-height: 0.40rem;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+html {
+    background: #fff;
+}
+
+.mui-pull-right img {
+    width: 19.5px;
+    height: 15px;
+}
+
+.mui-pull-right {
+    margin-top: 0.3rem;
+}
+
+.Experts {
+    width: 100%;
+    height: 3.98rem;
+    overflow: hidden;
+    background: url(../../image/recommend/Experts.png) no-repeat;
+    background-size: 100% 3.98rem;
+}
+
+.HeadPortrait {
+    width: 1.70rem;
+    height: 1.70rem;
+    margin: 0 auto;
+    margin-top: 0.30rem;
+    background: url(../../image/recommend/HeadPortrait.png) no-repeat;
+    background-size: 1.70rem 1.70rem;
+    padding-top: 0.23rem;
+}
+
+.HeadPortrait_bg {
+    width: 1.24rem;
+    height: 1.24rem;
+    margin: 0 auto;
+    border-radius: 50%;
+}
+
+.name {
+    color: #fff;
+    font-size: 0.30rem;
+    text-align: center;
+}
+
+.company {
+    color: #fff;
+    font-size: 0.28rem;
+    text-align: center;
+}
+
+.industry {
+    position: relative;
+    font-size: 0.26rem;
+    text-align: center;
+    color: #fff;
+}
+
+    .industry span {
+        padding: 0px 0.10rem;
+    }
+
+    .industry i {
+        display: block;
+        width: 1px;
+        height: 0.14rem;
+        background: #fff;
+    }
+
+.oi1 {
+    position: absolute;
+    top: 0.13rem;
+    left: 41.5%;
+}
+
+.oi2 {
+    position: absolute;
+    top: 0.13rem;
+    right: 41.5%;
+}
+
+.email_box {
+    overflow: hidden;
+    height: auto;
+    text-align: center;
+    font-size: 0.26rem;
+    color: #fff;
+}
+
+.phone {
+    margin-right: 0.05rem;
+}
+
+.oEmil {
+    margin-left: 0.05rem;
+}
+
+.box {
+    padding: 0.20rem 3%;
+    overflow: hidden;
+    height: auto;
+    border-bottom: 0.20rem solid #f5f5f5;
+}
+
+    .box p {
+        font-size: 0.28rem;
+        color: #444444;
+    }
+
+.research_title {
+    width: 100%;
+    height: 15px;
+    font-size: 0.30rem;
+    color: #1761ad;
+    line-height: 0.30rem;
+    margin-bottom: 15px;
+}
+
+    .research_title i {
+        display: block;
+        width: 4px;
+        height: 15px;
+        background: #1761ad;
+        float: left;
+        margin-right: 0.15rem;
+    }
+
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid #dddddd;
+    border-width: 1px 1px 1px 1px;
+    margin-top: 10px;
+}
+
+    .table th, .table td {
+        border: solid #dddddd;
+        border-width: 0 1px 1px 0;
+        padding: 2px 5px;
+        font-size: 0.30rem;
+        color: #444444;
+        height: 0.80rem;
+    }
+
+.area {
+    width: 100%;
+    height: 0.60rem;
+    background: #f5f5f5;
+}
+
+.area_auto {
+    width: 3.40rem;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+    .area_auto i {
+        display: block;
+        float: left;
+        width: 0.80rem;
+        height: 1px;
+        background: #bbbbbb;
+        margin-top: 0.20rem;
+    }
+
+    .area_auto img {
+        width: 0.32rem;
+        height: 0.32rem;
+        float: left;
+        margin-right: 0.05rem;
+        margin-top: 0.05rem;
+    }
+
+    .area_auto p {
+        float: left;
+        width: 1.55rem;
+        color: #ababab;
+        font-size: 0.28rem;
+        margin-left: 0.10rem;
+    }
+
+.evaluation {
+    padding: 0 3%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 0.20rem;
+}
+
+    .evaluation li {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        padding: 0.20rem 0px;
+        border-bottom: 1px solid #ddd;
+    }
+
+        .evaluation li:nth-last-child(1) {
+            border-bottom: 0px solid #ddd;
+        }
+
+.evaluation_p {
+    font-size: 0.28rem;
+    color: #444444;
+}
+
+.assess-top {
+    position: relative;
+    padding-top: 0.10rem;
+    padding-bottom: 0.05rem;
+    background-color: #fff;
+    overflow: hidden;
+}
+
+.user-portrait img {
+    display: block;
+    float: left;
+    width: 0.52rem;
+    height: 0.52rem;
+    border-radius: 50%;
+}
+
+.user-name {
+    font-size: 0.28rem;
+    line-height: 0.40rem;
+    float: left;
+    height: 0.40rem;
+    /*margin-right: 0.10rem;*/
+    margin-left: 0.10rem;
+    color: #444444;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 2.00rem;
+}
+
+.masonry {
+    float: right;
+    overflow: hidden;
+    height: auto;
+    margin-top: 0.15rem;
+}
+
+    .masonry img {
+        float: right;
+        width: 0.31rem;
+        height: 0.24rem;
+        margin-left: 0.10rem;
+    }
+
+.date {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.pay_money, .pay_date {
+    font-size: 0.24rem;
+    float: left;
+    display: block;
+    color: #bfbfbf;
+}
+
+.pay_money {
+    margin-right: 0.30rem;
+}
+
+.problem {
+    color: #0e5bb5;
+    font-size: 0.26rem;
+    margin: 0.06rem 0px;
+}
+
+.footer_btn {
+    overflow: hidden;
+    height: auto;
+    padding: 0 3%;
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+}
+
+    .footer_btn button {
+        width: 100%;
+    }
+
+    .footer_btn a {
+        display: block;
+        overflow: hidden;
+        float: left;
+        height: auto;
+        margin-bottom: 0.20rem;
+        width: 49%;
+    }
+
+        .footer_btn a:nth-child(even) {
+            float: right;
+        }
+
+        .footer_btn a:nth-last-child(1) {
+            float: right;
+        }
+
+.mui-btn-outlined {
+    background: #f19149;
+    color: #fff;
+}
+
+.mui-btn-redd,.mui-btn-blue {
+    background: #0e5bb5;
+    color: #fff;
+    border-color:#0e5bb5;
+}
+
+.box ul li {
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+.patentName, .patentNumber, .inventor, .applicationTime {
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+    font-size: 0.28rem;
+    border-bottom: 1px solid #ddd;
+}
+
+.applicationTime {
+    border-bottom: none;
+}
+
+    .patentName span, .patentNumber span, .inventor span, .applicationTime span {
+        display: block;
+        float: left;
+        padding: 5px 3px;
+        color: #444;
+    }
+
+        .patentName span:nth-child(1), .patentNumber span:nth-child(1), .inventor span:nth-child(1), .applicationTime span:nth-child(1) {
+            width: 21%;
+        }
+
+        .patentName span:nth-child(2), .patentNumber span:nth-child(2), .inventor span:nth-child(2), .applicationTime span:nth-child(2) {
+            width: 79%;
+            border-left: 1px solid #ddd;
+        }
+/*-----htmlÒÆ¹ýÀ´css-----*/
+ .ft-img-preview {
+        position: fixed;
+        display: -webkit-flex;
+        display: flex;
+        -webkit-flex-direction: column;
+        flex-direction: column;
+        -webkit-justify-content: center;
+        justify-content: center;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        z-index: 1000;
+        background-color: #fff;
+    }
+
+    .ft-img-preview > img {
+            max-width: 100%;
+            max-height: 100%;
+            display: block;
+        }
+    /**----------**/
+   .box p span{
+           font-family: 'Microsoft YaHei' !important;
+            font-size: 0.28rem !important;
+            line-height:0.40rem !important
+   } 

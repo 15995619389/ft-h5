@@ -1,0 +1,143 @@
+﻿
+@{
+    ViewBag.Title = "订单确认";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/content/css/high/orderenter.css" />
+}
+@section foot
+{
+    <script src="~/dist/high.orderenter.bundle.js"></script>
+}
+
+<div id="container" v-cloak>
+    <!--订单确认-->
+    <div class="order_box" v-show="OperateType=='orderenter'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+            <h1 class="mui-title">订单确认</h1>
+        </header>
+        <nav class="mui-bar mui-bar-tab" style="box-shadow:none;-webkit-box-shadow:none">
+            <a class="mui-tab-item TotalPrice">
+                总价：<span class="money">
+                    ￥
+                    <template v-if="order.ArticleModel!=null">
+                        {{orderTotal}}
+                    </template>
+                    <template v-else>
+                        0
+                    </template>
+                </span><span>(共{{orderEnter.Quantity}}件)</span>
+            </a>
+            <a class="mui-tab-item SubmitOrders" v-on:click="OrderPost">
+                立即购买
+            </a>
+        </nav>
+        <div class="mui-content l-scrollable">
+            <div class="user_info">
+                <!--情况1：有默认地址的状态-->
+                <div class="haveAddress" v-if="order.AddressModel!=null" v-on:click="AddressShow">
+                    <h3 class="user_top">
+                        <span class="user_name">{{order.AddressModel.Consignee}}</span><span class="phone">{{order.AddressModel.Telephone}}</span>
+                        <span class="acquiescence" v-show="order.AddressModel.IsDefault">默认</span>
+                    </h3>
+                    <ul class="user_address">
+                        <li><img src="~/Content/image/high/address.png" class="address_bg" /></li>
+                        <li class="user_auto">{{order.AddressModel.Address}}</li>
+                        <li class="user_left">&gt;</li>
+                    </ul>
+                </div>
+                <!--情况2：没有收货地址-->
+                <div class="noAddress" v-else v-on:click="AddAddress">
+                    您的收货地址为空，点击添加收货地址<span>&gt;</span>
+                </div>
+            </div>
+            <div class="goods_box" v-if="order.ArticleModel!=null">
+                <img src="~/Content/image/high/ribbon.png" class="ribbon_bg" />
+                <div class="goods_info">
+                    <img v-lazy="order.ArticleModel.ImgUrl" class="goods_img" />
+                    <div class="goods_info_right">
+                        <h3>{{order.ArticleModel.Name}}</h3>
+                        <p class="goods_info_text" v-html="order.ArticleModel.Description"></p>
+                        <h3 class="goods_price">
+                            <span>￥{{order.ArticleModel.SalePrice}}</span>
+                            <em class="promotions" v-if="order.ArticleModel.IsSalePromotion">{{order.ArticleModel.Discount}}折，{{order.ArticleModel.DiscountName}}</em>
+                        </h3>
+                        <div class="originalPrice" v-if="order.ArticleModel.IsSalePromotion">价格：<span>￥{{order.ArticleModel.CostPrice}}</span></div>
+                    </div>
+                </div>
+                <div class="goods_number">
+                    <span class="goods_hint">购买数量（<span>起订量：{{order.ArticleModel.OrderQuantity}}</span>）</span>
+                    <div class="quantity-wrapper">
+                        <a v-on:click="Add">+</a>
+                        <span class="quantity_text">{{orderEnter.Quantity}}</span>
+                        <a v-bind:class="{subtract:(orderEnter.Quantity<=order.ArticleModel.OrderQuantity)}" v-on:click="Minus">-</a>
+                    </div>
+                </div>
+            </div>
+            <div class="invoice_box" v-on:click="InvoiceShow">
+                <span style="float:left">发票</span>
+                <div class="invoice_name">
+                    <div class="invoice_up" v-if="order.InvoiceModel!=null">{{order.InvoiceModel.TypeVal}}({{order.InvoiceModel.Title}})</div>
+                    <div class="invoice_up" v-else>不开发票</div>
+                    <span>&gt;</span>
+                </div>
+            </div>
+            <div class="seller_info">
+                <h3>给卖家留言</h3>
+                <textarea placeholder="您可以给卖家留言，以便咨询！" class="seller_text" v-model="orderEnter.BuyRemark"></textarea>
+            </div>
+        </div>
+    </div>
+    <div id="pay"></div>
+    <!--收获地址-->
+    <div class="address_box" v-show="OperateType=='address'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="AddressHide"></a>
+            <h1 class="mui-title">收获地址</h1>
+            <a v-on:click="SkipUrl(1)" class="administer">管理</a>
+        </header>
+        <div class="mui-content l-scrollable">
+            <ul class="address_wrap">
+                <li v-for="(addres,index) in addressList" v-on:click="ChoiceAddress(index)">
+                    <div class="name_box">
+                        <strong>{{addres.Consignee}}</strong>
+                        <strong>{{addres.Telephone}}</strong>
+                    </div>
+                    <p class="address_text">
+                        <span v-if="addres.IsDefault" class="defaultAddress">[默认地址]</span>
+                        <span class="specificAddress">{{addres.Address}}</span>
+                    </p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--发票-->
+    <div class="invoice_content" v-show="OperateType=='invoice'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="InvoiceHide"></a>
+            <h1 class="mui-title">发票信息</h1>
+            <a v-on:click="SkipUrl(2)" class="administer">管理</a>
+        </header>
+        <div class="mui-content l-scrollable">
+            <ul class="invoice_list">
+                <li v-for="(invoice,index) in invoiceList" v-on:click="ChoiceInvoice(index)">
+                    <div class="defaultAddress" v-if="invoice.IsDefault">[默认发票]</div>
+                    <p v-if="invoice.Type==1">{{invoice.TypeVal}}-{{invoice.Title}}</p>
+                    <p v-else>{{invoice.TypeVal}}</p>
+                    <p v-if="invoice.Type==0">发票抬头：<span>{{invoice.Title}}</span></p>
+                    <p v-if="invoice.Type==1">公司名称：<span>{{invoice.CompanyName}}</span></p>
+                    <p v-if="(invoice.Type==0&&invoice.TitleType==1)||(invoice.Type==1)">纳税人识别号：<span>{{invoice.TaxesNumbe}}</span></p>
+                    <p v-if="invoice.Type==1">注册地址：<span>{{invoice.CompanyAddress}}</span></p>
+                    <p v-if="invoice.Type==1">注册电话：<span>{{invoice.Telephone}}</span></p>
+                    <p v-if="invoice.Type==1">开户银行：<span>{{invoice.OpeningBank}}</span></p>
+                    <p v-if="invoice.Type==1">开户账号：<span>{{invoice.AccountNumbe}}</span></p>
+                </li>
+                <li v-on:click="ChoiceInvoice(-1)">
+                    <p>不开发票</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,220 @@
+html{
+	background: #fff;	
+}
+p,body{
+	line-height: 0.40rem;
+}
+p{
+	margin-bottom: 0px;
+}
+.mui-bar-tab .aa {
+	width:50%;
+	float: left;
+	font-size: 0.30rem;
+	color: #666;
+	display: block;
+	float: left;
+	text-align: center;
+	position: relative;
+	line-height: 50px;
+}
+.mui-bar-tab .aa:nth-child(1) span{
+	width: 0.35rem;
+	height: 0.29rem;
+	background: url(../../../../image/BasicInformation/friends.png) no-repeat;
+	background-size: 0.35rem 0.29rem;
+	display: block;
+    position: absolute;
+    top: 17px;
+    left: 22%;
+}
+.mui-bar-tab .aa:nth-child(1){
+	border-right: 1px solid #ddd;
+}
+.mui-bar-tab .aa:nth-child(2) span{
+	width: 0.40rem;
+	height: 0.30rem;
+	background: url(../../../../image/BasicInformation/mymp.png) no-repeat;
+	background-size: 0.40rem 0.30rem;
+	display: block;
+    position: absolute;
+    top: 18px;
+    left: 22%;
+}
+.state{
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+	background: #f5f5f5;
+	border-top:1px solid #ddd ;
+	padding: 0.20rem 0px;
+}
+.state li{	
+	width: 25%;
+	height: auto;
+	overflow: hidden;
+	float: left;
+	font-size: 0.30rem;
+	text-align: center;
+	color: #444444;
+	border-right:1px solid #666;
+}
+.state li:nth-last-child(1){
+	border-right:0px solid #666;
+}
+/*----------content---------------*/
+.mui-table-view-cell>a:not(.mui-btn) {
+    white-space: normal;
+}
+.mui-table-view .mui-media-object {
+    max-width: 32%;
+    height: 1.6rem;
+}
+.content_body {
+    float: left;
+    width: 66%;
+    height: 100%;
+}
+.view_title {
+    width: 100%;
+    min-height: 0.6rem;
+    margin-bottom: 0.20rem;
+}
+.title_left {
+    width: 60%;
+    float: left;
+    font-size: 0.35rem;
+    color: #444444;
+}
+.phone {
+    float: left;
+    width: 40%;
+    color: #969696;
+    text-align: right;
+    margin-top: 0.05rem;
+    font-size: 0.25rem;
+}
+.introduce {
+    font-size: 0.26rem;
+    color: #666666;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: box;
+    display: -webkit-box;
+    line-clamp: 1;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 0.35rem;
+    letter-spacing: 0px;
+}
+.apply_base {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+}
+.apply_base li {
+    float: left;
+}
+.apply_base li:nth-child(1){
+	width: 60%;
+}
+.apply_base .all{
+	width: 40%;
+}
+.apply_base .receive_li{
+	width: 30%;
+	float: right;
+}
+.apply_img {
+    width: 0.30rem;
+    height: 0.30rem;
+    float: left;
+    margin-right: 0.05rem;
+    margin-top: 0.1rem;
+}
+.apply_base li p {
+    float: left;
+    color: #666;
+    font-size: 0.26rem;
+}
+.focus_img {
+    width: 0.30rem;
+    height: 0.30rem;
+    float: left;
+    margin-right: 0.05rem;
+    margin-top: 0.1rem;
+}
+.mui-table-view .mui-media-object.mui-pull-left {
+    margin-right: 2%;
+}
+.mui-table-view{
+	display: none;
+}
+.text_color{
+	color: #ffa600;
+}
+.content_body .title_left .examine{
+	border-radius: 3px;
+	background: #f19149;
+	font-size: 0.20rem;
+	color: #fff;
+	text-align: center;
+	padding: 0.05rem 0.20rem;
+	margin-left: 0.10rem;
+}
+.apply_base .ospan{
+	font-size:0.24rem ;
+	color: #666;
+	float: left;
+	line-height: 0.40rem;
+}
+.apply_base .receive{
+	color: #ffa600;
+}
+.apply_base .rejection{
+	color: #0e5bb5;
+}
+.apply_base li i{
+	    width: 1px;
+    height: 0.23rem;
+    display: block;
+    float: left;
+    margin: 0px 0.08rem;
+    background: #666666;
+    margin-top: 0.09rem;
+}
+.state .text_color {
+    color: #ffa600;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

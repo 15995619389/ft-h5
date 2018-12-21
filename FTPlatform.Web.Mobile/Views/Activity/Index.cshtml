@@ -1,0 +1,58 @@
+﻿@{
+    ViewBag.Title = "热门活动";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link href="~/Content/css/pulli.css" rel="stylesheet" />
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/myBusiness/myPrize/activity.css" rel="stylesheet" />
+    <link href="~/Content/css/activity/hotact.css" rel="stylesheet" />
+    <style>
+        html, body {
+            height: 100%;
+        }
+
+        .mui-bar-nav ~ .mui-content {
+            padding-top: 45px;
+        }
+    </style>
+}
+<header class="mui-bar mui-bar-nav">
+    <a href="javascript:window.history.go(-1);" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">热门活动</h1>
+</header>
+
+<div class="mui-content" style="height:100%;" v-cloak>
+    <ul class="prize_tab">
+        <li v-on:click="Online" v-bind:class="{text_color:isOnline}">线上活动</li>
+        <li v-on:click="Offline" v-bind:class="{text_color:!isOnline}">线下活动</li>
+    </ul>
+    <div style="position:absolute;top:89px;bottom:50px;width:100%;">
+        <scroller v-bind:on-refresh="Refresh" v-bind:on-infinite="Append">
+            <ul style="display: block;height:100%;">
+                <li class="online_teb online mui-table-view-cell mui-media" style="display: block;min-height:60px;" v-for="activity in activities" v-on:click="GoDetail(activity)">
+                    <h3 class="avtivity-title">{{activity.Name}}</h3>
+                    <ul class="time">
+                        <li>
+                            活动时间：<span>{{activity.StartTime|FormatDate}}</span>
+                        </li>
+                    </ul>
+                    <div class="cont-img">
+                        <img v-bind:src="activity.Image" />
+                        <i class="bgin-icon" v-if="time>activity.StartTime && time<activity.TerminationTime "></i>
+                        <i class="tp-icon" v-else-if="time<activity.StartTime"></i>
+                    </div>
+                </li>
+            </ul>
+        </scroller>
+    </div>
+    <foot v-cloak></foot>
+</div>
+
+
+@section foot
+{
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/dist/activity.list.bundle.js"></script>
+}

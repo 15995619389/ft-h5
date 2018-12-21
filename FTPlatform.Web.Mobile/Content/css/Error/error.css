@@ -1,0 +1,80 @@
+﻿body,html {
+    background:#fff;
+}
+.main-wrap{
+    width:100%;
+    padding:60px 20px;
+    box-sizing:border-box;
+  
+}
+.errorbox {
+    background: url('../../image/Error/400bg.png')no-repeat center center;
+    width: 6.48rem;
+    height: 6.71rem;
+    background-size: 100%;
+    position:relative;
+}
+.erro1{
+    background: url('../../image/Error/500bg.png')no-repeat center center;
+    width: 6.48rem;
+    height: 6.71rem;
+    background-size: 100%;
+    position:relative;
+}
+
+.errorbox .tipstext{
+    position:absolute;
+    right:0.2rem;
+    top:0.35rem;
+}
+.erro1 .tipstext{
+    position:absolute;
+    right:0.15rem;
+    top:1rem;
+}
+.errorbox .tipstext h3{
+    font-size:0.36rem;
+    color:#444;
+}
+.errorbox .tipstext p{
+    font-size:13px;
+    color:#666;
+}
+.errorbox .errabot{
+    position:absolute;
+     left:35%;
+    top:38%;
+   
+}
+.errorbox .errabot i{
+    display:block;
+    background: url('../../image/submit.png')no-repeat center center;
+    width:2.08rem;
+    height:2.98rem;
+    background-size:100%;
+}
+.errorbox .failrabot{
+     left:34%;
+    top:45%;
+}
+.errorbox .failrabot i{
+     display:block;
+    background: url('../../image/failure.png')no-repeat center center;
+    width:2.27rem;
+    height:2.96rem;
+    background-size:100%;
+}
+.btnback{
+    width:100%;
+    background:#0e5bb5;
+    height:44px;
+    line-height:44px;
+    font-size:14px;
+    color:#fff;
+    margin-top:3rem;
+    text-align:center;
+    border-radius:3px;
+}
+.btnback a{
+    color:#fff;
+}

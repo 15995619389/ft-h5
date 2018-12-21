@@ -1,0 +1,54 @@
+﻿@{
+    var apiUrl = this.ViewContext.Controller.GetApiUrl();
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!--隐藏状态栏/设置状态栏颜色-->
+    <meta name="keywords" content="网站关键字"> <!--/Keywords(关键字)　-->
+    <meta name="description" id="description" content="网站内容描述"> <!--description(网站内容描述)-->
+    <meta name="apple-mobile-web-app-title" content="标题">
+    <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- 删除默认的苹果工具栏和菜单栏 -->
+    <meta content="telephone=no" name="format-detection" />  <!--忽略数字自动识别为电话号码-->
+    <link rel="Shortcut Icon" href="~/Content/image/favicon.ico" />
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+    <title>@ViewBag.Title</title>
+    <link href="/Content/css/mui.min.css" rel="stylesheet" />
+    <style>
+        [v-cloak] {
+            display: none;
+        }
+    </style>
+    <link rel="stylesheet" href="~/Content/css/pulli.css" />
+    <link href="~/Content/Components/QuickPublish/QuickPublish.css" rel="stylesheet" />
+    @RenderSection("Head", false)
+</head>
+<body>
+    <input type="hidden" id="ApiUrl" value="@apiUrl" />
+
+    <script src="~/Content/Plugins/layer/layui.all.js"></script>
+    <script src="~/Content/js/jquery-1.11.0.min.js"></script>
+    <script src="~/src/modules/StorageService.js"></script>
+    <script src="~/Content/js/Pages/Global/base.js"></script>
+    <script src="~/Content/Plugins/vue.js"></script>
+    <script src="~/Content/js/Pages/Global/vue.fiters.extends.js"></script>
+    <script src="~/Content/js/Pages/Global/jquery.api.js"></script>
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script type="text/javascript" charset="utf-8">
+        $(function () {
+            document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+        });
+    </script>
+    @RenderBody()
+
+    <script src="~/Content/Components/QuickPublish/QuickPublish.js"></script>
+    <script src="~/Content/Components/SearchBar/SearchBar.js"></script>
+    @RenderSection("Scripts", false)
+</body>
+</html>

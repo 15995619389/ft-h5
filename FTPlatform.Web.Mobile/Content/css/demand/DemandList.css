@@ -1,0 +1,91 @@
+﻿.research_footer li p {
+    margin-top: 0px;
+}
+
+.cataloglist {
+    background: url(../../image/rectangular.png) no-repeat scroll right center transparent;
+    background-size: 0.25rem 0.15rem;
+    float: left;
+    width: 1.2rem;
+}
+
+.mui-table-view-chevron .mui-table-view-cell {
+    margin-right: 0px;
+}
+
+.mui-table-view-chevron .mui-table-view-cell>a:not(.mui-btn) {
+    margin-right: 0px;
+}
+
+.mui-table-view .mui-table-view-chevron li {
+    padding: 0px 15px;
+    margin: 0px 0px;
+}
+
+.mui-table-view-cell .mui-media {
+    width: 90%;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+.mui-content {
+    position: absolute;
+    top: 44px;
+    bottom: 44px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100%;
+}
+
+#refreshContainer {
+    padding-top: 0.88rem;
+}
+
+#refreshContainer .mui-scroll>ul>li {
+    padding-right: 0px;
+    width: 95%;
+}
+
+
+/*-------html移过来css-----*/
+
+html,
+body {
+    height: 100%;
+}
+
+#demand-sort-bar .active {
+    color: #ff6525;
+}
+
+.mui-ellipsis p {
+    height: 0.40rem;
+}
+
+.mui-ellipsis p,
+.mui-ellipsis span {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #8f8f94 !important;
+}
+
+.mui-ellipsis strong {
+    font-weight: 400 !important
+}
+
+.mui-content {
+    bottom: 0px
+}
+
+.body-overflow {
+    position: fixed;
+    width: 100%;
+}
+
+html {
+    background: #fff
+}

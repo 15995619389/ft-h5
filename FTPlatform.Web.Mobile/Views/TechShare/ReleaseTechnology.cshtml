@@ -1,0 +1,86 @@
+﻿
+@{
+    ViewBag.title = "发布技术管理";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+<link rel="stylesheet" href="/Content/css/myBusiness/myRecommended/releaseTechnology.css" />
+    }
+<div id="container"  v-cloak>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/index"></a>
+        <h1 class="mui-title">发布技术管理</h1>
+    </header>
+    <div class="mui-content">
+        <div style="position:absolute;z-index:9;width:100%;height:43px">
+            <ul class="content_nav">
+                <li v-bind:class="{text_color:(param.Status==100)}" v-on:click="Show(100)">全部</li>
+                <li v-bind:class="{text_color:(param.Status==-99)}" v-on:click="Show(-99)">待提交</li>
+                <li v-bind:class="{text_color:(param.Status==1)}" v-on:click="Show(1)">待审核</li>
+                <li v-bind:class="{text_color:(param.Status==2)}" v-on:click="Show(2)">待发布</li>
+                <li v-bind:class="{text_color:(param.Status==3)}" v-on:click="Show(3)">已发布</li>
+            </ul>
+        </div>
+        <!-----全部------->
+        <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" class="mui-scroll" style="top:28px">
+            <div>
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media" v-for="t in technology">
+                        <a>
+                            <img class="mui-media-object mui-pull-left" v-lazy="t.ImgUrl" v-on:click="Detail(t.Id,t.Status)">
+                            <div class="mui-media-body" v-on:click="Detail(t.Id,t.Status)">
+                                <div class="oTitle">
+                                    <p class="mui-ellipsis">{{t.Title}}</p>
+                                    <span class="oSpan">{{t.Status|s}}</span>
+                                </div>
+                                <p class="mui-ellipsis" v-html="t.Feature"></p>
+                                <p class="date">{{t.CreateTime|formatDate}}</p>
+                            </div>
+                            <div class="footer_bt" v-if="t.Status ==-99 || t.Status == -1">
+                                <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="OpenS(t.Id)">提交</button>
+                                <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="Edit(t.Id)">编辑</button>
+                                <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="OpenD(t.Id)">删除</button>
+                            </div>
+                            @**-----驳回原因-------*@
+                            <div class="rejected" v-if="t.Status == -1">
+                                <span class="rejected-tilte">驳回原因：</span>
+                                <div class="rejected-content">{{t.DevelopBackdrop}}</div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </scroller>
+        <div id="mask"></div>
+        <div class="popup" id="del" style="display:none">
+            <div class="btn_box">
+                <span style="margin-left: 20px;">提示</span>
+                <a class="bttn disappear" v-on:click="Cancel">X</a>
+            </div>
+            <p class="p_text">确认删除该技术?</p>
+            <div class="btn_footer">
+                <div class="btn_footer1">
+                    <button type="button" class="mui-btn mui-btn-blue mui-btn-block confirm " v-on:click="Delete()">确定</button>
+                    <button type="button" class="mui-btn  mui-btn-block cancel disappear" style="background: #ddd;" v-on:click="Cancel">取消</button>
+                </div>
+            </div>
+        </div>
+        <div class="popup" id="smt" style="display:none">
+            <div class="btn_box">
+                <span style="margin-left: 20px;">提示</span>
+                <a class="bttn disappear" v-on:click="Cancel">X</a>
+            </div>
+            <p class="p_text">确认提交该技术?</p>
+            <div class="btn_footer">
+                <div class="btn_footer1">
+                    <button type="button" class="mui-btn mui-btn-blue mui-btn-block confirm " v-on:click="Submit()">确定</button>
+                    <button type="button" class="mui-btn  mui-btn-block cancel disappear" style="background: #ddd;" v-on:click="Cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+@section foot{
+   
+    <script src="~/dist/tech.releasetech.bundle.js"></script>
+}

@@ -1,0 +1,17 @@
+Trying to delete property 'svn:mergeinfo'
+but the local property value is different.
+<<<<<<< (local property value)
+/branchs/liwenbing/FTPlatform.Web.Mobile/Content/image:3-10,19-291,297
+/branchs/ouyangsiyou/FTPlatform.Web.Mobile/Content/image:20-308
+/branchs/xubo/FTPlatform.Web.Mobile/Content/image:23-283
+/branchs/yangjun/FTPlatform.Web.Mobile/Content/image:22-181
+/branchs/yangjun_2/FTPlatform.Web.Mobile/Content/image:186-360
+/branchs/yefei/FTPlatform.Web.Mobile/Content/image:21-343
+/trunck/FTPlatform.Web.Mobile/Content/image:299-397||||||| (incoming 'changed from' value)
+/branchs/liwenbing/FTPlatform.Web.Mobile/Content/image:3-10,19-297
+/branchs/ouyangsiyou/FTPlatform.Web.Mobile/Content/image:20-308
+/branchs/xubo/FTPlatform.Web.Mobile/Content/image:23-283
+/branchs/yangjun/FTPlatform.Web.Mobile/Content/image:22-181
+/branchs/yangjun_2/FTPlatform.Web.Mobile/Content/image:186-360
+/branchs/yefei/FTPlatform.Web.Mobile/Content/image:21-343=======
+>>>>>>> (incoming 'changed to' value)

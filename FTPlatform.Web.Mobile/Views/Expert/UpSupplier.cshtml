@@ -1,0 +1,319 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    ViewBag.Title = "供方资料修改";
+}
+@section head{
+    <link rel="stylesheet" href="/Content/css/pulli.css" />
+    <link rel="stylesheet" href="/Content/css/myBusiness/basicInformation/applySupplier/applySupplier.css" />
+    <style>
+        .call_li3 {
+            color: #ff6525;
+            background: #ddd;
+        }
+
+            .call_li3:before {
+                content: "\2713";
+                position: absolute;
+                left: 30%;
+                color: #ff6525;
+            }
+    </style>
+}
+@section foot{
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/dist/expert.upsupplier.bundle.js"></script>
+}
+
+<div class="applySupplier l-scrollable" style="display:none;" v-cloak>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+        <h1 class="mui-title">供方资料修改</h1>
+    </header>
+    <div class="mui-content">
+        <!--职称选择弹出菜单-->
+        <div id="sheet" class="mui-popover mui-popover-bottom mui-popover-action">
+            <div class="call_box">
+                <div class="call_title">职称选择</div>
+                <ul>
+                    <li v-on:click="DutyNameSelect('正高级')" v-bind:class="{call_li3:(DetyName=='正高级')}">正高级</li>
+                    <li v-on:click="DutyNameSelect('副高级')" v-bind:class="{call_li3:(DetyName=='副高级')}">副高级</li>
+                    <li v-on:click="DutyNameSelect('中级')" v-bind:class="{call_li3:(DetyName=='中级')}">中级</li>
+                    <li v-on:click="DutyNameSelect('助理级')" v-bind:class="{call_li3:(DetyName=='助理级')}">助理级</li>
+                    <li v-on:click="DutyNameSelect('员级')" v-bind:class="{call_li3:(DetyName=='员级')}">员级</li>
+                    <li v-on:click="DutyNameSelect('无')" v-bind:class="{call_li3:(DetyName=='无')}">无</li>
+                </ul>
+            </div>
+        </div>
+        <ul class="user_tab">
+            <li v-bind:class="{text_color:(PerType==1)}">个人用户<i class="i_color"></i></li>
+            <li v-bind:class="{text_color:(PerType==2)}">机构用户<i class="i_color"></i></li>
+        </ul>
+        <!------个人用户------->
+        <div class="user_box" id="Personal" v-if="PerType==1" style="display:block;">
+            <div class="user_content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell oli">
+                        <a class="mui-navigate-right">
+                            <span class="oSpan"></span>职务：
+                            <input type="text" placeholder="请输入您的职务" v-model.trim="Personal.ExpertDuty" />
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a href="#sheet" id="openSheet" class="mui-navigate-right">
+                            <span class="oSpan"></span>职称：
+                            <input type="text" id="ExpertDutyName" placeholder="请输入您的职称" v-model="Personal.ExpertDutyName" />
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right WorkAddress" v-on:click="workAddressClick">
+                            <span class="oSpan">*</span>工作地址：
+                            @*<input type="text" readonly="readonly" id="nowValue" v-model="PersonalAddress" placeholder="请选择您的工作地址">*@
+                            <p id="nowValue" style="width:70%;float:right">{{Address}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="service">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <a class="">
+                            <span class="oSpan">*</span>可提供的服务
+                        </a>
+                    </li>
+                </ul>
+                <div class="service_checkbox">
+                    <template v-for="item in ExpertsService">
+                        <div class="mui-input-row mui-checkbox mui-left" v-if="item.value!='15'">
+                            <label>
+                                {{item.name}}
+                            </label>
+                            <input type="checkbox" v-bind:value="item.value" v-model="Personal.ExpertsServiceIds">
+                        </div>
+                        <div class="mui-input-row mui-checkbox mui-left" style="width: 100%;" v-else>
+                            <label>
+                                {{item.name}}
+                                <input type="text" style="border: none;width: 82%;" placeholder="请填写您能提供的服务" v-model.trim="Personal.ExpertSRemark" />
+                            </label>
+                            <input type="checkbox" v-bind:value="item.value" v-model="Personal.ExpertsServiceIds">
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <!------擅长领域------->
+            <div class="field">
+                <div class="field_box">
+                    <div class="field_title">
+                        <span class="oSpan">*</span> 擅长领域：
+                    </div>
+                    <div class="field_text">
+                        <textarea placeholder="可填研究方向、专业领域、主要从事的工作、能够提供的产品、技术、成果及其他服务等" v-model.trim="Personal.ScientificContent"></textarea>
+                    </div>
+                </div>
+                <div class="field_prompt">
+                    <span class="prompt_span">!</span>
+                    <span class="prompt_span2">请输入0-5000个字</span>
+                </div>
+            </div>
+            <!------个人简介------->
+            <div class="synopsis">
+                <div class="field_box">
+                    <div class="field_title">
+                        个人简介：
+                    </div>
+                    <div class="field_text">
+                        <textarea placeholder="可以填写您的工作经历、所获得的荣誉、专利、论文、项目等" v-model.trim="Personal.PersonExplain"></textarea>
+                    </div>
+                </div>
+                <div class="field_prompt">
+                    <span class="prompt_span">!</span>
+                    <span class="prompt_span2">请输入0-5000个字</span>
+                </div>
+            </div>
+            <!----备注------->
+            <div class="remark">
+                <div class="field_box">
+                    <div class="remark_title">
+                        备注：
+                    </div>
+                    <div class="remark_text">
+                        <textarea placeholder="填写能帮助您通过审核的信息" v-model.trim="Personal.ExpertRemark"></textarea>
+                    </div>
+                </div>
+                <div class="field_prompt">
+                    <span class="prompt_span">!</span>
+                    <span class="prompt_span2">请输入0-5000个字</span>
+                </div>
+            </div>
+            <button type="button" class="mui-btn mui-btn-blue mui-btn-block" v-on:click="applyPost">提交申请</button>
+        </div>
+        <!-------机构用户------->
+        <div class="user_box" id="Enterprise" v-if="PerType==2" style="display:block;">
+            <div class="user_content">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell oli">
+                        <a class="mui-navigate-right">
+                            <span class="oSpan">*</span>联系人姓名：
+                            <input type="text" placeholder="请输入联系人姓名" v-model.trim="Enterprise.ResponsibleName" />
+
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell oli">
+                        <a class="mui-navigate-right">
+                            <span class="oSpan"></span>联系人职务：
+                            <input type="text" placeholder="请输入联系人职务" v-model.trim="Enterprise.ExpertDuty" />
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a href="#sheet" id="openSheet" class="mui-navigate-right">
+                            <span class="oSpan"></span>联系人职称：
+                            <input type="text" id="ExpertDutyName" placeholder="请输入联系人职称" v-model="Enterprise.ExpertDutyName" />
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell">
+                        <a class="mui-navigate-right WorkAddress" v-on:click="workAddressClick">
+                            <span class="oSpan">*</span>工作地址：
+                            @*<input type="text" readonly="readonly" id="nowValue1" v-model="EnterpriseAddress" placeholder="请选择您的工作地址">*@
+                            <p id="nowValue1" style="width:70%;float:right">{{Address}}</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="service">
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell">
+                        <a class="">
+                            <span class="oSpan">*</span>可提供的服务
+                        </a>
+                    </li>
+                </ul>
+                <div class="service_checkbox">
+                    <template v-for="item in ExpertsService">
+                        <div class="mui-input-row mui-checkbox mui-left" v-if="item.value!='15'">
+                            <label>
+                                {{item.name}}
+                            </label>
+                            <input type="checkbox" v-bind:value="item.value" v-model="Enterprise.ExpertsServiceIds">
+                        </div>
+                        <div class="mui-input-row mui-checkbox mui-left" style="width: 100%;" v-else>
+                            <label>
+                                {{item.name}}
+                                <input type="text" style="border: none;width: 82%;" v-model.trim="Enterprise.ExpertSRemark" placeholder="请填写您能提供的服务" />
+                            </label>
+                            <input type="checkbox" v-bind:value="item.value" v-model="Enterprise.ExpertsServiceIds">
+                        </div>
+                    </template>
+                </div>
+            </div>
+            <div class="unitInformation">
+                <ul class="unit_ul">
+                    <li>
+                        <span class="unitId">单位证件：</span>
+                        <div class="radio">
+                            <div class="mui-input-row mui-radio mui-left">
+                                <label>组织机构代码</label>
+                                <input type="radio" id="OrganizationCode" value="组织机构代码" v-model="Enterprise.ExpertDeptCertificateType">
+                            </div>
+                            <div class="mui-input-row mui-radio mui-left">
+                                <label>信用代码</label>
+                                <input type="radio" id="CreditCode" value="信用代码" v-model="Enterprise.ExpertDeptCertificateType">
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="unitId">单位证件号码：</span>
+                        <input type="text" placeholder="请输入您的单位证件号码" class="number" style="width: 67%;margin-top: 0.20rem;" v-model.trim="Enterprise.ExpertDeptCertificateNum" />
+                    </li>
+                    <li>
+                        <span class="unitId">单位注册地址：</span>
+                        <input type="text" placeholder="请输入您的单位注册地址" class="registered" style="width: 67%;margin-top: 0.20rem;"
+                               v-model.trim="Enterprise.ExpertDeptCertificateAddress" />
+                    </li>
+                    <li>
+                        <span class="unitId">单位通讯地址：</span>
+                        <input type="text" placeholder="请输入您的单位通讯地址" class="communication" style="width: 67%;margin-top: 0.20rem;" v-model.trim="Enterprise.ExpertDeptAddress" />
+                    </li>
+                </ul>
+            </div>
+            <!------擅长领域------->
+            <div class="field">
+                <div class="field_box">
+                    <div class="field_title">
+                        <span class="oSpan">*</span> 擅长领域：
+                    </div>
+                    <div class="field_text">
+                        <textarea placeholder="可填研究方向、专业领域、主要从事的工作、能够提供的产品、技术、成果及其他服务等" v-model.trim="Enterprise.ScientificContent"></textarea>
+                    </div>
+                </div>
+                <div class="field_prompt">
+                    <span class="prompt_span">!</span>
+                    <span class="prompt_span2">请输入0-5000个字</span>
+                </div>
+            </div>
+            <!------机构简介------->
+            <div class="synopsis">
+                <div class="field_box">
+                    <div class="field_title">
+                        机构简介：
+                    </div>
+                    <div class="field_text">
+                        <textarea placeholder="可以填写您的工作经历、所获得的荣誉、专利、论文、项目等" v-model.trim="Enterprise.PersonExplain"></textarea>
+                    </div>
+                </div>
+                <div class="field_prompt">
+                    <span class="prompt_span">!</span>
+                    <span class="prompt_span2">请输入0-5000个字</span>
+                </div>
+            </div>
+            <!----备注------->
+            <div class="remark">
+                <div class="field_box">
+                    <div class="remark_title">
+                        备注：
+                    </div>
+                    <div class="remark_text">
+                        <textarea placeholder="填写能帮助您通过审核的信息" v-model.trim="Enterprise.ExpertRemark"></textarea>
+                    </div>
+                </div>
+                <div class="field_prompt">
+                    <span class="prompt_span">!</span>
+                    <span class="prompt_span2">请输入0-5000个字</span>
+                </div>
+            </div>
+            <button type="button" class="mui-btn mui-btn-blue mui-btn-block" v-on:click="applyPost">提交申请</button>
+        </div>
+    </div>
+</div>
+<!--------地区选择-------->
+<div class="address-box">
+    <header class="mui-bar mui-bar-nav" style="background: #efefef;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="addressBack"></a>
+        <h1 class="mui-title">选择工作地址</h1>
+    </header>
+    <div class="mui-content" style="background: #fff;">
+        <ul class="head-address-ul" id="headAddressUl">
+            <li class="head-address-li"><i class="border"></i>请选择</li>
+            <li style="color: #f23030;"><i></i></li>
+        </ul>
+        <div class="address-content" id="addressContentDiv">
+            <ul class="address-ul provice"></ul>
+            <ul class="area" style="width: 0%;"></ul>
+        </div>
+    </div>
+</div>
+
+<!--------提示信息-------->
+<div class="submittedSuccessfuly">
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-1)" id="successBack"></a>
+        <h1 class="mui-title">消息提示</h1>
+    </header>
+    <div class="mui-content" style="background: #fff;">
+        <div class="successful">
+            <img src="/Content/image/passwored_ok.png" />
+            <p style="color:#ff7e00;font-size:0.38rem"></p>
+            <span id="sucess202" style="display:none;"></span>
+            <span id="sucess201" style="display:none;">请至<a style="color:#0c4ca3" href="/expert/supplierdetail">供方角色</a> 中补齐资料，让更多的需方了解您~</span>
+        </div>
+    </div>
+</div>
+

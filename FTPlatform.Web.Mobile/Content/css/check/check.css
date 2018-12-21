@@ -1,0 +1,315 @@
+body{
+	background: #fff;
+}
+.soul_content{
+	background: #fff;
+	padding-bottom: 1.2rem!important;
+	
+}
+.botm-bg{
+	display: block;
+	background: url(../../image/check/ftb-bg.png) no-repeat;
+	width: 100%;
+	height: 1.31rem;
+	background-size: 100% 1.31rem;
+
+}
+.mid-banner{
+	width: 100%;
+	height: 3rem;
+	margin-bottom: 5PX;
+}
+.mid-banner img{
+	width: 100%;
+	height: 3rem;
+}
+.solution-wrap{
+	width: 100%;
+	padding: 10PX;
+	box-sizing: border-box;
+	color: #3f3f3f;
+}
+.solution-wrap h3{
+	font-size: 0.30rem;
+	text-align: center;
+	color: #0e5bb5;
+	font-weight: 500;
+    margin-right:7px;
+}
+.solution-wrap h3:after{
+	display: block;
+	content: "";
+	background: url(../../image/check/cut-line.png) no-repeat;
+	width: 2.18rem;
+	height: 0.13rem;
+	background-size: 2.18rem 0.13rem;
+	margin: 0 auto;
+	margin-top: 0.2rem;	
+}
+.solution-wrap .soul-list{
+	width: 100%;	
+}
+.solution-wrap .soul-list li b{
+	display: block;
+	color: #0e5bb5;
+	margin-bottom: 0.1rem;
+	font-size: 0.28rem;
+	font-weight: 500;
+}
+.solution-wrap .soul-list li p{
+	font-size: 0.26rem;
+	color: #3f3f3f;
+}
+.sec-banner{
+	width: 100%;
+}
+.sec-banner img{
+	height: 3rem;
+}
+.solution-wrap .advent-box h4{
+	font-size: 0.28rem;
+	color: #0e5bb5;
+	font-weight: 500;
+}
+.solution-wrap .advent-box{
+	margin-top: 0.2rem;
+	
+}
+.solution-wrap .advent-box .ness-list{
+	width: 100%;
+	overflow: hidden;	
+}
+.solution-wrap .advent-box .ness-list li{
+	line-height: 0.4rem;
+	font-size: 0.26rem;
+	overflow: hidden;
+}
+.solution-wrap .advent-box li:before{
+	display: inline-block;
+	float: left;
+	content: "";
+	width: 0.06rem;
+	height: 0.06rem;
+	border-radius: 50%;
+	background: #0e5bb5;
+	margin-top: 0.2rem;
+	margin-right: .1rem;	
+}
+.solution-wrap .advent-box li span{
+	display: inline-block;
+	float: left;
+	width: 96%;
+}
+.step-wrap{
+	background: url(../../image/check/seven-flo.png) no-repeat center center;
+	width: 100%;
+	height: 2.86rem;
+	background-size: 3.88rem 2.41rem;
+	position: relative;
+    right:5px;
+}
+.step-wrap .step-text{
+	position: absolute;	
+	font-size: 0.12rem;
+	color: #0c4ca3;
+}
+.step-wrap .step-text h5{
+ font-size: 0.22rem;
+ color: #0c4ca3;
+ margin-bottom: 0.02rem;
+ margin-top: 0;
+}
+.step-wrap .step-text p{
+ font-size: 0.12rem;
+ color: #0c4ca3;
+}
+.step-wrap .talk{
+	text-align:right;
+	left: 0.1rem;
+	top: 0.4rem;
+}
+.step-wrap .online{
+	text-align:right;
+	left: 0.4rem;
+	top: 1.3rem;
+}
+.step-wrap .agency{
+	text-align:right;
+	left: 0.4rem;
+	top: 2.1rem;
+}
+.step-wrap .confirm{
+	text-align:center;
+	left: 42.5%;
+	top: 2.7rem;
+}
+.step-wrap .Sign{
+	text-align:left;
+	right: 0.1rem;
+	top: 2.1rem;
+}
+.step-wrap .Track{
+	text-align:left;
+	right: -0.1rem;
+	top: 1.2rem;
+}
+.step-wrap .examine{
+	text-align:left;
+	right: -0.15rem;
+	top: 0.3rem;
+}
+.parter{
+	margin-top: 0.4rem;
+}
+.parter .part-logo{
+	width: 46%;
+	margin: 0.3rem auto;	
+	overflow: hidden;
+	text-align: center;
+}
+.parter .part-logo span{
+	display: inline-block;
+	margin-right: 0.2rem;
+}
+.parter .part-logo span img{
+	width: .79rem;
+	height: 0.82rem;
+}
+.Contact-msge{
+	width: 100%;
+	padding: 5PX;
+	box-sizing: border-box;
+	color: #fff;
+	font-size: 0.22rem;
+	margin-top: 4PX;
+	overflow: hidden;
+}
+.Contact-msge .mes-icon{
+	display: inline-block;
+	background: url(../../image/check/mesg.png) no-repeat;
+	width: 8%;
+	height: 0.27rem;
+	margin-top: 0.1rem;
+	float: left;
+	background-size: 0.43rem 0.27rem;
+}
+.mes-text{
+	float: left;
+	width: 92%;
+	border-left: #fff solid 1px;
+	padding-left: 5PX;
+	box-sizing: border-box;
+}
+
+
+
+/*----------css----------*/
+/*----顶部需求-----*/
+.mui-bar {
+    height: 44px;
+   
+}
+.oHeader1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.search {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    height: 27px;
+    width: 84%;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+.cataloglist {
+    background: url(../../image/rectangular.png) no-repeat scroll right center transparent;
+    background-size: 0.25rem 0.15rem;
+    float: left;
+    width: 1.50rem;
+    height: 100%;
+    padding: 0 0;
+    padding-left: 0.30rem;
+    color: #969696;
+}
+.cataloglist .area .slide li {
+    line-height: 25px;
+    color: #f1f1f1;
+}
+.on_seek {
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0.11rem;
+}
+.seek_img {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    margin-top: 3px;
+}
+
+/*-----------*/
+html{
+	background: #f2f1f7;
+}
+.space_box{
+	padding: 10px 3%;
+	height: auto;
+	overflow: hidden;
+	background: #fff;
+border-top: 1px solid #ddd;	
+border-bottom: 1px solid #ddd;	
+margin-bottom: 10px;
+}
+.content{
+	float: left;
+	width: 62%;
+	height: auto;
+	overflow: hidden;	
+} 
+.space_box a{
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.content h3{
+	color: #444444;
+	font-size: 0.32rem;	
+	margin: 0.15rem 0px;
+}
+.content p{
+	font-size: 0.28rem;
+	color: #969696;
+	margin-bottom: 0px;
+    line-height: 0.40rem;
+    overflow: hidden;
+  	text-overflow: ellipsis;
+  	display: -webkit-box;
+  	-webkit-line-clamp: 3;
+  	-webkit-box-orient: vertical;	
+}
+.space_box img{
+	display: block;
+	float: right;
+	width: 2.66rem;
+	height: 2.00rem;
+}
+.expect{
+	margin-top:2.50rem ;
+	background: #f2f1f7;
+	height: auto;
+	overflow: hidden;
+}
+.expect p{
+	font-size: 0.28rem;
+	color: #cccccc;text-align: center;
+}
+.expect img{
+	width: 1.15rem;
+	height: 0.97rem;
+	display: block;
+	margin: 0 auto;
+}

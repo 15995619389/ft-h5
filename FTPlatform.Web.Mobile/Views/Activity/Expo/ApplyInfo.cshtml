@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "参展申请";
+}
+
+<link href="~/Content/css/gobel.css" rel="stylesheet" />
+<link href="~/Content/css/check/check.css" rel="stylesheet" />
+<link href="~/Content/css/myBusiness/myReward/upgrade/register.css" rel="stylesheet" />
+<link href="~/Content/css/activity/Expo.css" rel="stylesheet" />
+<style>
+    .side-bar {
+        position: fixed;
+        top: 65%;
+        right: 0;
+        background: url(/Content/image/apply-bg.png) no-repeat;
+        width: 2.08rem;
+        height: 0.88rem;
+        background-size: 2.08rem 0.88rem;
+        color: #fff;
+        z-index: 5;
+    }
+</style>
+<header class="mui-bar mui-bar-nav head_box head-secd">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="/Activity/ExpoIndex"></a>
+    <h1 class="mui-title">参展申请</h1>
+</header>
+<div class="mui-content">
+    <div class="top-notice">
+        <i></i><span>请您如实填写各项信息，飞天众智承诺对您提交的信息进行保密</span>
+    </div>
+    <!--2017上海军民融合技术成果展-->
+    <div class="user_content">
+        <ul class="mui-table-view applyform">
+            <li class="mui-table-view-cell">
+                <label class="befor-name"><span class="oSpan">*</span>姓名：</label>
+                <div class="enter-text"><input type="text" /></div>
+            </li>
+            <li class="mui-table-view-cell">
+                <label class="befor-name"><span class="oSpan">*</span>联系电话：</label>
+                <div class="enter-text"><input type="text" /></div>
+            </li>
+            <li class="mui-table-view-cell">
+                <label class="befor-name"><span class="oSpan">*</span>公司名称：</label>
+                <div class="enter-text"><input type="text" /></div>
+            </li>
+            <li class="mui-table-view-cell">
+                <label class="befor-name"><span class="oSpan">*</span>公司地址：</label>
+                <div class="enter-text"><input type="text" /></div>
+            </li>
+        </ul>
+    </div>
+    <div class="user_content">
+        <ul class="mui-table-view applyform">
+            <li class="mui-table-view-cell specli">
+                <label class="befor-name narrow"><span class="oSpan">*</span>展会预定：</label>
+                <div class="enter-text">
+                    <div class="mui-input-row mui-radio mui-left radio-group" style="margin-top:10px;">
+                        <input name="Booth" value="1"type="radio" checked="checked">
+                        <label>特装展位<small style="font-size:10px;">（起租面积36㎡）</small></label>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left radio-group"style="margin-top:10px;">
+                        <input  name="Booth" value="2"type="radio">
+                        <label>标摊展位</label>
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell specli">
+                <label class="befor-name">参展展现类别：</label>
+                <div class="enter-text"style="margin-top:8px;">
+                    <div class="mui-input-row mui-radio mui-left radio-group" style="width:2.12rem;">
+                        <input name="Category" value="1"type="radio" checked="checked">
+                        <label>军工提升技术</label>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left radio-group">
+                        <input name="Category" value="2"type="radio">
+                        <label>军转民技术</label>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left radio-group">
+                        <input name="Category" value="3"type="radio">
+                        <label>民技军用技术</label>
+                    </div>
+                </div>
+            </li>
+            <li class="mui-table-view-cell specli">
+                <label class="befor-name">展现所属领域：</label>
+                <div class="enter-text"style="margin-top:8px;">
+                    <div class="mui-input-row mui-radio mui-left radio-group"style="width:2.12rem;">
+                        <input name="Field" value="1"type="radio" checked="checked">
+                        <label>航天技术</label>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left radio-group">
+                        <input name="Field" value="2"type="radio">
+                        <label>航空技术</label>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left radio-group">
+                        <input name="Field" value="3" type="radio">
+                        <label>海洋装备技术</label>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left radio-group">
+                        <input name="Field" value="3"type="radio">
+                        <label>地面装备技术</label>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left radio-group">
+                        <input name="Field" value="4"type="radio">
+                        <label>网络信息技术</label>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left radio-group">
+                        <input name="Field" value="5"type="radio">
+                        <label>电子信息技术</label>
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left radio-group">
+                        <input name="Field" value="6"type="radio">
+                        <label>其它</label>
+                    </div>
+                </div>
+            </li>
+          
+        </ul>
+    </div>
+    <div class="apy-btn"><a href="#">立即报名</a></div>
+
+</div>
+
+<script>
+    (function () {
+        $("#description")[0].content = "提供材料及其产品的失效分析检测标准方法以及设备。";
+    })();
+</script>

@@ -1,0 +1,134 @@
+body{
+	
+}
+.content_top h3{
+	color:#0e5bb5;
+	font-size: 0.32rem;
+}
+.content_top{
+	padding-bottom: 5px;
+	border-bottom: none;
+}
+.cont-img{
+	width: 100%;
+	position: relative;
+}
+.cont-img img{
+	width: 100%;
+	height: 4.18rem;
+}
+.cont-img i{
+	position: absolute;
+	top: 0;
+	right: 5px;
+	display: block;
+}
+.tp-icon{
+	position: absolute;
+	display: block;
+	background:url(../../image/activity/begin.png);
+	width:0.84rem ;
+	height: 1.02rem;
+	background-size: .84rem 1.02rem;
+}
+.bgin-icon{
+	position: absolute;
+	display: block;
+	background:url(../../image/activity/now.png);
+	width:0.84rem ;
+	height: 1.02rem;
+	background-size: .84rem 1.02rem;
+}
+.prize_tab .text_color{
+	border-bottom: #ff6525 solid 1PX;
+}
+.online{
+	margin-bottom: 0;
+}
+.sucess-box{
+	width: 100%;
+	padding: 10px;
+	box-sizing: border-box;
+	text-align: center;
+	margin-top: 30px;
+}
+.sucess-box img{
+	width: 2.06rem;
+	height: 2.94rem;
+	margin-bottom: 20px;
+}
+.sucess-box h5{
+	color:#0e5bb5;
+	font-size: 0.28rem;
+	margin-bottom: 8px;
+}
+.sucess-box p{
+	color: #969696;
+	font-size: 0.2rem;
+	line-height: 0.28rem;
+}
+.Prompt-box{
+	width: 100%;
+	height: .84rem;
+	background: #fff8e6;
+	border: #f2e9b8 solid 1px; 
+	color: #e0983a;
+	font-size: 0.24rem;
+	line-height: 0.84rem;
+	padding-left: 20px;
+	box-sizing: border-box;
+}
+.Prompt-box span:before{
+	content: "";
+	display: inline-block;
+	float: left;
+	width: 0.24rem;
+	height: 0.24rem;
+	background: url(../../image/tan.png)no-repeat;
+	background-size: 0.24rem 0.24rem;
+	margin-top: 0.28rem;
+	margin-right: 0.2rem;
+}
+.Remarks{
+	position: absolute;
+	right: 10px;
+	line-height: 50px;
+	color: #bababa;
+	font-size:.28rem ;
+}
+.regist-warp .prefix{
+	color: #444!important;
+}
+.mui-input-group .noline:after{
+	height: 0;	
+}
+.input-box{
+	border-bottom:#c8c7cc solid 1px;
+}
+.bef-text{
+	width: 40%;
+	float: left;
+	line-height: 50px;
+}
+.aft-text{
+	width: 60%;
+	float: right;
+	text-align: right;
+	line-height: 50px;
+	color: #999;
+}
+.mui-input-group .ful-row{
+	padding: 0 10px;
+	box-sizing: border-box;
+}
+.mui-input-group .ful-row:after{
+	position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}

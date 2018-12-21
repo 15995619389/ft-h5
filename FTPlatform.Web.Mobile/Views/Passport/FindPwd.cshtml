@@ -1,0 +1,61 @@
+﻿@{
+    ViewBag.Title = "找回密码";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="/content/css/login/login.css" rel="stylesheet" />
+    <link href="/content/css/login/forgot.css" rel="stylesheet" />
+}
+@section foot
+{
+    <script type="text/javascript" charset="utf-8" src="//g.alicdn.com/sd/nch5/index.js?t=1486519858472"></script>
+    <script src="~/dist/passport.forgot.bundle.js"></script>
+}
+
+<header class="mui-bar mui-bar-nav head_box">
+    <a href="javascript:window.history.go(-1);" class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">找回密码</h1>
+</header>
+<div class="mui-content body_content" v-cloak>
+    <section class="regist-warp">
+        <form class="mui-input-group login-form">
+            <div class="input-box">
+                <div class="mui-input-row">
+                    <label><i class="moblie"></i></label>
+                    <input type="text" id="Mobile" class="mui-input-clear" maxlength="30" v-model="formData.Mobile" placeholder="请输入手机号">
+                </div>
+                <div id="hkdiv" class="mui-input-row">
+                    <label><i class="lock pret"></i></label>
+                    <div class="range">
+                        <div class="" style="margin-bottom:10px; padding:0;">
+                            <div class="ln2">
+                                <div id="dom_id" style="height:35px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mui-input-row">
+                    <label></label>
+                    <input type="text" maxlength="6" class="mui-input-clear" v-model="formData.Code" placeholder="请输入验证码">
+                    <span><a href="javascript:" class="code" v-on:click="SendValCode" style="color:#0e5bb5">{{SendBtnText}}</a></span>
+                </div>
+            </div>
+            <div class="mui-radio rdaio-row">
+                <div id="ErrorMsg" class="error-notice erro-pub">{{ErrorMsg}}</div>
+            </div>
+            <div class="longin-row">
+                <a class="login-btn" href="javascript:" v-on:click="Next">下一步</a>
+            </div>
+
+            <input type='hidden' id='afs_scene' name='afs_scene' v-model="formData.afs_scene" />
+            <input type='hidden' id='afs_token' name='afs_token' v-model="formData.afs_token" />
+
+            <input type='hidden' id='csessionid' name='csessionid' />
+            <input type='hidden' id='sig' name='sig' />
+            <input type='hidden' id='token' name='token' />
+            <input type='hidden' id='scene' name='scene' />
+
+        </form>
+    </section>
+</div>
+

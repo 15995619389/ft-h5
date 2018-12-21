@@ -1,0 +1,108 @@
+﻿@{
+    ViewBag.Title = "中国制造2025会议";
+    ViewBag.Description = "飞天众智（www.techina2025.com）为社会各界提供航天搭载服务，可利用航天运载系列搭载条件提供生物菌种、农林植物种子、高性能材料等进行科学实验和产品开发。";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/unique/spaceflight.css" />
+    <link href="~/Content/css/unique/makemeeting.css" rel="stylesheet" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+    <script>
+        $(function () {
+            $("#fun_navback").on("click", function () {
+                document.referrer === '' ? window.location.href = "http://" + window.location.host : window.history.go(-1);
+            });
+        });
+    </script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="fun_navback"></a>
+    <h1 class="mui-title">中国制造2025会议</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage"><img src="~/Content/image/recommend/reback.png" /></a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content l-scrollable" style="background: #fff;">
+    <rightsidebar></rightsidebar>
+    <div class="CompanyName">
+        <h3>服务介绍</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <p class="platform_text text-inrod">十八大以来，习近平总书记着眼于实现强军梦、中国梦，鲜明地提出了军民深度融合的时代命题，并将之上升为国家战略，开创了军民融合式发展新局面。飞天众智中国制造科技服务平台做为中国航天军民融合科技服务的窗口，依托中国航天高端人才队伍，由80余名两院院士、高级将领、知名企业家组成的钱学森顾问委员会；由150余名长江学者、千人计划专家、国家杰出青年专家组成的钱学森创新委员会；自2015年10月起，举办各类论坛、军民融合会议、企业沙龙、宣讲会、技术对接等会议超过了80场，合作政府、园区超过50家，对接企业7558家。 </p>
+    <div class="CompanyName">
+        <h3>会议规模及类型</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <div class="tit-md">钱学森论坛</div>
+    <div class="mt-pic">
+        <img src="~/Content/image/MilitaryCivilian/meeting/ht.png" />
+    </div>
+    <div class="tit-md toptp">中国制造2025会议</div>
+    <div class="mt-pic" style="margin-bottom:0.2rem;">
+        <img src="~/Content/image/MilitaryCivilian/meeting/qhmt.png" />
+    </div>
+    <div class="list-pc">
+        <ul>
+            <li><img src="~/Content/image/MilitaryCivilian/meeting/gbj.png" /></li>
+            <li><img src="~/Content/image/MilitaryCivilian/meeting/xsmt.png" /></li>
+        </ul>
+    </div>
+    <div class="tit-md toptp">中国制造2025会议</div>
+    <div class="list-pc">
+        <ul>
+            <li>
+                <img src="~/Content/image/MilitaryCivilian/meeting/lw.png" />
+                <div class="text-js">节能环保领域技术沙龙</div>
+            </li>
+            <li style="padding-left:3px;box-sizing:border-box;">
+                <img src="~/Content/image/MilitaryCivilian/meeting/cx.png" />
+                <div class="text-js">慈溪市人工智能技术对接交流会</div>
+            </li>
+        </ul>
+        <ul>
+            <li>
+                <img src="~/Content/image/MilitaryCivilian/meeting/djdah.png" />
+                <div class="text-js">上海市军民两用技术大会<br /><span style="visibility:hidden;">人才基地活动</span></div>
+            </li>
+            <li>
+                <img src="~/Content/image/MilitaryCivilian/meeting/ht1.png" />
+                <div class="text-js">国家技术转移东部中心产业人才基地活动</div>
+            </li>
+        </ul>
+    </div>
+    <div class="CompanyName">
+        <h3>服务形式</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <div class="sevsr-gird">
+        <ul>
+            <li>
+                <div class="icon-sev"><i class="peo"></i></div>
+                <div class="sev-text">
+                    <h3>专家支持</h3>
+                    <p>根据主办方要求按照会议规格及会议主题提供专家支持。</p>
+                </div>
+            </li>
+            <li>
+                <div class="icon-sev"><i class="metol"></i></div>
+                <div class="sev-text">
+                    <h3>会议总包</h3>
+                    <p>根据主办方要求按照会议规格及会议主题提供一整套解决方案。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--公司备案，版权所有-->
+    <footer class="company_footer" style="width:100%;height:auto;overflow:hidden;padding:0.30rem 0;background:#f4f4f4;font-size:0.24rem;text-align:center;color:#999">
+        © 2016-<span>@DateTime.Now.Year</span>飞天众智平台&nbsp;|&nbsp;<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" style="color:#999">沪ICP备16043947号-2</a>
+    </footer>
+</div>
+<share ref="share"></share>

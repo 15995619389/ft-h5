@@ -1,0 +1,299 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <title>智币说明</title>
+    <link href="~/Content/css/score/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/score/smart.css" rel="stylesheet" />
+    <style>
+        .capture-wrap .zb-get li .cow:nth-child(1){
+            height:0.42rem;
+            margin-bottom:0px;
+            overflow:visible;
+            line-height:0.42rem
+        }
+        .capture-wrap .zb-get .cow .timenode{
+            font-size:0.22rem
+        }
+    </style>
+</head>
+
+<body>
+    <header class="mui-bar mui-bar-nav head_box head-secd" style="border-bottom: #ddd solid 1px;">
+        <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+        <h1 class="mui-title">智币说明</h1>
+    </header>
+    <nav class="mui-bar mui-bar-tab ft-tab">
+        <a class="nav-tab-item" href="/mall">
+            <span class="tab-icon icon-home"></span>
+            <span class="mui-tab-label">商城首页</span>
+        </a>
+        <a class="nav-tab-item" href="/mall/orderfromindex">
+            <span class="tab-icon icon-order"></span>
+            <span class="mui-tab-label">订单管理</span>
+        </a>
+        <a class="nav-tab-item" href="/mall/ScoreGold">
+            <span class="tab-icon icon-zhibi"></span>
+            <span class="mui-tab-label">我的智币</span>
+        </a>
+    </nav>
+    <div class="mui-content body_content">
+        <!--快速发布弹窗-->
+        <section class="shop-banner">
+            <img src="/Content/image/shop/shop-banner.png" />
+        </section>
+        <!--智币使用-->
+        <section class="capture-wrap">
+            <div class="zb-user">
+                <h4>智币使用</h4>
+                <p class="ptinfo">
+                    1.即积分，仅可在我平台内使用；<br> 2.还可升级会员等级；
+                    <br> 3.可在智享商城中兑换商品或服务；
+                    <br> 4.兑换或抵扣飞天众智名额有限的高端论坛、活动入场券；
+                    <br> 5.免费享受平台以后推出的服务，如飞天智库下载文档、上传VIP简历、筛选高端简历等。
+                </p>
+            </div>
+            <div class="zb-get">
+                <h4>智币获取</h4>
+                <ul>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">新用户注册</span>
+                            <span class="numbs">20</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">即时</span>
+                            <span class="numbs frequency">仅一次</span>
+                        </div>
+                    </li>
+                    @*<li>
+                        <div class="cow">
+                            <span class="chanel">完整个人信息</span>
+                            <span class="numbs">20</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">即时</span>
+                            <span class="numbs frequency">仅一次</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">实名认证</span>
+                            <span class="numbs">20</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">即时</span>
+                            <span class="numbs frequency">仅一次</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">登陆签到</span>
+                            <span class="numbs">1/次</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">即时</span>
+                            <span class="numbs longt">可累加，每天仅计1次</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">会员生日</span>
+                            <span class="numbs">1/次</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">生日当天零点时</span>
+                            <span class="numbs longt">可累加，每天1次</span>
+                        </div>
+                    </li>*@
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">成功申请成为供方</span>
+                            <span class="numbs">200</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">审核通过后2个工作时内</span>
+                            <span class="numbs longt"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">成功申请成为战略合作专家</span>
+                            <span class="numbs">600</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">审核通过后2个工作时内</span>
+                            <span class="numbs longt"></span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">成功审核“技术推荐“</span>
+                            <span class="numbs">600</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">审核通过后3个工作时内</span>
+                            <span class="numbs longt">可累加，同个技术仅计1次 	</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">发布有效需求</span>
+                            <span class="numbs">500</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">审核通过后2个工作时内</span>
+                            <span class="numbs longt">可累加，同个技术仅计1次 	</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">有效解决需求</span>
+                            <span class="numbs">800</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">供需双方确认完成后2个工作日内</span>
+                            <span class="numbs longt">可累加，同个技术仅计1次 	</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">交易完成后发布评分</span>
+                            <span class="numbs">50/次</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">评分审核通过后2个工作时内</span>
+                            <span class="numbs longt">可累加，同个技术仅计1次 	 	</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">发展智友</span>
+                            <span class="numbs">50/次</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">智友注册成功即入（恶意用户除外）</span>
+                            <span class="numbs longt">可累加，同个技术仅计1次 	 	</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">智友发布有效需求</span>
+                            <span class="numbs">100/次</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">审核通过后2个工作时内</span>
+                            <span class="numbs longt">可累加，同个技术仅计1次 	 	</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">智友有效解决需求</span>
+                            <span class="numbs">200/次</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">供需双方确认完成后2个工作日内</span>
+                            <span class="numbs longt">可累加，同个技术仅计1次 	 	</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">为飞天资讯投稿</span>
+                            <span class="numbs">1/10字</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">审核通过后2个工作时内</span>
+                            <span class="numbs longt">可累加，含标点及字符</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">在飞天资讯发布有效评论</span>
+                            <span class="numbs">5/次</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">评分审核通过后2个工作时内</span>
+                            <span class="numbs longt">可累加，同篇文章仅计1次</span>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="cow">
+                            <span class="chanel">智币充值</span>
+                            <span class="numbs">￥0.1元=1</span>
+                        </div>
+                        <div class="cow">
+                            <span class="chanel timenode">即时</span>
+                            <span class="numbs longt">仅可单向充值，不可退</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--智币商品 -->
+        <section class="capture-wrap">
+            <div class="zb-user">
+                <h4>有效期限说明</h4>
+                <p class="ptinfo">
+                    1.您所获得智币，自获得之日起18个月内有效（例：2016年4月18日所获得智币，将在2017年10月19日24点失效），如到期未及时使用，系统将自动清零（您充值兑换的智币除外，充值兑换的智币永久有效）；<br> 2.您每次使用的智币，系统均按所获智币时间节点排序优先使用。
+                </p>
+            </div>
+            <div class="zb-get">
+                <h4>奖惩规则</h4>
+                <p class="ptinfo">
+                    1.恶意注册、恶意推荐注册、发布违法或恶意信息（发布的信息由虚假、欺诈等不符合发布要求的情况），发现并审查属实，扣除相应智币，情节严重者将智币清零、注销会员；<br>
+                    2.举报他人违规行为，并审查属实，奖励100个智币。
+                </p>
+            </div>
+        </section>
+        <section class="capture-wrap">
+            <div class="zb-user">
+                <h4>其他说明</h4>
+                <p class="ptinfo">
+                    1.飞天众智保留对“智币奖励”活动规则及条款作出最终解释的权利，并有权根据需要随时增删、修订本规则，并通过飞天众智官网进行公告；<br>
+                    2.智币兑换的商品或者服务，不提供相应发票；<br>
+                    3.智币不可转让、不可多账户叠加；<br>
+                    4.话费兑换只接受系统自动派发的，不接受充值所获智币兑换。
+                </p>
+            </div>
+
+        </section>
+
+    </div>
+    <script>
+			$(document).ready(function() {
+				$(".right-adt").click(function() {
+					$(".under-gird").toggle();
+				});
+			});
+			<!--快速发布弹窗-->
+			$("#quick-pull").click(function() {
+				$("#mask").css({
+					"display": "block"
+				});
+			});
+			$(".close").click(function() {
+				$("#mask").css({
+					"display": "none"
+				});
+
+			});
+			$(".pull-techoly li a").click(function() {
+				$("#mask").css({
+					"display": "none"
+				});
+
+			});
+			$("#quick-pull").click(function() {
+				$("#quick-pull").toggleClass("blue");
+				$(".mui-tab-item").removeClass(".mui-active");
+			});
+    </script>
+    <script>
+			$(".ft-tab a").click(function() {
+				$(this).addClass("mui-active").siblings().removeClass("mui-active");
+			});
+    </script>
+</body>
+</html>

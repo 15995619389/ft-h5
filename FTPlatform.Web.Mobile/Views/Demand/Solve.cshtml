@@ -1,0 +1,45 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    ViewBag.Title = "我要解决";
+}
+
+@section head{
+    <link href="~/Content/css/pulli.css" rel="stylesheet" />
+    <link href="~/Content/css/demand/Solve.css" rel="stylesheet" />
+    <link href="~/Content/css/UI/style.min.css" rel="stylesheet" />
+    <link href="~/Content/Plugins/mui/mui.picker.min.css" rel="stylesheet" />
+}
+
+@section foot{
+    <script src="~/dist/demand.solve.bundle.js"></script>
+}
+
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+    <h1 class="mui-title">我要解决</h1>
+</header>
+<div class="mui-content" style="background: #fff;" v-cloak>
+    <div class="solve_box">
+        <div class="solve_text">
+            <textarea name="Solution" maxlength="450" v-model="apply.Solution" placeholder="请输入您的大致解决方法"></textarea>
+        </div>
+    </div>
+    <div class="time">
+        <div class="scrol-row">
+            <label>方便联系时间</label>
+            <div class="input-group">
+                <span id="startDate" v-on:click="GetSartTime" class="datebox">{{apply.StartTime|FormatDate}}</span>
+                <span>-</span>
+                 <span id="endDate" v-on:click="GetEndTime" class="datebox">{{apply.EndTime|FormatDate}}</span>
+            </div>
+        </div> 
+        <div class="Iwant">
+            <a class="submitSolve mui-btn mui-btn-blue mui-btn-block" v-on:click="Submit" href="javascript:;" style="color:#fff">提交</a>
+        </div>
+    </div>
+    <mt-datetime-picker ref="startPicker" type="date" v-bind:start-date="CurrentDate" v-model="apply.StartTime"></mt-datetime-picker>
+    <mt-datetime-picker ref="endPicker" type="date" v-bind:start-date="StartDate" v-model="apply.EndTime"></mt-datetime-picker>
+</div>
+
+
+

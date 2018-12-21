@@ -1,0 +1,108 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+<link href="/content/css/gobel.css" rel="stylesheet" />
+<link href="/content/css/shop/smart.css" rel="stylesheet" />
+
+<header class="mui-bar mui-bar-nav head_box" >
+    <div class="shoplogo">
+        <a href="/mall"></a>
+    </div>
+    <div class="search_box">
+        <i id="Search"></i>
+        <span style="width:77%;color:#666;font-size:0.28rem;line-height:0.45rem;text-align:left">搜索商品</span>
+    </div>
+    <div class="right-adt">
+        <a href="#">商城说明</a>
+    </div>
+    <!--商城说明-->
+</header>
+<div class="under-gird">
+    <i class="oi"></i>
+    <p class="txt">智币商城是飞天众智平台为回馈新老会员特别推出的智币（即积分）兑换商城，平台会员在完成相应任务和交易后，即可获得一定数目的智币，便可以在商城中使用智币兑换相应的礼品。</p>
+    <p><small>注：智币商城兑换的商品或者服务，不提供相应发票。</small></p>
+    <p class="txt">会员在享受智币商城相关服务时，有义务遵守以下交易条款。请您在下订单前，仔细阅读以下条款：</p>
+    <ul class="rule-list">
+        <li>
+            <h5>智币商品购买基本原则</h5>
+            <p>针对智币商品进行周期限购及数量限购，如同一会员在每个自然月内只能购买同样产品3个；</p>
+        </li>
+        <li>
+            <h5>智币商品退货规则</h5>
+            <p>
+                1.所有虚拟产品一旦确认购买并支付均不允许退货，如：话费充值、检测券、会议入场券、折扣券等；<br>
+                2.实物商品如非本身商品质量问题，不允许退货。
+            </p>
+        </li>
+        <li>
+            <h5>如因本身商品质量问题，导致退货，相关运输费用由退货方支付，我方按照实际运费折算成智币给到退货方，如运费为20元，则将给退货方账号增加20/0.1=200智币</h5>
+        </li>
+        <li>
+            <h5>商城购物返币规则</h5>
+            <p>
+                1.任何消费交易完成后5个工作日，系统自动返还消费智币的5%；<br>
+                2.如产生退货，则视为交易未完成，取消交易，不返币。
+            </p>
+        </li>
+        <li>
+            <h5>免责声明</h5>
+            <p>如因不可抗力或其它无法控制的原因使智币商城销售系统崩溃或无法正常使用导致网上交易无法完成或丢失有关的信息、记录等，智币商城会尽可能合理地协助处理善后事宜，并努力使客户免受经济损失。</p>
+        </li>
+    </ul>
+</div>
+<nav class="mui-bar mui-bar-tab ft-tab">
+    <a class="nav-tab-item" href="/">
+        <span class="tab-icon icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="nav-tab-item" href="/mall/orderfromindex">
+        <span class="tab-icon icon-order"></span>
+        <span class="mui-tab-label">订单管理</span>
+    </a>
+    <a class="nav-tab-item" href="/mall/ScoreGold">
+        <span class="tab-icon icon-zhibi"></span>
+        <span class="mui-tab-label">我的智币</span>
+    </a>
+</nav>
+
+@RenderBody()
+
+@section foot
+{
+    @RenderSection("foot", false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".right-adt").click(function () {
+                $(".under-gird").toggle();
+                //商城首页说明弹出后固定背景内容
+                if ($(".under-gird").is(":hidden")) {
+                    $("body").css("overflow", "auto");
+                } else {
+                    $("body").css("overflow", "hidden");
+                }
+            });
+        });
+
+        $("#quick-pull").click(function () {
+            $("#mask").css({
+                "display": "block"
+            });
+        });
+        $(".close").click(function () {
+            $("#mask").css({
+                "display": "none"
+            });
+        });
+        $(".pull-techoly li a").click(function () {
+            $("#mask").css({
+                "display": "none"
+            });
+
+        });
+        $("#quick-pull").click(function () {
+            $("#quick-pull").toggleClass("blue");
+            $(".mui-tab-item").removeClass(".mui-active");
+        });
+    </script>
+}

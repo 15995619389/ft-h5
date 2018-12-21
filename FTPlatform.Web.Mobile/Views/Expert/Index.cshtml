@@ -1,0 +1,92 @@
+﻿@{
+    ViewBag.Title = "技术资源库";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/content/css/resources/resourcePool.css" />
+}
+<style>
+    .body-overflow {
+        position: fixed;
+        width: 100%;
+    }
+</style>
+<div id="container" style="height:100%;width:100%">
+    @*头部导航*@
+    <header class="oHeader mui-bar mui-bar-nav">
+        <searchbar v-bind:stype="1"></searchbar>
+    </header>
+    @*底部导航*@
+    <foot ref="foot"></foot>
+    <div class="mui-content">
+        <div class="specialist_Box" v-cloak>
+            <ul class="specialist">
+                <li id="level" v-on:click="LevelStatus">
+                    专家级别
+                    <span class="all">{{param.expertLevel==0?"":param.expertLevel==2?"(明星专家)":param.expertLevel==1?"(普通专家)":""}}</span>
+                    <span class="trigon "></span><i></i>
+                </li>
+                <li id="category" v-on:click="TypeStatus">
+                    专家类型
+                    <span class="all">
+                        {{param.expertType==0?"":param.expertType==1?"(个人专家)":param.expertType==2?"(科研机构)":""}}
+                    </span>
+                    <span class="trigon"></span>
+            </ul>
+            <!---专家级别  三个选项---->
+            <div class="expertLevel_box">
+                <ul class="expertLevel" id="experts" v-if="LevelPannel">
+                    <li v-bind:class="{text_color:(param.expertLevel==0)}" v-on:click="LevelSort(0)">全部</li>
+                    <li v-bind:class="{text_color:(param.expertLevel==2)}" v-on:click="LevelSort(2)">明星专家</li>
+                    <li v-bind:class="{text_color:(param.expertLevel==1)}" v-on:click="LevelSort(1)">普通专家</li>
+                </ul>
+                <ul class="expertLevel" id="institutions" v-if="TypePannel">
+                    <li v-bind:class="{text_color:(param.expertType==0)}" v-on:click="TypeSort(0)">全部</li>
+                    <li v-bind:class="{text_color:(param.expertType==1)}" v-on:click="TypeSort(1)">个人专家</li>
+                    <li v-bind:class="{text_color:(param.expertType==2)}" v-on:click="TypeSort(2)">科研机构</li>
+                </ul>
+            </div>
+        </div>
+        <scroller ref="scroller" v-cloak v-bind:on-refresh="Search" v-bind:on-infinite="Append" v-bind:style="{'padding-top':paddingTop+'px'}">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell" v-on:click="Detail(expert.ExpertID)" v-for="expert in expertData">
+                    <a>
+                        <img class="mui-media-object mui-pull-left" v-lazy="expert.ExpertImgUrl">
+                        <div class="content_body">
+                            <div class="view_title">
+                                <h3 class="title_left">{{expert.ExpertName}}</h3>
+                                <p class="phone">@*{{expert.ExpertMobiePhone}}*@</p>
+                            </div>
+                            <p class="introduce">
+                                <template v-if="expert.ExpertDept!=''&&expert.ExpertDept!=null">
+                                    {{expert.ExpertDept}}&nbsp;&nbsp;|&nbsp;&nbsp;{{FormatExpertType!=''?FormatExpertType:expert.ExpertType}}
+                                </template>
+                                <template v-else>
+                                    {{FormatExpertType!=''?FormatExpertType:expert.ExpertType}}
+                                </template>
+                            </p>
+                            <ul class="apply_base">
+                                <li>
+                                    <img src="/Content/image/attention.png" class="focus_img">
+                                    <p>关注度:<span>{{expert.Attention}}</span></p>
+                                </li>
+                                <li>
+                                    <template v-if="expert.RealDealSafe!=''&&expert.RealDealSafe!=null">
+                                        <img src="/Content/image/security.png" class="apply_img">
+                                        <p>交易保障:<span>{{expert.RealDealSafe}}</span></p>
+                                    </template>
+                                </li>
+                            </ul>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </scroller>
+    </div>
+    <rightsidebar></rightsidebar>
+</div>
+@section foot{
+    <script src="~/dist/expert.list.bundle.js"></script>
+}
+
+

@@ -1,0 +1,36 @@
+﻿@{
+    ViewBag.Title = "我的咨询";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/pulli.css" />
+    <link rel="stylesheet" href="/Content/css/myBusiness/myAdvice/MyAdvice.css" />
+}
+@section foot{
+    <script src="~/dist/tech.techshareconsult.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/index"></a>
+    <h1 class="mui-title">我的咨询</h1>
+</header>
+<div class="mui-content mui-scroll-wrapper" style="background: #f2f1f7;" v-cloak>
+    <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" class="mui-scroll" v-cloak style="top:43px">
+        <div>
+            <div class="result_content" v-for="ad in advise">
+                <div class="result_content1">
+                    <div class="date_title">
+                        <p class="mui-ellipsis"> {{ad.TechShareModel?ad.TechShareModel.Title:""}}</p>
+                        <span class="result" v-if="ad.ReplyTxt==null">未回复</span>
+                        <span class="result result-box" v-if="ad.ReplyTxt!=null">已回复</span>
+                    </div>
+                    <div class="detail">
+                        <div class="adviceContent">
+                            <span class="adviceLabel">技术推荐</span>|<span class="adviceTime">{{ad.CreateTime|formatDate}}</span>
+                        </div>
+                        <span class="details_a" v-on:click="Detail(ad.Id)">咨询详情</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </scroller>
+</div>

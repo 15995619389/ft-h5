@@ -1,0 +1,227 @@
+﻿@{
+    ViewBag.Title = "技术详情";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/Content/css/results/details.css" />
+    <style>
+        body {
+            line-height: 21px;
+        }
+
+        .research_bt p {
+            text-indent: 2em;
+        }
+
+        .ft-img-preview {
+            position: fixed;
+            display: -webkit-flex;
+            display: flex;
+            -webkit-flex-direction: column;
+            flex-direction: column;
+            -webkit-justify-content: center;
+            justify-content: center;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background-color: #fff;
+        }
+
+            .ft-img-preview > img {
+                max-width: 100%;
+                max-height: 100%;
+                display: block;
+            }
+
+        .three-label {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            margin: 0.10rem 0px;
+        }
+
+            .three-label li {
+                width: 33.33%;
+                float: left;
+                text-align: center;
+                font-size: 0.20rem;
+                color: #666;
+            }
+
+        .research_bt p span {
+            font-family: 'Microsoft YaHei' !important;
+            font-size: 0.26rem !important;
+        }
+
+        .btn_box {
+            text-align: center;
+            font-size: 0.28rem;
+            color: #595757;
+            padding-top: 0.10rem;
+            padding-bottom: 0.10rem;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+            overflow: hidden;
+            height: auto;
+            width: 100%;
+        }
+
+        .textarea {
+            width: 90%;
+            min-height: 1.8rem;
+            margin-top: 11px;
+            margin-bottom: 11px;
+            margin-left: 5%;
+        }
+
+        .body-overflow {
+            overflow: hidden;
+        }
+    </style>
+}
+
+<div class="js-particulars l-scrollable" v-cloak>
+    <preview ref="preview"></preview>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+        <h1 class="mui-title">技术详情</h1>
+        <a class="mui-icon-right-nav mui-pull-right" v-on:click="Follow" id="attention" style="display:none;">
+            <img v-if="!IsFollow" src="/Content/image/attention.png" />
+            <img v-else src="/Content/image/heart.png" />
+        </a>
+    </header>
+    <div class="mui-content" style="background: none;">
+        <img v-bind:src="detail.ImgUrl" class="details_img" v-on:click="ShowPreview" />
+        <div class="details_body" v-cloak>
+            <div class="details_content">
+                <h3>{{detail.Title}}</h3>
+            </div>
+            <ul class="three-label" style="display:none"><li>申请：<span>{{detail.AbutCount}}</span></li><li>关注：<span>{{detail.FollowNum}}</span></li><li>浏览：<span>{{detail.BrowseNum}}</span></li></ul>
+            <ul>
+                <li>技术提供者身份：{{TechSupplier[detail.TechSupplier]}}</li>
+                <li>技术研发阶段：{{DevelPhase[detail.DevelPhase]}}</li>
+                <li>
+                    交易方式：
+                    <template v-for="(item,index) in detail.TechTradWay">
+                        {{TechTradWay[item]}}
+                        <template v-if="index!=(detail.TechTradWay.length-1)">
+                            /
+                        </template>
+                    </template>
+                </li>
+                <li>
+                    技术标签：
+                    <template v-if="BusinessNewCategory!=null">
+                        <template v-if="BusinessNewCategory.BusinessClassLevelName1!=null">
+                            {{BusinessNewCategory.BusinessClassLevelName1}}
+                        </template>
+                        <template v-if="BusinessNewCategory.BusinessClassLevelName2!=null">
+                            |{{BusinessNewCategory.BusinessClassLevelName2}}
+                        </template>
+                        <template v-if="BusinessNewCategory.BusinessClassLevelName3!=null">
+                            |{{BusinessNewCategory.BusinessClassLevelName3}}
+                        </template>
+                    </template>
+                </li>
+            </ul>
+            <table class="table" v-for="tp in detail.TechPatent">
+                <thead>
+                    <tr>
+                        <td colspan="3">专利号：<span>{{tp.PatentNum}}</span></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>国家：<span>{{tp.Country}}</span></td>
+                        <td>授权日期：<span>{{tp.AccreditTime|formatDate}}</span></td>
+                    </tr>
+                    <tr>
+                        <td>专利类型：<span>{{tp.PatentType}}</span></td>
+                        <td>申请日期：<span>{{tp.ApplyTime|formatDate}}</span></td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="research">
+                <div class="research_bt">
+                    <div class="research_title"><i></i>研发背景</div>
+                    <p v-html="detail.DevelopBackdrop"></p>
+                </div>
+            </div>
+            <div class="research">
+                <div class="research_bt">
+                    <div class="research_title"><i></i>应用范围</div>
+                    <p v-html="detail.ApplicaRange"></p>
+                </div>
+            </div>
+            <div class="research">
+                <div class="research_bt">
+                    <div class="research_title"><i></i>技术路线及原理</div>
+                    <p v-html="detail.TechTheory"></p>
+                </div>
+            </div>
+            <div class="research">
+                <div class="research_bt">
+                    <div class="research_title"><i></i>技术特色</div>
+                    <p v-html="detail.Feature"></p>
+                </div>
+            </div>
+            <div class="research" id="EconomyAnalyze">
+                <div class="research_bt">
+                    <div class="research_title"><i></i>经济效益分析</div>
+                    <p v-html="detail.EconomyAnalyze"></p>
+                </div>
+            </div>
+            <div class="research" style="border-bottom: none;" v-if="detail.TechAttachAll&&detail.TechAttachAll.length>0">
+                <div class="research_bt">
+                    <div class="research_title"><i></i>附件说明</div>
+                    <p v-for="attach in detail.TechAttachAll"><a v-bind:href="domain+attach.FilePath">{{attach.FileName+attach.FileExt}}</a></p>
+                </div>
+            </div>
+            <div class="bt" style="display:none">
+                <button type="button" class="mui-btn  mui-btn-block btn_show" style="margin-right: 2%;background: #f19149;" id="apply" v-on:click="ShowApplyPopup">申请技术应用</button>
+                <button type="button" class="mui-btn mui-btn-blue mui-btn-block consult" id="consults" v-on:click="ShowConsultPopup">我要咨询</button>
+            </div>
+        </div>
+        <div class="Iwant" style="display:none">
+            <!----> <!----> <!---->
+            <a class="mui-btn mui-btn-gray mui-btn-block">我的技术</a>
+        </div>
+    </div>
+
+    <!------申请技术应用--------->
+    <div id="mask"></div>
+    <div class="popup" v-if="applyPopup" style="display:block">
+        <div class="btn_box">
+            <span style="margin-left: 20px;">提示</span>
+            <a class="bttn disappear" v-on:click="PopupHide">X</a>
+        </div>
+        <p class="p_text">确认申请该技术应用?</p>
+        <div class="btn_footer">
+            <div class="btn_footer1">
+                <button type="button" class="mui-btn mui-btn-blue mui-btn-block confirm" v-on:click="ApplyTech">确定</button>
+                <button type="button" class="mui-btn  mui-btn-block cancel disappear" style="background: #ddd;" v-on:click="PopupHide">取消</button>
+            </div>
+        </div>
+    </div>
+    <!-------咨询---------->
+    <div class="popup_consult" v-if="consultPopup" style="display:block">
+        <div class="btn_box" style="border-bottom:1px solid #ddd;padding-left:10%">
+            我要咨询
+            <a class="btn" v-on:click="PopupHide">X</a>
+        </div>
+        <textarea class="textarea" id="ConsultationContent"></textarea>
+        <div class="btn_footer">
+            <div class="btn_footer1">
+                <button type="button" class="mui-btn mui-btn-blue mui-btn-block confirm_consult" v-on:click="ConsultTech">确定</button>
+            </div>
+        </div>
+    </div>
+    <rightsidebar></rightsidebar>
+</div>
+@section foot{
+    <script src="~/dist/tech.detail.bundle.js"></script>
+}
+
+

@@ -1,0 +1,390 @@
+﻿.mui-content, body {
+    background: #fff;
+}
+
+.mui-bar-nav {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.user_info {
+    padding: 0.20rem 2%;
+    overflow: hidden;
+    height: auto;
+}
+
+.haveAddress {
+    overflow: hidden;
+    width: 100%;
+}
+
+.noAddress {
+    padding: 0.40rem 0;
+    text-align: center;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0.30rem;
+    color: #444;
+}
+
+    .noAddress span {
+        float: right;
+        font-size: 0.30rem;
+    }
+
+.user_top {
+    width: 85%;
+    font-size: 0.30rem;
+    font-weight: 800;
+    color: #444;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 0.10rem;
+}
+
+    .user_top .phone {
+        font-weight: 500;
+    }
+
+    .user_top span {
+        display: block;
+        float: left;
+        margin-right: 0.20rem;
+        line-height: 0.38rem;
+    }
+
+    .user_top .acquiescence {
+        padding: 0.02rem 0.10rem;
+        border: 1px solid #ff7d01;
+        font-size: 0.26rem;
+        color: #fe6400;
+        font-weight: 100;
+        line-height: 0.30rem;
+    }
+
+.user_address {
+    overflow: hidden;
+    width: 100%;
+}
+
+    .user_address li {
+        overflow: hidden;
+        float: left;
+        color: #666;
+        font-size: 0.26rem;
+    }
+
+        .user_address li:first-child {
+            width: 5%;
+        }
+
+        .user_address li:nth-child(2) {
+            width: 86%;
+            margin: 0 2%;
+            line-height: 0.36rem;
+        }
+
+        .user_address li:last-child {
+            width: 5%;
+            float: right;
+            font-size: 0.30rem;
+        }
+
+.address_bg {
+    margin-top: 0.10rem;
+    width: 0.24rem;
+    height: 0.28rem;
+}
+
+.goods_box, .goods_info {
+    overflow: hidden;
+    height: auto;
+}
+
+.ribbon_bg {
+    width: 100%;
+    height: 0.16rem;
+}
+
+.goods_info {
+    padding: 0.30rem 2%;
+    background: #f5f5f5;
+}
+
+.goods_img {
+    width: 1.76rem;
+    height: 1.76rem;
+    float: left;
+    margin-right: 0.30rem;
+}
+
+.goods_info_right {
+    overflow: hidden;
+    height: auto;
+    width: 70%;
+    float: left;
+}
+
+    .goods_info_right h3 {
+        margin:0;
+        color: #444;
+        overflow: hidden;
+        width: 100%;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-size: 0.30rem;
+        margin-top:0.08rem
+    }
+
+.goods_info_text {
+    font-size: 0.26rem;
+    color: #999;
+    line-height: 0.36rem;
+    display: -webkit-box;
+    /*-webkit-box-orient: vertical;*/
+    height:0.36rem;
+    /*-webkit-line-clamp: 2;*/
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    margin-bottom:0
+}
+.goods_info_text p{
+    margin-bottom:0;
+    font-size:0.26rem;
+    height:0.36rem;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+
+/*--火爆促销--*/
+ .promotions{
+        display: inline-block;
+        font-size: 0.24rem;
+        font-weight: 100;
+        border: 1px solid #ff6300;
+        padding: 0 0.20rem;
+        line-height:0.40rem;
+        float:right
+    }
+    .originalPrice{
+        overflow:hidden;
+        font-size:0.28rem;
+        color:#969696;
+        margin-bottom:0;
+        line-height:0.40rem
+    }
+    .originalPrice span{
+        text-decoration:line-through
+    }
+/**/
+.goods_info_right .goods_price {
+    width: 100%;
+    color: #fe6400;
+    font-size: 0.30rem;
+}
+
+.goods_number, .invoice_box, .seller_info {
+    overflow: hidden;
+    padding: 0.30rem 2%;
+}
+
+.invoice_box {
+    border-bottom: 0.20rem solid #ddd;
+    border-top: 0.20rem solid #ddd;
+}
+
+.goods_hint {
+    float: left;
+    color: #444;
+    font-size: 0.30rem;
+    line-height: 0.55rem;
+}
+
+    .goods_hint span {
+        color: #666;
+    }
+
+.quantity-wrapper {
+    overflow: hidden;
+    display: inline-block;
+    float: right;
+    margin-right: 0.20rem;
+}
+
+    .quantity-wrapper a {
+        display: block;
+        border: 1px solid #ddd;
+        width: 0.55rem;
+        height: 0.55rem;
+        line-height: 0.50rem;
+        text-align: center;
+        color: #999;
+        float: left;
+    }
+
+.quantity_text {
+    display: inline-block;
+    float: left;
+    font-size: 0.28rem;
+    line-height: 0.50rem;
+    color: #444;
+    padding: 0 0.30rem;
+}
+
+.invoice_box {
+    font-size: 0.30rem;
+    color: #444;
+}
+
+.invoice_name {
+    width: 80%;
+    float: right;
+    overflow: hidden;
+}
+
+    .invoice_name .invoice_up {
+        float: left;
+        width: 94%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .invoice_name span {
+        float: right;
+        display: inline-block;
+    }
+
+.seller_info h3 {
+    color: #444;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0.30rem;
+}
+
+.seller_text {
+    height: 1.50rem;
+    font-size: 0.26rem;
+    color: #444;
+    border: none;
+    padding: 0.10rem 0;
+}
+
+.mui-bar-tab .mui-tab-item {
+    height: 50px;
+}
+
+.mui-bar .TotalPrice {
+    width: 100%;
+    float: left;
+    font-size: 0.28rem;
+    line-height: 50px;
+    background: #f5f5f5;
+}
+
+.mui-bar .SubmitOrders {
+    background: #fe6400;
+    color: #fff;
+    font-size: 0.28rem;
+    line-height: 50px;
+    width: 40%;
+}
+
+.TotalPrice .money {
+    color: #fe6400;
+}
+
+.order_box {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+/*-----发票----*/
+.invoice_content {
+    overflow: hidden;
+    width: 100%;
+}
+
+.invoice_list {
+    overflow: hidden;
+    width: 100%;
+}
+
+    .invoice_list li {
+        overflow: hidden;
+        padding: 0.20rem;
+        border-bottom: 0.15rem solid #efeff4;
+    }
+
+        .invoice_list li p {
+            margin-top: 0.10rem;
+            font-size: 0.28rem;
+            margin-bottom: 0;
+        }
+
+            .invoice_list li p span {
+                color: #444;
+            }
+
+.subtract {
+    background: #ddd;
+}
+
+/*---收获地址---*/
+.address_box {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+}
+
+.administer {
+    display: inline-block;
+    float: right;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+    color: #000;
+}
+
+.address_wrap {
+    overflow: hidden;
+}
+
+    .address_wrap li {
+        width: 100%;
+        padding: 0.20rem;
+        overflow: hidden;
+        height: auto;
+        border-bottom: 1px solid #ddd;
+    }
+
+.name_box {
+    overflow: hidden;
+    color: #444;
+    font-size: 0.28rem;
+}
+
+    .name_box strong {
+        float: left;
+    }
+
+        .name_box strong:last-child {
+            float: right;
+            font-weight: 400;
+        }
+
+.defaultAddress {
+    font-size: 0.26rem;
+    color: #fe6400;
+}
+
+.address_text {
+    margin-top: 0.10rem;
+    font-size: 0.26rem;
+    color: #666;
+    line-height: 0.38rem;
+    margin-bottom: 0;
+}

@@ -1,0 +1,127 @@
+/*------分类侧边栏----------*/
+.sidebar_left {
+    position: fixed;
+    bottom: 56px;
+    left: 0px;
+    width: 100%;
+    height: 75%;
+    background: #f5f5f5;
+    display: none;
+    z-index: 10000;
+    border-top: 1px solid #ddd;
+}
+.left_list{
+	width:25%;
+	height: 100%;
+	float: left;
+	background: #fff;
+    display:flex;
+    flex-direction:column;
+    /*改为纵向弹性布局 by susining*/
+}
+.left_list li{
+	width: 100%;
+	text-align: center;
+	border-top:1px solid #dddddd;
+	height: 13%;
+	line-height: 1.2rem;
+	font-size: 0.34rem;
+}
+.left_list li:nth-child(7){
+	height: 22%;
+	line-height: 2.0rem;	
+}
+.left_list_bg{
+	background: #f5f5f5;
+	color: #0e5bb5;
+}
+.right_list{
+	display: block;
+	width: 68%;
+	float: right;
+	height: 100%;
+	margin: 0px 3.5%;	
+}
+.right_list h4{
+	font-size: 0.28rem;
+	margin: 10px 0px;
+	color: #666;	
+}
+.two_label,.three_label{
+	width: 100%;
+	height: auto;
+	overflow: hidden	
+}
+.two_label li,.three_label li{
+	width: 33.33%;
+	text-align: center;
+	font-size: 0.28rem;
+	float: left;
+	background: #fff;
+	height: 0.80rem;
+	line-height: 0.80rem;
+	border: 1px solid #f5f5f5;
+	color: #666;
+}
+.right_list h5{
+	font-size: 0.24rem;
+	color: #666;
+	margin: 10px 0px;
+}
+
+.three_label li{
+	font-size: 0.24rem;
+	height: 0.60rem;
+	line-height: 0.60rem;
+}
+
+.three_label li.chosen{
+    color:#0e5bb5;
+    background:#ddd;
+    /*三级分类选中效果 by susining*/
+}
+.two_label .left_list_bg{
+	color: #0e5bb5;
+}
+
+
+.mui-table-view-cell:after {
+    left: 0px;
+}
+
+.oul1,.oul2,.oul3,.oul4,.oul5,.oul6,.oul7{
+	display: none;
+}
+.left_list li:nth-child(1){
+	border-top:none ;
+}
+.three_label div {
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    font-size: 0.24rem;
+    float: left;
+    background: #fff;
+    height: 0.60rem;
+    line-height: 0.60rem;
+    border: 1px solid #f5f5f5;
+    color: #666;
+}
+.two_label div {
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    font-size: 0.28rem;
+    float: left;
+    background: #fff;
+    height: 0.80rem;
+    line-height: 0.80rem;
+    border: 1px solid #f5f5f5;
+    color: #666;
+}
+.mui-btn-block {
+    padding: 5px 0px;
+    font-size: 0.32rem;
+    margin-top: 0.60rem;
+}
+

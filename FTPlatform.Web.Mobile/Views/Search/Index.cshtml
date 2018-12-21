@@ -1,0 +1,316 @@
+﻿
+@{
+    ViewBag.Title = "搜索";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link href="~/Content/css/pulli.css" rel="stylesheet" />
+    <link href="~/Content/css/search/SearchList.css" rel="stylesheet" />
+}
+
+<div class="searchMain">
+    <header class="mui-bar mui-bar-nav">
+        <div class="oHeader1">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+            <div class="search_box">
+                <input type="text" v-model="searchmodel.key" maxlength="18" v-on:keyup.enter="search" placeholder="全站搜索 一网打尽~" />
+                <a v-on:click="search" class="on_seek">
+                    <img src="/content/image/seek_top.png" class="seek_img">
+                </a>
+            </div>
+        </div>
+    </header>
+    <category-picker ref="catepicker"></category-picker>
+    <!--搜索内容结果-->
+    <div class="mui-content" v-cloak>
+        <div class="mask_box" style="z-index:6;"></div>
+        <div class="search_hint">已为您找到相关信息<span>{{total}}</span>条!</div>
+        <div class="classify_box mui-slider-group">
+            <div class="classify">
+                <span class="search_nav">{{selecttypemodel.Name}}（{{selecttypemodel.Count}}）</span>
+                <div class="search_bg">更多分类<i></i></div>
+                <div class="box" style="display:none"></div>
+                <div class="search_label" style="display:none">
+                    <p class="type">类型</p>
+                    <div class="label_box">
+                        <span v-on:click="SelectType(t)" v-bind:class="{ 'span_active':(t.Value == selecttypemodel.nType),'span_expert':(index == 1) }" v-for="(t,index) in types">{{t.Des}}（{{t.nCount}}）</span>
+                    </div>
+                    <button type="button" v-on:click="ToggleType" class="mui-btn mui-btn-outlined">确定</button>
+                </div>
+            </div>
+            <!--需求-->
+            <div class="content_box" style="display: block;" v-show="searchmodel.dt == 0">
+                <ul class="need_title" style="">
+                    <li class="cursorli">投入预算区间 <span v-if="demandmodel.AmountSpan.min >= 0">({{demandmodel.AmountSpan.des}})</span></li>
+                    <li class="cursorli">发布时间 <span v-if="demandmodel.PublishSpan.days >= 0">({{demandmodel.PublishSpan.des}})</span></li>
+                    <div class="needs_down" v-show="demandmodel.amountswitch" style="z-index:15">
+                        <div class="needs_nav">
+                            <span v-for="amount in demandmodel.amountInterval" v-on:click="SelectAmountSpan(amount)">{{amount.des}}</span>
+                        </div>
+                        <div class="cooperation_btn">
+                            <button class="reset" v-on:click="DemandResetAmount">重置</button>
+                            <button class="determine" v-on:click="Demanddetermine">确定</button>
+                        </div>
+                    </div>
+                    <div class="needs_down" v-show="demandmodel.publishswitch" style="z-index:15">
+                        <div class="needs_nav">
+                            <span v-for="pubd in demandmodel.publishData" v-on:click="SelectPublishSpan(pubd)">{{pubd.des}}</span>
+                        </div>
+                        <div class="cooperation_btn">
+                            <button class="reset" v-on:click="DemandResetPublish">重置</button>
+                            <button class="determine" v-on:click="Demanddetermine">确定</button>
+                        </div>
+                    </div>
+                </ul>
+                <div v-if="searchmodel.dt == 0" class="contentOne">
+                    <scroller ref="child1" v-bind:on-refresh="eReresh" v-bind:on-infinite="eAppend" v-bind:refreshText="refreshText" v-bind:noDataText="noDataText" v-bind:snapping="snapping" @*style="top: 169px;"*@>
+                        <div class="" style="overflow: visible;" id="refreshContainer">
+                            <ul class="need_content" style="display: block;" v-show="searchmodel.dt == 0">
+                                <li v-for="demand in demands[0]" v-if="demand.Id > 0">
+                                    <a class="need_a" v-bind:href="'/demand/detail/' + demand.Id">
+                                        <div class="li_title">
+                                            <span v-html="demand.Title"></span>
+                                            <span>{{demand.OthersNoAna.Status}}</span>
+                                        </div>
+                                        <p class="mui-ellipsis" v-html="demand.Content"></p>
+                                        <div class="li_footer">
+                                            <span>{{demand.BusCategory_First}}</span>
+                                            <span>{{demand.PublishDate | formatDate }}</span>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </scroller>
+                </div>
+            </div>
+
+            <!--专家-->
+            <div class="content_box mui-slider-item " v-show="searchmodel.dt == 1">
+                <ul class="experts_title">
+                    <li>级别 <span v-if="expertmodel.eCate.val >= -1">({{expertmodel.eCate.des}})</span></li>
+                    <li>类型 <span v-if="expertmodel.eType.val >= -1">({{expertmodel.eType.des}})</span></li>
+                    <li class="categoriesPicker" v-on:click="PickCategory" >擅长领域</li>
+                    <div class="experts_down" style="display:none;">
+                        <div class="experts_nav">
+                            <span v-for="e in expertmodel.expertCategory" v-on:click="expertmodel.Item_eCate = e">{{e.des}}</span>
+                        </div>
+                        <div class="cooperation_btn">
+                            <button class="reset" v-on:click="Reset(1, 1)">重置</button>
+                            <button class="determine" v-on:click="determine(1, 1)">确定</button>
+                        </div>
+                    </div>
+                    <div class="experts_down" style="display:none;">
+                        <div class="experts_nav">
+                            <span v-for="e in expertmodel.expertType" v-on:click="expertmodel.Item_eType = e">{{e.des}}</span>
+                        </div>
+                        <div class="cooperation_btn">
+                            <button class="reset" v-on:click="Reset(1, 2)">重置</button>
+                            <button class="determine" v-on:click="determine(1, 2)">确定</button>
+                        </div>
+                    </div>
+                </ul>
+                <!--专家级别-->
+                <div v-if="searchmodel.dt == 1" class="contentOne">
+                    <scroller ref="child1" v-bind:on-refresh="eReresh" v-bind:on-infinite="eAppend" v-bind:refreshText="refreshText" v-bind:noDataText="noDataText" @*style="top: 169px;"*@>
+                        <ul class="experts_content" style="display: block;" v-show="searchmodel.dt == 1">
+                            <li style="border-bottom: 1px solid #ddd;padding: 0.20rem 3%;" v-for="demand in demands[searchmodel.dt]" v-if="demand.Id > 0">
+                                <a class="need_a" v-bind:href="'/expert/detail/' + demand.OthersNoAna.ExpertID">
+                                    <img v-bind:src="demand.ImagePath" class="experts_img" />
+                                    <div class="experts_right">
+                                        <h3 class="title_left" v-html="demand.OthersNoAna.ExpertMT ? demand.Title + '--' + demand.OthersNoAna.ExpertMT :demand.Title"></h3>
+                                        <p class="introduce">{{demand.OthersNoAna.ExpertType}} &nbsp;&nbsp;|&nbsp;&nbsp;{{demand.OthersNoAna.ExpertDept}}</p>
+                                        <ul class="apply_base">
+                                            <li>
+                                                <img src="/content/image/attention.png" class="focus_img">
+                                                <p>关注数:<span>{{demand.AttentionNum}}</span></p>
+                                            </li>
+                                            <li>
+                                                <img src="/content/image/security.png" class="apply_img">
+                                                <p>交易保障:<span>{{(demand.OthersNoAna.RealDealSafe || "0")}}</span></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </scroller>
+                </div>
+            </div>
+
+            <!--技术-->
+            <div class="content_box" v-show="searchmodel.dt == 2">
+                <ul class="technique_title">
+                    <li class="oli">交易方式 <span v-if="techsharemodel.tMethod.val >= -1">({{techsharemodel.tMethod.des}})</span></li>
+                    <li class="oli">研究阶段 <span v-if="techsharemodel.tStage.val >= -1">({{techsharemodel.tStage.des}})</span></li>
+                    <li class="categoriesPicker"  v-on:click="PickCategory" >行业分类</li>
+                    <div class="cooperation" style="display:none;">
+                        <div class="cooperation_nav">
+                            <span v-for="t in techsharemodel.cooperationMethod" v-on:click="techsharemodel.Item_tMethod = t">{{t.des}}</span>
+                        </div>
+                        <div class="cooperation_btn">
+                            <button class="reset" v-on:click="Reset(2, 1)">重置</button>
+                            <button class="determine" v-on:click="determine(2, 1)">确定</button>
+                        </div>
+                    </div>
+                    <div class="cooperation" style="display:none;">
+                        <div class="cooperation_nav">
+                            <span v-for="t in techsharemodel.ResearchStage" v-on:click="techsharemodel.Item_tStage = t">{{t.des}}</span>
+                        </div>
+                        <div class="cooperation_btn">
+                            <button class="reset" v-on:click="Reset(2, 2)">重置</button>
+                            <button class="determine" v-on:click="determine(2, 2)">确定</button>
+                        </div>
+                    </div>
+                </ul>
+
+                <!--合作方式-->
+                <div id="cooperation_box" class="expert_level contentOne" v-if="searchmodel.dt == 2" >
+                    <scroller ref="child1" v-bind:on-refresh="eReresh" v-bind:on-infinite="eAppend" v-bind:refreshText="refreshText" v-bind:noDataText="noDataText" @*style="top: 169px;"*@>
+                        <!--出售-->
+                        <ul class="experts_content" style="display: block;">
+                            <li style="border-bottom: 1px solid #ddd;padding: 0.20rem 3%;" v-for="demand in demands[searchmodel.dt]">
+                                <a class="need_a" v-bind:href="'/techshare/detail/' + demand.Id">
+                                    <img v-bind:src="demand.ImagePath" class="experts_img" />
+                                    <div class="experts_right">
+                                        <div class="cooperation_title">
+                                            <span v-html="demand.Title"></span>
+                                            <span>{{demand.PublishDate | formatDate}}</span>
+                                        </div>
+                                        <p class="introduce" v-html="demand.Content"></p>
+                                        <ul class="apply_base">
+                                            <li>
+                                                <img src="/content/image/attention.png" class="focus_img">
+                                                <p>浏览量:<span>{{demand.OthersNoAna.BrowseNum}}</span></p>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </scroller>
+                </div>
+            </div>
+
+            <!--服务-->
+            <div class="content_box contentTwo" v-if="searchmodel.dt == 4">
+                <scroller ref="child1" v-bind:on-refresh="eReresh" v-bind:on-infinite="eAppend" v-bind:refreshText="refreshText" v-bind:noDataText="noDataText" @*style="top: 129px;"*@>
+
+                    <ul class="service_content">
+                        <li style="border-bottom: 1px solid #ddd;padding: 0.20rem 3%;" v-for="demand in demands[searchmodel.dt]">
+                            <a class="need_a" v-bind:href="'/unique/info/' + demand.Id">
+                                <img v-bind:src="demand.ImagePath" class="experts_img">
+                                <div class="experts_right">
+                                    <div class="service_title" v-html="demand.Title"></div>
+                                    <p class="p_content" v-html="demand.Content"></p>
+                                    <div class="service_page">
+                                        <span>业务咨询量：{{demand.OthersNoAna.BusinessReferCount}}</span>
+                                        <span>浏览量：{{demand.AttentionNum}}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </scroller>
+            </div>
+
+            <!-- 资讯 -->
+            <div class="content_box contentTwo" v-if="searchmodel.dt == 3">
+                <scroller ref="child1" v-bind:on-refresh="eReresh" v-bind:on-infinite="eAppend" v-bind:refreshText="refreshText" v-bind:noDataText="noDataText" @*style="top:129px;"*@>
+                    <ul class="information_content">
+                        <li style="border-bottom: 1px solid #ddd;padding: 0.20rem 3%;" v-for="demand in demands[searchmodel.dt]">
+                            <a class="need_a" v-bind:href="'/news/detail/' + demand.Id">
+                                <img v-bind:src="demand.ImagePath" class="experts_img">
+                                <div class="experts_right">
+                                    <div class="information_title" v-html="demand.Title"></div>
+                                    <p class="p_content" v-html="demand.Content"></p>
+                                    <div class="information_page">
+                                        <span>来源：{{(demand.OthersNoAna.Source || "飞天众智")}}</span>
+                                        <span style="float:right">{{demand.PublishDate | formatDate}}</span>
+                                    </div>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </scroller>
+            </div>
+            <!-- 专利 -->
+            <div class="content_box mui-slider-item " v-show="searchmodel.dt == 5">
+                <ul class="patent_title">
+                    <li>交易方式 <span v-if="patentmodel.patent_way.val  >= -1">({{patentmodel.patent_way.des}})</span></li>
+                    <li>专利状态 <span v-if="patentmodel.patent_status.val >= -1">({{patentmodel.patent_status.des}})</span></li>
+                    <li>专利类型 <span v-if="patentmodel.patent_type.val >= -1">({{patentmodel.patent_type.des}})</span></li>
+                    <div class="patent_down" style="display:none;">
+                        <div class="patent_nav">
+                            <span v-for="p in patentmodel.wayTrade" v-on:click="patentmodel.p_way = p">{{p.des}}</span>
+                        </div>
+                        <div class="cooperation_btn">
+                            <button class="reset" v-on:click="Reset(3, 1)">重置</button>
+                            <button class="determine" v-on:click="determine(3, 1)">确定</button>
+                        </div>
+                    </div>
+                    <div class="patent_down" style="display:none;">
+                        <div class="patent_nav">
+                            <span v-if="p.val != 2" v-for="p in patentmodel.patentStatus" v-on:click="patentmodel.p_status = p">{{p.des}}</span>
+                        </div>
+                        <div class="cooperation_btn">
+                            <button class="reset" v-on:click="Reset(3, 2)">重置</button>
+                            <button class="determine" v-on:click="determine(3, 2)">确定</button>
+                        </div>
+                    </div>
+                    <div class="patent_down" style="display:none;">
+                        <div class="patent_nav">
+                            <span v-for="p in patentmodel.patentType" v-on:click="patentmodel.p_type = p">{{p.des}}</span>
+                        </div>
+                        <div class="cooperation_btn">
+                            <button class="reset" v-on:click="Reset(3, 3)">重置</button>
+                            <button class="determine" v-on:click="determine(3, 3)">确定</button>
+                        </div>
+                    </div>
+                </ul>
+                <!--专利方式、状态、类型-->
+                <div v-if="searchmodel.dt == 5" class="contentOne">
+                    <scroller ref="child1" v-bind:on-refresh="eReresh" v-bind:on-infinite="eAppend" v-bind:refreshText="refreshText" v-bind:noDataText="noDataText" @*style="top: 169px;"*@>
+                        <ul class="experts_content" style="display: block;" v-show="searchmodel.dt == 5">
+                            <li style="border-bottom: 1px solid #ddd;padding: 0.20rem 3%;" v-for="demand in demands[searchmodel.dt]" v-if="demand.Id > 0">
+                                <a class="need_a" v-bind:href="'/patent/details/' + demand.Id">                               
+                                    <div class="experts_right" style="width:100%">
+                                        <div class="li_title"  style="width:100%">
+                                            <span v-html="demand.OthersNoAna.ExpertMT ? demand.Title + '--' + demand.OthersNoAna.ExpertMT :demand.Title"></span>
+                                            <span>{{patentStatus(demand.AttentionNum)}}</span>
+                                        </div>
+                                        <p class="introduce introduce_box" style="">{{demand.Content}}</p>
+                                        <ul class="apply_base">
+                                            <li style="width:33.33%;float:left;text-align:left;font-size:0.26rem;color:#969696">
+                                                {{patentmoney(demand.OthersNoAna.Amount)}}
+                                            </li>
+                                            <li style="width:33.33%;float:left;text-align:center;font-size:0.26rem;color:#969696">
+                                                {{demand.BugType_1}}
+                                            </li>
+                                            <li style="width:33.33%;float:left;text-align:right;font-size:0.26rem;color:#969696">
+                                               {{converttmode(demand.BugType_2)}}
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </a>
+                            </li>
+                        </ul>
+                    </scroller>
+                </div>
+               
+
+            </div>    
+            <div class="sorry" style="margin-top:4.45rem;" v-show="totalfortype == 0 && !loading">
+                <img src="/content/image/failure.png" />
+                <h3>非常抱歉</h3>
+                <p>未能找到与“<span>{{searchmodel.key}}</span>”相关的信息，你可以尝试<br />搜索其他关键词</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section foot
+{
+    <script src="~/dist/search.list.bundle.js"></script>
+}

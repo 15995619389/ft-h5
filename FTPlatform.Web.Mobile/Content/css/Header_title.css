@@ -1,0 +1,65 @@
+/*------修改头部-----*/
+.oHeader1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.search {
+    position: absolute;
+    top: 9px;
+    right: 0px;
+    height: 27px;
+    width: 92%;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+}
+.mui-bar {
+    height: 44px;
+    background: #fff;
+}
+.oHeader1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.cataloglist {
+    background: url(../../image/rectangular.png) no-repeat scroll right center transparent;
+    background-size: 0.25rem 0.15rem;
+    float: left;
+    width: 1.2rem;
+    height: 100%;
+    padding: 0 0;
+    padding-left: 0.30rem;
+    color: #969696;
+}
+.on_seek {
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0.11rem;
+}
+.cataloglist dt {
+     margin-top: 0px; 
+}
+.seek_img {
+    width: 0.25rem;
+    height: 0.25rem;
+    margin: auto;
+    margin-top: 6px;
+}
+#area{
+	font-size: 0.28rem;
+    margin-left:0.10rem
+}
+input[type=text]{
+	font-size: 0.32rem;
+	width: 62%;
+    height: 24px;
+    border: none;
+    padding: 0px 0px;
+    margin-bottom: 0px;
+    padding-left: 10px;
+    color: #666;
+    text-align:left;
+}

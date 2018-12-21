@@ -1,0 +1,103 @@
+﻿body {
+}
+.division{
+    margin-top:15px;
+}
+.text-inrod{
+    font-size:0.26rem;
+}
+.tit-md{
+    font-size:0.26rem;
+    color:#0e5bb5;
+    text-align:center;
+    margin:10px 0;
+}
+.mt-pic{
+width:100%;
+   }
+.mt-pic img{
+    width:100%;
+}
+.toptp{
+    margin-top:10px;
+}
+.list-pc{
+    width:100%;
+    padding:0 10px;
+    box-sizing:border-box;
+    overflow:hidden;
+    text-align:center;
+}
+.list-pc ul li{
+    display:inline-block;
+    text-align:center;
+    width:49%;
+    margin:0 auto;
+}
+.list-pc ul li:last-child{
+    padding-left:3px;
+    box-sizing:border-box;
+}
+.list-pc ul li img{
+    min-height:2.1rem;
+    width:100%;
+}
+.list-pc ul li .text-js{
+    margin-top:0.1rem;
+    color:#363636;
+    font-size:0.24rem;
+    line-height:0.26rem;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    height: 30px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    white-space: normal;
+}
+.sevsr-gird{
+    width:100%;
+    padding:10px 5px;
+    box-sizing:border-box;
+}
+.sevsr-gird ul li{
+    display:block;
+    overflow:hidden;
+    border-bottom:#ddd solid 1px;
+    padding:10px 0;
+}
+.sevsr-gird ul li:last-child{
+    border-bottom:none;
+}
+.sevsr-gird ul li .icon-sev{
+      width:13%;
+      float:left;
+}
+.sevsr-gird ul li .icon-sev .peo {
+        display:inline-block;
+        width:0.89rem;
+        height:0.89rem;
+        background-image: url('../../image/MilitaryCivilian/meeting/peo.png');
+        background-size:100%;
+    }
+.sevsr-gird ul li .sev-text{
+      width:87%;
+      float:left;
+      padding-left:10px;
+      box-sizing:border-box;
+}
+.sevsr-gird ul li .sev-text h3{
+    font-size:0.28rem;
+    color:#595757;
+}
+.sevsr-gird ul li .sev-text p{
+    font-size:0.24rem;
+    margin-bottom:0;
+}
+.sevsr-gird ul li .icon-sev .metol{
+       display:inline-block;
+       width:0.89rem;
+       height:0.89rem;
+       background-image: url('../../image/MilitaryCivilian/meeting/cil.png');
+       background-size:100%;
+}

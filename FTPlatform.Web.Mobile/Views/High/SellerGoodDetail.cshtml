@@ -1,0 +1,138 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    ViewBag.Title = "商品详情";
+}
+@section head{
+    <link rel="stylesheet" href="~/content/css/high/sellersettled.css" />
+    <link rel="stylesheet" href="~/content/css/high/sellerpublishgood.css" />
+    <style>
+        html, body, .mui-content {
+            background: none;
+        }
+
+        .shop_info, .contact_info {
+            margin-bottom: 0.15rem;
+            border-bottom: none;
+            background: #fff;
+        }
+
+        .good_text, .good_name, .good_label {
+            font-size: 0.28rem;
+            color: #888;
+            width: 80%;
+            float: right;
+        }
+        .good_name{
+            text-align:right
+        }
+        .good_text {
+            width: 100%;
+            text-indent: 2em;
+            margin-bottom:10px
+        }
+.good_text p{
+    margin-bottom:0
+}
+        .good_label {
+            text-align: right;
+        }
+
+        .auditReason {
+            padding: 0.20rem;
+            overflow: hidden;
+            font-size: 0.28rem;
+            color: #e0983a;
+            background: #fff8e6;
+            border-bottom: 1px solid #f2e9b8;
+        }
+
+            .auditReason span {
+                display: inline-block;
+                width: 0.29rem;
+                height: 0.29rem;
+                line-height: 0.29rem;
+                text-align: center;
+                font-size: 0.24rem;
+                color: #fff;
+                background: #e0983a;
+                border-radius: 50%;
+                margin-right: 5px;
+                padding-bottom: 5px;
+            }
+    </style>
+}
+@section foot{
+    <script src="~/dist/high.sellergooddetail.bundle.js"></script>
+}
+
+<div id="container" v-cloak>
+    <div class="publishGood">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+            <h1 class="mui-title">商品详情</h1>
+        </header>
+        <div class="mui-content l-scrollable" style="background:#efeff4;padding-bottom:1.00rem">
+            <div class="auditReason" v-show="good.ProcessState==2">
+                <span>!</span>审核不通过（原因：{{good.AuditNotMsg}}）
+            </div>
+            <ul class="shop_info">
+                <li>
+                    <span class="span_text">商品名称</span>
+                    <div class="good_name">{{good.Name}}</div>
+                </li>
+                <li>
+                    <span class="span_text">应用领域</span>
+                    <div class="good_label">{{good.ApplicationAreaText}}</div>
+                </li>
+                <li>
+                    <div class="li_title">
+                        <span class="span_text">商品图片</span>
+                    </div>
+                    <ol class="upload_box" v-if="good.ArticleImgList&&good.ArticleImgList.length>0">
+                        <li v-for="img in good.ArticleImgList"><img v-lazy="img.ImgPath" class="upload_img" /></li>
+                    </ol>
+                </li>
+            </ul>
+            <ul class="shop_info">
+                <li style="border-bottom:0;padding-bottom:0">
+                    <span class="span_text">产品概述</span>
+                </li>
+                <li style="padding:0 0.20rem">
+                    <div class="good_text">{{good.Introduction}}</div>
+                </li>
+            </ul>
+            <ul class="shop_info">
+                <li style="border-bottom:0;padding-bottom:0">
+                    <span class="span_text">产品说明</span>
+                </li>
+                <li style="padding:0 0.20rem">
+                    <div class="good_text" v-html="good.Description"></div>
+                </li>
+            </ul>
+            <ul class="shop_info">
+                <li style="border-bottom:0;padding-bottom:0">
+                    <span class="span_text">备注</span>
+                </li>
+                <li style="padding:0 0.20rem">
+                    <div class="good_text">{{good.Remark}}</div>
+                </li>
+            </ul>
+
+            <ul class="shop_info">
+                <li>
+                    <span class="span_text">计量单位</span>
+                    <div class="good_label">{{good.MeasureUnit}}</div>
+                </li>
+                <li>
+                    <span class="span_text">起订量</span>
+                    <div class="good_label">{{good.OrderQuantity}}</div>
+                </li>
+                <li>
+                    <span class="span_text">销售价格</span>
+                    <div class="good_label" v-if="good.SalePrice=='0.00'">面议</div>
+                    <div class="good_label" v-else>￥{{good.SalePrice}}</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

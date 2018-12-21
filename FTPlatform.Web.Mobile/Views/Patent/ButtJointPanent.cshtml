@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "对接专利管理";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/Content/css/myBusiness/myRecommended/releaseTechnology.css" />
+}
+<style>
+    .content_nav li:nth-child(1){
+        width:18%
+    }
+    .content_nav li:nth-child(3){
+        width:22%
+    }
+   
+</style>
+<div id="container" v-cloak>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/index"></a>
+        <h1 class="mui-title">对接专利管理</h1>
+    </header>
+    <div class="mui-content">
+        <div style="position:absolute;z-index:9;width:100%;height:43px">
+            <ul class="content_nav">               
+                <li v-bind:class="{text_color:(datamodel.status==0)}" v-on:click="Show(0)">全部</li>
+                <li v-bind:class="{text_color:(datamodel.status==1)}" v-on:click="Show(1)">申请中</li>
+                <li v-bind:class="{text_color:(datamodel.status==2)}" v-on:click="Show(2)">平台撮合中</li>
+                <li v-bind:class="{text_color:(datamodel.status==3)}" v-on:click="Show(3)">已签约</li>
+                <li v-bind:class="{text_color:(datamodel.status==4)}" v-on:click="Show(4)">交易完成</li>
+            </ul>
+        </div>
+        <!-----全部------->
+        <scroller v-show="loading||panentDetail.length>0||!Nodata" ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" class="" style="top:28px">
+            <div>
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media" v-for="patent in panentDetail" v-on:click="Detail(patent)">
+                        <a>
+                            <img class="mui-media-object mui-pull-left" v-lazy="patent.PatentCertificate" >
+                            <div class="mui-media-body" >
+                                <div class="oTitle" style="overflow:hidden">
+                                    <p class="mui-ellipsis">{{patent.PatentName}}</p>
+                                    <span class="oSpan">{{patent.TradeStatusVal}}</span>
+                                </div>
+                                <p class="mui-ellipsis" style="margin:0">{{patent.PantentInfo}}</p>
+                                <p class="date" style="text-align:left">{{patent.PatentAmount}}</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>               
+            </div>
+        </scroller>
+        <div  style="display:block;" class="not_release" v-show="panentDetail.length ==0&&!loading&&Nodata">
+            <img src="/Content/image/failure.png" />
+            <p>暂无信息，您还未发布过任何专利</p>
+            <a href="/patent/publish">发布专利</a>
+        </div>
+    </div>
+</div>
+@section foot{
+    <script src="~/dist/patent.buttjointpatent.bundle.js"></script>
+}
+

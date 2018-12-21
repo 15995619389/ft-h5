@@ -1,0 +1,66 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    ViewBag.title = "在线反馈";
+}
+    
+    
+    <link rel="stylesheet" href="~/Content/css/myBusiness/MyFeedback/OnlineFeedback.css" />
+<style>
+    .popup {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        width: 80%;
+        height: 4.20rem;
+        z-index: 1000;
+        display: none;
+        background: #fff;
+        border-radius: 10px;
+        margin-left: -40%;
+        margin-top: -2.10rem;
+    }
+</style>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/feedback/myfeedback"></a>
+        <h1 class="mui-title">在线反馈</h1>
+    </header>
+    <div class="mui-content" style="background: #fff;">
+        <div class="problem">
+            <div class="description">
+                <h3 class="description_title">问题类型</h3>
+                <span value="1">注册问题</span>
+                <span value="2">登录密码及寻找问题</span>
+                <span value="3">发布需求问题</span>
+                <span value="4">对接需求问题</span>
+                <span value="5">页面Bug问题</span>
+                <span value="6">功能建议</span>
+                <span value="7">其他</span>
+            </div>
+        </div>
+        <div class="CustomerFeedback">
+            <div class="description">
+                <h3 class="description_title">问题描述</h3>
+                <textarea class="text" rows="5" id="Describe" required="required" placeholder="请输入您的具体问题描述"></textarea>
+            </div>
+        </div>
+        <div class="btn">
+            <button type="button" class="mui-btn mui-btn-blue" id="submit">提交</button>
+        </div>
+    </div>
+<div id="mask"></div>
+<div class="popup">
+    <div class="btn_box">
+        <span style="margin-left: 20px;">提示</span>
+        <a class="bttn disappear">X</a>
+    </div>
+    <p class="p_text">感谢您的反馈，您所提出的问题我们正在进行核实，请耐心等待！</p>
+    <div class="btn_footer">
+        <div class="btn_footer1">
+            <button type="button" class="mui-btn mui-btn-blue mui-btn-block confirm">继续反馈</button>
+            <button type="button" class="mui-btn  mui-btn-block cancel disappear" style="background: #ddd;">取消</button>
+        </div>
+    </div>
+</div>
+@section foot{
+    <script src="~/dist/feedback.onlinefeedback.bundle.js"></script>
+}

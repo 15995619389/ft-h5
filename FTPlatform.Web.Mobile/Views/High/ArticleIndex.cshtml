@@ -1,0 +1,133 @@
+﻿
+@{
+    ViewBag.Title = "工业精品-首页";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+<link rel="stylesheet" href="/content/css/pulli.css" />
+<link rel="stylesheet" href="~/content/css/high/index.css" />
+}
+@section foot
+{
+    <script src="~/dist/high.index.bundle.js"></script>
+}
+
+<div id="container" v-cloak>
+    <popup v-model="IsPopupVisiable" position="bottom" style="width:100%;height:2.00rem;text-align:center;padding:0.40rem 0px">
+        <div>
+            <p style="margin-bottom:0.20rem" v-html="PopupMessage"></p>
+            <div>
+                <button v-on:click="HidePopup">取消</button>
+                <button v-on:click="PopupRedirect">确定</button>
+            </div>
+        </div>
+    </popup>
+    <header class="oHeader mui-bar mui-bar-nav">
+        <searchbar></searchbar>
+    </header>
+    <foot_item ref="footitem"></foot_item>
+    <div class="mui-content l-scrollable" style="padding-bottom:55px">
+        @*<img class="index_img" src="~/Content/image/high/high_banner.png" />*@
+        <div class="banner_scroll">
+            <div id="slider" class="mui-slider baner">
+                <div class="mui-slider-group mui-slider-loop">
+                    <!--额外增加的一个节点(循环轮播：第一个节点是最后一张轮播)-->
+                    <template v-if="banners.length>0">
+                        <div class="mui-slider-item mui-slider-item-duplicate" v-if="index == (banners.length - 1)" v-for="(ban,index) in banners">
+                            <a v-bind:href="ban.RedirectUrl">
+                                <img v-bind:src="ban.AdvUrl">
+                            </a>
+                        </div>
+                        <div class="mui-slider-item" v-for="ban in banners">
+                            <a v-bind:href="ban.RedirectUrl">
+                                <img v-bind:src="ban.AdvUrl">
+                            </a>
+                        </div>
+                        <div class="mui-slider-item mui-slider-item-duplicate" v-if="index == 0" v-for="(ban,index) in banners">
+                            <a v-bind:href="ban.RedirectUrl">
+                                <img v-bind:src="ban.AdvUrl">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div class="mui-slider-item mui-slider-item-duplicate">
+                            <a><img src="~/Content/image/high/high_banner.png"></a>
+                        </div>
+                        <div class="mui-slider-item">
+                            <a><img src="~/Content/image/high/high_banner.png"></a>
+                        </div>
+                        <div class="mui-slider-item mui-slider-item-duplicate">
+                            <a><img src="~/Content/image/high/high_banner.png"></a>
+                        </div>
+                    </template>
+
+                </div>
+                <div class="mui-slider-indicator">
+                    <div class="mui-indicator" v-bind:class="{'mui-active':(index == 0)}" v-for="(ban,index) in banners"></div>
+                </div>
+            </div>
+
+        </div>
+        <ul class="four_nav">
+            <li v-on:click="ClickUrl(1)">
+                <a>
+                    <i></i>
+                    <p>商户入驻</p>
+                </a>
+            </li>
+            <li v-on:click="ClickUrl(2)">
+                <a>
+                    <i></i>
+                    <p>发布产品</p>
+                </a>
+            </li>
+            <li v-on:click="ClickUrl(3)">
+                <a>
+                    <i></i>
+                    <p>我的订单</p>
+                </a>
+            </li>
+            <li v-on:click="ClickUrl(4)">
+                <a>
+                    <i></i>
+                    <p>卖家首页</p>
+                </a>
+            </li>
+        </ul>
+        <div class="model_title"><h3><span>热门商品</span></h3> <a href="/higharticlelist/" class="more_viw">更多商品 &gt;</a></div>
+        @*<ul class="mui-table-view ">
+            <li  class="mui-table-view-cell mui-media" v-for="heghdata in highdetail" style="padding:0">
+                <a v-bind:href="'/higharticle/'+heghdata.Id" style="padding:0">
+                    <img class="mui-media-object mui-pull-left" v-lazy="heghdata.ImgUrl"> 
+                    <div class="content_body">
+                        <h3>{{heghdata.Name}}</h3>
+                        <p class="p_text">{{heghdata.Introduction}}</p>
+                        <p class="company_name">{{heghdata.CompanyName}}</p>
+                    </div>
+                </a>
+            </li>           
+        </ul>*@
+        <ul class="high_list">
+            <li v-for="heghdataS in highSpread">
+                <a v-bind:href="'/higharticle/'+ heghdataS.Id">
+                    <img v-lazy="heghdataS.ImgUrl" class="list_img" />
+                    <div class="content_body">
+                        <h3>{{heghdataS.Name}}</h3>
+                        <p class="company_name">{{heghdataS.CompanyName}}</p>
+                    </div>
+                </a>
+            </li>
+            <li v-for="heghdata in highdetail">
+                <a v-bind:href="'/higharticle/'+heghdata.Id">
+                    <img v-lazy="heghdata.ImgUrl" class="list_img"/>
+                    <div class="content_body">
+                        <h3>{{heghdata.Name}}</h3>
+                        <p class="company_name">{{heghdata.CompanyName}}</p>
+                    </div>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <rightsidebar></rightsidebar>
+</div>
+

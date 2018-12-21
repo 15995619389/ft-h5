@@ -1,0 +1,410 @@
+﻿.mui-content {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    background: url('../../image/ftTwoyears/ft_bg.png') repeat;
+}
+.mui-pull-right {
+    margin-top: 14px;
+}
+.mui-pull-right img {
+    width: 18px;
+    height: 17px;
+}
+.banner_bg{
+    width:100%;
+    height:4.05rem;
+}
+.p_text{
+    font-size:0.24rem;
+    margin:0;
+    line-height:0.34rem;
+    padding:0 3%;
+    color:#b63822;
+    text-align:left
+}
+.content_one{
+    padding-top:0.20rem;
+    overflow:hidden;
+    width:100%;
+    height:auto;
+    position:relative
+}
+.content_one .one_img{
+    width:5.27rem;
+    height:1.09rem;
+    margin:0 auto
+}
+.vote {
+    padding:0.30rem;
+    margin:0 auto;
+    width: 7.04rem;
+    height: 5.37rem;
+    background: url('../../image/ftTwoyears/vote_bg.png') no-repeat;
+    background-size:100% 100%;
+}
+.vote_title{
+    font-size:0.26rem;
+    line-height:0.38rem;
+    color:#411e09
+}
+.vote_ul{
+    overflow:hidden;
+    padding:0.10rem 13%;
+}
+.vote_ul li{
+    float:left;
+}
+.vote_ul li:nth-child(1) img{
+    width:1.30rem;
+    height:1.30rem;
+    margin-bottom:0.10rem
+}
+.vote_ul li p{
+    font-size:0.26rem;
+    color:#411e09;
+    text-align:center;
+    margin-bottom:0
+}
+.vote_ul li:nth-child(2) img{
+    width:0.62rem;
+    height:0.09rem;
+    margin-top:0.60rem
+}
+.vote_ul li:nth-child(2){
+    margin:0 0.40rem
+}
+.vote_ul li:nth-child(3) img{
+    width:1.99rem;
+    height:1.24rem;
+    margin-bottom:0.15rem
+}
+.vote_btn{
+    display:block;
+    width:2.39rem;
+    height:0.57rem;
+    line-height:0.57rem;
+    text-align:center;
+    font-size:0.28rem;
+    color:#fff;
+    background:url('../../image/ftTwoyears/vote_btn.png') no-repeat;
+    background-size:100% 100%;
+    margin:0 auto
+}
+.time{
+    overflow:hidden;
+    margin-top:0.20rem;
+    font-size:0.24rem;
+    text-align:center;
+    color:#2e0000
+}
+.time span{
+    font-size:0.28rem;
+    color:#ea3635
+}
+.content_two,.content_three,.rule{
+    overflow:hidden;width:100%;height:auto;
+    margin-top:0.20rem
+}
+.two_img{
+    margin:0 auto;
+    width:6.03rem;
+    height:1.10rem;
+}
+.surprise_two{
+    padding:0.30rem;
+    width:7.13rem;
+    height:4.19rem;
+    margin:0 auto;
+    background:url("../../image/ftTwoyears/surprise.png") no-repeat;
+    background-size:100% 100%;
+}
+.surprise_two p,.surprise_three p{
+    padding-top:0.10rem;
+    font-size: 0.26rem;
+    line-height: 0.38rem;
+    color: #411e09;
+}
+.surprise_ul{
+    margin-top:0.50rem;
+    overflow:hidden;
+    height:auto
+}
+.surprise_ul li{
+    float:left;
+    margin-left:0.20rem;
+
+}
+.oli{
+    height:0.75rem;
+    margin-bottom:0.20rem
+}
+.li1_bg{
+    width:0.81rem;
+    height:0.65rem;
+    margin-left: 0.20rem;
+}
+.li2_bg{
+    width:0.78rem;
+    height:0.74rem;
+    margin-left: 0.30rem;
+}
+.li3_bg{
+    width:0.68rem;
+    height:0.75rem;
+    margin-left: 0.33rem;
+}
+.li4_bg{
+    width:0.63rem;
+    height:0.68rem;
+    margin-left: 0.38rem;
+}
+.surprise_ul li a{
+    display:block;
+    width:1.33rem;
+    height:0.41rem;
+    background:url("../../image/ftTwoyears/vote_btn.png") no-repeat;
+    background-size:100% 100%;
+    color:#fff;
+    text-align:center;
+    line-height:0.41rem;
+    font-size:0.22rem
+}
+.three_img{
+    width:5.27rem;
+    height:1.09rem;
+    margin:0 auto
+}
+.surprise_three{
+    width:7.12rem;
+    height:4.36rem;
+    margin:0 auto;
+    padding: 0.30rem;
+    background:url("../../image/ftTwoyears/surprise_three.png") no-repeat;
+    background-size:100% 100%
+}
+.surprise_three p{
+    width:98%;
+    margin:0 auto
+}
+.three_ul{
+  width:5.60rem;
+  margin:0 auto;
+    overflow: hidden;
+    padding-top:0.20rem
+}
+.three_ul li{
+    float:left;
+    text-align:center
+}
+.three_div{
+    height:1.09rem;
+}
+.three1_bg{
+    width:1.38rem;
+    height:0.84rem;
+    margin-left:0
+}
+.text{
+    font-size:0.22rem;
+    text-align:center;
+    color:#411e09
+}
+.three2_bg{
+    width:1.15rem;
+    height:1.09rem;
+    margin-left:0.30rem
+}
+.three3_bg{
+    width:1.19rem;
+    height:.96rem;
+    margin-left:0.20rem
+}
+.attention{
+    padding-top:0.10rem;
+    width:95%;
+    margin:0 auto;
+    font-size:0.22rem;
+    color:#411e09;
+    line-height:0.32rem
+}
+.rule{
+    padding:0.20rem 2% 1.00rem;
+}
+.rule_img{
+    width:1.67rem;
+    height:0.37rem;
+    margin-bottom:0.20rem
+}
+.rule ul{
+    overflow:hidden;
+    height:auto;
+    padding:0 2%;
+    margin:0 auto
+}
+.rule ul li{
+    font-size:0.24rem;
+    color:#411e09;
+    line-height:0.36rem
+}
+/*--弹窗--*/
+#mask{
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    background: #333;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: none;
+}
+.draw_model{
+    padding:0 0.50rem;
+    width:5.92rem;
+    height:4.30rem;
+    position:fixed;
+    top:50%;
+    left:50%;
+    margin-left:-2.96rem;
+    background:#fff;
+    border-radius:5px;
+    margin-top:-2.15rem;
+    z-index:1000;
+    display:none;
+}
+.pop_bg {
+    width: 3.94rem;
+    height: 1.91rem;
+    margin-top: -0.40rem;
+    background: url('../../image/ftTwoyears/pop_bg.png') no-repeat;
+    background-size:100% 100%;
+    margin-left:0.20rem;
+    margin-bottom:0.40rem
+}
+.span_colse {
+    display: block;
+    position: absolute;
+    top: 0.20rem;
+    right: 0.20rem;
+    width: 0.53rem;
+    height: 0.53rem;
+    background: url('../../image/ftTwoyears/none.png') no-repeat;
+    background-size:100% 100%;
+}
+.pop_text{
+    font-size:0.28rem;
+    text-align:center;
+    margin:0;
+    color:#444
+}
+.pop_btn {
+    overflow:hidden;
+    margin-top:0.20rem
+}
+.pop_btn a{
+    display:block;
+    width:2.38rem;
+    height:0.72rem;
+    background: url('../../image/ftTwoyears/vote_btn.png') no-repeat;
+    background-size:100% 100%;
+    line-height:0.72rem;
+    text-align:center;
+    color:#fff;
+    font-size:0.28rem;
+    float:left
+}
+.hint,.hint11{
+    overflow:hidden;
+    margin-top:0.10rem
+}
+.hint img{
+    width:0.32rem;
+    height:0.29rem;
+    float:left;
+    margin-top: 0.10rem;
+    margin-right: 0.05rem;
+}
+.hint p,.hint11 p{
+    display:block;
+    float:left;
+    font-size:0.28rem;
+    color:#444;
+    width:92%
+}
+.hint11 i{
+    display:block;
+    width:0.32rem;
+    height:0.29rem;
+    float:left;
+    background:url('../../image/ftTwoyears/hint.png') no-repeat;
+    background-size:100% 100%;
+    margin-top: 0.10rem;
+    margin-right: 0.05rem;
+}
+/*--------获奖名单--------*/
+.awards{
+    padding-top:.50rem;
+    width:100%;
+    z-index:1000;
+    height:8.85rem;
+    position:fixed;
+    top:1.00rem;
+    left:0;
+    background:url(../../image/ftTwoyears/awards.png) no-repeat;
+    background-size:100% 100%;
+    display:none
+}
+.awards_title{
+    text-align:center;
+    color:#fff;
+    font-size:0.40rem
+}
+.p_text{
+    width:5.95rem;
+    overflow:hidden;
+    font-size:0.24rem;
+    color:#fff;
+    text-align:center;
+    line-height:0.36rem;
+    margin:0 auto 0.20rem;
+}
+.awards_ul{
+    overflow:auto;
+    width:5.95rem;
+    height:6.02rem;
+    background:url(../../image/ftTwoyears/awards_ul.png) no-repeat;
+    background-size:100% 100%;
+    margin:0 auto
+}
+.awards_ul li{
+    overflow:hidden;    
+}
+.awards_box{
+     overflow:hidden;
+    margin:0.20rem 0.30rem 0;
+    padding-bottom:0.10rem;
+    border-bottom:1px dashed #b75c21;
+}
+.h3_title{
+    font-size:0.36rem;
+    color:#a31428;
+    font-weight:800;
+     overflow:hidden;
+    margin:0.20rem 0.30rem 0;
+}
+.awards_ul li p{
+    font-size:0.28rem;
+    color:#a31428;
+    line-height:0.36rem;
+    margin-bottom:0.05rem
+}
+.win_colse {
+    display: inline-block;
+    position: absolute;
+    right: 0.60rem;
+    width: 0.47rem;
+    height: 0.47rem;
+    background: url('../../image/ftTwoyears/zj_name.png') no-repeat;
+    background-size:100% 100%;
+}

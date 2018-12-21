@@ -1,0 +1,147 @@
+﻿
+/*新增搜索跳转页面样式*/
+.searchfixd {
+	position: fixed;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	font: 13px/1.5 arial;
+	z-index: 999999;
+	background-color: #fff;
+	display: none;
+}
+
+.search-wrap {
+	width: 100%;
+	padding: 20px;
+	box-sizing: border-box;
+	position: relative;
+    margin-top:20px;
+}
+
+.search-wrap .recent-inner {
+	overflow: hidden;
+}
+
+.search-wrap .recent-inner span {
+	float: left;
+}
+
+.search-wrap .recent-inner .del-icon {
+	width: 0.25rem;
+	height: 0.26rem;
+	display: inline-block;
+	background: url(/content/image/del.png) no-repeat;
+	background-size: 0.25rem 0.26rem;
+	float: left;
+	margin-top: 5px;
+}
+
+.search-wrap .recent-inner .search-tit {
+	width: 95%;
+	color: #666;
+	font-size: 0.28rem;
+    text-align:left
+}
+
+.search-wrap .recent-list {
+	width: 100%;
+	overflow: hidden;
+}
+
+.search-wrap ul {
+	border-top: none;
+	margin-top: 0.2rem;
+	 overflow: hidden;
+	padding-left: 0;
+}
+
+.search-wrap ul span {
+
+	/*width: 22%;*/
+	float: left;
+	height: 0.46rem;
+	text-align: left;
+	line-height: 0.46rem;
+	border: none;
+	margin-right: 3%;
+	color: #969696;
+}
+  .search-wrap  ul li {
+  /*width: 22%;*/
+  float: left;
+  height: 0.56rem;
+  text-align: left;
+  line-height: 0.56rem;
+  border: none;
+  margin-right: 3%;
+  margin-bottom: 10px;
+  color: #969696;
+  }
+.search-wrap ul span a {
+	color: #969696;
+}
+
+.search-wrap .hot-search {
+	width: 100%;
+	margin-top: 0.2rem;
+}
+
+.search-wrap .hot-search h3 {
+	font-size: 0.28rem;
+	display: block;
+	color: #666;
+	font-weight: 500;
+    text-align:left
+}
+
+.search-inpt {
+	margin-left: 0.2rem;
+}
+.delete-item{
+	background: #444;
+	opacity: 0.8;
+	border-radius: 5px;
+	position: absolute;
+	top: 1.8rem;
+	width: 60%;
+	margin: 0 auto;
+	color: #fff;
+	text-align: center;
+	left: 20%;
+	padding: 0.3rem;
+	box-sizing: border-box;
+	display: none;
+}
+.delete-item h4{
+	font-weight: 500;
+	font-size: 0.28rem;
+}
+.delete-item .delete-btngroup{
+	width: 100%;	
+	margin: 0 auto;
+	margin-top: 0.4rem;
+	
+}
+.delete-item .delete-btngroup a{
+	display: inline-block;
+	width: 40%;
+	color: #fff;
+	font-size: 0.3rem;
+}
+
+.searchfixd input[type=text]{
+	width: 90%;
+	padding: 0 0;
+	text-align: center;
+	font-size: 0.26rem;
+    line-height:25px;
+    height:25px;
+}
+ input[type=text]{
+    height:25px !important
+}
+.seaech-main{
+    padding-top:10px
+}

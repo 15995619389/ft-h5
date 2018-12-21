@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "订单管理";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/myBusiness/myRecommended/releaseTechnology.css" rel="stylesheet" />
+    <link href="~/Content/css/shop/smart.css" rel="stylesheet" />
+    <link href="~/Content/css/shop/buttonClass.css" rel="stylesheet" />
+    <style type="text/css">
+        .layui-layer {
+            background-color: #fff;
+        }
+
+        .layui-layer-hui .layui-layer-content {
+            background-color: rgba(0,0,0,.6);
+        }
+
+        .backcolor {
+            color: red;
+            text-align: center;
+            width: 100%;
+            height: 10%;
+            border: 0px;
+            background-color: transparent;
+        }
+
+        .mui-content, html {
+            background: #f5f5f5;
+        }
+
+        .mui-bar-nav ~ .mui-content {
+            padding-top: 44px;
+        }
+
+        .custom-wrap .custom-list .subject .sub-text p {
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: box;
+            display: -webkit-box;
+            line-clamp: 2;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            letter-spacing: 0px;
+            height: 30px;
+            line-height: 15px;
+            font-size: 12px;
+        }
+
+        .mui-table-view {
+            background: #fff;
+        }
+
+        .pay {
+            margin-bottom: 0;
+        }
+    </style>
+}
+@section foot{
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/Content/Plugins/layer/layui.all.js"></script>
+    <script src="~/dist/mall.orderfromindex.bundle.js"></script>
+    <script>
+        $(function () {
+            $(".mui-content .content_nav li").click(function () {
+                $(this).addClass("text_color").siblings().removeClass("text_color");
+            })
+            $("body").on("touchmove", function (e) {
+                e.preventDefault();
+            });
+            $("body").off("touchmove");
+        })
+    </script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mall/"></a>
+    <h1 class="mui-title">订单管理</h1>
+</header>
+<div class="mui-content">
+    <ul class="content_nav" style="">
+        <li class="text_color" v-on:click="SeachIndex(-1)">全部</li>
+        <li v-on:click="SeachIndex(0)">待付款</li>
+        <li v-on:click="SeachIndex(1)">已付款</li>
+        <li v-on:click="SeachIndex(8)">订单完成</li>
+        <li v-on:click="SeachIndex(99)">售后</li>
+    </ul>
+    <!-----全部------->
+    <div class="tabContent mui-scroll-wrapper" id="refreshContainer" style="display: block;position:fixed;margin-top:87px;" v-cloak>
+        <div class="custom-wrap mui-scroll">
+            <section>
+                <ul class="mui-table-view" v-for="fo in order">
+                    <li class="mui-table-view-cell mui-media orderlist">
+                        <div class="custom-list orderitem">
+                            <div class="cust-top">
+                                <span style="width:70%">订单编号：{{fo.OrderCode}}</span>
+                                <span style="width:30%" class="apply">{{fo.OrderStatus|type}}</span>
+                            </div>
+                            <div class="subject" v-bind:code="fo.OrderCode" v-bind:odtype="fo.OrderStatus" id="odDetail">
+                                <div class="sub-pro" v-if="fo.ModityImg!=null">
+                                    <img v-bind:src="fo.ModityImg.Url + fo.ModityImg.ImgName +fo.ModityImg.ImgFix" />
+                                </div>
+                                <div class="sub-pro" v-else>
+                                </div>
+                                <div class="sub-text">
+                                    <h4>{{fo.ModityName}}</h4>
+                                    <p>{{fo.ModityAbstract}}</p>
+                                </div>
+                                <div class="sub-numbs">
+                                    <p><b>{{fo.ModityFact}}</b></p>
+                                    <p><del>{{fo.ModityCompute}}</del></p>
+                                    <p>X{{fo.Numbers}}</p>
+                                </div>
+                            </div>
+                            <div class="Checkout" v-if="fo.OrderStatus==0">
+                                <span>共{{fo.Numbers}}件商品</span>
+                                <span>折后合计：<b>{{fo.ZhScore}}</b>智币</span>
+                            </div>
+                            <div class="Checkout" v-else-if="fo.OrderStatus>0 && fo.OrderStatus<9">
+                                <span>共{{fo.Numbers}}件商品</span>
+                                <span>折后实付：<b v-if="fo.FactScore!=0">{{fo.FactScore}}<span>智币</span></b> <b v-if="fo.FactMoney!=0">{{fo.FactMoney}}<span>现金</span></b></span>
+                            </div>
+                            <div class="pay" v-if="fo.OrderStatus==0" v-bind:code="fo.OrderCode" id="subPay"><a href="javascript:;">付款</a></div>
+                            <div class="progress" style="margin-right: 10px; margin-top: 0px;" v-else-if="fo.OrderStatus==1 && fo.ModityType==1" v-bind:code="fo.OrderCode" id="Custome"><a href="javascript:;">申请售后</a></div>
+                            <div class="progress" style="margin-right: 10px; margin-top: 0px;" v-else-if="fo.OrderStatus==8 && fo.ModityType==1 && fo.TimeBit<=20" v-bind:code="fo.OrderCode" id="Custome"><a href="javascript:;">申请售后</a></div>
+                        </div>
+                    </li>
+                </ul>
+            </section>
+            @*<ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media orderlist">
+                        <div class="custom-list orderitem">
+                            <div class="cust-top">
+                                <span>订单编号：1234567890</span>
+                                <span class="apply">已付款</span>
+                            </div>
+                            <div class="subject">
+                                <div class="sub-pro">
+                                    <img src="../../image/shop/card.png" />
+                                </div>
+                                <div class="sub-text">
+                                    <h4>三网通手机充值卡</h4>
+                                    <p>支持移动、联通电信的100元话费充值</p>
+                                </div>
+                                <div class="sub-numbs">
+                                    <p><b>30000</b></p>
+                                    <p><del>6000</del></p>
+                                    <p>X3</p>
+                                </div>
+                            </div>
+                            <div class="Checkout">
+                                <span>共1件商品</span>
+                                <span>合计：<b>3000</b>智币</span>
+                            </div>
+                        </div>
+                    </li>
+                </ul>*@
+        </div>
+    </div>
+    <div id="dloag1" style='text-align:center;font-size:13px;display:none;margin-top:10%'>
+        <p style='color: rebeccapurple;'>兑换需支付<span style="color:#ff6525;" id="score1" v-text="cue.needScore"></span>智币<span style="color:#ff6525;" id="money" v-text="cue.suppleMoney"></span>现金.</p>
+        <p style='color: rebeccapurple;'>是否立即支付?</p>
+    </div>
+    <div id="dloag2" style='text-align:center;font-size:13px;display:none;margin-top:10%'>
+        <p style='color: rebeccapurple;'>兑换需支付<span style="color:#ff6525;" id="score2" v-text="cue.noNeedScore"></span>智币,</p>
+        <p style='color: rebeccapurple;'>是否立即支付?</p>
+    </div>
+</div>
+<div id="data"></div>

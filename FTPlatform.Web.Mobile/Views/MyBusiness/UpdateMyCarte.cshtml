@@ -1,0 +1,90 @@
+﻿@{
+    ViewBag.Title = "编辑名片";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+    
+    <link rel="stylesheet" href="/Content/css/myBusiness/basicInformation/EnterpriseInformation.css" />
+    <style>
+        html {
+            background: #f4f4f4;
+        }
+
+        .mui-btn {
+            text-align: center;
+            width: 94%;
+            margin: 0.40rem auto;
+            display: block;
+        }
+
+        .textarea_box, .business {
+            margin: 0.20rem 0px;
+            padding: 0.20rem 3%;
+            background: #fff;
+            overflow: hidden;
+            height: auto;
+        }
+
+            .textarea_box span, .business span {
+                float: left;
+                color: #444444;
+                font-size: 0.30rem;
+            }
+
+            .textarea_box textarea {
+                float: right;
+                width: 80%;
+                border: 0px solid #fff;
+                font-size: 0.30rem;
+                padding: 0px;
+                height: 1.50rem;
+                margin-bottom:0px
+            }
+
+            .business textarea {
+                float: right;
+                width: 80%;
+                border: 0px solid #fff;
+                font-size: 0.30rem;
+                padding: 0px ;
+                height: 1.50rem;
+                margin-bottom:0px
+            }
+    </style>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+        <h1 class="mui-title">编辑名片</h1>
+    </header>
+    <div class="mui-content" v-cloak>
+        <div class="information_box">
+            <div class="name_title">
+                <span>姓名:</span><span>{{carte.RealName}}</span>
+            </div>
+            <div class="name_title">
+                <span>手机号:</span><span>{{carte.Mobile}}</span>
+            </div>
+            <div class="name_title">
+                <span>领域:</span><span>{{BusCate}}</span>
+            </div>
+        </div>
+        <div class="information_box">
+            <div class="name_title">
+                <span>职位:</span><span>{{carte.Position}}</span>
+            </div>
+            <div class="name_title">
+                <span>邮箱:</span><span>{{carte.Email}}</span>
+            </div>
+        </div>
+        <div class="textarea_box">
+            <span>用户签名:</span>
+            <textarea cols="" name="" rows="" id="Signature" placeholder="请用一句话介绍您自己">{{carte.Signature|removeHTMLTag}}</textarea>
+        </div>
+        <div class="business">
+            <span>主要优势:</span>
+            <textarea cols="" name="" rows="" id="BusinessScope" placeholder="能力、优势以及业务范围">{{carte.BusinessScope|removeHTMLTag}}</textarea>
+        </div>
+        <button type="button" class="mui-btn mui-btn-blue" v-on:click="Submit()">保存</button>
+    </div>
+@section foot{
+<script src="~/dist/member.updatemycarte.bundle.js"></script>
+    }
+   

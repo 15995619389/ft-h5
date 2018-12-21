@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "我的订单";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    @*<link rel="stylesheet" href="/Content/css/myBusiness/myRecommended/releaseTechnology.css" />*@
+    <link rel="stylesheet" href="~/Content/css/high/buyerorder.css" />
+}
+<style>
+    .mui-table-view-cell > a:not(.mui-btn) {
+        white-space: normal;
+    }
+</style>
+<div id="container" v-cloak>
+    <div class="order_content" v-show="Type=='orderlist'">
+        <header class="mui-bar mui-bar-nav" style="background: #fff;">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+            <h1 class="mui-title">我的订单</h1>
+        </header>
+        <div class="mui-content l-scrollable">
+            <div style="position:absolute;z-index:9;width:100%;">
+                <ul class="content_nav">
+                    <li v-bind:class="{text_color:(datamodel.orderStatus==0)}" v-on:click="SortStatus(0)">全部</li>
+                    <li v-bind:class="{text_color:(datamodel.orderStatus==1)}" v-on:click="SortStatus(1)">待付款</li>
+                    <li v-bind:class="{text_color:(datamodel.orderStatus==2)}" v-on:click="SortStatus(2)">待发货</li>
+                    <li v-bind:class="{text_color:(datamodel.orderStatus==3)}" v-on:click="SortStatus(3)">待收货</li>
+                    <li v-bind:class="{text_color:(datamodel.orderStatus==4)}" v-on:click="SortStatus(4)">已完成</li>
+                    <div id="rightiocn" class="right_iocn" v-on:click="PanelVisibale"><img src="/Content/image/myClassify.png"></div>
+                </ul>
+                <ul class="allProject" v-show="IsMoreStatusPanelVisiable">
+                    <li v-bind:class="{text_color:(datamodel.orderStatus==5)}" v-on:click="SortStatus(5)">已取消</li>
+                    <li v-bind:class="{text_color:(datamodel.orderStatus==6)}" v-on:click="SortStatus(6)">售后</li>
+                </ul>
+            </div>
+            <!-----全部------->
+            <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" style="top:85px">
+                <ul class="order_box">
+                    <li v-for="orderList in orders">
+                        <div class="oTitle" style="overflow:hidden" v-on:click="SkipUrl(orderList.ordernumber)">
+                            <p class="mui-ellipsis"><i></i>{{orderList.mechantname}}</p>
+                            <span class="oSpan">{{orderList.orderstatusval}}</span>
+                        </div>
+                        <p class="order_number" v-on:click="SkipUrl(orderList.ordernumber)">订单号：<span>{{orderList.ordernumber}}</span></p>
+                        <div class="shop_info">
+                            <img class="shop_img" v-lazy="orderList.productimg" v-on:click="ProductDetail(orderList.productid)" />
+                            <p class="shop_text"  v-on:click="SkipUrl(orderList.ordernumber)">{{orderList.productname}}</p>
+                        </div>
+                        <div class="shop_price" v-on:click="SkipUrl(orderList.ordernumber)">
+                            <span>共{{orderList.orderquantity}}件商品</span>
+                            <span class="price_money">总价：<span>￥{{orderList.orderamount}}</span></span>
+                        </div>
+                        <div class="message_box">
+                            <!--我的留言-->
+                            <div class="my_message" v-show="orderList.ordermessage!=null&&orderList.ordermessage!=''">
+                                <img src="~/Content/image/high/message.png" class="message_bg" />
+                                <span class="span_text">我的留言</span>
+                                <div class="message_content">{{orderList.ordermessage}}</div>
+                            </div>
+                            <div class="my_message">
+                                <div class="btn">
+                                    <button v-show="orderList.orderstatus==1" type="button" v-on:click="Operation('payment',orderList.ordernumber)" class="mui-btn mui-btn-yellow mui-btn-outlined">付款</button>
+                                    <button v-show="orderList.orderstatus==1" type="button" v-on:click="Operation('cancel',orderList.ordernumber)" class="mui-btn mui-btn-gray mui-btn-outlined">取消</button>
+                                    <button v-show="orderList.orderstatus==2&&!orderList.isexpediting" type="button" v-on:click="Operation('expediting',orderList.ordernumber)" class="mui-btn mui-btn-yellow mui-btn-outlined">催货</button>
+                                    <span v-show="orderList.orderstatus==2&&orderList.isexpediting" style="padding:6px 15px;display:inline-block;float:right;font-size:0.28rem">已催货</span>
+                                    <button v-show="orderList.orderstatus==3" v-on:click="Operation('confirm',orderList.ordernumber)" type="button" class="mui-btn mui-btn-yellow mui-btn-outlined">确认收货</button>
+                                    <button v-show="orderList.orderstatus==4&&!orderList.iscomment" type="button" class="mui-btn mui-btn-yellow mui-btn-outlined" v-on:click="AppraiseShow(orderList.ordernumber)">评价</button>
+                                    <span v-show="orderList.orderstatus==4&&orderList.iscomment" style="padding:6px 15px;display:inline-block;float:right;font-size:0.28rem">已评价</span>
+                                    <button v-show="orderList.orderstatus==4" type="button" class="mui-btn mui-btn-yellow mui-btn-outlined"
+                                            v-on:click="AfterSaleShow(orderList)">
+                                        申请售后
+                                    </button>
+                                    <button v-show="orderList.orderstatus==5||orderList.orderstatus==4" v-on:click="Operation('delete',orderList.ordernumber)" type="button" class="mui-btn mui-btn-danger mui-btn-outlined">删除</button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </scroller>
+        </div>
+        <div id="pay"></div>
+    </div>
+    <!--评价-->
+    <div class="appraise_content" v-show="Type=='appraise'">
+        <header class="mui-bar mui-bar-nav" style="background: #fff;">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="AppraiseHide"></a>
+            <h1 class="mui-title">评价</h1>
+        </header>
+        <div class="mui-content l-scrollable">
+            <ul class="appraise_ul">
+                <li>
+                    <span>评分：</span>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=1)}" v-on:click="ChioceScore(1)"></i>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=2)}" v-on:click="ChioceScore(2)"></i>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=3)}" v-on:click="ChioceScore(3)"></i>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=4)}" v-on:click="ChioceScore(4)"></i>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=5)}" v-on:click="ChioceScore(5)"></i>
+                </li>
+                <li>
+                    <span style="width:100%">评价内容：</span>
+                    <textarea placeholder="宝贝满足你的期待吗？说说你的心得吧" rows="4" v-model="AppraiseModel.appraise"></textarea>
+                </li>
+            </ul>
+            <button class="mui-btn-block mui-btn-blue mui-btn submit_appraise" v-on:click="AppraisePost">提&nbsp;&nbsp;&nbsp;交</button>
+        </div>
+    </div>
+    <!--申请售后-->
+    <div class="ApplyAfterSale" v-show="Type=='aftersale'">
+        <header class="mui-bar mui-bar-nav" style="background: #fff;">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="AfterSaleHide"></a>
+            <h1 class="mui-title">申请售后</h1>
+        </header>
+        <div class="mui-content l-scrollable">
+            <div class="goods_info">
+                <img v-lazy="AfterSale.productImg" class="goods_img">
+                <div class="goods_right">
+                    <p class="goods_title">{{AfterSale.productName}}</p>
+                    <div class="goods_status">
+                        <span class="time">共{{AfterSale.quantity}}件商品</span>
+                        <span class="money">总价：￥{{AfterSale.amount}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="apply_content">
+                <div class="apply_btn">
+                    <button class="mui-btn mui-btn-outlined" v-bind:class="{btn_color:(AfterSale.type==2)}" v-on:click="ChoiceAfterSaleType(2)">换&nbsp;&nbsp;&nbsp;货</button>
+                    <button class="mui-btn mui-btn-outlined" v-bind:class="{btn_color:(AfterSale.type==1)}" v-on:click="ChoiceAfterSaleType(1)">退&nbsp;&nbsp;&nbsp;货</button>
+                </div>
+                <div class="note_info">
+                    <h3>备注：</h3>
+                    <textarea placeholder="请填写售后备注，以便为您提供更好的产品！" rows="4" v-model="AfterSale.afterSaleInfo"></textarea>
+                </div>
+            </div>
+            <button class="mui-btn-block mui-btn-blue mui-btn submit_apply" v-on:click="AfterSalePost">提&nbsp;&nbsp;&nbsp;交</button>
+        </div>
+    </div>
+</div>
+@section foot{
+    <script src="~/dist/high.buyerorder.bundle.js"></script>
+}

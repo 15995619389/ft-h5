@@ -1,0 +1,79 @@
+﻿
+@{
+    ViewBag.Title = "发布专利管理";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/Content/css/myBusiness/myRecommended/releaseTechnology.css" />
+}
+<style>
+    .content_nav li:nth-child(1) {
+        width: 16%;
+    }
+    .content_nav li:nth-child(4) {
+        width: 24%;
+    }
+    .mui-table-view-cell>a:not(.mui-btn){
+        white-space:normal;
+    }
+</style>
+<div id="container" v-cloak>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/index"></a>
+        <h1 class="mui-title">发布专利管理</h1>
+    </header>
+    <div class="mui-content">
+        <div style="position:absolute;z-index:9;width:100%;height:43px">
+            <ul class="content_nav">
+                <li v-bind:class="{text_color:(datamodel.status==0)}" v-on:click="Show(0)">全部</li>
+                <li v-bind:class="{text_color:(datamodel.status==99)}" v-on:click="Show(99)">待提交</li>
+                <li v-bind:class="{text_color:(datamodel.status==1)}" v-on:click="Show(1)">待审核</li>
+                <li v-bind:class="{text_color:(datamodel.status==4)}" v-on:click="Show(4)">审核未通过</li>
+                <li v-bind:class="{text_color:(datamodel.status==3)}" v-on:click="Show(3)">已发布</li>
+            </ul>
+        </div>
+        <!-----全部------->
+        <scroller v-show="loading||panentDetail.length>0||!Nodata" ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" style="top:28px">
+            <div>
+                <ul class="mui-table-view">
+                    <li class="mui-table-view-cell mui-media" v-for="patent in panentDetail" >
+                        <a>
+                            <div style="overflow:hidden;" v-on:click="Detail(patent.PatentId,patent.AuditStatus)">
+                                <img class="mui-media-object mui-pull-left" v-lazy="patent.PatentCertificate">
+                                <div class="mui-media-body">
+                                    <div class="oTitle" style="overflow:hidden">
+                                        <p class="mui-ellipsis">{{patent.PatentName}}</p>
+                                        <span class="oSpan">{{patent.AuditStatusVal}}</span>
+                                    </div>
+                                    <p class="mui-ellipsis" style="margin:0">{{patent.PantentInfo}}</p>
+                                    <p class="date" style="text-align:left">{{patent.PatentAmount}}</p>
+                                </div>
+                            </div>
+                            <div class="releasea_box" v-if="patent.AuditStatus==99|| patent.AuditStatus==4">
+                                <div class="operation_btn">
+                                    <span  class="cause" v-if="patent.AuditStatus==4" v-on:click="Toggle(patent)">查看原因<em>&or;</em></span>
+                                    <span  class="Deleting" v-on:click="Deleting(patent.PatentId)" v-if="patent.AuditStatus==99">删除</span>
+                                    <span v-on:click="Edit(patent.PatentId)">编辑</span>
+                                </div>                           
+                                <div class="updown" v-if="patent.AuditStatus==4" v-show="patent.isShow"> 
+                                    <em>审核不通过原因：</em>
+                                    <div>{{patent.AuditContent}}</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+        </scroller>
+        <div style="display:block;" class="not_release" v-show="panentDetail.length ==0&&!loading&&Nodata">
+            <img src="/Content/image/failure.png" />
+            <p>暂无信息，您还未发布过任何专利</p>
+            <a href="/patent/publish">发布专利</a>
+        </div>
+    </div>
+</div>
+@section foot{
+    <script src="~/dist/patent.releaseadministerpatent.bundle.js"></script>
+}
+

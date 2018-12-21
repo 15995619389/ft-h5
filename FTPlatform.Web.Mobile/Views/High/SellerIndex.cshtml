@@ -1,0 +1,175 @@
+﻿
+@{
+    ViewBag.Title = "卖家首页";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/high/sellerindex.css" />
+}
+@section foot{
+    <script src="~/dist/high.sellerindex.bundle.js"></script>
+}
+<div id="container" v-cloak>
+    <preview ref="preview"></preview>
+    <!--卖家首页-->
+    <div class="index_box" v-show="PanelState==0">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+            <h1 class="mui-title">卖家首页</h1>
+        </header>
+        <div class="mui-content l-scrollable">
+            <div class="basic_info">
+                <div class="basic_left">
+                    <img v-bind:src="Merchant.merchantlogo" v-on:click="ShowPreview(Merchant.merchantlogo)" />
+                </div>
+                <div class="basic_right">
+                    <h3>{{Merchant.merchantname}}</h3>
+                    <ul class="user_info">
+                        <li><span></span>{{Merchant.merchantcontact}}</li>
+                        <li><span></span>{{Merchant.merchantcontactway}}</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="user_content">
+                <ul class="user_list">
+                    <li>
+                        <a href="/seller/good">
+                            <h3>{{Merchant.articlecount}}</h3>
+                            <p>我的商品</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seller/order">
+                            <h3>{{Merchant.allordercount}}</h3>
+                            <p>全部订单</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seller/order?status=1">
+                            <h3>{{Merchant.paymentcount}}</h3>
+                            <p>待买家付款</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seller/order?status=2">
+                            <h3>{{Merchant.noshipmentcount}}</h3>
+                            <p>待发货</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seller/order?status=3">
+                            <h3>{{Merchant.shipmentcount}}</h3>
+                            <p>已发货</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="/seller/consultme">
+                            <h3>{{Merchant.consultcount}}</h3>
+                            <p>咨询我的</p>
+                        </a>
+                    </li>
+                </ul>
+                <a href="/seller/publishgood" class="publish_goods">发布商品</a>
+            </div>
+            <ul class="mui-table-view" style="margin: 10px 0px;background:none">
+                <li class="mui-table-view-cell odd-li" v-on:click="ChangePanelState(1)">
+                    <img src="~/content/image/high/enterprise.png" class="enterprise_bg">
+                    <span class="mui-navigate-right">企业信息</span>
+                </li>
+                <li class="mui-table-view-cell odd-li" v-on:click="ChangePanelState(2)">
+                    <img src="~/content/image/high/contacts.png" class="contacts_bg">
+                    <span class="mui-navigate-right">联系人信息</span>
+                </li>
+                <li class="mui-table-view-cell odd-li" v-on:click="ChangePanelState(3)">
+                    <img src="~/content/image/high/account.png" class="account_bg">
+                    <span class="mui-navigate-right">开户信息</span>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--企业信息-->
+    <div class="enterprise_box" v-show="PanelState==1">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="ChangePanelState(0)"></a>
+            <h1 class="mui-title">企业信息</h1>
+        </header>
+        <div class="mui-content l-scrollable" style="background:#fff">
+            <div class="enterprise_text">
+                企业名称
+                <p class="mui-ellipsis">{{CompanyInfo.enterprisename}}</p>
+            </div>
+            <div class="enterprise_text">
+                统一社会信用代码
+                <p class="mui-ellipsis" style="width:66%">{{CompanyInfo.socialcreditcode}}</p>
+            </div>
+            <div class="enterprise_text">
+                企业营业执照
+                <img v-if="CompanyInfo.businesslicense" v-on:click="ShowPreview(CompanyInfo.businesslicense)" v-lazy="CompanyInfo.businesslicense" />
+            </div>
+            <div class="enterprise_text" >
+                企业logo
+                <img v-if="CompanyInfo.businesslicense!=''" v-on:click="ShowPreview(CompanyInfo.enterpriselogo)" v-lazy="CompanyInfo.enterpriselogo" />
+            </div>
+            <div class="others">
+                <div class="others_text">其他资质证书</div>
+                <ul class="others_ul" v-if="CompanyInfo.othercertificate.length>0">
+                    <li v-for="other in CompanyInfo.othercertificate"><img v-on:click="ShowPreview(other)" v-lazy="other" /></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--联系人信息-->
+    <div class="contacts_box" v-show="PanelState==2">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="ChangePanelState(0)"></a>
+            <h1 class="mui-title">联系人信息</h1>
+        </header>
+        <div class="mui-content l-scrollable" style="background:#fff">
+            <div class="enterprise_text">
+                联系人
+                <p class="mui-ellipsis">{{ContactInfo.contact}}</p>
+            </div>
+            <div class="enterprise_text">
+                职位
+                <p class="mui-ellipsis">{{ContactInfo.position}}</p>
+            </div>
+            <div class="enterprise_text">
+                联系方式
+                <p class="mui-ellipsis">{{ContactInfo.contactway}}</p>
+            </div>
+            <div class="enterprise_text">
+                联系地址
+                <p class="mui-ellipsis">{{ContactInfo.contactaddress}}</p>
+            </div>
+            <div class="enterprise_text">
+                个人名片
+                <img v-if="ContactInfo.businesscard" v-on:click="ShowPreview(ContactInfo.businesscard)" v-lazy="ContactInfo.businesscard" />
+            </div>
+        </div>
+    </div>
+    <!--开户信息-->
+    <div class="account_box" v-show="PanelState==3">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="ChangePanelState(0)"></a>
+            <h1 class="mui-title">开户信息</h1>
+        </header>
+        <div class="mui-content l-scrollable" style="background:#fff">
+            <div class="enterprise_text">
+                开户银行
+                <p class="mui-ellipsis">{{OpenInfo.openbankname}}</p>
+            </div>
+            <div class="enterprise_text">
+                开户名
+                <p class="mui-ellipsis">{{OpenInfo.openaccountname}}</p>
+            </div>
+            <div class="enterprise_text">
+                卡号
+                <p class="mui-ellipsis">{{OpenInfo.openaccountno}}</p>
+            </div>
+            <div class="enterprise_text">
+                开户许可证
+                <img v-if="OpenInfo.openlicense" v-on:click="ShowPreview(OpenInfo.openlicense)" v-lazy="OpenInfo.openlicense" />
+            </div>
+        </div>
+    </div>
+</div>

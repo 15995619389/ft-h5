@@ -1,0 +1,54 @@
+﻿@{
+    ViewBag.Title = "院士工作站";
+    ViewBag.Description = "";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="~/Content/css/unique/spaceflight.css" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+    <script>
+        $(function () {
+            $("#fun_navback").on("click", function () {
+                document.referrer === '' ? window.location.href = "http://" + window.location.host : window.history.go(-1);
+            });
+        });
+    </script>
+}
+
+<header class="mui-bar mui-bar-nav" style="background: #fff;border-bottom:1px solid #ddd">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="fun_navback"></a>
+    <h1 class="mui-title">院士工作站</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage">
+        <img src="~/Content/image/recommend/reback.png" />
+    </a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+
+<div class="mui-content l-scrollable" style="background: #fff;padding-bottom:44px">
+    <rightsidebar></rightsidebar>
+    <img src="~/Content/image/MilitaryCivilian/ws-img.png" class="ws-img"/>
+    <p class="platform_text">飞天众智以其自身院士工作站的建立、运营经验及平台积累的60余位两院院士资源，开展院士工作站建设业务，为企业建立“院士工作站”提供全链条服务。院士工作站系政府推动，以企事业单位创新需求为导向，以两院院士及其团队为核心，依托省内研发机构，联合进行科学技术研究的高层次科技创新平台，院士与企业合作对推动科技与经济结合作用突出，带动了地方和企业的项目实施、基地建设、人才培养的一体化，推进了科技合作的组织化、制度化、长效化。</p>
+    <div class="CompanyName">
+        <h3>院士工作站工作内容及意义</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <img src="~/Content/image/MilitaryCivilian/ws-list-img.png" class="ws-img" style="height:3.74rem;margin:0.20rem auto"/>
+    <ul class="ws-ul">
+        <li><i></i><p>开展产业及企业发展战略咨询和技术指导;</p></li>
+        <li><i></i><p>围绕企业发展急需解决的重大关键技术难题，组织院士及其创新团队与企业研发人员开展联合攻关;</p></li>
+        <li><i></i><p>引进院士及其创新团队的技术成果，在企业共同开展转化和产业化，培育自主知识产权和自主品牌;</p></li>
+        <li><i></i><p>与院士及其创新团队共建研究生培养基地，联合培养企业创新人才。</p></li>
+    </ul>
+</div>
+
+<share ref="share"></share>

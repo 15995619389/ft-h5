@@ -1,0 +1,40 @@
+﻿@{
+    ViewBag.Title = "飞天动态";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    @*<link href="~/Content/css/gobel.css" rel="stylesheet" />*@
+    <link href="~/Content/css/ft_dynamic/FT_dynamic.css" rel="stylesheet" />
+}
+
+<div id="container" style="height:100%;width:100%" v-cloak>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+        <h1 class="mui-title">飞天动态</h1>
+    </header>
+    <div class="mui-content mui-scroll-wrapper ">
+        <scroller ref="scroller" v-bind:on-refresh="Search" v-bind:on-infinite="Append" style="padding-top:45px">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-media" v-bind:id="news.Id" v-on:click="Detail(news.Id)" v-for="news in tabs">
+                    <a>
+                        <div class="content_left">
+                            @*<h3 class="li_title" v-if="news.Source=='' || news.Source==null">{{news.Title|t1}}</h3>
+                                <h3 class="li_title" v-else>{{news.Source}}：{{news.Title|t1}}</h3>*@
+                            <h3 class="li_title">{{news.Title}}</h3>
+                            <div class="source_box">
+                                <div class="source"><span class="source_text">来源</span><span class="source_firm">{{news.Source|srce}}</span></div>
+                                <div class="time">时间:<span>{{news.CreateTime|formatDate}}</span></div>
+                            </div>
+                        </div>
+                        <img v-bind:src="news.IconUrl" class="content_rihgt" />
+                    </a>
+                </li>
+            </ul>
+        </scroller>
+    </div>
+    <foot></foot>
+</div>
+@section foot
+{
+    <script src="~/dist/new.list.bundle.js"></script>
+}

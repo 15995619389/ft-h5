@@ -1,0 +1,140 @@
+﻿#component-quickpublish {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+}
+
+#component-quickpublish .shadow{
+    z-index:900;
+    background-color:rgba(0,0,0,.6);
+    height:100%;
+    width:100%;
+}
+
+#component-quickpublish.show{
+    display:block;
+}
+
+    #component-quickpublish .panel .close i {
+        display: block;
+        background: url(../../image/clobig.png) no-repeat center center;
+        width: 1.3rem;
+        height: 1.3rem;
+        background-size: 1.3rem 1.3rem;
+        margin: 0 auto;
+        padding-top: 1.8rem;
+        animation: qpanimate 0.5s linear;
+    }
+
+    #component-quickpublish .panel {
+        width: 60%;
+        margin: 0 auto;
+        bottom: 0.25rem;
+        left: 20%;
+        position: absolute;
+    }
+
+        #component-quickpublish .panel ul {
+            display: block;
+            overflow: hidden;
+        }
+
+            #component-quickpublish .panel ul li {
+                width: 50%;
+                float: left;
+                text-align: center;
+                animation: qpanimate 0.5s linear;
+            }
+
+                #component-quickpublish .panel ul li span {
+                    display: block;
+                }
+
+                #component-quickpublish .panel ul li a {
+                    color: #fff;
+                    font-size: 0.3rem;
+                    display: block;
+                }
+
+                    #component-quickpublish .panel ul li a .icon {
+                        display: block;
+                        width: 1.42rem;
+                        height: 1.42rem;
+                        border-radius: 1rem;
+                        background: #fff;
+                        margin: 0 auto;
+                    }
+
+                    #component-quickpublish .panel ul li a .text {
+                        padding-top: 0.2rem;
+                    }
+
+                    #component-quickpublish .panel ul li a i.pic {
+                        display: block;
+                        width: 0.76rem;
+                        height: 0.72rem;
+                        margin: 0 auto;
+                        padding-top: 1.45rem;
+                    }
+
+                    #component-quickpublish .panel ul li a i.demand {
+                        background: url(../../image/wri.png) no-repeat center center;
+                        background-size: 0.76rem 0.72rem;
+                    }
+
+                    #component-quickpublish .panel ul li a i.tech {
+                        background: url(../../image/set.png) no-repeat center center;
+                        background-size: 0.76rem 0.72rem;
+                    }
+
+.qpanimate {
+    animation: myaa .5s linear;
+}
+
+@keyframes qpanimate {
+    0% {
+        transform: scale(0);
+    }
+
+    25% {
+        transform: scale(0.25);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+
+    75% {
+        transform: scale(0.75);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+@-webkit-keyframes qpanimate {
+    0% {
+        transform: scale(0);
+    }
+
+    25% {
+        transform: scale(0.25);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+
+    75% {
+        transform: scale(0.75);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}

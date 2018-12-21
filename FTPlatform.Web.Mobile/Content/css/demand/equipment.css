@@ -1,0 +1,356 @@
+
+
+.box_content {
+	width: 100%;
+	height: auto
+}
+
+.options_top {
+	width: 100%;
+	height: 0.88rem;
+	background: #fff;
+	border-top: 1px solid #dddddd;
+}
+
+.time {
+	text-align: center;
+	line-height: 0.88rem;
+}
+
+.options_top .time {
+	width: 25%;
+	float: left;
+	padding-left: 4%;
+}
+
+.text_color {
+	color: #ffa600;
+}
+
+.time span {
+	line-height: 0.88rem;
+	display: block;
+	float: left;
+	font-size: 0.30rem;
+	text-align: center;
+}
+
+.time_left {
+	float: left;
+	width: 0.2rem;
+	margin-top: 0.30rem;
+	margin-left: 0.1rem;
+}
+
+.time_left img {
+	width: 100%;
+	height: 0.10rem;
+}
+
+.time_top {
+	margin-bottom: 0.05rem;
+}
+
+.time_left .screen_bg {
+	width: 100%;
+	height: 0.2rem;
+	margin-top: 0.05rem;
+}
+
+.home,
+.classify {
+	width: 0.46rem;
+	height: 0.45rem;
+}
+
+.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label {
+	font-size: 0.24rem;
+	display: block;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	color: #444;
+}
+
+.mui-bar-tab .mui-tab-item {
+	overflow: visible;
+}
+
+.publish {
+	width: 1.16rem;
+	height: 1.16rem;
+	position: absolute;
+	top: -0.65rem;
+    left: -0.33rem;
+}
+.research{
+	width: 100%;
+	height: auto;
+}
+.mui-table-view-cell:after{
+	left: 0px;
+}
+.research_title .not_docking{
+	color: #ffa800;
+	font-size: 0.26rem;
+	float: right;
+}
+.mui-table-view-cell .research_title{
+	width: 100%;
+	height: auto;
+	color: #184998;
+	font-size: 0.30rem;
+	min-height: 0.55rem
+}
+.oSpan{
+	color: #184998;
+	font-size: 0.30rem;
+	float: left;
+}
+.mui-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.26rem;
+}
+.research_footer{
+	width: 100%;
+	    margin-top: 5px;
+}
+.research_footer li{
+	float: left;
+}
+.research_footer li:nth-child(1){
+	margin-right: 5%
+}
+.money{
+	float: left;
+	width: 0.30rem;
+	height: 0.30rem;
+	margin-top: 0.06rem;
+    margin-right: 0.04rem;
+}
+.research_footer li p {
+    float: left;
+    color: #969696;
+    font-size: 0.26rem;
+}
+.year {
+    float: right;
+        color: #969696;
+    text-align: right;
+    margin-top: 0.05rem;
+    font-size: 0.20rem;
+}
+.focus_img{
+	width: 0.30rem;
+    height: 0.27rem;
+    float: left;
+    margin-right: 0.05rem;
+    margin-top: 0.08rem;
+}
+.research li:last-child{
+	margin-bottom: 50px;
+}
+
+/*--------*/
+.releaseTime{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	display: none;
+}
+.docking_state {
+    display: none;
+    width: 100%;
+    height: 0.66rem;
+}
+.docking_state li {
+    float: left;
+    line-height: 0.66rem;
+    font-size: 0.28rem;
+    color: #666666;
+    text-align: center;
+    width: 25%;
+    background: #f5f5f5;
+    /* border-top: 1px solid #ddd; */
+}
+/*----底部选项卡------*/
+.ft-tab .mui-tab-item {
+    color: #444;
+}
+.ft-tab .tab-list {
+    overflow: visible;
+}
+.mui-bar-tab .nav-tab-item {
+    display: table-cell;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #929292;
+}
+.ft-tab .mui-active {
+    color: #0e5bb5!important;
+}
+.ft-tab .icon-home {
+    background: url(../../image/home11.png) no-repeat;
+    width: 0.48rem;
+    height: 0.47rem;
+    background-size: 0.48rem 0.47rem;
+}
+.ft-tab .tab-icon {
+    margin-bottom: 0.15rem;
+    width: 0.46rem;
+    height: 0.46rem;
+    position: relative;
+    z-index: 20;
+    top: 3px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: Muiicons;
+    font-size: 0.24px;
+    font-weight: 400;
+    font-style: normal;
+    /* line-height: 1; */
+    display: inline-block;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+.ft-tab .mui-tab-label {
+    display: block;
+    font-size: 0.24rem;
+}
+.ft-tab .mui-active .icon-home {
+    background: url(../../image/home-cur.png) no-repeat;
+    width: 0.52rem;
+    height: 0.47rem;
+    background-size: 0.52rem 0.47rem;
+}
+.ft-tab .icon-pull {
+    background: url(../../image/plus_sign.png) no-repeat;
+    width: 1.16rem;
+    height: 1.16rem;
+    background-size: 1.16rem 1.16rem;
+}
+.ft-tab .pu-icon {
+    width: 1.16rem!important;
+    height: 1.16rem!important;
+    top: -0.2rem;
+}
+.ft-tab .icon-resouce {
+    background: url(../../image/classify.png) no-repeat;
+    width: 0.46rem;
+    height: 0.45rem;
+    background-size: 0.46rem 0.45rem;
+}
+.ft-tab .mui-active .icon-resouce {
+    background: url(../../image/noun-bl.png) no-repeat;
+    width: 0.46rem;
+    height: 0.45rem;
+    background-size: 0.46rem 0.45rem;
+}
+/*------快速发布-------*/
+#mask{
+	display: none;
+	position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+    background-color: rgba(0,0,0,.6);
+}
+.pull-techoly{
+	width: 60%;
+	margin: 0 auto;	
+	bottom:0.25rem;
+	left: 20%;
+	position: absolute;
+
+}
+.pull-techoly ul li{
+	width: 50%;
+	float: left;
+	text-align: center;
+}
+.pull-techoly ul li span{
+	display: block;
+}
+.pull-techoly ul li a{
+	color: #fff;
+	font-size: 0.3rem;
+	display: block;
+}
+.pull-techoly .cire-bd{
+	display: block;
+	width: 1.42rem;
+	height: 1.42rem;
+	border-radius: 1rem;
+	background: #fff;
+	margin: 0 auto;
+}
+.pull-techoly .pul-text{
+	padding-top: 0.2rem;
+}
+.pull-techoly .pull-need{
+	display: block;
+	background: url(../../image/wri.png) no-repeat center center;
+	width: 0.76rem;
+	height: 0.72rem;
+	background-size: 0.76rem 0.72rem;
+	margin: 0 auto;
+	padding-top: 1.45rem;
+}
+.pull-techoly ul{
+	display: block;
+	overflow: hidden;
+}
+.pull-techoly .pull-tech{
+	display: block;
+	background: url(../../image/set.png) no-repeat center center;
+	width: 0.66rem;
+	height: 0.70rem;
+	background-size: 0.66rem 0.70rem;
+	margin: 0 auto;
+	padding-top: 1.45rem;
+}
+.mui-popover .mui-popover-arrow:after{
+	position: absolute;
+    top: 19px;
+    left: 0;
+    width: 0;
+    height: 0;
+    content: ' ';
+    -webkit-transform: rotate(45deg);
+    transform: rotate(45deg);
+    border-radius: 0;
+    background: #f7f7f7;
+}
+.pull-techoly .close i{
+	display: block;
+	background: url(../../image/clobig.png) no-repeat center center;
+	width: 1.3rem;
+	height: 1.3rem;
+	background-size: 1.3rem 1.3rem;
+	margin: 0 auto;
+	padding-top: 1.8rem;
+}
+.hotwarp .model_title{
+	border-bottom: 0;
+}
+.mui-table-view:before {
+    position: absolute;
+    right: 0;
+    left: 0;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #fff; 
+    top: -1px;
+}
+.mui-title{
+	color: #0d0d0d;
+}

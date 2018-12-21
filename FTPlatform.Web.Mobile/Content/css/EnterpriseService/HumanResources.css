@@ -1,0 +1,320 @@
+html{
+	background: #fff;
+}
+/*----预约----*/
+
+.side-bar {
+	position: fixed;
+	top: 40%;
+	right: 0;
+	background: url(../../image/advice-bg.png) no-repeat;
+	width: 2.08rem;
+	height: 0.88rem;
+	background-size: 2.08rem 0.88rem;
+	color: #fff;
+	line-height: 0.30rem;
+	z-index: 999;
+}
+
+.side-bar a {
+	display: block;
+	color: #fff;
+	font-size: 0.24rem;
+	width: 50%;
+	margin-left: 0.9rem;
+	margin-top: 0.2rem;
+	line-height: 0.30rem;
+}
+
+
+/*---------*/
+
+.right_iocn img {
+	display: block;
+	width: 20px;
+	height: 20px;
+	margin-top: 3px;
+}
+.space_bg {
+	border-top: 1px solid #ddd;
+	display: block;
+	width: 100%;
+	height: 3.00rem;
+}
+.CompanyName {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.CompanyName h3 {
+    font-size: 0.34rem;
+    color: #0e5bb5;
+    text-align: center;
+}
+.division {
+    width: 2.18rem;
+    height: 0.13rem;
+    margin: 0 auto;
+    display: block;
+    margin-top: 7px;
+}
+.platform_text {
+	padding: 0px 3%;
+    font-size: 0.30rem;
+    color: #404040;
+    margin-bottom: 0px;
+    line-height: 0.42rem;
+}
+.superiority{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	background: url(../../image/EnterpriseService/Examples.png) no-repeat 0px 0px;
+	background-size:100% 4.85rem;
+}
+
+.superiority_box{
+	padding: 0px 3%;
+	overflow: hidden;
+	height: auto;
+	margin-top: 3.80rem;
+}
+.superiority_box h3{
+	width: 100%;
+    overflow: hidden;
+    height: auto;
+    font-size: 0.32rem;
+    color: #0e5bb5;
+    margin: 0.10rem 0px;
+}
+.what_park li {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin-top: 0.10rem;
+}
+.what_park li P {
+    margin-bottom: 0px;
+    font-size: 0.30rem;
+    color: #3f3f3f;
+    line-height: 0.40rem; 
+}
+.space_bg2{
+	width: 100%;
+	height: 3.00rem;
+	overflow: hidden;
+	margin-top: 0.20rem;
+}
+.scope_help{
+	padding: 0px 3%;
+	overflow: hidden;
+	height: auto;
+}
+.scope_help h3{
+	    width: 100%;
+    overflow: hidden;
+    height: auto;
+    font-size: 0.32rem;
+    color: #0e5bb5;
+    margin: 0.10rem 0px;
+}
+.mechanism {
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    margin: 0 auto;
+}
+.mechanism li {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.five {
+    width: 4%;
+    float: left;
+    display: block;
+    height: auto;
+    padding-top: 0.15rem;
+}
+.five i {
+    display: block;
+    width: 0.10rem;
+    height: 0.10rem;
+    border-radius: 50%;
+    background: #0e5bb5;
+}
+.mechanism li p {
+    width: 96%;
+    float: right;
+    overflow: hidden;
+    height: auto;
+}
+/*.what_park{
+	padding: 0px 2%;
+}*/
+#what_park li{
+    font-size: 0.30rem;
+    color: #3f3f3f;
+}
+#what_park li p{
+	float: right;
+	width: 92%;
+}
+.dispatching{
+	padding: 0px 0.35rem;
+	overflow: hidden;
+	height: auto;
+}
+.dispatching img{
+	display: block;
+	width: 0.92rem;
+	height: 0.91rem;
+	float: left;
+	margin-right: 0.43rem;
+}
+.dispatching img:nth-child(5){
+	margin-right: 0px;
+}
+.dispatching ul li{
+	float: left;
+	width: 0.92rem;
+	margin-right: 0.43rem;
+	font-size: 0.22rem;
+	color: #3f3f3f;
+	text-align: center;
+	line-height: 0.30rem;	
+}
+.dispatching ul,.dispatching div{
+	height: auto;
+	overflow: hidden;
+	margin-top: 0.10rem;
+}
+.dispatching ul li:nth-child(5){
+	margin-right: 0px;
+}
+.outsourcing{
+	font-size: 0.30rem;
+	line-height: 0.40rem;
+	color: #0e5bb5;
+	overflow: hidden;
+	height: auto;
+}
+.scope_help .platform_text{
+	padding: 0 0;
+}
+.space_bg3 {
+    width: 100%;
+    height: 3.00rem;
+    overflow: hidden;
+    margin: 0.20rem 0px;
+}
+/*----------7-------------*/
+.step-wrap {
+	/*background: url(../../image/EnterpriseService/process.png) no-repeat center center;*/
+	padding: 0px 2% 0px 0px;
+	height: 2.86rem;
+	/*background-size: 3.88rem 2.41rem;*/
+	position: relative;
+	line-height: 0.40rem;
+	position: relative;
+	margin-top: 0.30rem;
+}
+.step_wrap_bg{
+	position: absolute;
+	top: 0;
+	left: 23.5%;
+	width: 4.05rem;
+	height: 2.40rem;
+}
+.step-wrap .step-text {
+	position: absolute;
+	font-size: 0.12rem;
+	color: #0c4ca3;
+}
+
+.step-wrap .step-text h5 {
+	font-size: 0.22rem;
+	color: #0c4ca3;
+	margin-bottom: 0.02rem;
+	margin-top: 0;
+	/*line-height: 0.40rem;*/
+}
+
+.step-wrap .step-text p {
+	font-size: 0.14rem;
+	color: #0c4ca3;
+	margin-bottom: 0px;
+	line-height: 0.40rem;
+}
+
+.step-wrap .talk {
+	text-align: right;
+	left: 0.6rem;
+	top: 0.1rem;
+}
+
+.step-wrap .online {
+	text-align: right;
+	left: 0.05rem;
+	top: 1.10rem;
+}
+
+.step-wrap .agency {
+	text-align: right;
+	left: 1.40rem;
+	top: 2.0rem;
+}
+
+.step-wrap .confirm {
+	text-align: right;
+	left: 3.05rem;
+	top: 2.5rem;
+	text-align: center;
+}
+
+.step-wrap .Sign {
+	text-align: left;
+	right: 1.10rem;
+	top: 2.00rem;
+}
+
+.step-wrap .Track {
+	text-align: left;
+	right: 0.0rem;
+	top: 1.10rem;
+}
+
+.step-wrap .examine {
+	text-align: left;
+	right: 0.30rem;
+	top: 0.10rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

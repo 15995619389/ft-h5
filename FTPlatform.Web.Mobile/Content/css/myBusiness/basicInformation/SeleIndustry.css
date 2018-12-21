@@ -1,0 +1,189 @@
+html {
+				background: #fff;
+			}
+			.industry_box{
+				margin-top: 0.20rem;
+				background: #fff;	
+			}
+			.list_box {				
+				border-top: 1px solid #ddd;
+			}
+			.list_boxs{
+                border-top: 1px solid #ddd;
+                padding: 0.30rem 3%;
+				overflow: hidden;
+				height: auto;
+				color: #444444;
+				font-size: 0.30rem;
+				background: #fff;
+				/*border-bottom: 1px solid #ddd;*/
+			}
+			.list_box,
+			.list_two {
+				padding: 0.30rem 3%;
+				overflow: hidden;
+				height: auto;
+				color: #444444;
+				font-size: 0.30rem;
+				background: #fff;
+				/*border-bottom: 1px solid #ddd;*/
+			}
+			
+			.list_box span,
+			.list_two span {
+				color: #444444;
+				font-size: 0.30rem;
+				margin: 0px 0.05rem;
+			}
+			
+			.add_bg,
+			.delete {
+				display: block;
+				float: right;
+				width: 0.34rem;
+				height: 0.34rem;
+			}
+			
+			.add_bg img,
+			.delete img {
+				width: 0.34rem;
+				height: 0.34rem;
+			}
+			
+			.mui-btn {
+				text-align: center;
+				width: 94%;
+				margin: 0.40rem auto;
+				display: block;
+			}
+			/*------侧边栏----------*/
+.sidebar_left{
+	position: absolute;
+	top: 44px;
+	left: 0px;
+	width: 100%;
+	background: #f5f5f5;
+	display: none;
+ 	z-index: 7;	
+}
+.left_list{
+	width:27%;
+	height: 100%;
+	float: left;
+	background: #fff;
+}
+.left_list li{
+	width: 100%;
+	text-align: center;
+	border-top:1px solid #dddddd;
+	height: 13%;
+	line-height: 1.2rem;
+	font-size: 0.30rem;
+}
+/*.left_list li:nth-child(7){
+	height: 22%;
+	line-height: 2.0rem;	
+}*/
+.left_list_bg{
+	background: #f5f5f5;
+	color: #0e5bb5;
+}
+.right_list{
+    position:fixed;
+    right:0px;
+	display: none;
+	width: 69%;
+	height: 100%;
+	margin: 0px 2%;	
+}
+.right_list h4{
+	font-size: 0.28rem;
+	margin: 10px 0px;
+	color: #666;	
+}
+.right_list ul li{
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.two_label,.three_label{
+	width: 100%;
+	height: auto;
+	overflow: hidden	
+}
+.two_label li{
+	width: 33.33%;
+	text-align: center;
+	font-size: 0.26rem;
+	float: left;
+	background: #fff;
+	height: 0.80rem;
+	line-height: 0.80rem;
+	border: 1px solid #f5f5f5;
+	color: #666;
+}
+.right_list h5{
+	font-size: 0.24rem;
+	color: #666;
+	margin: 10px 0px;
+}
+
+.three_label li{
+	font-size: 0.24rem;
+	height: 0.60rem;
+	line-height: 0.60rem;
+}
+.two_label .left_list_bg{
+	color: #0e5bb5;
+}
+
+
+.mui-table-view-cell:after {
+    left: 0px;
+}
+
+.oul1,.oul2,.oul3,.oul4,.oul5,.oul6,.oul7,.oul8,.oul9,.oul10,.oul11{
+	display: none;
+}
+.left_list li:nth-child(1){
+	border-top:none ;
+}
+.three_label div {
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    font-size: 0.24rem;
+    float: left;
+    background: #fff;
+    height: 0.60rem;
+    line-height: 0.60rem;
+    border: 1px solid #f5f5f5;
+    color: #666;
+}
+.two_label div {
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    font-size: 0.28rem;
+    float: left;
+    background: #fff;
+    height: 0.80rem;
+    line-height: 0.80rem;
+    border: 1px solid #f5f5f5;
+    color: #666;
+}
+.three_label_li{
+    width: 33.33%;
+	text-align: center;
+	font-size: 0.28rem;
+	float: left;
+	background: #fff;
+	height: 0.80rem;
+	line-height: 0.80rem;
+	border: 1px solid #f5f5f5;
+	color: #666;
+}
+.three_label_text{
+    color: #0e5bb5;
+	background:#ddd;
+}

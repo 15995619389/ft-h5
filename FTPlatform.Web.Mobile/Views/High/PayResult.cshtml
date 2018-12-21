@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    var resultVal = ViewBag.isResult == 1 ? "支付成功" : ViewBag.isResult == 0 ? "支付失败" : "参数错误";
+    ViewBag.Title = resultVal;
+}
+
+@section head{
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/shop/smart.css" rel="stylesheet" />
+    <style>
+        html {
+            background: #fff;
+        }
+    </style>
+}
+
+<header class="mui-bar mui-bar-nav head_box head-secd" style="border-bottom: #ddd solid 1px;">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="/"></a>
+    <h1 class="mui-title">@resultVal</h1>
+</header>
+<div class="mui-content whit-content">
+    <section class="pay-subox">
+        @if (ViewBag.isResult == 1)
+        {
+            <img src="~/Content/image/shop/robot.png" style="margin:0 auto" />
+        }
+        else
+        {
+            <img src="/Content/image/shop/fail.png" style="margin:0 auto" />
+        }
+        <h4>@resultVal</h4>
+        <div class="order-btn">
+            <a href="/buyer/order" class="ord-mager">订单管理</a>
+            <a href="/higharticle" class="shop-index">工业精品首页</a>
+        </div>
+    </section>
+</div>

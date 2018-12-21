@@ -1,0 +1,313 @@
+﻿
+@{
+    ViewBag.Title = "幸运666 新年迎大运";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/activity/201801/lucky.css" rel="stylesheet" />
+    @*<link href="~/Content/js/Pages/Act/liMarquee.css" rel="stylesheet" />*@
+}
+
+<header class="mui-bar mui-bar-nav" style="z-index:12" id="mui-bar">
+    <a href="javascript:history.go(-1);" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">幸运666 新年迎大运</h1>
+    <a class="mui-icon-right-nav mui-pull-right" id="shareTenAct" v-on:click="SharePage"><img src="/Content/image/recommend/reback.png"></a>
+    <input type="hidden" id="shareTitle" value="幸运666 新年迎大运" />
+    <input type="hidden" id="shareContent" value="新的一年祝大家开年迎大运，整年666。" />
+    <preview ref="preview"></preview>
+    <share ref="share"></share>
+</header>
+<div class="mui-content l-scrollable">
+    <section class="banner_wrap">
+        <img src="~/Content/image/activity/201801/banner.png" />
+    </section>
+    <section class="connt-wrap ">
+        <div class="bd-title">
+            <h2>幸运666</h2>
+        </div>
+        <div class="game-rules">点击“开始转动”，等待图案转动停止后，逢“666” “166” “066”“016”“006”即得到相应智币。</div>
+        <div class="cj_modal">
+            <div class="main2">
+                <div class="side_yg"></div>
+                <div class="container">
+                    <div class="num num1">
+                        <div class="num-con num-con1">
+                            <div class="num-img"></div>
+                            <div class="num-img"></div>
+                        </div>
+                    </div>
+                    <div class="num num2">
+                        <div class="num-con num-con2">
+                            <div class="num-img"></div>
+                            <div class="num-img"></div>
+                        </div>
+                    </div>
+                    <div class="num num3">
+                        <div class="num-con num-con3">
+                            <div class="num-img"></div>
+                            <div class="num-img"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="cur-cj"></div>
+            </div>
+            <div class="main3">
+                <div class="container" style="top:0;">
+                    <div class="main3-btn" id="btl">开始转动</div>
+                </div>
+            </div>
+            <div class="actrule" onclick="ActLuck.OpenBlackUI('rule-box5')" ><i></i></div>
+        </div>
+        <!--获奖名单-->
+        <div class="winners-list">
+            <p class="zhibi-ct">18枚智币/次</p>
+            <div class="title" data-toggle="modal" data-target="#myModal_2">获奖名单</div>
+            <div class="text_marqu">
+                @*<marquee id="quee" direction=up height="270" behavior="scroll" scrolldelay="160" loop="-1" style="text-align:center;">
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                        <p>恭喜用户152****2312获得1元话费</p>
+                    </marquee>*@
+            </div>
+        </div>
+        <div class="botm-bg"></div>
+    </section>
+    <!--活动规则弹窗-->
+    <div class="rule-box5" style="display:none;">
+            <div class="mask"></div>
+            <div class="popmain">
+                <div class="pop-title">
+                    <div class="mui-icon-close close" onclick="ActLuck.CloseBlackUI('rule-box5')">
+                        <i></i>
+                    </div>
+                </div>
+                <div class="pop-body">
+                    <h3>活动规则</h3>
+                    <div class=text>
+                        <p><span class="bf-numb">1、</span><span class="lu-text">活动期间用户获得的智币无需申请领取，直接充值进入用户的智币账户；</span></p>
+                        <p><span class="bf-numb">2、</span><span class="lu-text">本次活动获得的智币与目前平台会员体系产生智币不重叠；</span></p>
+                        <p><span class="bf-numb">3、</span><span class="lu-text">本次活动获得的智币可在智币商城兑换商品，截至2018年7月1日，逾期未进行兑换的智币将做清零处理；</span></p>
+                        <p><span class="bf-numb">4、</span><span class="lu-text">凡是被本站定义为恶意用户的注册用户，不得参与本次活动</span></p>
+                        <p><span class="bf-numb">5、</span><span class="lu-text">本次活动期间如发现恶意注册，如：用虚拟手机进行注册用户、恶意软件注册用户、拒绝服务请求等情况，将不予以兑换任何礼品；</span></p>
+                        <p><span class="bf-numb">6、</span><span class="lu-text">本次活动参与人数较多，如有任何变动请留意官网公告，不再另行通知；</span></p>
+                        <p><span class="bf-numb">7、</span><span class="lu-text">在法律允许范围内，本次活动最终解释权及法律追责权归上海飞天众知科技服务有限公司所有；</span></p>
+                        <p><span class="bf-numb">8、</span><span class="lu-text">活动期间有任何问题，请垂询：400-920-2025或发送邮件至 market@techina2025.com。</span></p>
+                    </div>
+                    <div class="btgobel"></div>
+                </div>
+            </div>
+        </div>
+    <!--未登陆弹窗-->
+    <div class="pubpop-box1" style="display:none">
+        <div class="mask"></div>
+        <div class="popmain comon-bd">
+            <div class="pop-title">
+                <div class="mui-icon-close close" onclick="ActLuck.CloseBlackUI('pubpop-box1')">
+                    <i></i>
+                </div>
+            </div>
+            <div class="pop-body">
+                <div class="text">
+                    登录或注册后才能参与活动
+                </div>
+            </div>
+            <div class="btn cominbtn"><a href="/passport/login?returnurl=/act/JanLuckyAct">确定</a></div>
+        </div>
+    </div>
+    <!--未获奖弹窗-->
+    <div class="pubpop-box2" style="display:none">
+        <div class="mask"></div>
+        <div class="popmain comon-bd">
+            <div class="pop-title">
+                <div class="mui-icon-close close" onclick="ActLuck.CloseBlackUI('pubpop-box2')">
+                    <i></i>
+                </div>
+            </div>
+            <div class="pop-body">
+                <div class="text">
+                    很遗憾，您没有获奖，再接再励吧！
+                </div>
+            </div>
+            <div class="btn cominbtn"><a href="jacascript:;" onclick="ActLuck.CloseBlackUI('pubpop-box2')">确定</a></div>
+        </div>
+    </div>
+    <!--获得智币弹窗-->
+    <div class="pubpop-box3" style="display:none">
+        <div class="mask"></div>
+        <div class="popmain comon-bd">
+            <div class="pop-title">
+                <div class="mui-icon-close close" onclick="ActLuck.CloseBlackUI('pubpop-box3')">
+                    <i></i>
+                </div>
+            </div>
+            <div class="pop-body">
+                <div class="text" style="padding:0.8rem 0 0.15rem 0;">
+                    <span style="font-size:0.3rem;">恭喜您，获得XX枚智币,</span><br />
+                    请至“我的奖品”查询并使用
+                </div>
+            </div>
+            <div class="btton-group">
+                <div class="btn cominbtn flobtn"><a href="/act/myprize">我的奖品</a></div>
+                <div class="btn cominbtn flobtn"><a href="javascript:;" onclick="ActLuck.CloseBlackUI('pubpop-box3')">继续参与</a></div>
+            </div>
+        </div>
+    </div>
+    <!--获得智币弹窗-->
+    <div class="pubpop-box4" style="display:none">
+        <div class="mask"></div>
+        <div class="popmain comon-bd">
+            <div class="pop-title">
+                <div class="mui-icon-close close" onclick="ActLuck.CloseBlackUI('pubpop-box4')">
+                    <i></i>
+                </div>
+            </div>
+            <div class="pop-body">
+                <div class="text" style="padding:0.8rem 0 0.15rem 0;">
+                    <span style="font-size:0.3rem;">您的智币余额不足,</span><br />
+                    可发展好友或发布需求来赢取更多智币
+                </div>
+            </div>
+            <div class="btton-group">
+                <div class="btn cominbtn flobtn"><a href="#">发展好友</a></div>
+                <div class="btn cominbtn flobtn"><a href="/demand/publish">发布需求</a></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section foot{
+    <script src="~/dist/activity.luck.bundle.js"></script>
+}
+<script src="~/Content/js/jquery-1.11.0.min.js"></script>
+<script src="~/src/modules/StorageService.js"></script>
+<script src="~/src/modules/FilterService.js"></script>
+<script src="~/src/modules/ApiClient.js"></script>
+<script src="~/src/pages/Act/janluckact.js"></script>
+<script>
+    //$(document).ready(function () {
+    //    $(".circular").on("click", function (e) {
+    //        $this = $(this);
+    //        $(this).animate({
+    //            left: '200px',
+    //            top: '0'
+    //        });
+    //        $bg = $(".bg");
+    //        $bg.show('slow');
+    //        e.stopPropagation();
+    //    });
+    //});
+    //活动规则弹窗
+    //$(".actrule").click(function () {
+    //    $(".mask").css("display", "block");
+    //    $(".rule-box").css("display", "block");
+    //    $(".popmain").css("display", "block");
+    //    $('html,body').addClass("Ovhidden");
+    //    $('body').bind("touchmove", function (e) {
+    //        e.preventDefault();
+    //    });
+    //})
+    //$(".close").click(function () {
+    //    $(".mask").css("display", "none");
+    //    $(".rule-box").css("display", "none");
+    //    $(".pubpop-box").css("display", "none");
+    //    $('html,body').removeClass("Ovhidden");
+    //    $('body').unbind();
+    //})
+    ////提示弹窗
+    //$(".main3-btn").click(function () {
+    //    $(".mask").css("display", "block");
+    //    $(".pubpop-box").css("display", "block");
+    //    $(".comon-bd").css("display", "block");
+    //    $('html,body').addClass("Ovhidden");
+    //    $('body').bind("touchmove", function (e) {
+    //        e.preventDefault();
+    //    });
+    //})
+</script>
+@*<script type="text/javascript">
+        $(".main3-btn").click(function () {
+            //$(".cur-cj").addClass("show");
+            if (!flag) {
+                flag = true;
+                reset();
+                letGo();
+                setTimeout(function () {
+                    flag = false;
+                    if (index == 2) {
+                        $(".fix,.pop-form").show();
+                    } else {
+                        $(".fix,.pop").show();
+                        $(".pop-text span").text("" + String(4 - TextNum1) + (8 - TextNum2))
+                    }
+                }, 1000);
+                index++;
+            }
+        });
+        var flag = false;
+        var index = 0;
+        var TextNum1
+        var TextNum2
+        var TextNum3
+
+        function letGo() {
+
+            TextNum1 = parseInt(Math.random() * 4)//随机数
+            TextNum2 = parseInt(Math.random() * 7)
+            TextNum3 = parseInt(Math.random() * 7)
+
+            var num1 = [][TextNum1];//在这里随机
+            var num2 = [][TextNum2];
+            var num3 = [][TextNum3];
+            var number = { "1": 0, "2": -34, "3": -68, "4": -102, "5": -136, "6": -170, "7": -204, "8": -238, "9": -272, "0": -306 };
+            $(".num-con1").animate({ "top": -600 }, 1000, "linear", function () {
+                $(this).css("top", 0).animate({ "top": -306 }, 1000, "linear");
+            });
+            $(".num-con2").animate({ "top": -600 }, 1000, "linear", function () {
+                $(this).css("top", 0).animate({ "top": -306 }, 1800, "linear");
+            });
+            $(".num-con3").animate({ "top": -600 }, 1000, "linear", function () {
+                $(this).css("top", 0).animate({ "top": -306 }, 1300, "linear");
+            });
+        }
+        function reset() {
+            $(".num-con1,.num-con2,.num-con3").css({ "top": 0 });
+        }
+
+    </script>
+    <script>
+
+        $(".main3-btn").mousedown(function () {
+            $(".side_yg").addClass("tro");
+        });
+        $(".main3-btn").mouseup(function () {
+            $(".side_yg").removeClass("tro");
+        })
+        $(".main3-btn").on("click", function () {
+            run();
+            function run() {
+                $(".side_yg").animate({
+                    top: '2.2rem'
+                });
+
+                $(".side_yg").animate({
+                    top: '1.1rem'
+                });
+            }
+
+        });
+    </script>*@

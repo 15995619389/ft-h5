@@ -1,0 +1,170 @@
+/*-----头部-----------*/
+.oHeader {
+    position: fixed;
+    width: 100%;
+    height: 0.88rem;
+    border-bottom: 1px solid #ddd;
+    background: #fff;
+}
+.oHeader1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+/*.mui-bar-nav.mui-bar .mui-icon {
+    margin-right: -0.2rem;
+    margin-left: -0.2rem;
+    padding-left: 0.2rem;
+    padding-right: 0.2rem;
+    font-size: 0.40rem;
+    padding-top: 0.2rem;
+}*/
+.mui-bar-nav~.mui-content {
+    padding-top: 0.88rem;
+}
+.search {
+    position: absolute;
+    top: 0.15rem;
+    right: 0.3rem;
+    height: 0.54rem;
+    width: 6.06rem;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+
+.on_seek {
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0.11rem;
+}
+.cataloglist dt {
+    margin-top: 0.05rem;
+}
+
+.seek_img {
+    width: 0.26rem;
+    height: 0.26rem;
+    margin: auto;
+    margin-top: 0.13rem;
+}
+.mui-bar {
+    height: 0.88rem;
+    background: #fff;
+}
+.mui-bar-tab .mui-tab-item {
+    overflow: visible;
+}
+.home, .classify {
+    width: 0.46rem;
+    height: 0.45rem;
+}
+.publish {
+    width: 1.16rem;
+    height: 1.16rem;
+    position: absolute;
+    top: -0.65rem;
+    left: -0.33rem;
+}
+.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label {
+    font-size: 0.24rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #444;
+}
+.home, .classify {
+    width: 0.46rem;
+    height: 0.45rem;
+}
+.mui-content ul{
+	padding-left: 3%;
+	margin-top: 20px;
+}
+
+
+.mui-content ul li{
+	
+	width: 22%;
+	float: left;
+	height: 0.66rem;
+	text-align: center;
+	line-height: 0.66rem;
+	border: 1px solid #969696;
+	border-radius: 3px;
+	margin-right:3% ;
+	margin-bottom: 10px;
+	
+}
+.mui-content ul li a{
+	display: block;
+	width: 100%;
+	height: 100%;
+	font-size:0.30rem;
+	color: #666666;	
+}
+/*------修改头部-----*/
+.mui-bar {
+    height: 44px;
+    background: #fff;
+}
+.oHeader1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.search {
+    position: absolute;
+    top: 8px;
+    right: 15px;
+    height: 27px;
+    width: 84%;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+.cataloglist {
+    background: url(../../image/rectangular.png) no-repeat scroll right center transparent;
+    background-size: 0.25rem 0.15rem;
+    float: left;
+    width: 1.50rem;
+    height: 100%;
+    padding: 0 0;
+    padding-left: 0.30rem;
+    color: #969696;
+}
+.on_seek {
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0.11rem;
+}
+.cataloglist dt {
+     margin-top: 0px; 
+}
+.seek_img {
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    margin-top: 3px;
+}
+.mui-bar-nav~.mui-content {
+    padding-top: 44px;
+}
+.mui-bar-nav.mui-bar .mui-icon {
+    margin-right: -10px;
+    margin-left: -10px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+.mui-bar .mui-icon {
+    font-size: 24px;
+    position: relative;
+    z-index: 20;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+
+
+
+

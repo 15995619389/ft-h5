@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "进度查询";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/shop/product.css" rel="stylesheet" />
+    <style type="text/css">
+        .layui-layer {
+            background-color: #fff;
+        }
+
+        boby, html {
+            background: #fff;
+        }
+    </style>
+}
+@section foot{
+    <script src="~/dist/mall.schedule.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav head_box head-secd" style="border-bottom: #ddd solid 1px;">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+    <h1 class="mui-title">申请售后</h1>
+</header>
+<div class="mui-content" v-cloak>
+    <input type="hidden" id="code" value="@ViewBag.Code" />
+    <!--进度查询-->
+    <div class="progres-bar" v-if="odfrom.OrderStatus==2 || odfrom.OrderStatus==3">处理中...</div>
+    <div class="progres-bar" v-else-if="odfrom.OrderStatus>3 && odfrom.OrderStatus<8">已处理</div>
+    <div class="progres-bar" v-else>{{odfrom.OrderStatus|zt}}</div>
+    <section class="prog-text">
+        <div class="pro-row">
+            <span class="text-prefix">申请类型</span>
+            <span class="retun-gods">{{odfrom.OrderStatus|lx}}</span>
+        </div>
+        <div class="pro-row noline">
+            <span class="text-prefix">申请原因:</span>
+            <span class="reason">{{odfrom.Causatio}}</span>
+        </div>
+    </section>
+    <section class="prog-img" style="margin-top:10px;">
+        <ul>
+            <li v-for="img in odfrom.ImgModels">
+                <img v-bind:src="img.Url+img.ImgName+img.ImgFix">
+            </li>
+            @*<li><img src="../../image/774a091aa.png"></li>*@
+        </ul>
+    </section>
+</div>
+

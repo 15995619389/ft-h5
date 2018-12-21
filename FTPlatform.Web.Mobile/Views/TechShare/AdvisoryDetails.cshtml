@@ -1,0 +1,37 @@
+﻿@{
+    ViewBag.Title = "咨询详情";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/pulli.css" />
+    <link rel="stylesheet" href="/Content/css/myBusiness/myAdvice/advisoryDetails.css" />
+}
+@section foot{
+    <script src="~/dist/tech.advisorydetails.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/techshare/techshareconsult"></a>
+    <h1 class="mui-title">咨询详情</h1>
+</header>
+<div class="mui-content l-scrollable" v-cloak>
+    <div class="details_box">
+        <div class="details_conent">
+            <div class="content_title">
+                <img src="/Content/image/details_title.png" />
+                <p class="mui-ellipsis">{{details.TechShareModel? details.TechShareModel.Title:""}}</p>
+            </div>
+            <div class="content_text">
+                <div class="text_img"><img src="/Content/image/details_title2.png" /></div>
+                <p class="text_right">{{details.Content}}</p>
+            </div>
+            <p class="time"><span class="oSpan">{{details.CreateTime|formatDate}}</span><img src="/Content/image/time_bg.png" /></p>
+        </div>
+        <div class="reply" v-if="details.ReplyTxt!=null">
+            <div class="content_text">
+                <div class="text_img"><img src="/Content/image/reply.png" /></div>
+                <p class="text_right">{{details.ReplyTxt}}</p>
+            </div>
+            <p class="time"><span class="oSpan">{{details.ReplyTime|formatDate}}</span><img src="/Content/image/time_bg.png" /></p>
+        </div>
+    </div>
+</div>

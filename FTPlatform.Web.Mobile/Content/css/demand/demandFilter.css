@@ -1,0 +1,283 @@
+﻿#demand-sort-bar {
+    width: 100%;
+    height: 0.88rem;
+    background: #fff;
+    border-top: 1px solid #dddddd;
+    border-bottom: 1px solid #ddd;
+    position: absolute;
+    z-index: 9;
+}
+
+    #demand-sort-bar .sort-bar-item {
+        width: 25%;
+        float: left;
+        padding-left: 4%;
+        position: relative;
+        text-align: center;
+        line-height: 0.88rem;
+    }
+
+    #demand-sort-bar div:nth-child(1) {
+        width: 28%;
+    }
+
+    #demand-sort-bar div:nth-child(4) {
+        width: 20%;
+        float: right;
+    }
+
+    #demand-sort-bar div:nth-child(3) {
+        padding-left: 3%;
+    }
+
+    #demand-sort-bar .sort-bar-item span {
+        /*line-height: 0.88rem;*/
+        display: block;
+        float: left;
+        font-size: 0.30rem;
+        text-align: center;
+    }
+
+    #demand-sort-bar .sort-bar-item > div {
+        float: left;
+        width: 0.2rem;
+        margin-top: 0.30rem;
+        margin-left: 0.1rem;
+    }
+
+        #demand-sort-bar .sort-bar-item > div img {
+            width: 100%;
+            height: 0.10rem;
+        }
+
+            #demand-sort-bar .sort-bar-item > div img:first-child {
+                margin-bottom: 0.05rem;
+            }
+
+    #demand-sort-bar .sort-bar-item:nth-child(4) i {
+        display: block;
+        width: 0.25rem;
+        height: 0.2rem;
+        margin-top: 0.05rem;
+        background: url(../../image/screening.png) no-repeat center center;
+        background-size: 0.25rem 0.2rem;
+    }
+
+#targetAmoutSort {
+    padding-left: 6%;
+}
+
+#filterPanel div {
+    width: 0.25rem;
+}
+
+
+.docking_state {
+    width: 100%;
+    height: 0.66rem;
+    z-index: 9;
+    position: absolute;
+    top: 0.88rem;
+    background: #f5f5f5;
+    /*display: flex;
+    justify-content: space-around;*/
+}
+
+    .docking_state li {
+        line-height: 0.66rem;
+        font-size: 0.28rem;
+        color: #666666;
+        text-align: center;
+        background: #f5f5f5;
+        width:20%;
+        float:left
+    }
+
+    .docking_state .text_color {
+        color: #ff6525;
+    }
+
+/*选中效果*/
+/*.text_color {
+    color: #ffa600;
+}*/
+
+/*---上下箭头----*/
+.up {
+    width: 0.30rem;
+    overflow: hidden;
+    height: auto;
+    margin: 0 auto;
+    display: inline-block;
+    float: left;
+    margin-top: 0.25rem;
+}
+
+#demand-sort-bar .active {
+    color: #ffa600;
+}
+#demand-sort-bar .sort-bar-item:nth-child(2){
+    padding-left:2%;
+    width:26%
+}
+.mui-icon-arrowup, .mui-icon-arrowdown {
+    font-size: 0.20rem;
+    width: 0.20rem;
+    height: 0.20rem;
+    line-height: 0.20rem;
+}
+/*筛选弹出框*/
+
+#demand-filt-panel {
+    position: fixed;
+    bottom: 0px;
+    right: 0;
+    height: 100%;
+    display: block;
+    z-index: 99;
+}
+
+    #demand-filt-panel input[type=text] {
+        width: 100%;
+        padding: 0 0;
+        text-align: center;
+        font-size: 0.26rem;
+        height: 75%;
+    }
+
+    #demand-filt-panel .shadow {
+        position: fixed;
+        right: 0px;
+        width: 100%;
+        height: 100%;
+        background: #333;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+    }
+
+    #demand-filt-panel .content {
+        position: relative;
+        right: 0px;
+        height: 350px;
+        width: 90%;
+        height: 100%;
+        float: right;
+    }
+
+    #demand-filt-panel .filts {
+        float: right;
+        width: 100%;
+        height: 93%;
+        padding-left: 0;
+        background: #fff;
+        margin-bottom: 0rem;
+    }
+
+    #demand-filt-panel .filt {
+        width: 100%;
+        padding-left: 3%;
+        border-bottom: 1px solid #ddd;
+        padding-bottom:15px
+    }
+    #demand-filt-panel .filt:nth-child(1){
+        border-bottom:5px solid #f5f5f5
+        
+    }
+    #demand-filt-panel .filt:last-child{
+        border-bottom:none
+    }
+    #demand-filt-panel .filt-title {
+        width: 100%;
+        font-size: 0.30rem;
+        color: #666666;
+        margin-top: 10px;
+        margin-bottom: 0px;
+    }
+
+    /*标的额区间*/
+    #demand-filt-panel .filt-interval > div {
+        width: 100%;
+    }
+
+    #demand-filt-panel .filt-interval .input-dash {
+        width: 20%;
+        height: 1.05rem;
+        float: left;
+    }
+
+        #demand-filt-panel .filt-interval .input-dash i {
+            display: block;
+            width: 60%;
+            margin: 0 auto;
+            height: 1px;
+            background: #969696;
+            margin-top: 30%;
+        }
+
+    #demand-filt-panel .filt-interval > .text {
+        float: left;
+        clear: none;
+    }
+
+    /*关注度、发布时间*/
+    #demand-filt-panel .filt ul {
+        width: 100%;
+        overflow:hidden;
+        height:auto;
+       padding-top:0.20rem
+    }
+
+        #demand-filt-panel .filt ul li {
+            width: 28%;
+            float: left;
+            line-height: .62rem;
+            text-align: center;
+            border: 1px solid #ddd;
+            font-size: 0.26rem;
+            border-radius: 3px;
+            color: #666666;
+        }
+        #demand-filt-panel .filt-title:nth-child(2){
+            margin-bottom:0.20rem
+        }
+        #demand-filt-panel .filt-title:nth-child(3){
+            margin-bottom:0.20rem
+        }
+
+            #demand-filt-panel .filt ul li:nth-child(2) {
+                margin: 0px 5%;
+            }
+
+            #demand-filt-panel .filt ul li.chosen {
+                background: #f8b551;
+                color: #fff;
+            }
+
+    /*按钮*/
+    #demand-filt-panel .btns {
+        width: 100%;
+    }
+
+        #demand-filt-panel .btns div {
+            clear: both;
+        }
+
+        #demand-filt-panel .btns button {
+            width: 50%;
+            text-align: center;
+            float: left;
+            border-radius: 0px;
+            height: 0.80rem;         
+            line-height:0
+        }
+
+        #demand-filt-panel .btns .reset {
+            background: #dddddd;
+            border:1px solid #ddd
+        }
+
+        #demand-filt-panel .btns .determine {
+            background: #0e5bb5;
+            border: 1px solid #0e5bb5;
+            color: #fff;
+        }

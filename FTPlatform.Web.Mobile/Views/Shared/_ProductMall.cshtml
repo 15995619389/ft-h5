@@ -1,0 +1,62 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="/content/css/gobel.css" rel="stylesheet" />
+    <link href="/content/css/shop/smart.css" rel="stylesheet" />
+    @RenderSection("head", false)
+}
+@section foot
+{
+    @RenderSection("foot", false)
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $(".right-adt").click(function () {
+                $(".under-gird").toggle();
+            });
+        });
+
+        $("#quick-pull").click(function () {
+            $("#mask").css({
+                "display": "block"
+            });
+        });
+        $(".close").click(function () {
+            $("#mask").css({
+                "display": "none"
+            });
+        });
+        $(".pull-techoly li a").click(function () {
+            $("#mask").css({
+                "display": "none"
+            });
+
+        });
+        $("#quick-pull").click(function () {
+            $("#quick-pull").toggleClass("blue");
+            $(".mui-tab-item").removeClass(".mui-active");
+        });
+    </script>
+}
+<header class="mui-bar mui-bar-nav head_box" style="height:44px;">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="/mall/Index"></a>
+    <div class="search_box" style="width:90%;float:right;height:27px;margin-top:9px">
+        <span style="margin-left:0.1rem;width:88%;line-height:25px"><input type="text" placeholder="搜索商品" value="" style="height:22px;line-height:22px;font-size:0.26rem"></span>
+        <i id="Search" style="float:right;margin-right:5px;margin-top:3px"></i>
+    </div>
+</header>
+<nav class="mui-bar mui-bar-tab ft-tab">
+    <a class="nav-tab-item" href="/">
+        <span class="tab-icon icon-home"></span>
+        <span class="mui-tab-label">首页</span>
+    </a>
+    <a class="nav-tab-item" href="/mall/orderfromindex">
+        <span class="tab-icon icon-order"></span>
+        <span class="mui-tab-label">订单管理</span>
+    </a>
+    <a class="nav-tab-item" href="/mall/ScoreGold">
+        <span class="tab-icon icon-zhibi"></span>
+        <span class="mui-tab-label">我的智币</span>
+    </a>
+</nav>
+@RenderBody()

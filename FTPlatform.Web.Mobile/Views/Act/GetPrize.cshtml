@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "领取奖品";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<meta charset="UTF-8">
+<title>领取奖品</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+@section head{
+<link rel="stylesheet" href="/Content/css/pulli.css" />
+<link rel="stylesheet" href="/Content/css/myBusiness/myPrize/getPrize.css" />
+    }
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+    <h1 class="mui-title">领取奖品</h1>
+</header>
+<div class="mui-content" v-cloak>
+    <div class="from_content" v-if="prize.Status >= PrizeStatus.YeDraw">
+        <div class="mui-input-row">
+            <label style="width:100%">收件人：{{prize.Consignee}}</label>
+        </div>
+        <div class="mui-input-row">
+            <label style="width:100%">联系方式：{{prize.Telephone}}</label>
+        </div>
+        <div class="mui-input-row">
+            <label v-if="prize.LogistNumber!=null" style="width:100%">物流号：{{prize.LogistNumber}}</label>
+            <label v-if="prize.LogistNumber==null" style="width:100%">物流号：未发货</label>
+        </div>
+    </div>
+    <div class="from_content" v-if="prize.Status == PrizeStatus.NoDraw">
+        <div class="mui-input-row">
+            <label>收件人：</label>
+            <input id="Consignee" type="text" placeholder="请输入姓名">
+        </div>
+        <div class="mui-input-row">
+            <label>联系方式：</label>
+            <input id="Telephone" type="text" placeholder="请输入联系方式">
+        </div>
+        <div class="mui-input-row">
+            <label>物流地址：</label>
+            <input id="Addressee" type="text" placeholder="请输入物流地址">
+        </div>
+
+        <button type="button" class="mui-btn mui-btn-blue mui-btn-block" v-on:click="Sumb(prize.Id)">提&nbsp;&nbsp;交</button>
+    </div>
+</div>
+@section foot{
+<script src="~/Content/Plugins/layer/layui.all.js"></script>
+    <script src="~/dist/act.getprize.bundle.js"></script>
+    }

@@ -1,0 +1,281 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    ViewBag.Title = "发布技术推荐";
+}
+@section head{
+    <link rel="stylesheet" href="/content/css/label.css" />
+    <link href="/content/css/pulli.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/content/css/results/PublishingTechnology.css" />
+    <style>
+            #edui46 {
+                z-index: 1 !important;
+            }
+
+            .wap_tol ul li span {
+                top: -13px;
+                right: -10px;
+            }
+
+            .popup, .popup_consult {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin-left: -40%;
+                margin-top: -1.75rem;
+            }
+            /*#component-imguploader .file-info{
+            margin-top: -44px
+        }*/
+            .mui-content {
+                top: 0;
+            }
+
+            .html-fiexd {
+                position: fixed;
+                width: 100%;
+                overflow: hidden;
+                height: 100%;
+            }
+    </style>
+}
+@section foot{
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/dist/tech.publish.bundle.js"></script>
+}
+<div id="container">
+    <image-uploader ref="uploader"></image-uploader>
+    <category-picker ref="catepicker"></category-picker>
+    <mt-datetime-picker ref="dateTimepicker1" v-on:confirm="GetApplyTime" v-bind:start-date="StartDate" v-bind:end-date="EndDate" type="date" year-format="{value} 年" month-format="{value} 月" date-format="{value} 日">
+    </mt-datetime-picker>
+    <mt-datetime-picker ref="dateTimepicker2" v-on:confirm="GetAccreditTime" v-bind:start-date="StartDate" v-bind:end-date="EndDate" type="date" year-format="{value} 年" month-format="{value} 月" date-format="{value} 日">
+    </mt-datetime-picker>
+    <header class="" style="background: #fff;border-bottom: none;">
+        <a class="mui-icon-arrowleft  mui-pull-left header-a" href="javascript:history.go(-1);"></a>
+        <h1 class="mui-title">发布技术推荐</h1>
+    </header>
+    <div class="mui-content l-scrollable" id="techContent" v-cloak style="top:44px">
+        <div class="prompt" style="display:none;">
+            <p class="prompt_text"><img src="~/Content/image/all/prompt_icon.png">请至基本信息完善资料后再进行发布技术</p>
+        </div>
+        <div class="need_name">
+            <div class="name_title">
+                <em class="oSpan">*</em><input type="text" placeholder="技术名称" style="width: 95%;" v-model.trim="TechShare.Title" />
+            </div>
+            <div class="upload_img">
+                <template v-if="TechShare.ImgUrl==''">
+                    <img src="../../Content/image/firstFigure.png" id="textfield" v-on:click="UploadImage">
+                </template>
+                <div style="font-size:0.26rem;color:#b90000">*只能上传一张</div>
+                <div class="wap_tol" style="margin-top:10px;">
+                    <ul>
+                        <li v-if="TechShare.ImgUrl!=''" style="position:relative;width:142px">
+                            <img id="ImgUrl" v-bind:src="domain+TechShare.ImgUrl" alt="" width="142" height="142" />
+                            <span v-on:click="RemoveImage">×</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="needs">
+            <div class="need_form">
+                <div class="form_title">
+                    <span class="oSpan">*</span>技术提供者身份
+                </div>
+                <div class="service_checkbox">
+                    <div class="radio">
+                        <div class="mui-input-row mui-radio mui-left">
+                            <label>技术独立研发</label>
+                            <input type="radio" value="1" v-model="TechShare.TechSupplier">
+                        </div>
+                        <div class="mui-input-row mui-radio mui-left">
+                            <label>技术联合研发者</label>
+                            <input type="radio" value="2" v-model="TechShare.TechSupplier">
+                        </div>
+                        <div class="mui-input-row mui-radio mui-left">
+                            <label>技术代理者</label>
+                            <input type="radio" value="3" v-model="TechShare.TechSupplier">
+                        </div>
+                        <div class="mui-input-row mui-radio mui-left">
+                            <label>其他</label>
+                            <input type="radio" value="4" v-model="TechShare.TechSupplier">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="need_form">
+                <div class="form_title">
+                    <span class="oSpan">*</span>技术研发阶段
+                </div>
+                <div class="service_checkbox">
+                    <div class="radio radio_box">
+                        <div class="mui-input-row mui-radio mui-left">
+                            <label>研发</label>
+                            <input name="DevelPhase" type="radio" value="1" v-model="TechShare.DevelPhase">
+                        </div>
+                        <div class="mui-input-row mui-radio mui-left">
+                            <label>小试</label>
+                            <input name="DevelPhase" type="radio" value="2" v-model="TechShare.DevelPhase">
+                        </div>
+                        <div class="mui-input-row mui-radio mui-left">
+                            <label>中试</label>
+                            <input name="DevelPhase" type="radio" value="3" v-model="TechShare.DevelPhase">
+                        </div>
+                        <div class="mui-input-row mui-radio mui-left">
+                            <label>已有样品</label>
+                            <input name="DevelPhase" type="radio" value="4" v-model="TechShare.DevelPhase">
+                        </div>
+                        <div class="mui-input-row mui-radio mui-left">
+                            <label>产业化</label>
+                            <input name="DevelPhase" type="radio" value="5" v-model="TechShare.DevelPhase">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="need_form">
+                <div class="form_title">
+                    <span class="oSpan">*</span>交易方式（多选）
+                </div>
+                <div class="service_checkbox checkBox">
+                    <div class="mui-input-row mui-checkbox mui-left" style="width: 35%;float: left;">
+                        <label class="from_label">风险投资</label>
+                        <input name="TechTradWay" type="checkbox" value="1" v-model="TechShare.TechTradWay">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left" style="width: 35%;float: left;">
+                        <label class="from_label">研发合同</label>
+                        <input name="TechTradWay" type="checkbox" value="2" v-model="TechShare.TechTradWay">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left" style="width: 30%;float: left;">
+                        <label class="from_label">技术入股</label>
+                        <input name="TechTradWay" type="checkbox" value="3" v-model="TechShare.TechTradWay">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left" style="width: 35%;float: left;">
+                        <label class="from_label">授权许可</label>
+                        <input name="TechTradWay" type="checkbox" value="4" v-model="TechShare.TechTradWay">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left" style="width: 35%;float: left;">
+                        <label class="from_label">出售</label>
+                        <input name="TechTradWay" type="checkbox" value="5" v-model="TechShare.TechTradWay">
+                    </div>
+                </div>
+                <div class="need_text">
+                    <textarea placeholder="如需要,请对交易方式进行说明" v-model.trim="TechShare.TechTradOther"></textarea>
+                </div>
+            </div>
+        </div>
+        <div class="TechnologyLabel">
+            <div class="form_title">
+                <span class="oSpan">*</span>技术标签
+            </div>
+            <div class="label_box" id="pickCategory">
+                <div class="label_fill" v-html="Category"></div>
+                <button type="button" class="mui-btn mui-btn-blue" v-on:click="PickCategory">选择标签</button>
+            </div>
+        </div>
+        <div class="Research_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>研发背景
+            </div>
+            <textarea placeholder="研发背景" class="needs_bg_text" v-model="DevelopBackdrop"></textarea>
+        </div>
+        <div class="Research_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>应用范围
+            </div>
+            <textarea placeholder="应用范围" class="needs_bg_text" v-model="ApplicaRange"></textarea>
+        </div>
+        <div class="Research_bg">
+            <div class="form_title">
+                <span class="oSpan"></span>生产条件及设备
+            </div>
+            <textarea placeholder="生产条件及设备" class="needs_bg_text" v-model="ProductEquip"></textarea>
+        </div>
+        <div class="Research_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>技术路线/原理
+            </div>
+            <textarea placeholder="技术路线/原理" class="needs_bg_text" v-model="TechTheory"></textarea>
+        </div>
+        <div class="Research_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>技术特色
+            </div>
+            <textarea placeholder="请输入您的技术特色" class="needs_bg_text" v-model.trim="TechShare.Feature"></textarea>
+        </div>
+        <div class="PatentInformation">
+            <div class="form_title">专利信息</div>
+            <div class="name_title">
+                <span style="font-size: 0.30rem;color: #666;">专利号</span><input type="text" v-model.trim="TechPatentModel.PatentNum" style="text-align: right;width: 81%;">
+            </div>
+            <div class="name_title">
+                <span style="font-size: 0.30rem;color: #666;">国家</span><input type="text" v-model.trim="TechPatentModel.Country" style="text-align: right;width: 81%;">
+            </div>
+            <div class="name_title">
+                <span style="font-size: 0.30rem;color: #666;">专利类型</span><input type="text" v-model.trim="TechPatentModel.PatentType" style="text-align: right;width: 81%;">
+            </div>
+            <div class="name_title">
+                <span style="font-size: 0.30rem;color: #666;">申请日期</span>
+                <span v-on:click="openPicker1" style="text-align: right;width: 81%;display:block;height:20px;float:right;color:#444;">{{TechPatentModel.ApplyTime}}</span>
+            </div>
+            <div class="name_title">
+                <span style="font-size: 0.30rem;color: #666;">授权日期</span>
+                <span v-on:click="openPicker2" style="text-align: right;width: 81%;display:block;height:20px;float:right;color:#444;">{{TechPatentModel.AccreditTime}}</span>
+            </div>
+        </div>
+        <div class="Research_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>经济效益分析
+            </div>
+            <textarea placeholder="经济效益分析" class="needs_bg_text" v-model="EconomyAnalyze"></textarea>
+        </div>
+        <div class="Upload">
+            <div class="form_title">
+                上传文件
+            </div>
+            <div class="upload_files">
+                <div id="uploadForm">
+                    <div id="files"><img src="../../Content/image/Upload_file.png" /></div>
+                    <input type="file" class="file_box" id="fileAttach" size="28">
+                    <div id="techFile">
+                        <ul>
+                            <li v-for="(lis,index) in TechShare.TechAttachAll" >
+                                {{lis.FileName+lis.FileExt}}
+                                <span class="delefile" style="cursor:pointer" v-on:click="RemoveFile(index)">×</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="Btn">
+            <button v-on:click="Post(1)" type="button" class="mui-btn mui-btn-yellow">提交</button>
+            <button v-on:click="Post(-99)" type="button" class="mui-btn mui-btn-blue">保存</button>
+        </div>
+        <div id="mask"></div>
+        <!---------以保存待提交---->
+        <div class="popup" v-on:click="SkipUrl">
+            <div class="btn_box">
+                提示
+                <a class="btn disappear">X</a>
+            </div>
+            <p>您的技术推荐已保存至待提交，请在待提交中查看或编辑</p>
+            <div class="btn_footer">
+                <div class="btn_footer1">
+                    <button type="button" class="mui-btn mui-btn-blue  confirm ">确定</button>
+                </div>
+            </div>
+        </div>
+        <!----------已提交，等待审核------------>
+        <div class="popup_consult" v-on:click="SkipUrl">
+            <div class="btn_box">
+                提示
+                <a class="btn disappear">X</a>
+            </div>
+            <p>您的技术推荐已提交，请等待平台审核</p>
+            <div class="btn_footer">
+                <div class="btn_footer1">
+                    <button type="button" class="mui-btn mui-btn-blue  confirm_consult">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

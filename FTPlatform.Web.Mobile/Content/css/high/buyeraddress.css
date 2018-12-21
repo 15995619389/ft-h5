@@ -1,0 +1,291 @@
+﻿
+.mui-bar{
+    border-bottom:1px solid #ddd
+}
+/*---收获地址---*/
+.takeAddress{
+   overflow:hidden;
+   width:100%;
+   height:auto;
+}
+.administer{
+    display:inline-block;
+    float:right;
+    font-size: 17px;
+    font-weight: 500;
+    line-height: 44px;
+    color: #000;
+}
+.address_wrap,.govern{   
+    overflow:hidden;
+}
+.address_wrap li{
+    width:100%;
+    padding:0.20rem;
+    overflow:hidden;
+    height:auto;
+    border-bottom:1px solid #ddd;
+}
+.name_box{
+    overflow:hidden;
+    color:#444;
+    font-size:0.28rem
+}
+.name_box strong{
+    float:left;
+}
+.name_box strong:last-child{
+    float:right;
+    font-weight:400
+}
+.defaultAddress{
+    font-size:0.26rem;
+    color:#fe6400
+}
+.address_text{
+    margin-top:0.10rem;
+    font-size:0.26rem;
+    color:#666;
+    line-height:0.38rem;
+    margin-bottom:0
+}
+/*--管理收货地址---*/
+.AdministerAddress{
+    overflow:hidden;
+   width:100%;
+   height:auto;
+}
+.govern li{
+    width:100%;
+    padding:0.20rem 0;
+    overflow:hidden;
+    height:auto;
+    margin-bottom:0.10rem;
+    background:#fff
+}
+.govern .name_box{
+    padding:0 0.20rem
+}
+.govern .address_text{
+    border-bottom:1px dashed #ddd;
+    padding:0 0.20rem 0.20rem
+}
+.select_address{
+    overflow:hidden;
+    padding:0.20rem 0.20rem 0.10rem;
+}
+.radio{
+    float:left;
+    font-size:0.26rem;
+}
+.radio sapn{
+    color:#444
+}
+.radio .text_color{
+color:#fe6400
+}
+.radio i {
+        display: inline-block;
+        float: left;
+        width: 0.30rem;
+        height: 0.30rem;
+        background: url('../../image/high/radio.png') no-repeat;
+        background-size:100% 100%;
+        margin-top:4px;
+        margin-right:5px
+    }
+.radio .user_chekbox{
+    background: url('../../image/high/user_chekbox.png') no-repeat;
+    background-size:100% 100%;
+}
+.list_btn{
+    float:right;
+}
+.list_btn .mui-btn-gray{
+    color:#a5a7a8
+}
+.list_btn .mui-btn-blue{
+    color:#0e5bb5;
+    border:1px solid #0e5bb5  
+}
+.list_btn button{
+    padding:0.08rem 15px;
+    margin-left:10px;
+    font-size:0.26rem
+}
+.AdministerAddress .mui-bar-tab{
+    line-height:0.80rem;
+    height:0.80rem;
+    background:#0e5bb5;text-align:center;
+    color:#fff;
+    font-size:0.30rem
+}
+/*---编辑地址----*/
+.editAddress{
+    overflow:hidden;
+    width:100%;
+   height:auto;
+}
+.edit_ul{
+    overflow:hidden;
+    width:100%;
+    height:auto;
+    background:#fff
+}
+.edit_ul li{
+    padding:0.20rem;
+    border-bottom:1px solid #ddd;
+    font-size:0.28rem;
+    color:#444;
+    overflow:hidden
+}
+.edit_ul li span{
+    display:block;
+    float:left
+}
+.edit_ul li input[type="text"]{
+    padding:0;
+    width:81%;float:left;
+    margin:0;
+    height:21px;
+    font-size:0.28rem;
+    color:#444;
+    border:none
+}
+.edit_ul .city{
+    width:80%;float:left;
+    margin:0;
+    height:21px;
+    font-size:0.28rem;
+    color:#444;
+    border:none
+}
+.edit_ul .city em{
+    float:right;
+    font-size:0.40rem;
+    color:#999
+}
+.adinfo{
+    font-size:0.28rem;
+    color:#444;
+    padding:0.20rem;
+    border:1px solid #ddd;
+    display:block
+}
+#determine{
+    background:#0e5bb5;
+    border:1px solid #0e5bb5;
+    position: absolute;
+    bottom: 1.00rem;
+    width: 96%;
+    left: 2%;
+}
+.detailAddress{
+    width:100%;
+    font-size:0.28rem;
+    border:none;
+    margin-bottom:0;
+    padding:0
+}
+#mask{
+    position:fixed;
+    left:0;
+    top:0;
+    right:0;bottom:0;
+    background:#333;
+    opacity:0.5;
+    width:100%;
+    height:100%;
+}
+
+
+
+
+
+
+
+
+
+/*------city--------*/
+#PoPy{
+    position:fixed;
+    height:6.00rem;
+    left:0 !important;
+    bottom:0 !important;
+    width:100% !important;
+}
+#_citysheng{
+    padding:0.20rem;
+    overflow:hidden;
+    border-bottom:1px solid #0e5bb5
+}
+#_citysheng li{
+    width:33.33%;
+    float:left
+}
+._citys1{
+   height:5.50rem;
+    overflow: auto;
+    width:100%
+}
+._citys1 a{
+    display:block;
+    border-bottom:1px solid #ddd;
+    background:#fff;
+    color:#444;
+    padding:0.20rem
+}
+#city{
+    font-size:0.28rem;
+    border:none;
+    width:90%;
+    /*text-align:right*/
+}
+#cColse{
+    position:absolute;
+    right:0.20rem;
+    width:20px;
+    text-align:center;
+    margin-top:0.15rem
+}
+
+/*-------*/
+.edit_ul li:last-child{
+    border-top:0.15rem solid #f5f5f5;
+}
+.radio {
+    float: right;
+    font-size: 0.26rem;
+}
+.radio i {
+    display: inline-block;
+    float: left;
+    width: 0.30rem;
+    height: 0.30rem;
+    background: url(../../image/high/radio.png) no-repeat;
+    background-size: 100% 100%;
+    margin-top: 4px;
+    margin-right: 5px;
+}
+.radio .user_chekbox {
+    background: url(../../image/high/user_chekbox.png) no-repeat;
+    background-size: 100% 100%;
+}
+.govern li:last-child{
+        margin-bottom:40px
+    }
+
+/*--addressList--*/
+.addressNoData{
+            background: #efeff4;
+    }
+    .addressNoData li {
+        text-align: center;
+        background: #efeff4;
+        border-bottom: none;
+        color: rgb(170, 170, 170);
+        font-size: 16px;
+    }
+ .citySel {
+        color: red !important;
+    }

@@ -1,0 +1,158 @@
+html{
+	background: #fff;
+}
+p,body{
+	line-height: 0.40rem;
+}
+p{
+	margin-bottom: 0px;
+}
+.problem{
+	background: #f2f1f7;
+	height: auto;
+	overflow: hidden;
+	display: none;
+}
+.attention{
+	height: 0.90rem;
+	border-bottom: 1px solid #ddd;
+	border-top:1px  solid #ddd;
+	overflow: hidden;
+	width: 100%;
+}
+.attention li{
+	width: 33.33%;
+	border-right: 1px solid #ddd;
+	text-align: center;
+	font-size: 0.30rem;
+	color: #444;
+	line-height: 0.90rem;
+	float: left;
+}
+.attention li:nth-child(3){
+	border-right: none;
+}
+.feedback {
+    padding: 0.20rem 3%;
+    overflow: hidden;
+    height: auto;
+    margin-bottom: 0.20rem;
+    background: #fff;
+}
+.research_title{
+    font-size: 0.30rem;
+    color: #0e5bb5;
+    padding-bottom: 10px;
+}
+.Serial {
+    font-size: 0.28rem;
+    color: #666666;
+}
+.not_docking {
+    float: right;
+    color: #ff6525;
+}
+.industry{
+	margin-right:1.20rem;
+}
+.research_footer {
+    width: 100%;
+    
+    
+}
+.experts{
+	border-bottom: 1px dashed #ddd;
+    padding-bottom: 0.20rem;
+    overflow: hidden;
+}
+.research_footer li {
+    float: left;
+}
+.money {
+    float: left;
+    width: 0.25rem;
+    height: 0.25rem;
+    margin-top: 0.08rem;
+    margin-right: 0.04rem;
+}
+.research_footer li p {
+    float: left;
+    color: #969696;
+    font-size: 0.26rem;
+}
+.experts li p,.personal li p{
+    float: right;
+	color: #444;
+font-size: 0.28rem;	
+}
+.focus_img {
+    width: 0.25rem;
+    height: 0.22rem;
+    float: left;
+    margin-right: 0.05rem;
+    margin-top: 0.10rem;
+}
+.research_footer li:nth-last-child(1){
+	float: right;
+}
+.research_title .over{
+	color: #137132;
+}
+.attention .text_color{
+	color: #ff6525;
+}
+.personal{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding-top:0.20rem ;
+}
+.personal li{
+	float: left;
+	overflow: hidden;
+	height: auto;
+}
+.personal li:nth-child(2){
+	float: right;
+}
+.name{
+	font-size: 0.30rem;
+	color: #0e5bb5;
+}
+.NotExchange{
+	color: #2f9fc3;
+}
+.mui-btn, button{
+	padding: 0.08rem 0.24rem;
+	font-size: 0.28rem;
+	float: right;
+	margin-top: 0.20rem;
+}
+.feedback_box ul{
+	overflow: hidden;
+	height: auto;
+	float: left;
+}
+.feedback_box ul:nth-child(2){
+	float: right;
+}
+.technology li:nth-child(1){
+	margin-right: 0.40rem;
+}
+.technology_title{
+	    font-size: 0.30rem;
+    color: #0e5bb5;
+}
+.feedback_box{
+	padding: 0.30rem 3%;
+    overflow: hidden;
+    height: auto;
+    margin-bottom: 0.20rem;
+    background: #fff;
+}
+.technology li p{
+	color: #444;
+}
+.research_footer li p{
+	margin-top: 0px;
+}

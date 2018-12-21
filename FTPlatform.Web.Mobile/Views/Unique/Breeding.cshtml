@@ -1,0 +1,192 @@
+﻿@{
+    ViewBag.Title = "航天育种";
+    ViewBag.Description = "飞天众智（www.techina2025.com）为社会各界提供航天搭载服务，可利用航天运载系列搭载条件提供生物菌种、农林植物种子、高性能材料等进行科学实验和产品开发。";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/unique/spaceflight.css" />
+    <link href="~/Content/css/unique/breeding.css" rel="stylesheet" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+    <script>
+        $(function () {
+            $("#fun_navback").on("click", function () {
+                document.referrer === '' ? window.location.href = "http://" + window.location.host : window.history.go(-1);
+            });
+        });
+    </script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff; z-index:34;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="fun_navback"></a>
+    <h1 class="mui-title">航天育种</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage"><img src="~/Content/image/recommend/reback.png" /></a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg" style="z-index:34;">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content l-scrollable" style="background: #fff;">
+    <rightsidebar></rightsidebar>
+    <img src="~/Content/image/MilitaryCivilian/breeding/amtop.png" class="space_bg" />
+    <div class="CompanyName">
+        <h3>航天育种介绍</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <div class="introduced-list">
+        <ul>
+            <li><span>随着科学技术的发展，人们探索外部世界的活动由陆地延伸到海洋、拓展到太空。今天，我们对太空进行着新的探索。</span> </li>
+            <li><span>太空环境的特点是高远位置、高洁净、高真空、微重力、多种宇宙射线、重粒子和交变磁场等。这个特殊环境给金属冶炼、合成材料、制药、旅游观光、天文观测和诱变育种创造了理想的条件。</span> </li>
+            <li><span>中国的航天专家、农业育种专家、遗传专家经过多年的努力，利用太空环境作为诱变因子，在培育优良农作物品种方面取得了可喜的成绩。</span> </li>
+        </ul>
+    </div>
+    <div class="space_bg"><img src="~/Content/image/MilitaryCivilian/breeding/sy.png" /></div>
+    <div class="CompanyName">
+        <h3>何谓航天育种</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <p class="platform_text2">航天诱变育种（简称航天育种）技术是近20年来涌现的创造新种质资源和新品种的新技术。它是利用返回式航天器将植物种子（含微生物、枝芽、细胞组织等）带到太空，利用宇宙空间特殊的环境（微重力、高真空、宇宙射线、重粒子、交变磁场等因素），对植物种子的诱变作用来产生变异，再返回地面选育新种质、新材料，培育新品种的作物育种技术。</p>
+    <div class="trait-box">
+        <h4>航天育种技术的突出特点</h4>
+        <ul>
+            <li>
+                <i class="bypl"></i>
+                <span>变异频率高</span>
+            </li>
+            <li>
+                <i class="byfd"></i>
+                <span>变异幅度大</span>
+            </li>
+            <li>
+                <i class="profi"></i>
+                <span>有益变异多</span>
+            </li>
+            <li>
+                <i class="stabilize"></i>
+                <span>变异稳定快</span>
+            </li>
+        </ul>
+        <p class="approach-text">航天育种技术是培育高产、质优、早熟、抗病农作物新品种、新种质资源的新途径。</p>
+    </div>
+    <div class="space_bg"><img src="~/Content/image/MilitaryCivilian/breeding/exper.png" /></div>
+    <div class="CompanyName">
+        <h3>航天育种简易流程</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <div class="flow-box">
+        <ul>
+            <li>
+                <div class="cire-icn"><i class="yzfc"></i></div>
+                <div class="fl-text">将种子装入<br />宇宙飞船</div>
+            </li>
+            <li>
+                <div class="cire-icn"><i class="tkhj"></i></div>
+                <div class="fl-text">太空环境中综<br />合因素影响</div>
+            </li>
+            <li style="margin-right:0;">
+                <div class="cire-icn"><i class="zzyc"></i></div>
+                <div class="fl-text">种子遗传基因<br />变异</div>
+            </li>
+            <li>
+                <div class="cire-icn"><i class="filt"></i></div>
+                <div class="fl-text">返回地面后对变异种子<br />选优及筛选</div>
+            </li>
+            <li style="margin-right:0;">
+                <div class="cire-icn"><i class="foster"></i></div>
+                <div class="fl-text">种植和培育<br /><span style="visibility:hidden;">选优及筛选</span></div>
+            </li>
+        </ul>
+    </div>
+    <div class="introduced-list">
+        <ul>
+            <li><span>航天育种是一种研究活动，种子经过搭载返回到地面后，必须由专业的育种人员，经历至少3～5年的选育过程（筛选、淘汰、稳定化试验），从中筛选出一些育种专家认为有价值、有推广应用前景、遗传稳定的品系，再经过至少2～3年的品种多点试验后。报经国家或省、部级品种审定委员会认定，在适种区域进行推广应用。 </span> </li>
+            <li><span>航天育种与传统育种相比，最大的优势是缩短了育种时间，能在较短的时间内，创造出大批优质的种质资源。</span> </li>
+        </ul>
+    </div>
+    <div class="CompanyName">
+        <h3>航天育种技术与转基因技术</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <div class="technology-wrap">
+        <div class="gene-ty">
+            <div class="wht-text">
+                <h3>非转基因技术</h3>
+                <p>目前，有一些人对航天育种产品还存在一定程度的误解，把它和转基因食品混淆起来。</p>
+                <p>转基因，是指运用科学手段从某种生物中提取所需要的基因，将其转入另一种生物中，使与另一种生物的基因进行重组，从而产生特定的具有变异遗传性状的物质。</p>
+                <p>从这里可以看出：要完成转基因，必须要满足3个条件，首先要有外源基因（人们希望植物体要具有的特性）；其次，要有被导入的植物体；最关键的是，该植物体要将被导入的外源基因转化，并得到表达（外源基因的特性能遗传）。这3个条件均满足了，才是完成了转基因。</p>
+            </div>
+        </div>
+        <div class="space-tly">
+            <div class="arrows"></div>
+            <div class="mutation">
+                <h3>航天育种技术</h3>
+                <p>而在实施航天搭载中，外源基因的“提取”和“导入”是不可能在航天搭载的实施中进行的。航天育种是利用宇宙空间特殊的环境（微重力、高真空、宇宙射线、重粒子、交变磁场等因素）使植物种子的染色体发生变异，再返回地面选育新材料、培育新品种的作物育种新技术。所以通过航天搭载培育出的优良品种，不是转基因的。</p>
+            </div>
+        </div>
+    </div>
+    <div class="CompanyName">
+        <h3>食用航天食品安全吗？</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <div class="space_bg" style="margin-top:20px;"><img src="~/Content/image/MilitaryCivilian/breeding/east-ep.png" /></div>
+    <div class="introduced-list" style="margin-top:8px;">
+        <ul>
+            <li><span>在自然条件下，由于各种内外因素的影响，染色体上个别基因点发生内在变化，导致外部性状出现变异的频率很低，只有几万分之一到几百万分之一。 航天育种只是使变异的频率提高而已，并不存在安全问题。培育成的新品种进行推广种植，最后才能走上人们的餐桌。因而，没有必要担心食用的安全。</span> </li>
+            <li><span>航天育种是近20几年来涌现的创造新种质资源和新品种的新技术。经科研和生产单位的育种专家和科技工作者的地面选育，培育出了包括粮食、蔬菜、花卉的众多新品种。这些优良品种进入了百姓的餐桌，美化了民众的生活，装满了百姓的米袋子，丰富了百姓的菜篮子，鼓起了农民的钱袋子。航天育种已显露出了广阔的发展前景和可观的经济效益，我们愿航天育种能对国民经济建设、农业生产的发展、农民的增收和丰富人民的生活起到促进作用。</span> </li>
+        </ul>
+    </div>
+    <div class="CompanyName">
+        <h3>航天育种延伸项目</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <div class="space_bg" style="margin-top:20px;"><img src="~/Content/image/MilitaryCivilian/breeding/timg.png" /></div>
+    <div class="projectlist">
+        <ul>
+            <li>
+                <div class="proicon">
+                    <i class="matrix"></i>
+                </div>
+                <div class="protext">
+                    <h4>与企业合作建立航天育种示范基地</h4>
+                    <p>定位为加快军民融合深度发展，推广航天育种技术，普及航天农业科普教育。</p>
+                </div>
+            </li>
+            <li>
+                <div class="proicon">
+                    <i class="logo"></i>
+                </div>
+                <div class="protext">
+                    <h4>航天育种logo的商标授权</h4>
+                    <p>由中国航天授权的“航天育种”品牌商标进行推广合作，以“航天育种”的品牌授权、商标为合作内容。</p>
+                </div>
+            </li>
+            <li>
+                <div class="proicon">
+                    <i class="park"></i>
+                </div>
+                <div class="protext">
+                    <h4>合作航天文化主题公园、太空乐园等观光体验项目，设立航天科普教育基地</h4>
+                    <p>航天文化主题公园、太空乐园的建立核心意义是航天技术的体现，通过推动军民融合发展战略，本着资本+文化产业融合的理念来为企业服务。</p>
+                </div>
+            </li>
+            <li>
+                <div class="proicon">
+                    <i class="town"></i>
+                </div>
+                <div class="protext">
+                    <h4>建设航天特色小镇</h4>
+                    <p>国家住房城乡建设部、国家发展改革委、财政部在2016年下发《关于开展特色小镇培育工作的通知》，提出到2020年要培育1000个左右特色小镇。中国航天不断建设和完善“军民联合、互利多赢、长效发展的航天小镇模式”，逐步通过经营型的农业、工业和旅游业，形成建设新型社会主义新农村、新城镇的长效发展机制，促进地方经济、科技、环境、文化全面融合发展。</p>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!--公司备案，版权所有-->
+    <footer class="company_footer" style="width:100%;height:auto;overflow:hidden;padding:0.30rem 0;background:#f4f4f4;font-size:0.24rem;text-align:center;color:#999">
+        © 2016-<span>@DateTime.Now.Year</span>飞天众智平台&nbsp;|&nbsp;<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" style="color:#999">沪ICP备16043947号-2</a>
+    </footer>
+</div>
+<share ref="share"></share>

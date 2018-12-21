@@ -1,0 +1,277 @@
+html{
+	background: #f2f1f7;
+}
+.prize_tab{
+	background: #fff;
+	height: 45px;
+	width: 100%;
+	overflow: hidden;
+	border-bottom: 1px solid #ddd;
+	border-top:1px solid #ddd;
+}
+.prize_tab li{
+	width: 50%;
+	float: left;
+	height: 100%;
+	line-height: 45px;
+	text-align: center;
+	font-size: 0.30rem;
+	color: #444;
+}
+.prize_tab li:nth-child(1){
+	border-right:1px solid #ddd;
+}
+.activtiy_box{
+	display: none;
+	width: 100%;
+	height:40px;
+	background: #f2f1f7;
+}
+.activtiy {
+	width: 100%;
+	margin:0 auto;
+	height: 100%;
+}
+.activtiy li{
+	float: left;
+	width: 27%;
+	height: 100%;
+	line-height: 40px;
+	text-align: center;
+	color: #444;
+	font-size: 0.30rem;
+}
+.state{
+	width: 100%;
+	margin:0 auto;
+	height: 100%;
+}
+.state li{
+	width: 17%;
+	height: 100%;
+	line-height: 40px;
+	text-align: center;
+	color: #444;
+	font-size: 0.30rem;
+	float: left;
+}
+/*--activtiy_content---*/
+.activtiy_content{
+	display: none;
+	width: 100%;
+   
+	height: auto;
+	overflow: hidden;
+}
+.online_teb{
+	width: 100%;
+	display: none;
+}
+/*-----线上-------*/
+.online{
+	padding: 11px 4%;
+	border-bottom: 1px solid #ddd;
+	/*border-top:1px solid #ddd ;*/
+	overflow: hidden;
+	height: auto;
+    background: #fff;	
+    margin-bottom: 15px;
+}
+.research_title {
+    font-size: 0.28rem;
+    color: #0e5bb5;  
+}
+.not_docking {
+    float: right;
+    color: #ff6525;
+}
+.time{
+	overflow: hidden;
+	height: auto;
+	width: 100%;
+    margin-bottom:5px;	
+}
+.time li{
+	width: 50%;
+	float: left;
+	font-size: 12px;
+	color:#969696;
+}
+.content_top{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	border-bottom: 1px dashed #ddd;
+    padding-bottom: 11px;	
+}
+.content_bottom{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	font-size: 14px;
+	line-height: 30px;
+	padding-top: 11px;	
+	color:#969696;
+}
+.content_bottom button{
+	float: right;
+}
+.prize_tab .text_color{
+	color: #ff6525;
+}
+.activtiy .text_color{
+	color: #ff6525;
+}
+.state .text_color{
+	color: #ff6525;
+}
+.online_teb_box{
+	width: 100%;
+	display: none;
+}
+.immediately11{
+	float: right;
+}
+.mui-table-view-cell:after{
+    height:0px
+}
+.avtivity-title{
+    font-size:0.30rem;
+    color:#0e5bb5;
+}
+/*查看抵扣卷弹窗*/
+			.popup-box,.ticks_info {
+				width: 100%;
+				
+			}
+			.popup-box{
+                position:fixed;
+                top:40px;
+                z-index:10
+			}
+			.mask {
+				width: 100%;
+				height: 100%;
+				overflow: hidden;
+				opacity: 0.7;
+				filter: alpha(opacity=70);
+			}
+			
+			.myPrize {
+				width: 100%;
+				margin: 0 auto;
+				height: 100%;
+				overflow: hidden;
+				position: relative;
+				/*background: url(../image/archbg.png) no-repeat;
+				background-size: cover;*/
+			}
+			
+			.securities {
+				font-size: 0.34rem;
+				color: #fff;
+				text-align: center;
+				margin: 0px 0px;
+				padding: 10px 0px;
+				font-weight: bold;
+			}
+			
+			.money_one {
+				margin-top: 0.20rem;
+				color: #fff;
+				height: auto;
+				padding-bottom: 0.20rem;
+				border-bottom: #b12f0d dashed 1px;
+			}
+			
+			.ticks_info .money_p {
+				height: 1.00rem;
+				color: #fff;
+			}
+			
+			.ticks_info {
+				width: 94%;
+				margin: 0 auto;
+			}
+			
+			.ticks_info .numbc {
+				color: #ffdb35;
+				font-size: 1.0rem;
+				font-weight: bold;
+			}
+			
+			.money_text {
+				font-size: 0.28rem;
+				color: #fff;
+			}
+			
+			.noit {
+				height: auto;
+				padding-bottom: 0.20rem;
+				border-bottom: #b12f0d dashed 1px;
+				margin-bottom: 0.20rem;
+			}
+			
+			.noit h3 {
+				color: #fff;
+				margin-top: 0.20rem;
+				font-size: 0.36rem;
+			}
+			
+			.noit li {
+				color: #fff;
+				line-height: 0.36rem;
+				overflow: hidden;
+				font-size: 0.26rem;
+			}
+			
+			.money_footer {
+				padding: 0.20rem 0px;
+				width: 100%;
+				height: auto;
+				overflow: hidden;
+			}
+			
+			.money_footer p {
+				line-height: 0.40rem;
+				font-size: 0.30rem;
+			}
+			
+			.money_footer p span {
+				float: left;
+				display: block;
+				color: #fff;
+				font-size: 12px;
+			}
+			
+			.money_footer_left {
+				width: 10%;
+				text-align: left;
+			}
+			
+			.money_footer_reight {
+				width: 82%;
+				text-align: right;
+			}
+			
+			.myPrize img {
+				height: 100%;
+				width: 100%;
+			}
+			
+			.box {
+				position: absolute;
+				overflow: hidden;
+				top: 0px;
+				width: 100%;
+			}
+			.btn_close{
+				border: none;
+				position: absolute;
+				top: 0;
+				right: 2%;
+				width: 0.60rem;
+				height: 0.70rem;
+				background:url(/Content/image/activity/close_apr.png) no-repeat;
+				background-size: 0.60rem 0.70rem;
+			}

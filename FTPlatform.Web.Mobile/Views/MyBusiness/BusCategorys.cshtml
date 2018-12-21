@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "选择行业";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<link rel="stylesheet" href="~/Content/css/myBusiness/basicInformation/SeleIndustry.css" />
+
+<header class="mui-bar mui-bar-nav" style="background: #fff;border-bottom:1px solid #ddd">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/basicinformation"></a>
+    <h1 class="mui-title">选择行业</h1>
+</header>
+<div class="mui-content" style="background: #f2f1f7;" v-cloak>
+    <div class="industry_box">
+        <div class="list_boxs" v-on:click="PickCategory">
+            <span style="display:inline-flex">点击此处添加行业标签</span>
+            <a class="add_bg"><img src="~/Content/image/add_bg.png" /></a>
+        </div>
+        <div class="list_box" v-for="(category,index) in businesscategory">
+            <div style="width:90%;height:23px;overflow:hidden;float:left;text-overflow: ellipsis;white-space: nowrap;">
+                <span v-if="category.BusinessClassLevelName1!=null&&category.BusinessClassLevelName1!=''">{{category.BusinessClassLevelName1}}</span>
+                <span v-if="category.BusinessClassLevelName2!=null&&category.BusinessClassLevelName2!=''">< {{category.BusinessClassLevelName2}}</span>
+                <span v-if="category.BusinessClassLevelName3!=null&&category.BusinessClassLevelName3!=''">< {{category.BusinessClassLevelName3}}</span>
+            </div>
+            <a class="delete" v-on:click="Del(index)"><img src="~/Content/image/delete_bg.png" /></a>
+        </div>
+    </div>
+    <button type="button" class="mui-btn mui-btn-blue" v-on:click="Submit()">提交</button>
+    <!--选择标签-->
+    <category-picker ref="catepicker"></category-picker>
+</div>
+@section foot{
+    <script src="~/dist/member.buscategorys.bundle.js"></script>
+}

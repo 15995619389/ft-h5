@@ -1,0 +1,48 @@
+html{
+	background: #f2f1f7;
+}
+.from_content{
+	margin-top: 20px;
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+    background: #fff;
+    font-size: 0.32rem;
+    color: #444444;
+}
+.mui-input-row label{
+	width: 30%;
+	padding: 11px 0px;
+	padding-left: 15px;
+}
+.mui-input-row label~input, .mui-input-row label~select, .mui-input-row label~textarea{
+	width: 70%;
+font-size: 0.30rem;	
+}
+.mui-input-row{
+	border-bottom: 1px solid #ddd;    	
+}
+.mui-btn-block {
+    font-size: 0.32rem;
+    display: block;
+    width: 94%;
+    margin-bottom: 10px;
+    padding: 5px 0;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 1px solid #184998;
+    background-color: #184998;
+}
+.mui-btn{
+	margin-left: 3%;
+	display: block;
+	width: 94%;
+	margin-top: 1.0rem;
+}
+.mui-input-row label span{
+	color: red;
+	display: block;
+    float: left;
+    padding-top: 0.05rem;
+    margin-right: 0.05rem;
+}

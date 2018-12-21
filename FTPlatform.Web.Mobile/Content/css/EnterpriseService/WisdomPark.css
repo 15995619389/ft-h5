@@ -1,0 +1,297 @@
+/*----预约----*/
+.side-bar {
+    position: fixed;
+    top: 40%;
+    right: 0;
+    background: url(../../image/advice-bg.png) no-repeat;
+    width: 2.08rem;
+    height: 0.88rem;
+    background-size: 2.08rem 0.88rem;
+    color: #fff;
+     line-height: 0.30rem;
+     z-index: 999;
+}
+.side-bar a {
+    display: block;
+    color: #fff;
+    font-size: 0.24rem;
+    width: 50%;
+    margin-left: 0.9rem;
+    margin-top: 0.2rem;
+    line-height: 0.30rem;
+}
+/*---------*/
+html{
+	background: #fff;
+}
+.right_iocn img {
+    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+}
+.space_bg {
+    display: block;
+    width: 100%;
+    height: 3.00rem;
+}
+.CompanyName {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.CompanyName h3 {
+    font-size: 0.34rem;
+    color: #0e5bb5;
+    text-align: center;
+}
+.division {
+    width: 2.18rem;
+    height: 0.13rem;
+    margin: 0 auto;
+    display: block;
+    margin-top: 7px;
+}
+.what_park,.wisdomPark_two{
+	padding: 0px 3%;
+	overflow: hidden;
+	height: auto;
+}
+.what_park li,.wisdomPark_two li {
+    overflow: hidden;
+    width: 100%;
+    height: auto;
+    margin-top: 0.10rem;
+}
+
+.what_park1,.what_park2,.what_park3,.what_park4,.what_park5,.what_park6{
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+	font-size: 0.32rem;
+	color: #0e5bb5;
+	margin: 0.10rem 0px;
+}
+.what_park1 img{
+	display: block;
+	width: 0.28rem;
+	height: 0.26rem;
+	float: left;
+	margin-top: 0.10rem;
+	margin-right: 0.20rem;
+}
+.what_park2 img{
+	display: block;
+	width: 0.30rem;
+	height: 0.30rem;
+	float: left;
+	margin-top: 0.10rem;
+	margin-right: 0.20rem;
+}
+.what_park3 img{
+	display: block;
+	width: 0.30rem;
+	height: 0.26rem;
+	float: left;
+	margin-top: 0.10rem;
+	margin-right: 0.20rem;
+}
+.what_park4 img{
+	display: block;
+	width: 0.30rem;
+	height: 0.28rem;
+	float: left;
+	margin-top: 0.10rem;
+	margin-right: 0.20rem;
+}
+.what_park5 img{
+	display: block;
+	width: 0.28rem;
+	height: 0.28rem;
+	float: left;
+	margin-top: 0.10rem;
+	margin-right: 0.20rem;
+}
+.what_park6 img{
+	display: block;
+	width: 0.30rem;
+	height: 0.25rem;
+	float: left;
+	margin-top: 0.13rem;
+	margin-right: 0.20rem;
+}
+.what_park li P{
+	margin-bottom:0px ;
+	font-size: 0.30rem;
+	color:#3f3f3f ;
+	line-height: 0.40rem;
+}
+.worth_box{
+	width: 100%;
+	height:6.87rem;
+	overflow: hidden;
+	background: url(../../image/EnterpriseService/worth_bg.png) no-repeat center center;
+	background-size: 100% 6.87rem;
+	position: relative;
+	    margin-top: 0.30rem;
+}
+.icon_img {
+    width: 0.54rem;
+    height: 0.54rem;
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 46%;
+}
+.worth_box h3{
+	font-size: 0.34rem;
+    color: #fff;
+    text-align: center;
+    line-height: 1.40rem;
+    margin: 0 0;
+}
+.worth_text1{	
+	padding-top: 0.60rem;
+}
+.worth_text2{	
+	padding-top: 1.0rem;
+}
+.worth_text3{
+	
+	padding-top: 1.0rem;
+}
+.worth_box p{
+	width: 88%;
+	font-size: 0.28rem;
+	color: #fff;
+	text-align: center;
+	margin: 0 auto;
+	line-height: 0.40rem;
+}
+.wisdomPark_two{
+	
+}
+.wisdomPark1,.wisdomPark2,.wisdomPark3,.wisdomPark4{
+	width: 100%;
+    overflow: hidden;
+    height: auto;
+    font-size: 0.32rem;
+    color: #0e5bb5;
+    margin: 0.10rem 0px;
+}
+.wisdomPark1 img {
+    display: block;
+    width: 0.22rem;
+    height: 0.27rem;
+    float: left;
+    margin-top: 0.10rem;
+    margin-right: 0.26rem;
+}
+.wisdomPark2 img {
+    display: block;
+    width: 0.28rem;
+    height: 0.24rem;
+    float: left;
+    margin-top: 0.13rem;
+    margin-right: 0.20rem;
+}
+.wisdomPark3 img {
+    display: block;
+    width: 0.28rem;
+    height: 0.24rem;
+    float: left;
+    margin-top: 0.13rem;
+    margin-right: 0.20rem;
+}
+.wisdomPark4 img {
+    display: block;
+    width: 0.28rem;
+    height: 0.24rem;
+    float: left;
+    margin-top: 0.14rem;
+    margin-right: 0.20rem;
+}
+.wisdomPark_two li P {
+    margin-bottom: 0px;
+    font-size: 0.30rem;
+    color: #3f3f3f;
+    line-height: 0.40rem;
+}
+.ft_box{
+	width: 100%;
+	overflow: hidden;
+	height: 2.56rem;
+	position: relative;
+	background: url(../../image/EnterpriseService/ft_box.png) no-repeat center center;
+	background-size:100% 2.56rem;
+	margin-top: 0.20rem;
+}
+.ft_box p{
+	margin-bottom: 0px;
+	font-size: 0.34rem;
+	color: #fff;
+	text-align: center;
+}
+.ft_text{
+	margin-top: 1.30rem;
+}
+.difficult{
+	padding: 0 4%;
+	overflow: hidden;
+	height: auto;
+	    margin-top: 0.20rem;
+}
+.difficult_title{
+	font-size: 0.30rem;
+	margin-bottom: 0.20rem;
+	color: #225a9f;
+}
+.difficult_ul{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.difficult_ul li img{
+	display: block;
+	width: 0.42rem;
+	height: 0.42rem;
+	float: left;
+	margin-right: 0.15rem;
+}
+.difficult_ul li{
+	height: auto;
+	overflow: hidden;
+	font-size: 0.30rem;
+	color: #3f3f3f;
+	margin-bottom: 0.15rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,256 @@
+﻿
+@{
+    ViewBag.Title = "飞天众智两周年惊喜等你领取！";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="~/Content/css/ftTwoYears/index.css" />
+}
+<div id="act">
+    <header class="mui-bar mui-bar-nav">
+        <a href="javascript:history.go(-1);" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">飞天众智两周年惊喜等你领取!</h1>
+        <a class="mui-icon-right-nav mui-pull-right" id="shareTenAct" v-on:click="SharePage"><img src="/Content/image/recommend/reback.png"></a>
+    </header>
+    <div class="mui-content l-scrollable">
+        <img src="~/Content/image/ftTwoyears/banner.png" class="banner_bg" />
+        <p class="p_text" style="color:#b63822;width:100%;text-align:left">飞天众智两周年庆震撼来袭！邀您一起大狂欢！我们为您准备了多重惊喜，赶快加入，庆典开启豪礼送不停！Ready Go！</p>
+        <div class="content_one">
+            <img src="~/Content/image/ftTwoyears/one.png" class="one_img" />
+            <div class="vote">
+                <p class="vote_title">投票给您认为的“最优秀案例”，我们将从最终票数最高的案例投票者中选择2位，赠送爱奇艺VIP年卡。</p>
+                <ul class="vote_ul">
+                    <li>
+                        <img src="~/Content/image/ftTwoyears/users.png" />
+                        <p>2位投票者</p>
+                    </li>
+                    <li>
+                        <img src="~/Content/image/ftTwoyears/left.png" />
+                    </li>
+                    <li>
+                        <img src="~/Content/image/ftTwoyears/vip.png" />
+                        <p>爱奇艺VIP年卡</p>
+                    </li>
+                </ul>
+                <div><a href="javascript:;" class="vote_btn" v-on:click="IsLogin" style="color:#fff">立即投票</a></div>
+                <div class="time" id="timer">投票剩余时间：<span>00</span>小时<span>00</span>分<span>00</span>秒</div>
+                <div class="time" style="margin-top:0;font-size:0.22rem">（注:每人每天可投2票，手机H5端及电脑端平台均可投票）</div>
+            </div>
+        </div>
+        <div class="content_two">
+            <img src="~/Content/image/ftTwoyears/two.png" class="two_img" />
+            <div class="surprise_two">
+                <p>我们将在活动期间，从所有新注册用户、发布需求或技术推荐并通过用户、成功申请供方用户中随机抽取2名用户，<span style="color:red;">赠送价值¥200元的京东购物卡！</span></p>
+                <ul class="surprise_ul">
+                    <li>
+                        <div class="oli">
+                            <img src="~/Content/image/ftTwoyears/li1.png" class="li1_bg" />
+                        </div>
+                        <a href="javascript:;" v-on:click="RegisterDecide">新用户注册</a>
+                    </li>
+                    <li>
+                        <div class="oli">
+                            <img src="~/Content/image/ftTwoyears/li2.png" class="li2_bg" />
+                        </div>
+                        @*<a href="/demand/publish">发布需求</a>*@
+                        <a href="javascript:;" v-on:click="PublishDemand">发布需求</a>
+
+                    </li>
+                    <li>
+                        <div class="oli">
+                            <img src="~/Content/image/ftTwoyears/li3.png" class="li3_bg" />
+                        </div>
+                        @*<a href="/techshare/publish">发布技术</a>*@
+                        <a href="javascript:;" v-on:click="PublishTech">发布技术</a>
+                    </li>
+                    <li>
+                        <div class="oli">
+                            <img src="~/Content/image/ftTwoyears/li4.png" class="li4_bg" />
+                        </div>
+                        @*<a href="/expert/applysupplier">申请供方</a>*@
+                        <a href="javascript:;" v-on:click="PublishApply">申请供方</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="content_three">
+            <img src="~/Content/image/ftTwoyears/three.png" class="three_img" />
+            <div class="surprise_three">
+                <p>工业精品版块重磅上线，首次下单购买即可获得智币，更有欧姆龙按摩仪等您带走！</p>
+                <ul class="three_ul">
+                    <li>
+                        <div class="three_div" style="padding-top:0.20rem">
+                            <img src="~/Content/image/ftTwoyears/three1.png" class="three1_bg" />
+                        </div>
+                        <span class="text">1000枚智币</span>
+                    </li>
+                    <li style="margin: 0 0.57rem;">
+                        <div class="three_div">
+                            <img src="~/Content/image/ftTwoyears/three2.png" class="three2_bg" />
+                        </div>
+                        <span class="text">欧姆龙按摩仪</span>
+                    </li>
+                    <li style="float:right">
+                        <div class="three_div" style="padding-top:0.10rem">
+                            <img src="~/Content/image/ftTwoyears/three3.png" class="three3_bg" />
+                        </div>
+                        <span class="text">20%折扣</span>
+                    </li>
+                </ul>
+                <div class="attention">
+                    注：目前工业精品版块仅发布于电脑版网站，请您在电脑上输入链接www.techina2025.com，或直接搜索“飞天众智”，即可参加活动。
+                </div>
+            </div>
+        </div>
+        <div class="rule">
+            <img src="~/Content/image/ftTwoyears/rule_bg.png" class="rule_img" />
+            <ul>
+                <li>1、活动结束后3个工作日内，将在平台官网、手机端H5页面及微信推文中公布中奖信息，请及时留意；</li>
+                <li>2、在工业精品版块“成功下单”指成功完成付款；</li>
+                <li>3、工业精品版块下单累计金额计算以飞天众智平台财务到账时间为准，最迟到账时间截止至2017年12月1日10:00；</li>
+                <li>4、用户获赠智币有效期截止至2018年2月24日，请在智币有效期内进行兑换使用；</li>
+                <li>5、本次活动增加智币与目前平台会员体系产生智币不重叠；</li>
+                <li>6、凡是被本站定义为恶意用户的注册用户，将取消抽奖资格，不得参与最终抽奖；</li>
+                <li>7、本次活动期间如发现恶意注册，如：用虚拟手机进行注册、恶意软件注册、拒绝服务请求等情况，将不予以兑换任何礼品；</li>
+                <li>8、因活动参与人数较多，如有任何变动请留意“飞天众智平台官网”，不再另行通知；</li>
+                <li>9、本活动最终解释权归上海飞天众知科技服务有限公司所有；</li>
+                <li>10、活动期间有任何问题，请垂询：400-920-2025或发送邮件至 market@techina2025.com。</li>
+            </ul>
+        </div>
+
+        @*一般提示*@
+        <div class="draw_model" id="pop_message">
+            <div class="pop_bg"></div>
+            <span class="span_colse" v-on:click="IsOpenWindow('pop_message',false)"></span>
+            <p class="pop_text" id="z_text"></p>
+            <p class="pop_text"></p>
+            <div class="pop_btn">
+                <a href="javascript:;" v-on:click="IsOpenWindow('pop_message',false)" style="margin-left:1.20rem">确&nbsp;&nbsp;定</a>
+                <a href="javascript:;" style="display:none"></a>
+            </div>
+        </div>
+        <!-----------获奖名单        活动结束后，在展示获奖名单信息----------->
+        <div class="awards" id="draw_show">
+            <h3 class="awards_title">获奖名单新鲜出炉啦！<span class="win_colse" v-on:click="IsOpenWindow('draw_show',false)"></span></h3>
+            <p class="p_text">恭喜以下获奖者，我们会在3个工作日内为您送出奖品，您也可以在 <a href="javascript:;" v-on:click="MyPrizeUrl" style="color:blue;font-size:0.24rem">我的奖品</a> 中查看奖品情况！</p>@*/act/myprize*@
+            <ul class="awards_ul">
+                <li>
+                    <h3 class="h3_title">惊喜一中奖者</h3>
+                    <div class="awards_box">
+                        <p><span>邱女士</span><span>138****5300</span></p>
+                        <p><span>计女士</span><span>138****9025</span></p>
+                        <p>您两位分别获得“爱奇艺VIP年卡”一张。</p>
+                    </div>
+                </li>
+                <li>
+                    <h3 class="h3_title">惊喜二中奖者</h3>
+                    <div class="awards_box">
+                        <p><span>曹先生</span><span>139****8805</span></p>
+                        <p><span>吴女士</span><span>137****5678</span></p>
+                        <p><span>艾女士</span><span>188****7897</span></p>
+                        <p>以上各位将获得1000枚智币，可进入<a href="/mall/index" style="color:#dd524d;">智币商城</a>兑换礼品，了解什么是智币，请查看<a href="/mall/golditail" style="color:#dd524d;">智币说明</a> 。</p>
+                    </div>
+                    <div class="awards_box">
+                        <p><span>张小姐</span><span>157****4792</span></p>
+                        <p>您获得“价值¥598元的欧姆龙低周波按摩仪”一台。</p>
+                    </div>
+                </li>
+                <li>
+                    <h3 class="h3_title">惊喜三中奖者</h3>
+                    <div class="awards_box">
+                        <p><span>员先生</span><span>188****9169</span></p>
+                        <p><span>刘先生</span><span>178****0903</span></p>
+                        <p>您获得“价值¥200元的京东购物卡”一张。</p>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <mt-popup v-model="popupVisible" position="bottom" style="width:100%;height:2.00rem;text-align:center;padding:0.40rem 0px">
+            <div>
+                <p style="margin-bottom:0.20rem" v-html="textMessage"></p>
+                <div>
+                    <button v-on:click="Close">取消</button>
+                    <button v-on:click="IsOkUrl">确定</button>
+                </div>
+            </div>
+        </mt-popup>
+        <share ref="share"></share>
+    </div>
+</div>
+<!-------遮罩层 mask------------>
+<div id="mask"></div>
+
+
+<!------弹窗1   尚未登录----------------->
+<div class="draw_model" id="pop_one">
+    <div class="pop_bg"></div>
+    <span class="span_colse"></span>
+    <p class="pop_text">您目前尚未登录</p>
+    <p class="pop_text">需要登录之后方可参与投票</p>
+    <div class="pop_btn">
+        <a href="javascript:;" onclick="location.href = '/passport/login?returnurl=' + encodeURIComponent('/act/FtSecondIndex')" style="margin-left:1.20rem">确&nbsp;&nbsp;定</a>
+        <a href="javascript:;" style="display:none"></a>
+    </div>
+</div>
+<!------弹窗2   获奖者还在评选中，12月4日18点将揭晓中奖名单，敬请期待！------------->
+<div class="draw_model" id="pop_two">
+    <div class="pop_bg"></div>
+    <span class="span_colse"></span>
+    <p class="pop_text"></p>
+    <div class="pop_btn">
+        <a href="/" style="margin-left:1.20rem">返回首页</a>
+        <a href="javascript:;" style="display:none"></a>
+    </div>
+</div>
+<!------弹窗3   投票给案例--------------->
+<div class="draw_model" id="pop_three">
+    <div class="pop_bg"></div>
+    <span class="span_colse"></span>
+    <p class="pop_text">确认投票给此案例吗？</p>
+    <p class="pop_text">确认将消耗掉您1次投票机会</p>
+    <div class="pop_btn">
+        <a href="javascript:;">确&nbsp;&nbsp;认</a>
+        <a href="javascript:;" style="float:right">取&nbsp;&nbsp;消</a>
+    </div>
+</div>
+<!------弹窗4   还剩1次投票机会，继续投票------>
+<div class="draw_model" id="pop_four">
+    <div class="pop_bg"></div>
+    <span class="span_colse"></span>
+    <p class="pop_text">投票已提交</p>
+    <p class="pop_text">今天您还剩余1次投票机会，欢迎您继续为您喜欢的案例投票。</p>
+    <div class="pop_btn">
+        <a href="javascript:;">继续投票</a>
+        <a href="/act/leaderboard" style="float:right">查看票数排行</a>
+    </div>
+</div>
+<!------弹窗5   投票次数用完，明日再投------>
+<div class="draw_model" id="pop_five" style="height:5.60rem;margin-top:-2.80rem;">
+    <div class="pop_bg"></div>
+    <span class="span_colse"></span>
+    <p class="pop_text">投票已提交</p>
+    <p class="pop_text">您今天的投票限额已用完，请您明日再投。欢迎您继续参加其他有奖活动。</p>
+    <div class="hint"><img src="~/Content/image/ftTwoyears/hint.png" /><p>小贴士：呼朋唤友一起投票吧，这样获奖概率更高哦。</p></div>
+    <div class="pop_btn">
+        <a href="/act/leaderboard">查看票数排行</a>
+        <a href="/act/FtTwoYears" style="float:right">参加其他有奖活动</a>
+    </div>
+</div>
+<!------弹窗6   投票失败----------------->
+<div class="draw_model" id="pop_six" style="height:5.60rem;margin-top:-2.80rem">
+    <div class="pop_bg"></div>
+    <span class="span_colse"></span>
+    <p class="pop_text">投票失败</p>
+    <p class="pop_text">您今天的投票限额已用完，请您明日再投。欢迎您继续参加其他有奖活动。</p>
+    <div class="hint11"><i></i><p>小贴士：每天都投票的用户，很容易获奖哦</p></div>
+    <div class="pop_btn">
+        <a href="/act/leaderboard">查看票数排行</a>
+        <a href="/act/FtTwoYears" style="float:right">参加其他有奖活动</a>
+    </div>
+</div>
+
+@section foot{
+    <script src="~/dist/act.ftsecondindex.bundle.js"></script>
+}

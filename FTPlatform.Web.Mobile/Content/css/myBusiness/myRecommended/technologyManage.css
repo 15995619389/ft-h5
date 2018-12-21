@@ -1,0 +1,52 @@
+html{
+	background: #f2f1f7;
+}
+.oTitle{
+	width: 100%;
+    overflow:hidden	
+}
+.oTitle .mui-ellipsis{
+	width: 60%;
+	float: left;
+	color: #0e5bb5;
+	font-size: 0.30rem;
+	margin: 0px 0px;
+}
+.mui-ellipsis{
+	width: 100%;
+	margin: 7px 0px;
+	font-size: 0.26rem;
+}
+.oSpan{
+	float: right;
+	color: #ff6525;
+	font-size: 0.28rem;
+}
+.date{
+	width: 100%;
+	font-size: 12px;
+	color: #969696;
+	text-align: right;
+}
+.mui-table-view .mui-media-object {
+    line-height: 42px;
+    max-width: 1.28rem;
+    height: 1.28rem;
+    width:100%;
+}
+.mui-table-view {
+    margin-top: 15px;
+     background:#f2f1f7
+}
+.mui-table-view-cell:after{
+    left:0px
+}
+.mui-table-view li:nth-child(1){
+    border-top:none
+}
+.mui-table-view li{
+   background:#fff;
+   margin-bottom:10px;
+   border-top:1px solid #ddd
+
+}

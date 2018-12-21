@@ -1,0 +1,586 @@
+﻿@{
+    ViewBag.Title = "双旦大富翁--飞天游园会";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/activity/201712/DecemberIndex.css" />
+}
+@section foot{
+    <script src="~/dist/activity.share.bundle.js"></script>
+}
+<style type="text/css">
+    #shadow {
+        height: 300px;
+        width: 600px;
+        position: absolute;
+        top: 400px;
+        left: 0;
+        z-index: 0;
+        background: -webkit-radial-gradient(center center, 150px 50px, #cfcfcf, #efefef);
+        background: -moz-radial-gradient(center center, 150px 50px, #cfcfcf, #efefef);
+        background: -ms-radial-gradient(center center, 150px 50px, #cfcfcf, #efefef);
+        background: -o-radial-gradient(center center, 150px 50px, #cfcfcf, #efefef);
+        background: radial-gradient(center center, 150px 50px, #cfcfcf, #efefef);
+        -webkit-transform: perspective(100px) rotateX(60deg) rotateY(0deg);
+        -moz-transform: perspective(100px) rotateX(60deg) rotateY(0deg);
+        -ms-transform: perspective(100px) rotateX(60deg) rotateY(0deg);
+        -o-transform: perspective(100px) rotateX(60deg) rotateY(0deg);
+        transform: perspective(100px) rotateX(60deg) rotateY(0deg);
+        opacity: 0;
+    }
+
+    #container {
+        /*background:black;*/
+        height: 80px;
+        width: 80px;
+        position: absolute;
+       top:42%;
+       left:50%;
+       margin-left:-60px;
+       margin-top:-60px;
+        z-index: 1;
+        -webkit-transform-style: preserve-3d;
+        -moz-transform-style: preserve-3d;
+        -ms-transform-style: preserve-3d;
+        -o-transform-style: preserve-3d;
+        transform-style: preserve-3d;
+        -webkit-transform: perspective(2000px) rotateX(-10deg) rotateY(45deg);
+        -moz-transform: perspective(2000px) rotateX(-10deg) rotateY(45deg);
+        -ms-transform: perspective(2000px) rotateX(-10deg) rotateY(45deg);
+        -o-transform: perspective(2000px) rotateX(-10deg) rotateY(45deg);
+        transform: perspective(2000px) rotateX(-10deg) rotateY(45deg);
+    }
+
+        #container p {
+            position: absolute;
+            top: 40%;
+            left: 35%;
+            padding: 5px;
+            word-spacing: 0.2em;
+            line-height: 20px;
+            background: black;
+            color: #fff;
+            text-align: center;
+        }
+
+        #container div {
+            height: 80px;
+            width: 80px;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: #fff;
+            line-height: 80px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 80px;
+            cursor: pointer;
+            background: rgba( 239, 239, 239, 1);
+            -webkit-transition: 500ms all ease;
+            -moz-transition: 500ms all ease;
+            -ms-transition: 500ms all ease;
+            -o-transition: 500ms all ease;
+            transition: 500ms all ease;
+        }
+
+            #container div div {
+                border: 1px solid #fff;
+                /* rgba( 255,255,255, 1 ) */
+                box-shadow: 1px 0 3px #fff, 1px 0px 10px #efefef;
+                border-radius: 8px;
+                background: -webkit-radial-gradient(center, #d81002, #b20c00);
+                background: -moz-radial-gradient(center, #d81002, #b20c00);
+                background: -ms-radial-gradient(center, #d81002, #b20c00);
+                background: -o-radial-gradient(center, #d81002, #b20c00);
+                background: radial-gradient(center, #d81002, #b20c00);
+            }
+
+                #container div div:hover {
+                    background: -webkit-radial-gradient(center, #ff0000, #b20c00);
+                    background: -moz-radial-gradient(center, #f00, #b20c00);
+                    background: -ms-radial-gradient(center, #f00, #b20c00);
+                    background: -o-radial-gradient(center, #f00, #b20c00);
+                    background: radial-gradient(center, #f00, #b20c00);
+                }
+
+            #container div ul {
+                list-style: none;
+                margin: 15px;
+            }
+
+            #container div li {
+                /*width: 30px;
+                height: 30px;*/
+                float: left;
+                overflow: hidden;
+                -webkit-transition: 500ms all ease;
+                -moz-transition: 500ms all ease;
+                -ms-transition: 500ms all ease;
+                -o-transition: 500ms all ease;
+                transition: 500ms all ease;
+            }
+
+                #container div li span {
+                    width: 15px;
+                    height: 15px;
+                    margin: 5px auto;
+                    display: block;
+                    background: -webkit-linear-gradient(top, #eee, #fff);
+                    background: -moz-linear-gradient(top, #eee, #fff);
+                    background: -ms-linear-gradient(top, #eee, #fff);
+                    background: -o-linear-gradient(top, #eee, #fff);
+                    background: linear-gradient(top, #eee, #fff);
+                    border-radius: 25px;
+                    box-shadow: -1px -1px 2px #000;
+                }
+
+    .snow-canvas {
+        display: block;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        position: fixed;
+        pointer-events: none;
+    }
+    .role-image{
+        position:absolute;
+        /*left:0.50rem !important;
+        top:0.30rem !important;*/
+    }
+    .role-image img {
+        width:50px;
+    }
+    /**---**/
+    #box-3 ul li,#box-6 ul li{
+        position:absolute;
+    }
+    /*.wrap_box .games_box{
+        width:300px;
+        height:307px;
+    }*/
+
+    .games_box canvas {
+    margin:4px 4px 0px 5px;
+    }
+</style>
+<div id="">
+    <header class="mui-bar mui-bar-nav" style="z-index:12">
+        <a href="javascript:history.go(-1);" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">双旦大富翁--飞天游园会</h1>
+        <a class="mui-icon-right-nav mui-pull-right" id="shareTenAct" v-on:click="SharePage"><img src="/Content/image/recommend/reback.png"></a>
+        <preview ref="preview"></preview>
+        <share ref="share"></share>
+
+    </header>
+    <div class="mui-content l-scrollable">
+        <div class="banner_box">
+            <img src="~/Content/image/activity/201712/green.png" class="green"/>
+            <img src="~/Content/image/activity/201712/banner_title.png" class="banner_title" />
+            <img src="~/Content/image/activity/201712/moon.png" class="moon"/>
+            <img src="~/Content/image/activity/201712/men.png" class="men"/>
+            <img src="~/Content/image/activity/201712/banner_gift.png" class="banner_gift"/>
+        </div>
+        <!--摇色子-->
+        <div class="content_box">
+            <div class="snow_box">
+                <img src="~/Content/image/activity/201712/xl_snow.png" class="snow_one"/>
+                <img src="~/Content/image/activity/201712/xl_snow.png" class="snow_two"/>
+                <img src="~/Content/image/activity/201712/xl_snow.png" class="snow_three"/>
+            </div>
+            <div class="wrap_box">
+                <div class="title_bg"></div>
+                <!--起点-->
+                <div class="starts"></div>
+                <div class="role-image-start" style="position:absolute;top: 6.6rem; left: 22px;">
+                    <img style="width:50px;" src="/content/image/activity/201712/move/right-0.png">
+                </div>
+
+                <!--摇色子区域-->
+                <div class="games_box" id="games_box" style="position:relative">
+                    <div class="hint_box">说明</div>
+                    <!--未登录-->
+                    <div class="no_logoin" id="logoin_box">
+                        
+                        <img src="~/Content/image/activity/201712/no_logoin.png" />
+                        <span class="logoin_btn">开启大奖之旅</span>
+                    </div>
+                    <!--已登录-->
+                    <div class="loginSuccess" style="display:none">
+                        <div class="sieve_box">
+                            <div class="wrap_sieve">
+                                <div id="roll_dice" class="dice dice_1"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="number">
+                            <span class="logoin_btn">兑换更多投掷机会</span>
+                            <div class="surplus">
+                                <img src="~/Content/image/activity/201712/number_img.png"/>
+                                <span class="ospan">今日剩余次数<strong id="zsz">0</strong>次</span>
+                            </div>
+                      </div>
+                        <div class="hint_box">说明</div>
+                    </div>
+                </div>
+            </div>
+            <div class="snowflake_box" style="margin-top:0.20rem">
+                <img src="~/Content/image/activity/201712/xl_snow.png" class="snowflake_one"/>
+                <img src="~/Content/image/activity/201712/s_snow.png" class="snowflake_two" />
+                <img src="~/Content/image/activity/201712/xl_snow.png" class="snowflake_three"/>
+                <a class="see_prize" style="display:none;">查看我的奖品</a>
+            </div>
+        </div>
+        <div class="footer">
+            <img src="~/Content/image/activity/201712/gift.png" class="footer_gift"/>
+            <img src="~/Content/image/activity/201712/s_snow.png" class="s_snow"/>
+        </div>
+        <canvas class="snow-canvas" speed="1" interaction="false" size="2" count="40" opacity="0.00001" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)" wind-power="0" image="false" width="1366" height="667"></canvas>
+        <canvas class="snow-canvas" speed="3" interaction="true" size="6" count="15" start-color="rgba(253,252,251,1)" end-color="rgba(251,252,253,0.3)" opacity="0.00001" wind-power="2" image="false" width="1366" height="667"></canvas>
+        <canvas class="snow-canvas" speed="3" interaction="true" size="12" count="10" wind-power="-5" image="/content/image/activity/201712/xl_snow.png" width="1366" height="667"></canvas>
+
+    </div>  
+    <!--遮罩层-->
+    <div id="mask"></div>
+    <!--我的奖品-->
+    <div class="myPirze_box" style="display:none">
+        <i class="model_none"></i>
+        <ul class="myPirze_content l-scrollable">
+        </ul>
+    </div>
+    <!--活动说明-->
+    <div class="actInstruction_box" style="display:none">       
+        <div class="act_title">活动说明 <i class="model_none"></i></div>
+        <div class="act_text">
+            <ul>
+                <li>一、活动规则</li>
+                <li>1、点击骰子开始转动，待骰子转动停止后，根据掷得的点数在地图上前进相应的步数；</li>
+                <li>2、用户走到目标地点后，可查看该地点对应的产品展示或领取奖品奖励；</li>
+                <li>3、每位用户每天有3次免费投掷机会（电脑端及手机端相加共3次），通过成功邀请好友注册、发布需求审核通过、发布技术审核通过、申请供方审核通过、工业精品成功下单均可免费获得1次额外投掷的机会，每位用户每天最多增加3次投掷机会；</li>
+                <li>4、用户还可通过消费50智币兑换投掷次数，每天兑换次数不限。</li>
+                <li>二、注意事项</li>
+                <li>1、用户游戏获赠智币有效期为3个月，请在智币有效期内进行兑换使用；</li>
+                <li>2、本次活动增加智币与目前平台会员体系产生智币不重叠；</li>
+                <li>3、用户获得的奖品（除智币外），请在2018年1月13日前到“我的奖品”申请领取，逾期未申请领取视为作废，我们会在申请领取后3个工作日内完成发放；</li>
+                <li>4、工业精品成功下单是指成功付款；</li>
+                <li>5、凡是被本站定义为恶意用户的注册用户，不得参与本次活动；</li>
+                <li>6、本次活动期间如发现恶意注册，如：用虚拟手机进行注册、恶意软件注册、拒绝服务请求等情况，将不予兑换任何礼品；</li>
+                <li>7、因活动参与人数较多，如有任何变动请留意飞天众智官网，不再另行通知；</li>
+                <li>8、在法律允许范围内，本次活动最终解释权及法律追责权归上海飞天众知科技服务有限公司所有；</li>
+                <li>9、活动期间有任何问题，请垂询：400-920-2025或发送邮件至 market@techina2025.com。</li>
+            </ul>
+        </div>
+    </div>
+    <!--弹窗1   消耗50枚智币-->
+    <div class="draw_model" id="dhdomMessage">
+        <div class="model_title">温馨提示</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <div class="hint_P mar_p">每兑换一次投掷机会将消耗掉您50枚智币<br />确认兑换吗？</div>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;">智币兑换</a>
+                <a href="javascript:;" class="giveUp">放弃</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗2   兑换成功-->
+    <div class="draw_model" id="dhSuccess">
+        <div class="model_title">兑换成功</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <h3>恭喜您兑换成功！</h3>
+                <div class="hint_P mar_p">我们已经等您很久了，<br />继续high起来吧！</div>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;" class="confirm">确定</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗3    智币余额不足50，无法兑换-->
+    <div class="draw_model" id="dhError">
+        <div class="model_title">温馨提示</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text">
+                <h3>抱歉</h3>
+                <div class="hint_P">您的智币余额不足50，无法兑换。</div>
+                <div class="prompting" style="margin-top:0.10rem">
+                    小贴士：听说
+                    <span><a target="_blank" class="refereecode" href="/passport/register">邀请好友注册</a>、</span>
+                    <span><a target="_blank" href="/demand/publish">发布有效需求</a>、</span>
+                    <span><a target="_blank" href="/techshare/publish">发布有效技术</a>、</span>
+                    <span><a target="_blank" href="/higharticle">在工业精品板块下单</a>、</span>
+                    <span><a target="_blank" href="/expert/applysupplier">成功申请供方</a></span>
+                    也可获得额外投掷机会哦~
+                </div>
+            </div>
+            <div class="model_btn">
+                <a href="/" target="_blank" class="confirm">返回首页</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗4    很遗憾，投掷次数已用尽-->
+    <div class="draw_model" id="UnJiHui">
+        <div class="model_title">温馨提示</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text">
+                <h3>很遗憾，投掷次数已用尽。</h3>
+                <div class="hint_P">花费50智币可兑换一次投掷机会~</div>
+                <div class="prompting" style="margin-top:0.10rem">
+                    小贴士：听说
+                    <span><a target="_blank" class="refereecode" href="/passport/register">邀请好友注册</a>、</span>
+                    <span><a target="_blank" href="/demand/publish">发布有效需求</a>、</span>
+                    <span><a target="_blank" href="/techshare/publish">发布有效技术</a>、</span>
+                    <span><a target="_blank" href="/higharticle">在工业精品板块下单</a>、</span>
+                    <span><a target="_blank" href="/expert/applysupplier">成功申请供方</a></span>
+                    也可获得额外投掷机会哦~
+                </div>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;">智币兑换</a>
+                <a href="javascript:;" class="giveUp">放弃</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗5   知识产权服务-->
+    <div class="draw_model" id="domMessage_5">
+        <div class="model_title">知识产权服务</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <div class="hint_P mar_p">海量数据库实现精准化匹配，让您的专利技术资源快速转化为商业价值。</div>
+            </div>
+            <div class="model_btn">
+                <a href="/unique/intellectualproperty" target="_blank" class="confirm">查看知识产权服务</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗6   技术需求库-->
+    <div class="draw_model" id="domMessage_6">
+        <div class="model_title">技术需求库</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <div class="hint_P mar_p">汇聚各行业海量技术需求难题，<br/>只等您来解决。</div>
+            </div>
+            <div class="model_btn">
+                <a href="/demand/" target="_blank" style="width:2.00rem">进入技术需求库</a>
+                <a href="/demand/publish" target="_blank" class="giveUp">发布需求</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗7   众智绝活-->
+    <div class="draw_model" id="domMessage_7">
+        <div class="model_title">众智绝活</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <div class="hint_P mar_p">汇集中国航天高精尖技术，<br />为您提供专业、顶级的技术服务。</div>
+            </div>
+            <div class="model_btn">
+                <a href="/unique/list/1" target="_blank" class="confirm">查看众智绝活</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗8   技术资源库-->
+    <div class="draw_model" id="domMessage_8">
+        <div class="model_title">技术资源库</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <div class="hint_P mar_p">上万名各领域技术大咖，<br />为您量身打造技术解决方案。</div>
+            </div>
+            <div class="model_btn">
+                <a href="/expert/" target="_blank" style="width:2.00rem">进入技术资源库</a>
+                <a href="/expert/applysupplier" target="_blank" class="giveUp">申请供方</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗9   智币商城-->
+    <div class="draw_model" id="domMessage_9">
+        <div class="model_title">智币商城</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <div class="hint_P mar_p">智有所得，“币”有所想，好玩的小游戏、热门的高科技奖品，等你来兑换。</div>
+            </div>
+            <div class="model_btn">
+                <a href="/mall/" target="_blank" class="confirm">进入智币商城</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗10   企业服务-->
+    <div class="draw_model" id="domMessage_10">
+        <div class="model_title">企业服务</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <div class="hint_P mar_p">专业团队为您提供一站式企业服务方案，提升“专注度”与“竞争力”。</div>
+            </div>
+            <div class="model_btn">
+                <a href="/unique/list/2" target="_blank" class="confirm">查看企业服务</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗11   高端产品-->
+    <div class="draw_model" id="domMessage_11">
+        <div class="model_title">工业精品</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <div class="hint_P mar_p">中国航天工业精品的在线采购商城，来自航天，品质保证。</div>
+            </div>
+            <div class="model_btn">
+                <a href="/higharticle/" target="_blank" class="confirm">购买工业精品</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗12   10枚智币-->
+    <div class="draw_model" id="domMessage12">
+        <div class="model_title">
+            10枚智币
+        </div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text ten">
+                <h3>恭喜获得10智币！</h3>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;" class="confirm">确定</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗13   50枚智币-->
+    <div class="draw_model" id="domMessage13">
+        <div class="model_title">
+            50枚智币
+        </div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text ten">
+                <h3>恭喜获得50智币！</h3>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;" class="confirm">确定</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗14   100枚智币-->
+    <div class="draw_model" id="domMessage14">
+        <div class="model_title">
+            100枚智币
+        </div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text ten">
+                <h3>恭喜获得100智币！</h3>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;" class="confirm">确定</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗15   爱奇艺VIP月度会员-->
+    <div class="draw_model" id="domMessage15">
+        <div class="model_title" style="text-align:right;padding-right:0.20rem">爱奇艺VIP月度会员</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text">
+                <h3 style="font-size:0.26rem">太幸运了！</h3>
+                <div class="hint_P mar_p">您获得爱奇艺VIP月度会员！<br/>请在2018年1月13日24:00前至<span>“我的奖品”</span>申请领取！逾期未申请领取视为作废。</div>
+            </div>
+            <div class="model_btn">
+                <a href="/act/myprize" target="_blank" class="confirm">领取奖品</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗16   30元话费-->
+    <div class="draw_model" id="domMessage16">
+        <div class="model_title" >30元话费</div>
+        <div class="model_content" style="padding-top:0.40rem">
+            <i class="model_none"></i>
+            <div class="content_text">
+                <h3 style="font-size:0.26rem">终于等到你！恭喜获得30元话费！</h3>
+                <div class="hint_P mar_p">请在2018年1月13日24:00前至<span>“我的奖品”</span>申请充值！逾期未申请领取视为作废。</div>
+            </div>
+            <div class="model_btn">
+                <a href="/act/myprize" target="_blank" class="confirm">领取奖品</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗17   回到起点-->
+    <div class="draw_model" id="domMessage17">
+        <div class="model_title">回到起点</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <h3 style="font-size:0.26rem">很遗憾！</h3>
+                <div class="hint_P mar_p">您要回到起点重新进行游戏了</div>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;" class="confirm">确定</a>
+            </div>
+        </div>
+    </div>
+    <!--弹窗18   领取成功-->
+    <div class="draw_model" id="domMessage18">
+        <div class="model_title">领取成功</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text content_top">
+                <h3 style="font-size:0.26rem">领取成功</h3>
+                <div class="hint_P mar_p">我们会在3个工作日内与您核实信息并发放奖品，请您注意接听电话！</div>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;" class="confirm">确定</a>
+            </div>
+        </div>
+    </div>
+    <div class="draw_model" id="logindomMessage">
+        <div class="model_title">温馨提示</div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text">
+                <div class="hint_P mar_p">您目前尚未登录，需要登录才可开始游戏哦！</div>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;">前往登录</a>
+                <a href="javascript:;" class="giveUp">取消</a>
+            </div>
+        </div>
+    </div>
+    <div class="draw_model" id="iphone">
+        <div class="model_title">
+            iPhone X
+        </div>
+        <div class="model_content">
+            <i class="model_none"></i>
+            <div class="content_text ten">
+                <h3>恭喜您获得iPhone X一台！</h3>
+            </div>
+            <div class="model_btn">
+                <a href="javascript:;" class="confirm">确定</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Content/js/jquery-1.11.0.min.js"></script>
+<script src="~/src/modules/StorageService.js"></script>
+<script src="~/src/modules/FilterService.js"></script>
+<script src="~/src/modules/ApiClient.js"></script>
+
+<script src="~/src/pages/activity/12/game.map.conf.js"></script>
+<script src="~/src/pages/activity/12/game.map.core.js"></script>
+<script src="~/src/pages/activity/12/game.conf.js"></script>
+<script src="~/src/pages/activity/12/game.model.js"></script>
+<script src="~/src/pages/activity/12/game.js"></script>
+@*<script src="~/src/pages/activity/12/game.sieve.js"></script>*@
+<script src="~/src/pages/activity/12/snow-plugin.js"></script>
+
+<script src="~/src/pages/activity/12monthgame.js"></script>

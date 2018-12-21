@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "评价成功";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+<link rel="stylesheet" href="~/Content/css/pulli.css" />
+<link rel="stylesheet" href="~/Content/css/gobel.css" />
+<link rel="stylesheet" href="~/Content/css/myBusiness/myNeed/MyNeeds.css" />
+
+
+<body style="background: #fff;">
+
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a href="javascript:" onclick="history.go(-2)" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">评价成功</h1>
+        <a href="javascript:" onclick="history.go(-2)" class="mui-pull-right finsh-ok">完成</a>
+    </header>
+    <div class="mui-content" style="background: #fff;">
+        <foot></foot>
+        <section class="supplier">
+            <img src="/Content/image/Need_save.png" />
+            <p>
+                您的评论已提交成功<br> 审核通过后将获得50个智币！
+            </p>
+        </section>
+    </div>
+    <!--快速发布弹窗-->
+</body>
+@section foot{
+<script src="~/dist/demand.cqsuccess.bundle.js"></script>
+}

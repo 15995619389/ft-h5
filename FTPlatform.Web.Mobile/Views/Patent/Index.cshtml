@@ -1,0 +1,147 @@
+﻿
+@{
+    ViewBag.Title = "技术专利";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="/Content/css/results/conversion.css" />
+    @*<link href="~/Content/css/unique/sortbar.css" rel="stylesheet" />*@
+}
+@section foot
+{
+    <script src="~/dist/patent.list.bundle.js"></script>
+}
+<style>
+    .teamwork_nav span{
+        display:block;
+        font-size: 0.28rem;
+        float: left;
+        padding:0.10rem 0.20rem;
+        margin: 0.10rem 0.35rem 0.10rem 0;
+        color: #666;
+        width:27%;
+        text-align: center;
+        border:1px solid #ddd;
+        border-radius:3px
+    }
+    .teamwork:last-child span{ 
+        width:35%
+    }
+    .teamwork_nav .active{
+        color:#0e5bb5;
+        border-color:#0e5bb5
+    }
+    .screening_right .teamwork{
+        border-bottom: 0.16rem solid #f5f5f5;
+    }
+    .nav_table{
+            border-top: 1px solid #ddd;
+    }
+</style>
+<div id="container" v-cloak>
+    <header class="oHeader mui-bar mui-bar-nav">
+        <searchbar ref="searchbar" v-bind:stype="5"></searchbar>
+    </header>
+    <foot_item ref="footitem"></foot_item>
+
+    <div class="mui-content" style="position:fixed">
+        <div class="technology">
+            <div style="width: 100%;">
+                技术专利
+            </div>
+        </div>
+        <div>
+            <div class="options">
+                <ul class="nav_table">
+                    <li v-on:click="TechDes(1)">
+                        <span class="sSpan" v-bind:class="{active:(searchmodel.sortType==1||searchmodel.sortType==2)}">时间</span> 
+                        <span class="up" style="margin-top: 0.2rem;">
+                            <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(searchmodel.sortType==2)}"></span> 
+                            <span class="mui-icon mui-icon-arrowdown " v-bind:class="{active:(searchmodel.sortType==1)}"></span>
+                        </span>
+                    </li> 
+                    <li v-on:click="TechDes(2)">
+                        <span class="sSpan" v-bind:class="{active:(searchmodel.sortType==3||searchmodel.sortType==4)}">价格</span> 
+                        <span class="up" style="margin-top: 0.2rem;">
+                            <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(searchmodel.sortType==4)}"></span>
+                             <span class="mui-icon mui-icon-arrowdown" v-bind:class="{active:(searchmodel.sortType==3)}"></span>
+                        </span>
+                    </li> 
+                    <li id="screening_box" v-on:click="TechDes(3)">
+                        <span class="sSpan">筛选</span> 
+                        <span class="up" style="margin-top: 0.2rem;">
+                            <i class="screen_bg"></i>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+                <!--下拉刷新容器-->             
+                <scroller ref="scroller_patent" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" style="margin-top:80px;">
+                    <!--数据列表-->
+                    <ul class="mui-table-view " style="display: block;">
+                        <li class="mui-table-view-cell mui-media" v-for="patent in patents">
+                            <a v-bind:href="'/patent/details/'+ patent.Id">
+                                <img class="mui-media-object mui-pull-left" v-lazy="patent.PatentCertificate">
+                                <div class="content_body">
+                                    <div class="view_title">
+                                        <h3 class="title_left">{{patent.PatentName}}</h3>
+                                        <p class="year">{{patent.ReleaseTime}}</p>
+                                    </div>
+                                    <p class="introduce">{{patent.PantentInfo}}</p>
+                                    <ul class="apply_base">
+                                        <li>
+                                            <p><span>{{patent.PantentAmout}}</span></p>
+                                        </li>
+                                        <li>
+                                            <p><span>{{patent.PatentType}}</span></p>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </a>
+                        </li>
+                    </ul>
+                </scroller>
+
+        </div>
+   </div>
+    @*---筛选--*@
+    <div id="side">
+        <div class="mask_box" v-on:click="MaskboxHide"></div>
+        <div class="screening_box">
+            <div class="screening_right">
+                <div class="teamwork">
+                    <h3>专利交易方式</h3>
+                    <div class="teamwork_nav">
+                        <span v-on:click="TechTradWaySort(1)" v-bind:class="{active:(searchmodel.tradeMode==1)}">转让</span>
+                        <span v-on:click="TechTradWaySort(2)" v-bind:class="{active:(searchmodel.tradeMode==2)}">普通许可</span>
+                        <span v-on:click="TechTradWaySort(3)" v-bind:class="{active:(searchmodel.tradeMode==3)}">独占许可</span>
+                        <span v-on:click="TechTradWaySort(4)" v-bind:class="{active:(searchmodel.tradeMode==4)}">排他许可</span>
+                    </div>
+                </div>
+                <div class="teamwork">
+                    <h3>专利状态</h3>
+                    <div class="teamwork_nav">
+                        <span v-on:click="DevelPhaseSort(1)" v-bind:class="{active:(searchmodel.patentStatus==1)}">申请中</span>
+                        <span v-on:click="DevelPhaseSort(3)" v-bind:class="{active:(searchmodel.patentStatus==3)}">授权</span>
+                        <span v-on:click="DevelPhaseSort(4)" v-bind:class="{active:(searchmodel.patentStatus==4)}">证书</span>
+                    </div>
+                </div>
+                <div class="teamwork">
+                    <h3>专利类型</h3>
+                    <div class="teamwork_nav">
+                        <span v-on:click="TyprSort(1)" v-bind:class="{active:(searchmodel.patentType==1)}">外观设计专利</span>
+                        <span v-on:click="TyprSort(2)" v-bind:class="{active:(searchmodel.patentType==2)}">实用新型专利</span>
+                        <span v-on:click="TyprSort(3)" v-bind:class="{active:(searchmodel.patentType==3)}">发明专利</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer_btn">
+                <button type="button" class="mui-btn reset" v-on:click="Reset">重置</button>
+                <button type="button" class="mui-btn determine" v-on:click="TechSort">确定</button>
+            </div>
+        </div>
+    </div>
+    <rightsidebar></rightsidebar>
+</div>
+

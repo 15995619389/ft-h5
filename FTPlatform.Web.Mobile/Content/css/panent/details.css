@@ -1,0 +1,166 @@
+﻿
+.mui-title ul{
+    width:100%;
+    height:100%;
+    overflow:hidden
+}
+.mui-title ul li{
+    width:33.33%;
+    height:100%;
+    float:left;
+    font-size:18px
+}
+.mui-pull-right{
+    margin-top:14px
+}
+.mui-pull-right img{
+    width:18px;
+    height:17px;
+}
+.mui-title ul .text_color{
+    color:#0e5bb5
+}
+.details_content {
+    padding:0.30rem 0;
+    font-size:0.28rem
+}
+.details_p .d_p_text li{
+    overflow:hidden;
+
+}
+.details_p .d_p_text li div{
+    float:left;
+    width:50%
+}
+.details_p .d_p_text,.details_p .d_p_text li{
+    margin-bottom:0.10rem
+} 
+.details_content li{
+    color:#444
+}
+.Iwant{
+    padding-left:2%;
+    width:98%
+}
+.Iwant a{
+    border:none;
+}
+.mui-btn-blue {
+    background: #0e5bb5;
+    border-color: #0e5bb5;
+    color: #fff !important;
+}
+.mui-btn-gray {
+    background: #dadada;
+}
+.recommend li{
+    margin-bottom:0.30rem
+}
+.PanentDetails_box{
+    display:none;overflow:hidden;
+}
+.flow_path{
+    overflow:hidden;
+    padding:0.20rem 2%;
+    margin:0 auto
+}
+.flow_path li{
+    font-size:0.28rem;
+    color:#444;
+    line-height:0.38rem;
+    margin-bottom:0.10rem;
+    overflow:hidden
+}
+.flow_path li span,.flow_path li div{
+    display:block;float:left;
+    height:100%
+}
+.flow_path li div{
+    width:96%
+}
+.safeguard{
+    overflow:hidden;padding:0 2%;
+    margin:0.20rem auto
+}
+.safeguard li{
+    font-size:0.28rem;
+    margin-bottom:0.10rem;
+    color:#444
+}
+.SubPopup{
+    position: fixed;
+    bottom:0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    z-index: 1000;
+    background: none;
+    transition: height 0.5s;
+    -moz-transition: height 0.5s; 
+    -webkit-transition: height 0.5s; 
+    -o-transition: height 0.5s; 
+}
+.title_box{
+    position:relative
+}
+.sub_img{
+    position:absolute;
+    top:-1.00rem;
+    width:1.85rem;
+    height:1.85rem;
+}
+.title_box p{
+    width:50%;
+    font-size:0.28rem;
+    margin-left:2.00rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    height:0.80rem;
+    float:left;
+    color:#0d0d0d
+}
+.ChooseWay{
+    overflow:hidden;
+    width:100%;
+    margin-top:1.10rem
+}
+.way{
+    overflow:hidden;
+    margin:0.30rem 0
+}
+    .way span {
+        float: left;
+        margin-right: 0.30rem;
+        border: 1px solid #ddd;
+        color: #666;
+        text-align: center;
+        width: 2.30rem;
+        height: 0.70rem;
+        line-height: 0.70rem;
+        border-radius: 5px;
+        font-size: 0.28rem;
+        margin-bottom:0.30rem
+    }
+    .way .active{
+        border:1px solid #0e5bb5;
+        color:#0e5bb5
+    }
+    .btn_FooterBox{
+        width:100%;
+        overflow:hidden;
+ }
+.btn_FooterBox .mui-btn{
+    width:100%;
+    border:none;
+    background:#ff6525;
+    border-radius:0;
+    color:#fff;
+    height:0.90rem;
+    line-height:0.90rem;
+    padding:0
+}
+.Hide_block{
+    height:5.90rem
+}

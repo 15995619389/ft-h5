@@ -1,0 +1,77 @@
+﻿
+<link rel="stylesheet" href="~/Content/css/share.css" />
+<style>
+    .btn_box {
+        text-align: center;
+        font-size: 0.28rem;
+        color: #595757;
+        padding-top: 0.10rem;
+        padding-bottom: 0.10rem;
+        border-bottom-left-radius: 0px;
+        border-bottom-right-radius: 0px;
+        overflow: hidden;
+        height: auto;
+        width: 100%;
+    }
+
+    .textarea {
+        width: 90%;
+        min-height: 1.8rem;
+        margin-top: 11px;
+        margin-bottom: 11px;
+        margin-left: 5%;
+    }
+</style>
+
+<div class="share-overlay" style="display:none" id="shareHide"></div>
+<div class="share-wrapper share-show" style="display:none">
+    <h2>分享到</h2>
+    <div class="share-list">
+        <div class="c-tool-btn wa-image-entity" @*onclick="call('wechatFriend')"*@ id="wechatFriend">
+            <img class="c-img" src="~/Content/image/share/wxfriend_2.png"><span class="c-gap-top c-line-clamp1">微信好友</span>
+        </div>
+        <div class="c-tool-btn wa-image-entity" @*onclick="call('wechatTimeline')"*@ id="wechatTimeline">
+            <img class="c-img" src="~/Content/image/share/pyq_2.png"><span class="c-gap-top c-line-clamp1">微信朋友圈</span>
+        </div>
+        <div class="c-tool-btn wa-image-entity" @*onclick="call('qqFriend')"*@ id="qqFriend">
+            <img class="c-img" src="~/Content/image/share/qqfriend_2.png"><span class="c-gap-top c-line-clamp1">QQ好友</span>
+        </div>
+        <div class="c-tool-btn wa-image-entity" @*onclick="call('qZone')"*@ id="qZone">
+            <img class="c-img" src="~/Content/image/share/qzone_2.png"><span class="c-gap-top c-line-clamp1">QQ空间</span>
+        </div>
+        <div class="c-tool-btn wa-image-entity" @*onclick="call('weibo')"*@ id="weibo">
+            <img class="c-img" src="~/Content/image/share/sinaweibo_2.png"><span class="c-gap-top c-line-clamp1">新浪微博</span>
+        </div>
+    </div>
+    <a class="share-cancel" id="share-cancel" @*onclick="cancel()"*@></a>
+</div>
+<div id="mask"></div>
+<div class="popup_consult" style="text-align:center;font-size:0.30rem;padding-top:0.20rem">
+    浏览器不支持，请手动复制链接
+    @*<a class="bttn disappear">X</a>*@
+    <textarea class="textarea" id="CopyModel"></textarea>
+    <div class="btn_footer">
+        <div class="btn_footer1">
+            <button type="button" class="mui-btn mui-btn-blue mui-btn-block confirm_consult disappear">取消</button>
+        </div>
+    </div>
+</div>
+<!---点击下方分享---->
+<div class="sharing-hint hide" @*onclick="shareHide()"*@>
+    <p>
+        <span>点击浏览器下方“</span><img src="~/Content/image/share/sharing-hint2.png" class="oimg"><span>”分享给好友，</span>
+    </p>
+    <p style="padding-left:5%">
+        <span>Safari浏览器请点击“</span><img src="~/Content/image/share/sharing-hint1.png" class="aimg" /><span>”按钮！</span>
+    </p>
+    <img src="~/Content/image/share/sharing-down.png" class="sharing-down">
+</div>
+<!---点击右上角分享---->
+<div class="right-sharing hide" @*onclick="shareHide()"*@>
+    <img src="~/Content/image/share/right-sharing.png" class="right-bg" />
+    <p>点击右上角,</p>
+    <p>分享到微信好友、朋友圈或QQ</p>
+</div>
+
+<script type="text/javascript" src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script type="text/javascript" src="~/Content/Plugins/NativeShare.js"></script>

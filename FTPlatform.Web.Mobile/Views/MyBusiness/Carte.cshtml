@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "我的名片";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+    <link rel="stylesheet" href="~/Content/css/myBusiness/basicInformation/myNameCard.css" />
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/basicinformation"></a>
+        <h1 class="mui-title">我的名片</h1>
+    </header>
+    
+    <div class="mui-content" style="background: #fff;" v-cloak>
+        <nav class="mui-bar mui-bar-tab" style="background: #fff;">
+            <a class="aa" href="/expert">
+                <span></span>增加好友
+            </a>
+            <a class="aa" v-on:click="MyCarte()">
+                <span></span>我的名片
+            </a>
+        </nav>
+        <div style="width:100%;position:absolute;z-index:10;height:40px">
+            <ul class="state">
+                <li class="text_color" v-on:click="Change(99)">全部</li>
+                <li v-on:click="Change(0)">待确认</li>
+                <li v-on:click="Change(1)">已接收</li>
+                <li v-on:click="Change(-1)">拒收</li>
+            </ul>
+        </div>
+        <!-------全部-------->
+        <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" class="mui-scroll" v-cloak>
+            <div>
+                <ul class="mui-table-view" style="display: block;">
+                    <li class="mui-table-view-cell mui-media" v-for="carte in cartes">
+                        <a href="javascript:;">
+                            <div class="card-box-content" v-on:click="Look(carte)">
+                                <img class="mui-media-object mui-pull-left" v-lazy="carte.imgUrl!=null?carte.imgUrl:'/Content/image/m_user_default400.png'" />
+                                <div class="content_body">
+                                    <div class="view_title">
+                                        <h3 class="title_left"><span class="carte-name">{{carte.Name}}</span><span class="examine" @*v-if="carte.Status==0" v-on:click="Look(carte)"*@>查看</span></h3>
+                                        <span class="phone">{{carte.CreateTime|formatDate}}</span>
+                                    </div>
+                                    <p class="introduce">所属行业：<span>{{carte.Buss}}</span></p>
+                                    <ul class="apply_base">
+                                        <li>
+                                            <p>会员类型:<span>{{carte.IsSupply? "技术提供方":"技术需求方"}}</span></p>
+                                        </li>                                   
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="carte-btn">
+                                <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-if="carte.Status==0" v-on:click="Reject(carte.Id)">拒绝</button>
+                                <button type="button" class="mui-btn mui-btn-gray mui-btn-outlined" v-on:click="Delete(carte.Id)">删除</button>                              
+                                <button type="button" class="mui-btn mui-btn-gray mui-btn-outlined" v-if="carte.Status==0" v-on:click="Receive(carte.Id)">接收</button>
+                                <button type="button" class="mui-btn mui-btn-gray mui-btn-outlined" v-if="carte.Status==-1" v-on:click="Receive(carte.Id)">重新接收</button>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+                </div>
+</scroller>
+</div>
+@section foot{
+    <script src="~/dist/member.carte.bundle.js"></script>
+    }

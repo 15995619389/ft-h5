@@ -1,0 +1,62 @@
+._nc .stage1{
+    margin-top:0.15rem;
+}
+._nc .stage1 .slider {
+    height: 35px !important;
+    background-color: #fff !important;
+}
+
+._nc .stage1 .label {
+    line-height: 35px !important;
+    height: 35px !important;
+    text-align: left !important;
+    padding-left: 70px;
+    box-sizing: border-box;
+    color: #bbb !important;
+    font-size: 0.24rem;
+}
+
+._nc .stage1 .button {
+    height: 33px !important;
+    background-color: #fff !important;
+    border-right: #bbb solid 1px;
+}
+
+._nc .stage1 {
+    height: 35px !important;
+}
+
+    ._nc .stage1 .track div {
+        height: 35px !important;
+        line-height: 35px !important;
+    }
+
+._nc .stage2 .textbox .placeholder {
+    left: 65px;
+}
+
+._nc .stage2 .textbox .code {
+    border-left: #184998 solid 1px;
+}
+
+._nc .stage2 .icon.tip {
+    top: 15px;
+}
+
+._nc .stage2 .icon.clear {
+    top: 15px;
+}
+
+._nc .stage2 .icon.refresh {
+    top: 15px;
+}
+.mui-input-group .mui-input-row:nth-child(1):after{
+    right:15px !important
+}
+.mui-input-group .mui-input-row:nth-child(2):after{
+    right:15px !important
+}
+.mui-input-group .mui-input-row:nth-child(3):after{
+    right:0 !important;
+    left:0 !important
+}

@@ -1,0 +1,250 @@
+html{
+	background: #f2f1f7;
+}
+.mui_bg{
+	width: 0.42rem;
+	height: 0.39rem;
+	background: url(../../../../image/reward.png) no-repeat center center;
+	background-size: 0.42rem 0.39rem;
+}
+.prompt{
+	width: 100%;
+	height: 0.60rem;		
+	background: #fff8e6;	
+}
+.prompt{
+	margin: 0 auto;
+	text-align: center;
+	font-size: 0.20rem;
+	color: #e0983a;
+	line-height: 0.60rem;
+    border-bottom: 1px solid #f2e9b8;
+    border-top: 1px solid #f2e9b8;	
+}
+.prompt p span{
+	display: block;
+	width: 0.30rem;
+	height:0.30rem;
+	border-radius: 50%;
+	text-align: center;
+	line-height: 0.30rem;
+	background: #e0983a;
+	color: #fff;
+	font-size: 0.26rem;
+	float: left;
+	margin-top: 0.25rem;
+}
+.task_one{	
+	overflow: hidden;
+	height: auto;
+	background: #fff;
+	margin-bottom: 0.20rem;	
+}
+.task_title{
+	padding: 0 3%;	
+	padding-top: 10px;
+	overflow: hidden;
+	height: auto;
+	border-bottom: 1px solid #ddd;		
+}
+.task_title div{
+overflow: hidden;
+	height: auto;	
+}
+.task_title img{
+	width: 0.50rem;
+	height: 0.46rem;
+	display: block;
+	float: left;
+	margin-right: 5px;
+	float: left;
+}
+.task_title h3{
+	font-size: 0.30rem;
+	float: left;
+    line-height:0.46rem
+	
+}
+h1, h2, h3, h4, h5, h6{
+	margin: 0 0;
+}
+.task_title p{
+	font-size: 0.26rem;
+	margin-top: 0.10rem;
+    margin-bottom:0.10rem
+}
+.conditions{
+	height: auto;
+	overflow: hidden;
+	padding: 7px 3%;
+    line-height: 29px;	
+}
+.oSpan{
+	display: block;
+	float: left;
+	font-size: 0.28rem;
+	color: #444;
+}
+.conditions_btn{
+	position: relative;
+	overflow: hidden;
+	height: auto;
+	width: 53%;
+	float: right;
+}
+.conditions_btn button{
+	font-size: 0.28rem;
+	width: 1.50rem;
+	padding: 5px;
+	margin-right: 5px;
+}
+.conditions_btnss:before{
+	content: "\2713";
+    position: absolute;
+    right: 0;
+    color: #ff6525;
+}
+.task_two{
+	overflow: hidden;
+	height: auto;
+	background: #fff;
+	margin-bottom: 0.30rem;	
+}
+.conditions_btn{
+	color: #a5a7a8;	
+	position: relative;
+}
+.register_now{
+	width: 94%;
+	margin: 0 auto;
+}
+.register_now button{
+	padding: 5px 0px;
+}
+#fileField{
+	position: absolute;
+	right: 0.5rem;
+	width: 1.50rem;
+	padding: 5px;
+	filter: alpha(opacity: 0);
+    opacity: 0;
+}
+#fileField_two{
+	position: absolute;
+	right: 0.5rem;
+	width: 1.50rem;
+	padding: 5px;
+	filter: alpha(opacity: 0);
+    opacity: 0;
+}
+/*--------*/
+.ft-tab {
+    background: #fff;
+    /*padding-bottom: 0.10rem;*/
+    box-sizing: border-box;
+}
+.ft-tab .mui-tab-item {
+    color: #444;
+}
+.ft-tab .mui-active {
+    color: #0e5bb5!important;
+}
+.ft-tab .tab-icon {
+    margin-bottom: 0.15rem;
+    width: 0.46rem;
+    height: 0.46rem;
+    position: relative;
+    z-index: 20;
+    top: 3px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: Muiicons;
+    font-size: 0.24px;
+    font-weight: 400;
+    font-style: normal;
+    /* line-height: 1; */
+    display: inline-block;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+.ft-tab .icon-update {
+    background: url(../../../../image/up-s.png) no-repeat center center;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-size: 100% 100%;
+    margin: 0 auto;
+    margin-bottom: 0.15rem;
+}
+.ft-tab .icon-update {
+    background: url(../../../../image/up-s.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 100% 100%;
+}
+.ft-tab .mui-active .icon-update {
+    background: url(../../../../image/up.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 100% 100%;
+}
+.ft-tab .mui-tab-label {
+    display: block;
+    font-size: 0.24rem;
+}
+.ft-tab .icon-reward {
+    background: url(../../../../image/ax-re.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 100% 100%;
+}
+.ft-tab .mui-active .icon-reward {
+    background: url(../../../../image/ax-big.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 100% 100%;
+}
+.ft-tab .icon-manger {
+    background: url(../../../../image/reo.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 100% 100%;
+}
+.ft-tab .mui-active .icon-manger {
+    background: url(../../../../image/reo-bl.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 100% 100%;
+}
+/*---------*/
+.mui-bar-tab .nav-tab-item {
+    display: table-cell;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #929292;
+}
+.content_box{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding-top: 35px;
+}
+.content_box img{
+	width:2.06rem ;
+	height: 2.94rem;
+	display: block;
+	margin: 0 auto;
+}
+.content_box p{
+	color: #444;
+	text-align: center;
+	font-size: 0.28rem;
+	margin-top: 20px;
+}
+.register_now  .mui-btn-blue{
+    background:#0e5bb5;
+    border-color:#0e5bb5
+}

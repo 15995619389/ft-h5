@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "支付失败";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/shop/smart.css" rel="stylesheet" />
+    <style>
+        html {
+            background: #fff;
+        }
+    </style>
+}
+<header class="mui-bar mui-bar-nav head_box head-secd" style="border-bottom: #ddd solid 1px;">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="javascript:history.back(-1);"></a>
+    <h1 class="mui-title">支付失败</h1>
+</header>
+<div class="mui-content whit-content">
+    <section class="pay-subox">
+        <img src="/Content/image/shop/fail.png" style="margin:0 auto" />
+        <h4>您的智币余额不足</h4>
+        <p>请赚取更多智币后再进行兑换</p>
+        <div class="order-btn">
+            <a href="/mall/getgold" class="ord-mager">赚取智币</a>
+            <a href="/mall/index" class="shop-index">商城首页</a>
+        </div>
+    </section>
+</div>

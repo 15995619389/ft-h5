@@ -1,0 +1,37 @@
+﻿@{
+    var apiUrl = this.ViewContext.Controller.GetApiUrl();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" /><!--隐藏状态栏/设置状态栏颜色-->
+    <meta name="keywords" content="网站关键字"> <!--/Keywords(关键字)　-->
+    <meta name="description" id="description" content="@ViewBag.Description"> <!--description(网站内容描述)-->
+    <meta name="apple-mobile-web-app-title" content="标题">
+    <meta name="apple-mobile-web-app-capable" content="yes" /> <!-- 删除默认的苹果工具栏和菜单栏 -->
+    <meta content="telephone=no" name="format-detection" />  <!--忽略数字自动识别为电话号码-->
+    <meta name="screen-orientation" content="portrait">  <!-- uc强制竖屏 -->
+    <meta name="x5-orientation" content="portrait"> <!-- QQ强制竖屏 -->
+    <title>@ViewBag.Title</title>
+    <link rel="Shortcut Icon" href="~/Content/image/favicon.ico" />
+    <link href="~/Content/Styles/base.css" rel="stylesheet" />
+    <link href="~/Content/css/mui.min.css" rel="stylesheet" />
+    <link href="~/Content/css/UI/style.min.css" rel="stylesheet" /> <!-- mint-ui -->
+    <link rel="stylesheet" href="~/Content/css/pulli.css" /> <!-- Todo:公共样式需要重新定义 -->
+    <script>
+        document.documentElement.style.fontSize = document.documentElement.clientWidth / 7.5 + 'px';
+    </script>
+    @RenderSection("head", false)
+</head>
+<body>
+    <input type="hidden" id="ApiUrl" value="@apiUrl" />
+    <div id="app">
+        @RenderBody()
+    </div>
+    <script src="~/dist/common.bundle.js"></script>
+    @RenderSection("foot", false)
+</body>
+</html>
+<script type='text/javascript'> (function(w,d,s,l,a){ w._CommandName_=l;w[l]=w[l]||function(){(w[l].q=w[l].q||[]).push(arguments); w[l].track = function(){(w[l].q[w[l].q.length-1].t=[]).push(arguments)};return w[l]},w[l].a=a,w[l].l=1*new Date(); var c = d.createElement(s);c.async=1; c.src='//fm.ipinyou.com/j/a.js'; var h = d.getElementsByTagName(s)[0];h.parentNode.insertBefore(c, h); })(window,document,'script','py','gAs8T..BDaEk2mTAq88zS0pIn1aM0'); py('event','viewPage'); </script>

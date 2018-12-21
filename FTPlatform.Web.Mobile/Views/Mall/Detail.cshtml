@@ -1,0 +1,239 @@
+﻿@{
+    ViewBag.Title = "商品详情";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<link href="/content/css/gobel.css" rel="stylesheet" />
+<link href="/content/css/shop/product.css" rel="stylesheet" />
+<link href="~/Content/css/shop/buttonClass.css" rel="stylesheet" />
+<style type="text/css">
+    [v-cloak] {
+        display: none !important;
+    }
+
+    .layui-layer {
+        background-color: #fff;
+    }
+
+    .layui-layer-hui .layui-layer-content {
+        background-color: rgba(0,0,0,.6);
+    }
+
+    html {
+        background: #efeff4;
+    }
+
+    .mui-input-row .mui-input-clear ~ .mui-icon-clear {
+        top: 17px;
+    }
+
+    .CommodityDetails img {
+        width: 100%;
+    }
+
+    .order-info .mui-table-view-cell.mui-active {
+        background: #fff;
+    }
+</style>
+<header class="mui-bar mui-bar-nav head_box head-secd" style="border-bottom: #ddd solid 1px;">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="/mall/list"></a>@*javascript:history.back(-1)*@
+    <h1 class="mui-title"></h1>
+</header>
+<!--底部购买按钮-->
+<nav class="mui-bar mui-bar-tab ft-tab" style="padding-bottom: 0; margin-top:30px;">
+    <a class="nav-tab-item par-ind" href="/mall/Index">
+        <span class="tab-icon icon-home"></span>
+        <span class="mui-tab-label">商城首页</span>
+    </a>
+    <a class="nav-tab-item longin-btn" id="LoginDown" style="display:none">
+        <span class="mui-tab-label buynow">购买请先登录</span>
+    </a>
+    <a class="nav-tab-item buy-btn" id="openSheet">
+        <span class="mui-tab-label buynow">立即购买</span>
+    </a>
+</nav>
+<div class="mui-content l-scrollable" v-cloak>
+    <input type="hidden" value="@ViewBag.Id" id="code" />
+    <!--商品展示-->
+    <section class="product-wrap">
+        <!--焦点图片轮播-->
+        <div class="focus-imgs">
+            <div id="slider" class="mui-slider baner">
+                <div class="mui-slider-group mui-slider-loop">
+                    <div class="mui-slider-item">
+                        <a href="javascript:;">
+                            <img v-bind:src="lastImg.Url+lastImg.ImgName + lastImg.ImgFix">
+                        </a>
+                    </div>
+                    <div class="mui-slider-item" v-for="modImg in getdata.ModityImgAll">
+                        <a href="javascript:;">
+                            <img v-bind:src="modImg.Url+modImg.ImgName + modImg.ImgFix">
+                        </a>
+                    </div>
+                    <div class="mui-slider-item">
+                        <a href="javascript:;">
+                            <img v-bind:src="fristImg.Url+fristImg.ImgName + fristImg.ImgFix">
+                        </a>
+                    </div>
+                </div>
+                <div class="mui-slider-indicator">
+                    @*<div class="mui-indicator mui-active"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>
+                        <div class="mui-indicator"></div>*@
+                    @*<div class="mui-indicator" v-for="modImg in getdata.ModityImgAll"></div>*@
+                </div>
+            </div>
+        </div>
+        <div class="pro-art">
+            <h3>{{getdata.ModityName}}</h3>
+            <p><span>兑换价<b>{{getdata.FactScore}}</b></span><span>@*<del>{{getdata.ComputeScore}}</del>*@</span></p>
+            <div class="botm-ball">
+                <span class="exchange">已兑换 {{getdata.ConvertNumber}}</span>
+                <span class="Surplus">剩余 {{getdata.ModityNumber}}</span>
+            </div>
+        </div>
+        <div class="buy-wrap" v-if="getdata.ModityType!=3">
+            <form>
+                @*<div class="introduction-wrap" v-if="getdata.ModityType==3">
+                        <div class="parameter-top">
+                            <p><b>品牌名称：</b>{{getdata.Brand}}</p>
+                            <h5>产品参数</h5>
+                            {{getdata.ModityAbstract}}
+                        </div>
+                        <div class="intro-pc"  v-show="getdata.ModityImg!=null">
+                            <img v-bind:src="getdata.ModityImg.Url+getdata.ModityImg.ImgName+getdata.ModityImg.ImgFix" style="height:2.5rem;display:initial">
+                        </div>
+                        <div class="intro-textinner">
+                            <h5>产品介绍：</h5>
+                            <p>充值流程：您要充值的手机号码-点击确认-三个工作日内充值到账</p>
+                            <p> 58分钟  430元  每分钟 7.41 年租86元 24个月有效期  88216开头 短信3元</p>
+                        </div>
+                    </div>*@
+                <div>
+                    <div class="mui-input-row buy-row">
+                        <label>购买数量</label>
+                        <div class="mui-numbox" data-numbox-step='1' data-numbox-min='-200' data-numbox-max='1000'>
+                            <button class="mui-btn mui-numbox-btn-minus" type="button" v-on:click="addInput(getdata.ModityNumber,'-')">-</button>
+                            <input class="mui-numbox-input" style="display:none;" type="number" value="400" />
+                            <input class="mui-numbox-input" style="text-align:center;width:150%" type="number" id="modNumber" v-model="subFrom.number" v-on:input="addInput(getdata.ModityNumber,'')" />
+                            <button class="mui-btn mui-numbox-btn-plus" type="button" v-on:click="addInput(getdata.ModityNumber,'+')">+</button>
+                        </div>
+                    </div>
+                    @*<div class="mui-input-row buy-row">
+                            <label>收货人</label>
+                            <input type="text" class="mui-input-clear" v-model="subFrom.people" id="people" placeholder="请填写收货人">
+                        </div>*@
+                    <div class="mui-input-row buy-row">
+                        <label>收货地址</label>
+                        <input type="text" class="mui-input-clear" v-model="subFrom.address" v-on:focus="isLoginShow" id="address" placeholder="请填写收货地址">
+                    </div>
+                    <div class="mui-input-row buy-row" style="border-bottom:none;">
+                        <label>联系电话</label>
+                        <input type="text" class="mui-input-clear" v-model="subFrom.telephony" v-on:focus="isLoginShow" id="telephony" placeholder="请填写联系电话">
+                    </div>
+                </div>
+            </form>
+        </div>
+        <!-------新增商品详情----------->
+        <div class="CommodityDetails" v-show="getdata.FiveDepict!=''&& getdata.FiveDepict!=null">
+            <p class="Commodity-content">商品详情</p>
+            <div v-html="getdata.FiveDepict"></div>
+        </div>
+    </section>
+    <!-- 立即购买弹层 -->
+    <div id="sheet" class="mui-popover mui-popover-bottom mui-popover-action order-wrap">
+        <div class="product-part" style="margin-bottom:2px;">
+            <ul class="order-info">
+                <li>
+                    <div class="top-item">
+                        <div class="tp-pc" v-if="getdata.ModityImg!=null">
+                            <img v-bind:src="getdata.ModityImg.Url + getdata.ModityImg.ImgName + getdata.ModityImg.ImgFix" />
+                        </div>
+                        <div class="tp-pc" v-else>
+                            暂无图片
+                        </div>
+                        <div class="tp-text">{{getdata.ModityName}}</div>
+                        <div class="close-X" v-on:click="popClose">
+                            <a href="javascript:;"><i class="mui-icon mui-icon-closeempty"></i></a>
+                        </div>
+                    </div>
+                </li>
+                <li class="mui-table-view-cell" style="padding:0 15px">
+                    <form>
+                        <div class="mui-input-row buy-row" style="height:40px">
+                            <label style="line-height:40px;padding:0;font-size:0.28rem">价格</label>
+                            <div class="zhibi" style="line-height:40px;padding:0;font-size:0.28rem">{{getdata.FactScore}}智币</div>
+                        </div>
+                        <div class="mui-input-row buy-row" style="height: 40px;padding:5px 0">
+                            <label style="margin:0;padding:0;font-size:0.28rem;line-height:30px">购买数量</label>
+                            <div class="mui-numbox" data-numbox-step='1' data-numbox-min='-1000' data-numbox-max='1000' style="margin: 0;overflow:visible;height:30px">
+                                <button class="mui-btn mui-numbox-btn-minus" type="button" v-on:click="addInput2(getdata.ModityNumber,'-')">-</button>
+                                <input class="mui-numbox-input" style="display:none" value="400" type="number" v-model="subFrom.number" />
+                                <input class="mui-numbox-input" style="text-align:center;width:150%" type="number" id="modNumber2" v-model="subFrom.number" v-on:input="addInput2(getdata.ModityNumber,'')" />
+                                <button class="mui-btn mui-numbox-btn-plus" type="button" v-on:click="addInput2(getdata.ModityNumber,'+')">+</button>
+                            </div>
+                        </div>
+                        <div class="mui-input-row " style="height: auto;">
+                            <label style="display:block;width: 100%;line-height:0.40rem;font-size:0.28rem;padding:0">留言</label>
+                            <textarea style="width: 100%; border: none; color: #666;padding: 0;font-size:0.28rem;line-height:0.36rem;" v-model="subFrom.cargo"></textarea>
+                        </div>
+                    </form>
+                </li>
+            </ul>
+        </div>
+        <!-- 结账信息 -->
+        <div class="checkout-part">
+            <div class="user-mesage" v-if="user != null" style="padding:0">
+                <div class="mui-input-row " style="height: auto;padding-bottom:10px" v-if="getdata.ModityType==3">
+                    <label style="line-height: 30px;">充值号码</label>
+                    <div class="phonenumber" style="margin-top:0">{{user.Mobile}}</div>
+                </div>
+                <p v-else>
+                    电话：{{subFrom.telephony}} <br>收货地址：{{subFrom.address}}
+                </p>
+            </div>
+            <div class="check-money" style="margin-bottom: -1.1em;" v-if="getdata.ModityType!=3 && userscore!=null">
+                <p>共{{subFrom.number}}件 折后总金额<b>{{userscore.needScore}}</b>智币</p>
+                <p class="blue-txt" v-if="userscore!=null">
+                    您现有智币{{userscore.score}}
+                    <span v-if="userscore.IsSupply">需补现金{{userscore.suppleMoney}}元</span>
+                </p>
+            </div>
+        </div>
+        <div class="submit-btn" v-on:click="SubOrderFrom">
+            <a href="javascript:;">提交订单</a>
+        </div>
+    </div>
+    <div id="dloag1" style='text-align:center;font-size:13px;display:none;'>
+        <p style='color: rebeccapurple;margin-top:10px;'>订单添加成功.</p>
+        <p style='color: rebeccapurple;'>兑换需支付<span style="color:#ff6525;" id="score1" v-text="cue.needScore"></span>智币<span style="color:#ff6525;" id="money" v-text="cue.suppleMoney"></span>现金.</p>
+        <p style='color: rebeccapurple;'>是否立即支付?</p>
+    </div>
+    <div id="dloag2" style='text-align:center;font-size:13px;display:none;'>
+        <p style='color: rebeccapurple;margin-top:10px;'>订单添加成功.</p>
+        <p style='color: rebeccapurple;'>兑换需支付<span style="color:#ff6525;" id="score2" v-text="cue.noNeedScore"></span>智币,</p>
+        <p style='color: rebeccapurple;'>是否立即支付?</p>
+    </div>
+</div>
+<div id="data"></div>
+@section foot{
+    <script src="~/Content/Plugins/layer/layui.all.js"></script>
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/dist/mall.detail.bundle.js"></script>
+    <script type="text/javascript">
+
+        /*-----填写input框时------*/
+        $(function () {
+            $(".buy-wrap .buy-row .mui-input-clear").on("focus", function () {
+                $("body").animate({
+                    top: "-100px",
+                }, 50)
+            })
+            $(".buy-wrap .mui-input-row .mui-input-clear").on("blur", function () {
+                $("body").animate({
+                    top: "0"
+                }, 50)
+            })
+        })
+    </script>
+}

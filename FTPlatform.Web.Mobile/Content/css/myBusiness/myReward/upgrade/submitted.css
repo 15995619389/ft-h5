@@ -1,0 +1,119 @@
+.box_img img{
+	
+	display: block;
+	width: 2.08rem;
+	height: 2.98rem;
+	margin: 0 auto;
+}
+html,.mui-content{
+	background: #fff;
+}
+.box_img {
+	border-top: 1px solid #ddd;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	padding-top: 1rem;
+}
+.p_text1{
+	font-size: 17px;
+	text-align: center;
+	color: #0e5bb5;
+	margin: 10px 0px;
+}
+.p_text2,.p_text3{
+	text-align: center;
+	color: #444444;
+}
+p{
+	margin-bottom: 0px;
+}
+/*--------*/
+.ft-tab {
+    background: #fff;
+    /*padding-bottom: 0.10rem;*/
+    box-sizing: border-box;
+}
+.ft-tab .mui-tab-item {
+    color: #444;
+}
+.ft-tab .mui-active {
+    color: #0e5bb5!important;
+}
+.ft-tab .tab-icon {
+    margin-bottom: 0.15rem;
+    width: 0.46rem;
+    height: 0.46rem;
+    position: relative;
+    z-index: 20;
+    top: 3px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: Muiicons;
+    font-size: 0.24px;
+    font-weight: 400;
+    font-style: normal;
+    /* line-height: 1; */
+    display: inline-block;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+.ft-tab .icon-update {
+    background: url(../../../../image/up-s.png) no-repeat center center;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-size: 0.5rem 0.5rem;
+    margin: 0 auto;
+    margin-bottom: 0.15rem;
+}
+.ft-tab .icon-update {
+    background: url(../../../../image/up-s.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .mui-active .icon-update {
+    background: url(../../../../image/up.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .mui-tab-label {
+    display: block;
+    font-size: 0.24rem;
+}
+.ft-tab .icon-reward {
+    background: url(../../../../image/ax-re.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .mui-active .icon-reward {
+    background: url(../../../../image/ax-big.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .icon-manger {
+    background: url(../../../../image/reo.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .mui-active .icon-manger {
+    background: url(../../../../image/reo-bl.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+/*---------*/
+.mui-bar-tab .nav-tab-item {
+    display: table-cell;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #929292;
+}

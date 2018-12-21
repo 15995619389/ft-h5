@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "复合材料检测";
+    ViewBag.Description = "提供理化检测、无损检测、失效分析的新技术以及方法的研究和失效机理的研究";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/check/check.css" rel="stylesheet" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+}
+
+<header class="mui-bar mui-bar-nav head_box head-secd">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+    <h1 class="mui-title">复合材料检测</h1>
+    <a class="return share-button" v-on:click="SharePage"></a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content soul_content l-scrollable">
+    <rightsidebar></rightsidebar>
+    <section class="mid-banner">
+        <img src="/content/image/check/f-banner1.png" />
+    </section>
+    <!-- 失效分析整体解决方案服务-->
+    <section class="solution-wrap">
+        <h3>复合材料检测整体解决方案服务</h3>
+        <ul class="soul-list">
+            <li>
+                <b>为客户提供复合材料</b>
+                <p>产品的具体检测标准、非标准测试方法以及相匹配的检测设备。</p>
+                <b>为客户提供最适合实验室</b>
+                <p>包含可以出具数据以及报告的实验室。</p>
+                <b>实验资源的分析匹配</b>
+                <p>为客户提供成本与效率最优化方案。</p>
+                <b>实验结果的分析</b>
+                <p>为客户提供数据以及技术分析服务等。</p>
+            </li>
+        </ul>
+    </section>
+    <section class="sec-banner">
+        <img src="/content/image/check/f-banner2.png" />
+    </section>
+    <!-- 我们的优势-->
+    <section class="solution-wrap">
+        <h3>我们的优势</h3>
+        <div class="advent-box">
+            <h4>技术优势</h4>
+            <ul class="ness-list">
+                <li><span>提供理化检测、无损检测、失效分析的新技术以及方法的研究和失效机理的研究</span></li>
+                <li><span>复合材料综合性能评价的方案设计与测试表征技术</span></li>
+                <li><span>模拟特种、极端使用环境的复合材料检测评价技术</span></li>
+                <li><span>通过各种检测分析手段，对材料、结构以及生产工艺进行逆向分析等</span></li>
+            </ul>
+        </div>
+        <div class="advent-box">
+            <h4>资源优势</h4>
+            <ul class="ness-list">
+                <li><span>提供复合材料以及产品于环境条件要求较高的检测设备资源</span></li>
+                <li><span>具备材料理化、失效分析、老化等性能数据库</span></li>
+                <li><span>具备国内复合材料相关实验室以及院校实验室资源数据库等</span></li>
+            </ul>
+        </div>
+    </section>
+    <!--服务流程-->
+    <section class="solution-wrap sever-step">
+        <h3>服务流程</h3>
+        <div class="step-wrap">
+            <div class="step-text talk">
+                <h5>发起咨询</h5>
+                <p>Initiate consultation</p>
+            </div>
+            <div class="step-text online">
+                <h5>在线客服</h5>
+                <p>Online answering</p>
+            </div>
+            <div class="step-text agency">
+                <h5>推荐机构</h5>
+                <p>Recommended institutions</p>
+            </div>
+            <div class="step-text confirm">
+                <h5>客户确认</h5>
+                <p>client confirmation</p>
+            </div>
+            <div class="step-text Sign">
+                <h5>签订三方协议</h5>
+                <p>Signed a tripartite agreement</p>
+            </div>
+            <div class="step-text Track">
+                <h5>项目进度跟踪</h5>
+                <p>Project progress tracking</p>
+            </div>
+            <div class="step-text examine">
+                <h5>审核与发证</h5>
+                <p>Audit and certification</p>
+            </div>
+        </div>
+    </section>
+    <!--合作伙伴-->
+    <section class="solution-wrap parter">
+        <h3>合作伙伴</h3>
+        <div class="part-logo">
+            <span><img src="/content/image/check/ht-logo.png"></span>
+            <span><img src="/content/image/check/kxy-logo.png"></span>
+            <span><img src="/content/image/check/timg-logo.png"></span>
+        </div>
+    </section>
+</div>
+<share ref="share"></share>
+
+
+

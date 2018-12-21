@@ -1,0 +1,20 @@
+﻿@{
+    ViewBag.Title = "已保存";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="/content/css/pulli.css" />
+    <link rel="stylesheet" href="/content/css/save.css" />
+}
+
+<header class="mui-bar mui-bar-nav aHeader" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/demand/"></a>
+    <h1 class="mui-title">需求已保存</h1>
+</header>
+<div class="mui-content">
+    <div class="box">
+        <img src="/content/image/Need_save.png" />
+        <p class="p_text">您的需求已保存至待提交，进入<a href="/demand/publishdemand">我的需求</a>查看</p>
+    </div>
+</div>

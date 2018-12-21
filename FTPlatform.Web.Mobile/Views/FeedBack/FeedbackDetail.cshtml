@@ -1,0 +1,31 @@
+﻿@{
+    ViewBag.Title = "反馈详情";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+    <link rel="stylesheet" href="~/Content/css/feedback/FeedbackDetails.css" />
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+        <h1 class="mui-title">反馈详情</h1>
+    </header>
+    <div class="mui-content" style="background: #fff;" v-cloak>
+        <input type="hidden" id="id" value="@ViewBag.id" />
+        <div class="problem">
+            <div class="problem_title">
+                <img src="/Content/image/details_title.png">
+                {{fd.FeedType|ft}}
+            </div>
+            <div class="description">
+                <h3 class="description_title">问题描述</h3>
+                <p class="text">{{fd.Describe}}</p>
+            </div>
+        </div>
+        <div class="CustomerFeedback" v-if="fd.BackText!=null">
+            <div class="description">
+                <h3 class="description_title">客服反馈</h3>
+                <p class="text">{{fd.BackText}}</p>
+            </div>
+        </div>
+    </div>
+@section foot{
+<script src="~/dist/feedback.detail.bundle.js"> </script>
+}

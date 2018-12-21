@@ -1,0 +1,65 @@
+﻿
+@{
+    ViewBag.Title = "新增收货地址";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="~/Content/css/high/buyeraddress.css" />
+}
+@section foot
+{
+    <script src="~/dist/high.newaddress.bundle.js"></script>
+    <script src="~/Content/js/Pages/highcity/Popt.js"></script>
+    <script src="~/Content/js/Pages/highcity/cityJson.js"></script>
+    <script src="~/Content/js/Pages/highcity/citySet.js"></script>
+}
+<style>
+    .Mandatory{
+        color:red
+    }
+</style>
+<div id="container" v-cloak>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+        <h1 class="mui-title">新增收货地址</h1>
+    </header>
+    <div class="mui-content">
+        <ul class="edit_ul">
+            <li>
+                <span class="Mandatory">*</span>
+                <span>收货人：</span>
+                <input type="text" v-model.trim="NewAddressText.Consignee"/>
+            </li>
+            <li>
+                <span class="Mandatory">*</span>
+                <span>手机号码：</span>
+                <input type="text" style="width:77%" v-model.trim="NewAddressText.Telephone" id="phone"/>
+            </li>
+            <li>
+                <span class="Mandatory">*</span>
+                <span>所在地区：</span>
+                <div class="city" style="width:77%"><input id="city" value="" placeholder="请选择"  readonly="readonly"/><em>&gt;</em>
+                </div>
+                <input type="hidden" id="ProvinceId" />
+                <input type="hidden" id="ProvinceName"/>
+                <input type="hidden" id="CityId"/>
+                <input type="hidden" id="CityName"/>
+                <input type="hidden" id="DistrictId"/>
+                <input type="hidden" id="DistrictName"/>
+            </li>
+            <li>
+                <textarea type="text" placeholder="需填写详细地址" class="detailAddress" rows="2" v-model="NewAddressText.AddressDetails"></textarea>
+            </li>
+            <li>
+                <span>设为默认地址</span>
+                <div class="radio">
+                @*<i v-bind:class="{user_chekbox:(NewAddressText.IsDefault)}"></i>*@
+                    <input type="checkbox" v-model="NewAddressText.IsDefault"/>
+                </div>
+            </li>
+        </ul>
+        <button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="determine" v-on:click="PostAddress">保存并使用</button>
+    </div>
+    <div id="mask" v-on:click="maskHide"></div>
+</div>

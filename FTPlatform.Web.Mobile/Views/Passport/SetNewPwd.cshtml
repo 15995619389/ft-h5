@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "设置新密码";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="/content/css/login/login.css" rel="stylesheet" />
+}
+@section foot{
+    <script src="~/dist/passport.password.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+    <h1 class="mui-title">设置新密码</h1>
+</header>
+<div class="mui-content body_content" v-cloak>
+    <section class="regist-warp">
+        <form class="mui-input-group login-form">
+            <div class="input-box">
+                <div class="mui-input-row">
+                    <label><i class="moblie"></i></label>
+                    <input type="password" maxlength="20" class="mui-input-clear" v-model="formData.Pwd" placeholder="设置新密码">
+                </div>
+                <div class="mui-input-row">
+                    <label><i class="lock"></i></label>
+                    <input type="password" maxlength="20" class="mui-input-clear" v-model="formData.VerPwd" placeholder="确认密码">
+                </div>
+            </div>
+            <div class="mui-radio rdaio-row">
+                <div id="ErrorMsg" class="error-notice erro-pub">{{ErrorMsg}}</div>
+            </div>
+            <div class="mui-radio rdaio-row">
+                <div class="error-notice erro-pub">
+                    请将密码设置成6-16位，并且由字母、数字两种以上组合
+                </div>
+            </div>
+            <div class="longin-row">
+                <a class="login-btn" href="javascript:" v-on:click="SubmitChange">完成</a>
+            </div>
+        </form>
+    </section>
+</div>

@@ -1,0 +1,32 @@
+.aHeader a {
+	color: #666;
+}
+html{
+    background:#fff
+}
+.box {
+	margin: 0 auto;
+	border-top: 1px solid #ddd;
+}
+
+.box img {
+	width: 2.86rem;
+	height: 2.86rem;
+	margin: .50rem auto;
+}
+
+.p_text {
+	width: 100%;
+	margin: 0 auto;
+	color: #444444;
+	font-size: 0.32rem;
+	text-align: center;
+}
+
+.p_text a {
+	color: #007AFF;
+}
+
+.mui-title {
+	font-size: 0.32rem;
+}

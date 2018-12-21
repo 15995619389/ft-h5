@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "申请失败";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;border-bottom: 1px solid #ddd;">
+    <a id="back" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">@ViewBag.Title</h1>
+</header>
+<meta charset="UTF-8">
+<title>申请失败</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+<link rel="stylesheet" href="/Content/css/myBusiness/myReward/upgrade/failure.css" />
+<div class="mui-content" id="mui-content" v-cloak>
+    <foot></foot>
+    <div class="box_img">
+        <img src="/Content/image/failure.png" />
+        <h3 class="p_text1">非常遗憾，您的申请未通过</h3>
+        <p class="p_text2">原因：<span v-if="updateresult.Reason!='其他'">{{updateresult.Reason}}</span><span v-if="updateresult.Reason=='其他'">{{updateresult.Comment}}</span></p>
+       
+        <button type="button" class="mui-btn mui-btn-blue mui-btn-block" v-on:click="Update()">返回修改</button>
+    </div>
+</div>
+@section foot{
+<script src="~/dist/agent.submitfail.bundle.js"></script>
+}

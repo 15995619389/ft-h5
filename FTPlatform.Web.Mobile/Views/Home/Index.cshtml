@@ -1,0 +1,293 @@
+﻿@{
+    ViewBag.Title = "发需求 找专家 到飞天众智";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="/Content/css/gobel.css" />
+    <link rel="stylesheet" href="/content/css/Header_title.css" />
+    <link href="~/Content/Components/SearchBar/SearchBar.css" rel="stylesheet" />
+    <link href="/Content/css/intic.css?v=1.0" rel="stylesheet" />
+    <style type="text/css">
+        .input-text {
+            color: #595757;
+            font-size: 0.28rem;
+            text-align: left;
+            padding-left: 10px;
+            margin-left: 10px;
+        }
+
+        html {
+            background: #fff;
+        }
+    </style>
+}
+
+@section foot{
+    <script src="~/dist/home.index.bundle.js"></script>
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+}
+
+<div id="container" style="padding-bottom:50px;">
+    <header class="mui-bar mui-bar-nav head_box">
+        <searchbar ref="search" v-bind:stype="-1"></searchbar>
+    </header>
+    <!--页面主体部分-->
+    <div class="mui-content body_content l-scrollable" v-cloak>
+        <foot v-cloak></foot>
+        <!--轮播-->
+        <section class="banner_scroll">
+            <div id="slider" class="mui-slider baner">
+                <div class="mui-slider-group mui-slider-loop">
+                    <!-- 额外增加的一个节点(循环轮播：第一个节点是最后一张轮播) -->
+                    <template v-if="banners.length>0">
+                        <div class="mui-slider-item mui-slider-item-duplicate" v-if="index == (banners.length - 1)" v-for="(ban,index) in banners">
+                            <a v-bind:href="ban.RedirectUrl">
+                                <img v-bind:src="ban.AdvUrl">
+                            </a>
+                        </div>
+                        <div class="mui-slider-item" v-for="ban in banners">
+                            <a v-bind:href="ban.RedirectUrl">
+                                <img v-bind:src="ban.AdvUrl">
+                            </a>
+                        </div>
+                        <div class="mui-slider-item mui-slider-item-duplicate" v-if="index == 0" v-for="(ban,index) in banners">
+                            <a v-bind:href="ban.RedirectUrl">
+                                <img v-bind:src="ban.AdvUrl">
+                            </a>
+                        </div>
+                    </template>
+                    <template v-else>
+                        <div class="mui-slider-item mui-slider-item-duplicate">
+                            <a><img src="~/Content/image/homedefault.jpg"></a>
+                        </div>
+                        <div class="mui-slider-item">
+                            <a><img src="~/Content/image/homedefault.jpg"></a>
+                        </div>
+                        <div class="mui-slider-item mui-slider-item-duplicate">
+                            <a><img src="~/Content/image/homedefault.jpg"></a>
+                        </div>
+                    </template>
+                </div>
+                <div class="mui-slider-indicator">
+                    <div class="mui-indicator" v-bind:class="{'mui-active':(index == 0)}" v-for="(ban,index) in banners"></div>
+                </div>
+            </div>
+        </section>
+        <!--分块导航-->
+        <section class="list-item" v-if="navs.length > 0">
+            <div class="floor_s">
+                <ul class="mui-table-view mui-grid-view mui-grid-9 flo_item">
+                    <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3" v-for="nav in navs">
+                        <a v-bind:href="nav.Value">
+                            <span class="icon-cirle" v-bind:class="nav.Remark"></span>
+                            <div class="detext">{{nav.Name}}</div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--飞天动态-->
+        <section class="news_warp">
+            <div class="news_srocll">
+                <div class="logo_lt" v-on:click="NewsList">
+                    <img src="/content/image/FTNS.png" />
+                </div>
+                <div class="news_info">
+                    <ul>
+                        <li style="height:0.46rem;line-height:0.46rem" v-for="item in news" v-on:click="NewsDetail(item.Id)">
+                            <span class="bef_name" v-if="item.Source != ''">{{item.Source}}</span>
+                            <span class="news_text">{{item.Title}}</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <!--小广告图 -->
+        <div class="banner_sm" v-if="advs.length>0">
+            <a v-bind:href="advs[0].RedirectUrl"><img v-bind:src="advs[0].AdvUrl" /></a>
+        </div>
+        <!--明星专家 -->
+        <section class="star_model" v-if="starexpert.length > 0">
+            <div class="model_title">
+                <h3><span>明星专家</span></h3>
+                <a href="/expert?level=2&type=1" class="more_viw">更多 ></a>
+            </div>
+            <ul class="mui-row model_gird">
+                <li class="mui-col-sm-12 mui-col-xs-12 itemstar">
+                    <div class="mui-col-sm-6 mui-col-xs-6 bod-rt floorow" v-if="index==0" v-for="(expert,index) in starexpert" v-on:click="Edetail(expert.ExpertID)">
+                        <div class="text-detil">
+                            <h4>{{expert.ExpertName}}</h4>
+                            <p>{{expert.ExpertType|formatLength(14) }}</p>
+                            <p>关注度：<span>{{expert.Attention}}</span></p>
+                            <p>交易保障：<span>{{expert.RealDealSafe}}</span></p>
+                        </div>
+                        <div class="peoleimg">
+                            <img v-lazy="expert.User.AvatarUrl" />
+                        </div>
+                    </div>
+                    <div class="mui-col-sm-6 mui-col-xs-6 floorow" style="padding-left:5px;box-sizing:border-box;" v-if="index==1" v-for="(expert,index) in starexpert" v-on:click="Edetail(expert.ExpertID)">
+                        <div class="text-detil">
+                            <h4>{{expert.ExpertName}}</h4>
+                            <p>{{expert.ExpertType|formatLength(14) }}</p>
+                            <p>关注度：<span>{{expert.Attention}}</span></p>
+                            <p>交易保障：<span>{{expert.RealDealSafe}}</span></p>
+                        </div>
+                        <div class="peoleimg">
+                            <img v-lazy="expert.User.AvatarUrl" />
+                        </div>
+                    </div>
+                </li>
+                <li class="mui-col-sm-12 mui-col-xs-12 itemstar">
+                    <div class="mui-col-sm-6 mui-col-xs-6 bod-rt floorow" v-if="index==2" v-for="(expert,index) in starexpert" v-on:click="Edetail(expert.ExpertID)">
+                        <div class="text-detil">
+                            <h4>{{expert.ExpertName}}</h4>
+                            <p>{{expert.ExpertType|formatLength(14) }}</p>
+                            <p>关注度：<span>{{expert.Attention}}</span></p>
+                            <p>交易保障：<span>{{expert.RealDealSafe}}</span></p>
+                        </div>
+                        <div class="peoleimg">
+                            <img v-lazy="expert.User.AvatarUrl" />
+                        </div>
+                    </div>
+                    <div class="mui-col-sm-6 mui-col-xs-6 floorow" style="padding-left:5px;box-sizing:border-box;" v-if="index==3" v-for="(expert,index) in starexpert" v-on:click="Edetail(expert.ExpertID)">
+                        <div class="text-detil">
+                            <h4>{{expert.ExpertName}}</h4>
+                            <p>{{expert.ExpertType|formatLength(14) }}</p>
+                            <p>关注度：<span>{{expert.Attention}}</span></p>
+                            <p>交易保障：<span>{{expert.RealDealSafe}}</span></p>
+                        </div>
+                        <div class="peoleimg">
+                            <img v-lazy="expert.User.AvatarUrl" />
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <!--专业机构 -->
+        <section class="star_model agency" v-if="proforg.length > 0">
+            <div class="model_title">
+                <h3><span>明星机构</span></h3>
+                <a href="/expert?level=2&type=2" class="more_viw">更多 ></a>
+            </div>
+            <ul class="mui-row model_gird">
+                <li class="mui-col-sm-12 mui-col-xs-12 itemstar">
+                    <div class="mui-col-sm-6 mui-col-xs-6 bod-rt floorow" v-if="index==0" v-for="(expert,index) in proforg" v-on:click="Edetail(expert.ExpertID)">
+                        <h4>{{expert.ExpertName}}</h4>
+                        <div class="text-detil">
+                            <p>{{expert.ExpertType|formatLength(14)}}</p>
+                            <p>关注度：<span>{{expert.Attention}}</span></p>
+                            <p>交易保障：<span>{{expert.RealDealSafe}}</span></p>
+                        </div>
+                        <div class="peoleimg compy">
+                            <img v-lazy="expert.User.AvatarUrl" />
+                        </div>
+                    </div>
+                    <div class="mui-col-sm-6 mui-col-xs-6 floorow" style="padding-left:5px;box-sizing:border-box;" v-if="index==1" v-for="(expert,index) in proforg" v-on:click="Edetail(expert.ExpertID)">
+                        <h4>{{expert.ExpertName}}</h4>
+                        <div class="text-detil">
+                            <p>{{expert.ExpertType|formatLength(14)}}</p>
+                            <p>关注度：<span>{{expert.Attention}}</span></p>
+                            <p>交易保障：<span>{{expert.RealDealSafe}}</span></p>
+                        </div>
+                        <div class="peoleimg compy">
+                            <img v-lazy="expert.User.AvatarUrl" />
+                        </div>
+                    </div>
+                </li>
+                <li class="mui-col-sm-12 mui-col-xs-12 itemstar">
+                    <div class="mui-col-sm-6 mui-col-xs-6 bod-rt floorow" v-if="index==2" v-for="(expert,index) in proforg" v-on:click="Edetail(expert.ExpertID)">
+                        <h4>{{expert.ExpertName}}</h4>
+                        <div class="text-detil">
+                            <p>{{expert.ExpertType|formatLength(14)}}</p>
+                            <p>关注度：<span>{{expert.Attention}}</span></p>
+                            <p>交易保障：<span>{{expert.RealDealSafe}}</span></p>
+                        </div>
+                        <div class="peoleimg compy">
+                            <img v-lazy="expert.User.AvatarUrl" />
+                        </div>
+                    </div>
+                    <div class="mui-col-sm-6 mui-col-xs-6 floorow" style="padding-left:5px;box-sizing:border-box;" v-if="index==3" v-for="(expert,index) in proforg" v-on:click="Edetail(expert.ExpertID)">
+                        <h4>{{expert.ExpertName}}</h4>
+                        <div class="text-detil">
+                            <p>{{expert.ExpertType|formatLength(14)}}</p>
+                            <p>关注度：<span>{{expert.Attention}}</span></p>
+                            <p>交易保障：<span>{{expert.RealDealSafe}}</span></p>
+                        </div>
+                        <div class="peoleimg compy">
+                            <img v-lazy="expert.User.AvatarUrl" />
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <div class="banner_sm" v-if="advs.length>1">
+            <a v-bind:href="advs[1].RedirectUrl"><img v-lazy="advs[1].AdvUrl" /></a>
+        </div>
+        <!--专诚邀您解决需求 -->
+        <section class="star_model demand" v-if="unsolvedemands.length > 0">
+            <div class="model_title">
+                <h3><span>诚邀您解决需求</span></h3>
+                <a href="/demand" class="more_viw">更多 ></a>
+            </div>
+            <ul class="mui-table-view mui-grid-view demand-list">
+                <li class="mui-table-view-cell mui-media mui-col-xs-6" v-for="demand in unsolvedemands" v-on:click="Ddetail(demand.Id)">
+                    <a href="javascript:;" style="margin: -20px 0 0 -14px">
+                        <img class="mui-media-object xqpc" v-lazy="demand.ImgUrl">
+                        <div class="mui-media-body demand-body">
+                            <h5>{{demand.Title|html|formatLength(9)}}</h5>
+                            <div class="text-block">{{demand.Description|html}}</div>
+                            <div class="money-tb budget">投入预算:{{InputBudget[demand.InputBudget]}}</div>
+                            @*<div class="money-tb budget">投入预算:1~200万</div>*@
+                            <div class="money-tb focus budget " style="float:right">关注数:{{demand.FollowNum}}</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <div class="banner_sm" v-if="advs.length>2">
+            <a v-bind:href="advs[2].RedirectUrl"><img v-lazy="advs[2].AdvUrl" /></a>
+        </div>
+        <!--热门技术推荐 -->
+        <section class="star_model demand hotwarp">
+            <div class="model_title">
+                <h3><span>热门技术推荐</span></h3>
+                <a href="/techshare" class="more_viw">更多 ></a>
+            </div>
+            <ul class="mui-table-view mui-grid-view demand-list" v-if="populartechshare.length > 0">
+                <li class="mui-table-view-cell mui-media mui-col-xs-6" v-for="tech in populartechshare" v-on:click="Tdetail(tech.Id)">
+
+                    <a style="margin: -20px 0 0 -14px">
+                        <img class="mui-media-object xqpc" v-lazy="tech.ImgUrl">
+                        <div class="mui-media-body demand-body">
+                            <h5>{{tech.Title|html|formatLength(9)}}</h5>
+                            <div class="text-block">{{tech.Feature|html}}</div>
+                            <div class="money-tb">浏览量:{{tech.BrowseNum}}</div>
+                            <div class="money-tb focus" style="float:right">关注度:{{tech.FollowNum}}</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+        <footer class="foot_longin" style="height:auto">
+            <ul>
+                <li>
+                    <a href="/passport/login">登录</a>
+                </li>
+                <li style="float:right;">
+                    <a href="/passport/register">注册</a>
+                </li>
+                @*<li>
+                        <a href="http://www.techina2025.com" class="webout">电脑版</a>
+                    </li>*@
+
+
+            </ul>
+            <!--公司备案，版权所有-->
+            <div class="company_footer" style="width:100%;height:auto;overflow:hidden;padding:0.40rem 0 0.80rem;font-size:0.24rem;text-align:center;color:#999">
+                © 2016-<span>@DateTime.Now.Year</span>飞天众智平台&nbsp;|&nbsp;<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" style="color:#999">沪ICP备16043947号-2</a>
+            </div>
+        </footer>
+    </div>
+    <rightsidebar></rightsidebar>
+</div>

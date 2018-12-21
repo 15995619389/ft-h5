@@ -1,0 +1,511 @@
+p,
+html {
+    line-height: 0.40rem;
+}
+
+html {
+    background: #f4f4f4;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+.name_title {
+    width: 100%;
+    padding: 10px 0px;
+    color: #bbbbbb;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+}
+
+.oSpan {
+    color: #b90000;
+    margin-top: 0.05rem;
+    display: block;
+    float: left;
+    width: 3%;
+    margin-right: 0.05rem;
+}
+
+input[type=text] {
+    width: 73%;
+    float: right;
+    margin-bottom: 0px;
+    padding: 0;
+    height: 20px;
+    border: none;
+    color: #444;
+    font-size: 15px;
+}
+
+.need_name {
+    padding: 0px 3%;
+    border-top: 1px solid #ddd;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.upload_img {
+    width: 100%;
+    padding: 0.30rem 0px;
+    position: relative;
+}
+
+#textfield {
+    display: block;
+    width: 1.40rem;
+    height: 1.40rem;
+}
+
+.file {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1.40rem;
+    height: 1.40rem;
+    filter: alpha(opacity: 0);
+    opacity: 0;
+}
+
+.needs,
+.TechnologyLabel {
+    padding: 0px 3%;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.need_form {
+    padding-bottom: 15px;
+    background: #fff;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+}
+
+.form_title {
+    width: 100%;
+    padding: 10px 0px;
+    color: #444444;
+    font-size: 0.32rem;
+}
+
+.service_checkbox {
+    width: 100%;
+    overflow: hidden;
+    color: #444;
+}
+
+.radio {
+    width: 100% height: auto;
+    overflow: hidden;
+}
+
+.needs .need_form .service_checkbox .radio .mui-left:nth-child(odd) {
+    width: 50%;
+    float: left;
+}
+
+.mui-input-row {
+    clear: none;
+}
+
+.mui-checkbox.mui-left label,
+.mui-radio.mui-left label {
+    padding-right: 0px;
+    padding-left: 0.50rem;
+    /* padding-top: 5px; */
+    padding-bottom: 5px;
+    font-size: 0.26rem;
+}
+
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+    width: 0.38rem;
+    height: 0.38rem;
+    top: 0.12rem;
+}
+
+    .mui-checkbox input[type=checkbox]:before,
+    .mui-radio input[type=radio]:before {
+        font-size: 0.34rem;
+    }
+
+
+/*--------2----------*/
+
+.needs .need_form .service_checkbox .radio_box .mui-left:nth-child(odd) {
+    float: left;
+    width: 33.33%;
+}
+
+.needs .need_form .service_checkbox .radio_box .mui-left:nth-child(even) {
+    float: left;
+    width: 33.33%;
+}
+
+.radio_box {
+    width: 100% height: auto;
+    overflow: hidden;
+}
+
+.need_text {
+    width: 94%;
+    margin-left: 6%;
+    margin-top: 5px;
+}
+
+.need_form textarea {
+    padding: 5px 5px;
+    font-size: 0.32rem;
+    color: #444;
+    min-height: 1.5rem;
+    border: none;
+    margin-bottom: 0px;
+}
+
+.mui-checkbox.mui-left input[type=checkbox],
+.mui-radio.mui-left input[type=radio] {
+    left: 0.10rem;
+}
+
+
+/*----选择标签-----*/
+
+.label_box {
+    width: 100%;
+    height: 33px;
+}
+
+.label_fill {
+    float: left;
+    border: 1px solid #dddddd;
+    width: 70%;
+    height: 100%;
+    font-size: 0.24rem;
+    line-height: 33px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.label_box .mui-btn {
+    float: right;
+    width: 28%;
+    padding: 6px 0px;
+    text-align: center;
+}
+
+.TechnologyLabel {
+    padding: 0px 3% 0.40rem 3%;
+}
+
+.Research_bg,
+.PatentInformation {
+    padding: 0px 3%;
+    background: #fff;
+    margin-bottom: 10px;
+}
+
+.needs_bg_text {
+    padding: 5px 5px;
+    font-size: 0.28rem;
+    color: #444;
+    min-height: 2.00rem;
+    border: none;
+}
+
+.name_title:nth-last-child(1) {
+    border-bottom: 0px solid #ddd;
+}
+
+.upload_files {
+    width: 100%;
+    padding-bottom: 0.20rem;
+    position: relative;
+}
+
+#files {
+    width: 1.26rem;
+    height: 1.26rem;
+    overflow: hidden;
+    border: 1px dashed #ddd;
+}
+
+    #files img {
+        width: 0.54rem;
+        height: 0.48rem;
+        margin: 0.37rem auto;
+    }
+
+.file_box {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 1.26rem;
+    height: 1.26rem;
+    filter: alpha(opacity: 0);
+    opacity: 0;
+}
+
+.Upload {
+    padding: 0px 3%;
+    background: #fff;
+}
+
+.Btn {
+    overflow: hidden;
+    height: auto;
+    padding: 0px 3%;
+    background: #fff;
+}
+
+    .Btn button {
+        margin: 0.40rem 0px;
+        width: 49%;
+        float: left;
+    }
+
+        .Btn button:nth-child(2) {
+            float: right;
+        }
+
+
+/*----------侧边栏-------------------*/
+
+.sidebar_left {
+    display: none;
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 998;
+}
+
+.three_label div {
+    display: block;
+    width: 33.33%;
+    text-align: center;
+    font-size: 0.24rem;
+    float: left;
+    background: #fff;
+    height: 0.60rem;
+    line-height: 0.60rem;
+    border: 1px solid #f5f5f5;
+    color: #666;
+}
+
+.oul1,
+.oul2,
+.oul3,
+.oul4,
+.oul5,
+.oul6,
+.oul7 {
+    display: none;
+}
+
+.right_list button {
+    width: 100%;
+    margin-top: 0.40rem;
+}
+
+.left_list li:nth-child(1) {
+    border-top: 0px solid #ddd;
+}
+
+.left_list li {
+    font-size: 0.32rem;
+}
+/*-----弹窗-----*/
+/*--------弹窗----------*/
+
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #333;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: none;
+}
+
+.popup {
+    position: absolute;
+    left: 50%;
+    width: 80%;
+    height: 3.50rem;
+    z-index: 1000;
+    display: none;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.btn_box {
+    width: 100%;
+    margin: 0 auto;
+    height: 0.5rem;
+    background: #fff;
+    border-radius: 10px;
+    text-align:center;
+    font-size:0.28rem;
+    color:#666
+}
+
+.btn {
+    width: 10%;
+    height: 0.5rem;
+    float: right;
+    text-align: center;
+    line-height: 0.50rem;
+    color: #333;
+}
+
+.p_text {
+    width: 100%;
+    margin: .80rem auto;
+    color: #f19149;
+    font-size: 0.30rem;
+    text-align: center;
+}
+
+.btn_footer {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+    .btn_footer button {
+        width: 75%;
+        font-size: 0.30rem;
+        text-align: center;
+        background: #007AFF;
+    }
+
+.btn_footer1 {
+    margin: 0 auto;
+}
+
+
+
+.textarea {
+    width: 90%;
+    min-height: 1.8rem;
+    margin-top: 5px;
+    margin-left: 5%;
+}
+
+.popup_consult {
+    position: absolute;
+    left: 50%;
+    width: 80%;
+    height: 3.50rem;
+    z-index: 1000;
+    display: none;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.btn_footer .confirm_consult {
+    width: 75%;
+    margin-left: 5%;
+}
+
+.wap_tol ul li span {
+    position: absolute;
+    top: 1.8rem;
+    color: red;
+    font-size: 0.60rem;
+}
+
+
+
+
+
+
+
+/*----------*/
+.popup_consult p, .popup p {
+    width: 84%;
+    margin: 0.40rem auto;
+    font-size: 0.30rem;
+    color: #fe8a3f;
+    text-align: center;
+}
+
+.needs .checkBox .label_color, .need_form .radio .label_color {
+    color: #0e5bb5;
+}
+
+
+.delefile {
+    position: absolute;
+    color: red;
+    font-size: 0.6rem;
+    text-align: center;
+    float: left;
+}
+/**-------input---------**/
+ .mui-btn-blue{
+     background:#0e5bb5;
+     border-color:#0e5bb5
+ }
+ header{
+	position: fixed;
+	z-index: 10;
+	right: 0;
+	left: 0;
+    top:0;
+	height: 44px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.header-a{
+	margin-right: -10px;
+	margin-left: -10px;
+	padding:10px;
+	font-size: 24px;
+	position: relative;
+	z-index: 20;
+	font-family: Muiicons;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1;
+	display: inline-block;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	float: left;
+}
+.mui-content{
+   position: absolute;
+   top:44px;
+   width:100%;
+	overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+}
+/*---提示----*/
+.prompt {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #fff8e6;
+    padding: 5px 0px;
+    border-top: 1px solid #f2e9b8;
+}
+.prompt_text {
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 0.26rem;
+}
+.prompt_text img {
+    float: left;
+    display: block;
+    width: 0.28rem;
+    height: 0.30rem;
+    margin-top: 0.07rem;
+}

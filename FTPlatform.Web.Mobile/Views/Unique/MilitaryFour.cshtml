@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "军工四证";
+    ViewBag.Description = "军工认证，即也就是军工资质条件，是指申请承担武器装备科研生产任务的单位应具备的能力和资格，也就是进入军方市场的“通行证”或“门槛”。";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/MilitaryCivilian/militaryFour.css" />
+    <style>
+        .Contact-msge {
+            margin-top: 8PX;
+        }
+
+        .mui-bar {
+            height: 44px;
+        }
+    </style>
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+    <script>
+        $(function () {
+            $("#fun_navback").on("click", function () {
+                document.referrer === '' ? window.location.href = "http://" + window.location.host : window.history.go(-1);
+            });
+        });
+    </script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="fun_navback"></a>
+    <h1 class="mui-title">军工四证</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage">
+        <img src="~/Content/image/recommend/reback.png" />
+    </a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content l-scrollable" style="background: #fff;">
+    <rightsidebar></rightsidebar>
+    <img src="~/Content/image/MilitaryCivilian/military_bg.png" class="space_bg" />
+    <div class="CompanyName">
+        <h3>什么是军工四证</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <p class="platform_text">军工认证，即也就是军工资质条件，是指申请承担武器装备科研生产任务的单位应具备的能力和资格，也就是进入军方市场的“通行证”或“门槛”。</p>
+    <p class="platform_text2">根据国家和军队的现行法规标准，承担武器装备科研生产任务的单位，一般应取得武器装备质量管理体系证书、武器装备科研生产保密资格证书、武器装备科研生产许可证书和装备承制单位资格证书，简称“四证”。</p>
+    <div class="introduce">
+        <img src="~/Content/image/MilitaryCivilian/catti.png" />
+    </div>
+    <div class="CompanyName">
+        <h3>企业为什么进行“军工四证”认证</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <p class="platform_text22" style="margin-top: 5px;">企业参与到军工体系内，将可以获得莫大的好处。</p>
+    <p class="platform_text22">其具体优势主要有三点。</p>
+    <ul class="why_box">
+        <li class="why_money">
+            <div class="why_one"><img src="~/Content/image/MilitaryCivilian/why_one.png" /></div>
+            <p class="why_title">1、实体行业中最高的利润</p>
+            <p class="p1">放眼世界，在现有的实体行业中，军工、军火</p>
+            <p class="p1">生意，一般都是利润最高的，没有“之一”。中国各类军工企业以及各相关各业，虽比不上以“吸血”著称的美国军工企业，但总体利润仍旧丰厚。</p>
+        </li>
+        <li class="why_money">
+            <div class="why_two"><img src="~/Content/image/MilitaryCivilian/why_two.png" /></div>
+            <p class="why_title">2、增长有保障的多样性大市场</p>
+            <p class="p1">当前，几乎所有传统行业都面临着市场饱和</p>
+            <p class="p1">与增长乏力的困扰。但是，开放的中国军工产业，却为广大制造业企业提供了一个广阔的新天地。随着整体国力的提升，以及武器装备现代化、新时期军队建设的需要，近十年来中国军费正逐年以较快速度增长。至2015年以增致8800亿元规模。</p>
+            <p class="p1" style="margin-top: 0.30rem;">各类军工采购 项目分门别类，覆盖制造业</p>
+            <p class="p1">的方方面面。无论是什么样的企业，只要有实力，总有其可以涉足的领域，总能在其中找到自己的舞台。 </p>
+        </li>
+        <li class="why_money">
+            <div class="why_three"><img src="~/Content/image/MilitaryCivilian/why_three.png" /></div>
+            <p class="why_title">3、军工行业对企业逐渐放开</p>
+            <p class="p1">工信部副部长兼国防科工局局长许达哲曾在</p>
+            <p class="p1">民营企业高科技成果展览暨军民融合高层论坛”上表示，要加快推进军工企业股份制改造；引导优势民营企业进入军品科研生产和维修领域。在军民融合中，军队率先迈开了走向民用市场的步伐。</p>
+            <p class="p1" style="margin-top: 0.30rem;">目前潜力巨大的军工领域，不但对国内私企</p>
+            <p class="p1">放开，甚至也对外资企业摆出了欢迎的姿态，为广大制造企业提供了一个开阔的新天地。 </p>
+        </li>
+    </ul>
+    <p class="footer_text">
+        飞天众智中国制造科技服务平台军工资质“四证”办理资质咨询项目目前已经启动。即日起，为有意取得“四证”获取军工资质的企业提供咨询与其他配套服务。
+    </p>
+    <!--公司备案，版权所有-->
+    <footer class="company_footer" style="width:100%;height:auto;overflow:hidden;padding:0.30rem 0;background:#f4f4f4;font-size:0.24rem;text-align:center;color:#999">
+        © 2016-<span>@DateTime.Now.Year</span>飞天众智平台&nbsp;|&nbsp;<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" style="color:#999">沪ICP备16043947号-2</a>
+    </footer>
+</div>
+<share ref="share"></share>

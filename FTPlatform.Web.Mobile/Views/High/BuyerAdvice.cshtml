@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "我的咨询";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/content/css/high/buyeradvice.css" />
+}
+@section foot{
+    <script src="~/dist/high.advice.bundle.js"></script>
+}
+
+<div id="container" v-cloak>
+    <div class="meAdcice" v-show="type=='list'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+            <h1 class="mui-title">我的咨询</h1>
+        </header>
+        <div class="mui-content l-scrollable">
+            <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" style="top:44px">
+                <div class="advice_box" v-for="(consult,index) in advices">
+                    <div class="goods_info">
+                        <img v-lazy="consult.productimg" class="goods_img" v-on:click="ProductSkip(consult.productid)" />
+                        <div class="goods_right">
+                            <p class="goods_title">{{consult.productname}}</p>
+                            <p class="goods_title">X{{consult.purchasecount}}</p>
+                            <div class="goods_status">
+                                <span class="money" v-if="consult.saleprice=='0.00'">面议</span>
+                                <span class="money" v-else>￥{{consult.saleprice}}</span>
+                                <span class="time">{{consult.createtime}}</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="problem_wrap">
+                        <div class="problem_box">
+                            <span>咨询问题：</span>
+                            <div class="problem_text">{{consult.contentnub}}</div>
+                        </div>
+                    </div>
+                    <div class="check_btn">
+                        <button type="button" v-show="consult.isoffer" class="mui-btn mui-btn-yellow mui-btn-outlined"  v-on:click="OfferShow(index)" style="width:48%">查看报价</button>
+                        <button type="button"  v-show="consult.isreply" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="CheckReply(consult.replynub)">查看回复</button>
+                    </div>
+                </div>
+            </scroller>
+        </div>
+        <!--遮罩层-->
+        <div id="mask" style="display:none"></div>
+        <!--查看回复-->
+        <div class="pop_model" id="Reply" style="display:none">
+            <h3 v-on:click="ReplyHide"><span>X</span></h3>
+            <div class="problem_wrap">
+                <div class="reply_box">
+                    <span>回复内容：</span>
+                    <span class="reply_text">{{replyModel.replyNub}}</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="quoteInfo" v-show="type=='offer'" style="background:#fff;">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="OfferHide"></a>
+            <h1 class="mui-title">报价信息</h1>
+        </header>
+        <div class="mui-content l-scrollable">
+            <div class="advice_box">
+                <div class="goods_info">
+                    <img  class="goods_img" v-lazy="offerModel.productimg" />
+                    <div class="goods_right">
+                        <p class="goods_title" style="-webkit-line-clamp:3">{{offerModel.productname}}</p>                       
+                    </div>
+                </div>
+                <div class="goods_status quote" style="padding:0 0.20rem;background:#fff">
+                    <span>
+                       <em> 报价：</em>
+                        @*<span class="money" v-if="consult.saleprice=='0.00'">面议</span>*@
+                        <span class="money">￥{{offerModel.offerprice}}</span>
+                    </span>
+                    <span class="time">{{offerModel.createtime}}</span>
+                </div>
+                <div class="check_btn">
+                    <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="EnterOrderSkip(offerModel)" style="float:none;margin:0 auto;display:block">去下单</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

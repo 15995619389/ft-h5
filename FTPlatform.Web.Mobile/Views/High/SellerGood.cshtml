@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "我的商品";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/content/css/high/sellergood.css" />
+}
+@section foot{
+    <script src="~/dist/high.sellergood.bundle.js"></script>
+}
+<div id="container" v-cloak>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+        <h1 class="mui-title">我的商品</h1>
+    </header>
+    <div class="mui-content l-scrollable">
+        <div class="specialist_Box">
+            <ul class="specialist">
+                <li v-on:click="SortPanelShow(1)">
+                    审核状态
+                    <span class="all">{{param.auditState==0?"(待审核)":param.auditState==1?"(审核通过)":param.auditState==2?"(审核未通过)":""}}</span>
+                    <span class="trigon "></span>
+                    <i></i>
+                </li>
+                <li v-on:click="SortPanelShow(2)">
+                    商品状态
+                    <span class="all">{{param.articleState==1?"(已上架)":param.articleState==2?"(已下架)":""}}</span>
+                    <span class="trigon"></span>
+                </li>
+            </ul>
+            <div class="expertLevel_box">
+                <!--点击审核状态显示-->
+                <ul class="expertLevel" v-if="SortPanel==1">
+                    <li v-bind:class="{text_color:(param.auditState==99)}" v-on:click="AuditStateSort(99)" style="width:25%">全部</li>
+                    <li v-bind:class="{text_color:(param.auditState==0)}" v-on:click="AuditStateSort(0)" style="width:25%">待审核</li>
+                    <li v-bind:class="{text_color:(param.auditState==1)}" v-on:click="AuditStateSort(1)" style="width:25%">审核通过</li>
+                    <li v-bind:class="{text_color:(param.auditState==2)}" v-on:click="AuditStateSort(2)" style="width:25%">审核未通过</li>
+                </ul>
+                <!--点击商品状态显示-->
+                <ul class="expertLevel" v-if="SortPanel==2">
+                    <li v-bind:class="{text_color:(param.articleState==99)}" v-on:click="ArticleStateSort(99)">全部</li>
+                    <li v-bind:class="{text_color:(param.articleState==1)}" v-on:click="ArticleStateSort(1)">已上架</li>
+                    <li v-bind:class="{text_color:(param.articleState==2)}" v-on:click="ArticleStateSort(2)">已下架</li>
+                </ul>
+            </div>
+        </div>
+        <scroller ref="scroller" v-bind:on-refresh="Search" v-bind:on-infinite="Append" v-bind:style="{'padding-top':paddingTop+'px'}">
+            <ul class="goods_content">
+                <li v-for="good in goods">
+                    <a v-bind:href="'/seller/gooddetail?gdId='+good.Id">
+                        <div style="overflow:hidden">
+                            <img v-lazy="good.ImgUrl" class="goods_img" />
+                            <div class="goods_info">
+                                <div class="goods_top">
+                                    <h3 class="mui-ellipsis-2 goods_title">{{good.Name}}</h3>
+                                    <span class="audit_state">{{good.ProcessStateText}}</span>
+                                </div>
+                                <div class="goods_num">
+                                    <span class="goods_pirce" v-if="good.SalePrice=='0.00'">面议</span>
+                                    <span class="goods_pirce" v-else>￥{{good.SalePrice}}</span>
+                                    @*<span class="goods_stock">库存:10</span>*@
+                                    <span class="goods_unit">计量单位:{{good.MeasureUnit}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                    <div style="background:#fff;padding:0 0.20rem;overflow:hidden ">
+                        <div class="good_state" style="padding:0.20rem 0">
+                            <span class="cause" v-show="good.ProcessState==2" v-on:click="NotPassPanel(good.Id)">查看原因<em>∨</em></span>
+                            <button v-show="good.ProcessState==1&&(good.ArticleState==0||good.ArticleState==2)" v-on:click="Operation(1,good.Id)" class="mui-btn mui-btn-yellow mui-btn-outlined">上架</button>
+                            <button v-show="good.ProcessState==1&&good.ArticleState==1" v-on:click="Operation(2,good.Id)" class="mui-btn mui-btn-yellow mui-btn-outlined">下架</button>
+                            <button v-show="good.ProcessState==2||(good.ArticleState==2&&(good.ProcessState==2||good.ProcessState==1))" v-on:click="Operation(4,good.Id)" class="mui-btn mui-btn-yellow mui-btn-outlined">编辑</button>
+                            <button v-show="good.ProcessState==2||(good.ArticleState==2&&(good.ProcessState==2||good.ProcessState==1))" v-on:click="Operation(3,good.Id)" class="mui-btn mui-btn-gray mui-btn-outlined">删除</button>
+                            <span>{{good.ArticleStateText}}</span>
+                        </div>
+                        <div class="updown" v-show="notPassId==good.Id">
+                            <em>审核不通过原因：{{good.AuditNotMsg}}</em>
+                            <div></div>
+                        </div>
+                    </div>
+
+                </li>
+            </ul>
+        </scroller>
+    </div>
+</div>

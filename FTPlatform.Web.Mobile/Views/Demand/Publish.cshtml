@@ -1,0 +1,258 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    ViewBag.Title = "发布需求";
+}
+
+@section head{
+    <link href="/content/css/pulli.css" rel="stylesheet" />
+    <link href="/content/css/label.css" rel="stylesheet" />
+    <link href="/content/css/release/releaseTechnology.css" rel="stylesheet" />
+    <style>
+        .upload_img > div {
+            float: left;
+            margin-right: 10px;
+        }
+           .upload_img > div.img-block {
+               position: relative;
+          }
+          .upload_img > div.img-block span {
+               position: absolute;
+               right: -0.20rem;
+               top: -0.20rem;
+               color: red;
+               font-size: 0.60rem;
+               height: .5rem;
+               width: 0.5rem;
+               text-align: center;
+          }
+         .upload_img > div > img {
+             height: 1.40rem;
+         }
+        .img_hint {
+            clear: both;
+        }
+    </style>
+}
+
+@section foot
+{
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/dist/demand.publish.bundle.js"></script>
+}
+
+<div id="container">
+    <header class="" style="background: #fff;border-bottom: none;">
+        <a class="mui-icon-arrowleft mui-pull-left header-a" href="javascript:window.history.go(-1);"></a>
+        <h1 class="mui-title">发布需求</h1>
+    </header>
+    <image-uploader ref="uploader"></image-uploader>
+    <category-picker ref="catepicker"></category-picker>
+    <form class="mui-content l-scrollable" style="top:44px">
+        <div class="prompt-box" v-show="isPromptVisible" v-cloak>
+            <p class="prompt_text"><img src="~/Content/image/all/prompt_icon.png">请至基本信息完善资料后再进行发布需求</p>
+        </div>
+        <div class="need_name">
+            <div class="name_title">
+                <em class="oSpan">*</em><input type="text" v-model="demand.Title"  placeholder="需求名称" style="width:95%;" />
+            </div>
+            <div class="upload_img">
+                <div>
+                    <img src="/content/image/from_img.png" v-on:click="UploadImage" id="textfield">
+                </div>
+                <div class="img-block" v-cloak v-for="(img,index) in demand.DemandImg">
+                    <img v-bind:src="domain+img.ImgPath">
+                    <span v-on:click="RemoveImage(index)">×</span>
+                </div>
+            </div>
+            <div class="img_hint">最多上传5张</div>
+        </div>
+        <div class="needs">
+            <div class="need_form">
+                <div class="form_title">
+                    <span class="oSpan">*</span>需求类型
+                </div>
+                <div class="service_checkbox">
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" v-bind:class="{label_color:(demand.RequirementType.indexOf('1')!=-1)}">产品研发</label>
+                        <input  value="1" v-model="demand.RequirementType" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" v-bind:class="{label_color:(demand.RequirementType.indexOf('2')!=-1)}">工艺改进</label>
+                        <input  value="2" v-model="demand.RequirementType" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" v-bind:class="{label_color:(demand.RequirementType.indexOf('3')!=-1)}">委托加工</label>
+                        <input  value="3" v-model="demand.RequirementType" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" v-bind:class="{label_color:(demand.RequirementType.indexOf('4')!=-1)}">设备改进</label>
+                        <input  value="4" v-model="demand.RequirementType" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" v-bind:class="{label_color:(demand.RequirementType.indexOf('5')!=-1)}">采购定制</label>
+                        <input  value="5" v-model="demand.RequirementType" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label">其他</label>
+                        <input v-model="demand.RequirementType" value="6" type="checkbox">
+                    </div>
+                </div>
+                <div class="need_text" id="requir">
+                    <textarea v-if="demand.RequirementType.indexOf('6')!=-1"  v-model="demand.RequirementTypeOther"  placeholder="请输入您的需求类型"></textarea>
+                </div>
+            </div>
+            <div class="need_form">
+                <div class="form_title">
+                    <span class="oSpan">*</span>需求解决方式
+                </div>
+                <div class="service_checkbox">
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label"  v-bind:class="{label_color:(demand.Solution.indexOf('1')!=-1)}">技术咨询</label>
+                        <input v-model="demand.Solution" value="1" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" v-bind:class="{label_color:(demand.Solution.indexOf('2')!=-1)}">技术培训</label>
+                        <input v-model="demand.Solution" value="2" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" v-bind:class="{label_color:(demand.Solution.indexOf('3')!=-1)}">方案设计</label>
+                        <input v-model="demand.Solution" value="3" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left" style="width: 35%;">
+                        <label class="from_label" v-bind:class="{label_color:(demand.Solution.indexOf('4')!=-1)}">技术转让/许可</label>
+                        <input v-model="demand.Solution" value="4" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left" style="width: 35%;">
+                        <label class="from_label" v-bind:class="{label_color:(demand.Solution.indexOf('5')!=-1)}">委托/合作开发</label>
+                        <input v-model="demand.Solution" value="5" type="checkbox">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left" style="width: 30%;">
+                        <label class="from_label">其他</label>
+                        <input v-model="demand.Solution" value="6" type="checkbox">
+                    </div>
+                </div>
+                <div class="need_text" id="solution">
+                    <textarea v-if="(demand.Solution.indexOf('6')!=-1)" v-model="demand.SolutionOther" placeholder="请输入您的需求类型"></textarea>
+                </div>
+            </div>
+            <div class="completionTime" style="border-bottom:1px solid #ddd">
+                <div class="form_title">
+                    <span class="oSpan">*</span>投入预算
+                </div>
+                <div class="service_checkbox">
+                    <div class="mui-input-row mui-radio mui-left">
+                        <label class="from_label">&lt;1万</label>
+                        <input v-model="demand.InputBudget" value="1" type="radio">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left">
+                        <label class="from_label">1~10万</label>
+                        <input v-model="demand.InputBudget" value="2" type="radio">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left">
+                        <label class="from_label">10~50万</label>
+                        <input v-model="demand.InputBudget" value="3" type="radio">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left" style="width: 35%;">
+                        <label class="from_label">50~200万</label>
+                        <input v-model="demand.InputBudget" value="4" type="radio">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left" style="width: 35%;">
+                        <label class="from_label">>200万</label>
+                        <input v-model="demand.InputBudget" value="5" type="radio">
+                    </div>
+                </div>
+            </div>
+            <div class="completionTime ">
+                <div class="form_title">
+                    <span class="oSpan">*</span>期望完成时间
+                </div>
+                <div class="service_checkbox">
+                    <div class="mui-input-row mui-radio mui-left">
+                        <label class="from_label">1~3个月</label>
+                        <input v-model="demand.ExpectedFinishTime" value="1" type="radio">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left">
+                        <label class="from_label">3~6个月</label>
+                        <input v-model="demand.ExpectedFinishTime" value="2" type="radio">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left">
+                        <label class="from_label">6~12个月</label>
+                        <input v-model="demand.ExpectedFinishTime" value="3" type="radio">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left" style="width: 35%;">
+                        <label class="from_label">>12月</label>
+                        <input v-model="demand.ExpectedFinishTime" value="4" type="radio">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="needs_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>需求背景及成因
+            </div>
+            <textarea  v-model="demand.BackgroundCauses" placeholder="请输入您的需求背景及成因" class="needs_bg_text"></textarea>
+        </div>
+        <div class="needs_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>现状描述
+            </div>
+            <textarea  v-model="DemandDescription" placeholder="请输入您的现状描述" class="needs_bg_text"></textarea>
+        </div>
+        <div class="needs_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>当前参数
+            </div>
+            <textarea  v-model="demand.ArgsDesc" placeholder="请输入您的当前参数" class="needs_bg_text"></textarea>
+        </div>
+        <div class="needs_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>期望要求
+            </div>
+            <textarea v-model="demand.ExpectDesc"  placeholder="请输入您的期望要求" class="needs_bg_text"></textarea>
+        </div>
+        <div class="needs_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>预期参数
+            </div>
+            <textarea v-model="demand.AnticipateDesc"  placeholder="请输入您的预期参数" class="needs_bg_text"></textarea>
+        </div>
+        <div class="enterprise">
+            <div class="name_title">
+                <input v-model="demand.FirmBelongTrade"  type="text" placeholder="企业所属行业" />
+            </div>
+            <div class="name_title" style="border-bottom: none;">
+                <input v-model="demand.FirmMainProduct" type="text" placeholder="企业主营产品" />
+            </div>
+        </div>
+        <div class="select_label">
+            <div class="form_title">
+                <span class="oSpan">*</span>定制需求标签
+            </div>
+            <div class="label_box" id="pickCategory">
+                <div class="label_fill"  v-html="category"></div>
+                <button type="button" class="mui-btn mui-btn-blue" v-on:click="PickCategory">选择标签</button>
+            </div>
+            <div class="form_title">
+                公开状态
+            </div>
+            <div class="bb" style="width: 100%;height: auto;overflow: hidden;">
+                <div class="mui-input-row mui-radio mui-left" v-bind:class="{label_color:(demand.PublishStatus==1)}">
+                    <label class="">需求信息公开，公司名不公开</label>
+                    <input v-model="demand.PublishStatus" value="1" type="radio">
+                </div>
+                <div class="mui-input-row mui-radio mui-left" v-bind:class="{label_color:(demand.PublishStatus==2)}">
+                    <label class="">需求信息公开，公司名公开</label>
+                    <input v-model="demand.PublishStatus"  value="2" type="radio">
+                </div>
+                <div class="mui-input-row mui-radio mui-left"  v-bind:class="{label_color:(demand.PublishStatus==3)}">
+                    <label>需求信息不公开，委托平台处理</label>
+                    <input v-model="demand.PublishStatus" value="3" type="radio">
+                </div>
+            </div>
+            <div class="footer_bt">
+                <a v-on:click="Post(1)"><button type="button" class="mui-btn mui-btn-yellow">提交</button></a>
+                <a v-on:click="Post(99)"><button type="button" class="mui-btn mui-btn-blue">保存</button></a>
+            </div>
+        </div>
+    </form>
+</div>

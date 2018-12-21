@@ -1,0 +1,71 @@
+p,html{
+	line-height: 0.40rem;
+}
+html{
+	background: #f4f4f4;
+}
+p{
+	margin-bottom: 0px;
+}
+.name_title {
+    width: 100%;
+    padding: 10px 0px;
+    color: #bbbbbb;
+    border-bottom: 1px solid #ddd;
+    overflow: hidden;
+}
+input[type=text] {
+    width: 80%;
+    float: right;
+    margin-bottom: 0px;
+    padding: 0;
+    height: 20px;
+    border: none;
+    color: #444;
+    font-size: 15px;
+    text-align: right;
+}
+.information_box{
+	padding: 0 3%;
+	height: auto;
+	overflow: auto;
+	background: #fff;
+	margin-top: 0.20rem;
+}
+.name_title span{
+	font-size: 0.32rem;
+	color: #444444;
+}
+.name_title span:nth-child(2){
+	width: 80%;
+    float: right;
+    color: #444;
+    font-size: 0.32rem;
+    text-align: right;
+}
+.name_title:nth-last-child(1){
+	border-bottom:0px solid #ddd ;
+}
+
+.right_iocn img {
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.mui-btn{
+	margin-left: 3%;
+	display: block;
+	width: 94%;
+	margin-top: 1.0rem;
+}
+
+
+
+
+
+
+
+
+
+
+

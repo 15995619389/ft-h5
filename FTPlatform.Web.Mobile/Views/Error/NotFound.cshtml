@@ -1,0 +1,21 @@
+﻿@{
+    ViewBag.Title = "404";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/Error/error.css" rel="stylesheet" />
+}
+<div class="main-wrap">
+    <div class="errorbox">
+        <div class="tipstext">
+            <h3>真的很抱歉！</h3>
+            <p>您访问的页面弄丢了</p>
+        </div>
+        <div class="errabot">
+            <i></i>
+        </div>
+    </div>
+    <div class="btnback" onclick="window.location.href = '/'">
+        <a>返回首页</a>
+    </div>
+</div>

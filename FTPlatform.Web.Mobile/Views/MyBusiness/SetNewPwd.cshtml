@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "密码修改";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<link href="~/Content/css/myBusiness/my/PasswordChange.css" rel="stylesheet" />
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+    <h1 class="mui-title">密码修改</h1>
+</header>
+<div class="mui-content">
+    <div class="password_box">
+        <div class="name_title">
+            <span>当前密码</span><input type="password" id="OldPwd" placeholder="请输入当前密码">
+        </div>
+        <div class="name_title">
+            <span>设置新密码</span>
+            <div class="newPassword">
+                <input type="password" placeholder="请设置新密码" id="NewPwd" style="margin-top: 0.05rem;width: 100%;">
+                <p>请输入6-16个字符，支持英文首字符为大小字母</p>
+            </div>
+
+        </div>
+        <div class="name_title">
+            <span>确认新密码</span><input type="password" id="ConfirmPwd" placeholder="请再次输入新密码">
+        </div>
+    </div>
+    <div class="prompt"><span>安全提示：</span><p>请妥善保管密码！飞天众智网工作人员不会以任何理由向您索取密码</p></div>
+    <button type="button" class="mui-btn mui-btn-blue" id="submit">提交</button>
+</div>
+@section foot{
+<script src="~/dist/member.setnewpwd.bundle.js"></script>
+    }

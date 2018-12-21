@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = ViewBag.type == 1 ? "擅长领域" : ViewBag.type == 2 ? "个人简介" : "";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+    @if (ViewBag.type == 1)
+    {
+        <h1 class="mui-title">擅长领域</h1>
+    }
+    @if (ViewBag.type == 2)
+    {
+        <h1 class="mui-title">个人简介</h1>
+    }
+</header>
+<style>
+    html {
+        background: #fff;
+    }
+
+    p,
+    body {
+        line-height: 0.40rem;
+    }
+
+    p {
+        margin-bottom: 0px;
+    }
+
+    .icon_img img {
+        width: 20px;
+        height: 18px;
+    }
+
+    .Personal_box {
+        border-top: 1px solid #ddd;
+        padding: 0.40rem 3%;
+    }
+
+    .Personal_text {
+        font-size: 0.30rem;
+        color: #444444;
+    }
+
+    .mechanism {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        padding: 0.20rem 3%;
+        background: #f5f5f5;
+        border-radius: 10px;
+        margin: 0.50rem 0px;
+    }
+
+        .mechanism li {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+        }
+
+    .five {
+        width: 4%;
+        float: left;
+        display: block;
+        height: auto;
+        padding-top: 0.15rem;
+    }
+
+        .five i {
+            display: block;
+            width: 0.10rem;
+            height: 0.10rem;
+            border-radius: 50%;
+            background: #0e5bb5;
+        }
+
+    .mechanism .platform_text {
+        font-size: 0.30rem;
+        color: #404040;
+        margin-bottom: 0px;
+        line-height: 0.40rem;
+        width: 96%;
+        float: right;
+        overflow: hidden;
+        height: auto;
+        padding: 0 0;
+    }
+
+    .Personal_text textarea {
+        float: right;
+        width: 100%;
+        border: 0px solid #fff;
+        font-size: 0.32rem;
+        padding: 0px 15px;
+        min-height: 2.5rem;
+    }
+
+    button {
+        width: 100%;
+    }
+</style>
+@if (ViewBag.type == 1 || ViewBag.type == 2)
+{
+    <div class="mui-content" style="background: #fff;" v-cloak>
+        <input type="hidden" id="type" value="@ViewBag.type" />
+        <div class="Personal_box">
+            @if (ViewBag.type == 1)
+            {
+                <p class="Personal_text"><textarea id="content">{{ScientificContent|removeHTMLTag}}</textarea></p>
+            }
+            @if (ViewBag.type == 2)
+            {
+                <p class="Personal_text">
+                    <textarea id="content">{{PersonExplain|removeHTMLTag}}</textarea>
+                </p>
+            }
+            <button type="button" v-on:click="Submit()" class="mui-btn mui-btn-blue">保存</button>
+        </div>
+    </div>
+}
+@section foot{
+    <script src="~/dist/expert.editsupplier.bundle.js"></script>}
+

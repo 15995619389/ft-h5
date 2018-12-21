@@ -1,0 +1,591 @@
+﻿body {
+    position: relative;
+}
+.head_box{
+
+    overflow:hidden;
+}
+.head_box .backhome{
+   position:absolute;
+   right:15px;
+   top:10px;
+
+}
+.head_box .backhome i{
+    display:block;
+   width:0.48rem;
+   height:0.47rem;
+   background: url('../../../image/home.png');
+   background-size:100%;
+}
+.banner {
+    width: 100%;
+    height: 5.73rem;
+}
+
+    .banner img {
+        width: 100%;
+    }
+
+.actconnter {
+    width: 100%;
+    background-color: #ec463a;
+    margin: 0;
+    padding-top: 10px;
+    background-image: url('../../../image/activity/201709/dian.png');
+    background-size: 100%;
+}
+
+    .actconnter .catogy-model {
+        width: 6.53rem;
+        height: 4.82rem;
+        margin: 0 auto;
+        background-image: url('../../../image/activity/201709/bigbox.png');
+        background-size: 100% 100%;
+        margin-bottom: 15px;
+    }
+
+        .actconnter .catogy-model h1 {
+            width: 2.05rem;
+            height: 0.74rem;
+            background-image: url('../../../image/activity/201709/titbg.png');
+            background-size: 100%;
+            margin: 0 auto;
+            font-size: 0.3rem;
+            color: #5e4a19;
+            text-align: center;
+            line-height: 0.74rem;
+            margin-bottom: 10px;
+            padding-left: 5px;
+        }
+
+.sin-rules {
+    float: right;
+    width: 1.59rem;
+    height: 0.43rem;
+    background-image: url('../../../image/activity/201709/sidebg.png');
+    background-size: 100%;
+    font-size: 0.22rem;
+    color: #ec463a;
+    padding-left: 10px;
+    margin-top: -18px;
+    margin-right:10px;
+}
+
+    .sin-rules i {
+        width: 0.22rem;
+        height: 0.22rem;
+        float: left;
+        margin-right: 5px;
+        background-image: url('../../../image/activity/201709/que.png');
+        background-size: 100%;
+        margin-top: 5px;
+    }
+
+    .sin-rules span {
+        float: left; 
+    }
+    .sin-rules span a{
+        color:#ec463a;
+    }
+
+.getzb {
+    width: 86%;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 0.35rem;
+    text-align: center;
+}
+    .getzb .list {
+        display: inline-block;
+        /*margin-right:0.4rem;*/
+        float:left;
+        line-height:0.6rem;
+    }
+    .getzb .weeks {
+        color: #ec463a;
+        font-size: 16px;
+        margin-left:0.5rem;
+    }
+        .getzb .weeks b {
+            font-size: 0.72rem;
+        }
+
+    .getzb .getsonline {
+        color: #52260e;
+        font-size: 0.20rem;
+        text-decoration: underline;
+        margin: 0.2rem 0.2rem 0 .2rem;
+    }
+
+    .getzb .zbticks {
+        width: 1.39rem;
+        height: 0.93rem;
+        background-image: url('../../../image/activity/201709/24zb.png');
+        background-size: 100%;
+        padding-top: 0.8rem;
+    }
+
+.sign .intro-text {
+    width: 100%;
+    padding: 10px 30px;
+    box-sizing: border-box;
+    color: #661822;
+    font-size: 0.24rem;
+    line-height: 0.3rem;
+    margin-bottom: 0;
+}
+
+.catogy-model .signbtn {
+    width: 4.22rem;
+    height: 0.85rem;
+    background-image: url('../../../image/activity/201709/butbg.png');
+    background-size: 100%;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 0.3rem;
+    text-align: center;
+    line-height: 0.85rem;
+}
+
+    .catogy-model .signbtn a {
+        color: #fff;
+    }
+
+.actconnter .experience {
+    width: 6.53rem;
+    height: 3.9rem;
+    background-image: url('../../../image/activity/201709/smalbox.png');
+    background-size: 100%;
+}
+
+.experience .intro-text {
+    text-align: center;
+    color: #661822;
+    font-size: 0.3rem;
+    margin: 0;
+    line-height: 0.4rem;
+}
+
+.gobel-text {
+    color: #ec463a;
+    text-align: center;
+    margin: 10px 0;
+}
+
+    .gobel-text b {
+        font-size: 0.6rem;
+        margin-right: 3px;
+    }
+
+.experience .signbtn {
+    margin-top: 10px;
+}
+
+.stairway {
+    width: 60%;
+    margin: 0 auto;
+    overflow: hidden;
+    padding: 0;
+}
+
+    .stairway i {
+        width: 0.23rem;
+        height: 0.24rem;
+        background-image: url('../../../image/activity/201709/stair .png');
+        background-size: 100%;
+    }
+
+    .stairway .left-way {
+        float: left;
+    }
+
+    .stairway .right-way {
+        float: right;
+    }
+
+.rules-model {
+    width: 100%;
+    border-top: #8d1c14 dashed 1px;
+    margin-top: 20px;
+}
+
+    .rules-model .rules-main {
+        width: 6.30rem;
+        margin: 0 auto;
+        padding: 20px 0;
+        box-sizing: border-box;
+    }
+
+        .rules-model .rules-main .tuletit {
+            width: 100%;
+            overflow: hidden;
+            margin-bottom: 15px;
+        }
+
+            .rules-model .rules-main .tuletit h1 {
+                width: 100%;
+                color: #fff;
+                font-size: 0.32rem;
+                text-align: center;
+                display: block;
+                width: 30%;
+                margin: 0 auto;
+            }
+
+        .rules-model .rules-main p {
+            color: #fff;
+            display: block;
+            text-align: left;
+        }
+
+        .rules-model .rules-main .tuletit h1:before {
+            content: "";
+            display: inline-block;
+            width: 0.36rem;
+            height: 0.34rem;
+            float: left;
+            background-image: url('../../../image/activity/201709/star.png');
+            background-size: 100%;
+        }
+
+        .rules-model .rules-main .infos {
+            width: 100%;
+            display: block;
+            color: #fff;
+            font-size: 0.24rem;
+            line-height: 0.35rem;
+        }
+
+            .rules-model .rules-main .infos p {
+                width: 100%;
+                overflow: hidden;
+                margin-bottom: 5px;
+                line-height: 16px;
+            }
+
+            .rules-model .rules-main .infos .numbers {
+                width: 5%;
+                float: left;
+            }
+
+            .rules-model .rules-main .infos .tster {
+                width: 95%;
+                float: left;
+            }
+
+.actconnter .footer-bg {
+    width: 100%;
+    height: 0.88rem;
+    background-color: #ec463a;
+    overflow: hidden;
+    position: relative;
+}
+
+    .actconnter .footer-bg .gobel {
+        width: 5.44rem;
+        height: 0.88rem;
+        position: absolute;
+        right: 0;
+        background-image: url('../../../image/activity/201709/gold.png');
+        background-size: 100%;
+    }
+
+    .actconnter .footer-bg .sm-car {
+        width: 1.22rem;
+        height: 0.86rem;
+        position: absolute;
+        left: 7%;
+        background-image: url('../../../image/activity/201709/car.png');
+        background-size: 100%;
+    }
+/*弹出层*/
+.Ovhidden {
+    height: 100%;
+    overflow: hidden;
+}
+
+.sign-box {
+    display: none;
+}
+
+.immed-sign {
+    display: none;
+}
+
+.complete-box {
+    display: none;
+}
+
+.mask {
+    position: fixed;
+    display: none;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, .6);
+    -webkit-animation: movesup 0.3s ease;
+}
+
+.Signpop {
+    width: 90%;
+    bottom: 1.8rem;
+    margin: 0 auto;
+    position: absolute;
+    opacity: 1;
+    left: 5%;
+    z-index: 1001;
+}
+
+    .Signpop .pop-title {
+        background: #ff5237;
+        border-radius: 4px 4px 0 0;
+        position: relative;
+        height: 0.97rem;
+    }
+
+        .Signpop .pop-title h3 {
+            text-align: center;
+            color: #fff;
+            font-size: 0.36rem;
+            line-height: 0.97rem;
+        }
+
+        .Signpop .pop-title .close {
+            position: absolute;
+            right: 10px;
+            width: 0.42rem;
+            height: 0.42rem;
+            top: 14px;
+            background-image: url('../../../image/activity/201709/mask/cloxewh.png');
+            background-size: 100%;
+        }
+
+.mui-icon-close:before {
+    content: "";
+}
+
+.Signpop .pop-title .wavyline {
+    position: absolute;
+    top: -5px;
+    left: 30%;
+    width: 2.84rem;
+    height: 0.15rem;
+    background-image: url('../../../image/activity/201709/mask/topbl.png');
+    background-size: 100%;
+}
+
+.Signpop .pop-body {
+    background: #fff;
+    border-radius: 0 0 4px 4px;
+    overflow: hidden;
+}
+
+    .Signpop .pop-body .text {
+        color: #3e3e3e;
+        font-size: 0.28rem;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+
+    .Signpop .pop-body .btgobel {
+        width: 100%;
+        height: .81rem;
+        margin: 0;
+        padding: 0;
+        background-image: url('../../../image/activity/201709/mask/gobelh5.png');
+        background-size: 100%;
+    }
+/*立即签到*/
+.immed-sign .Signpop .pop-title {
+    height: 3.5rem;
+    padding-top: 10px;
+}
+
+.tpgift {
+    position: relative;
+    width: 5.2rem;
+    display: block;
+    height: 2.37rem;
+    background-image: url('../../../image/activity/201709/mask/gift.png');
+    background-size: 100%;
+    margin: 0 auto;
+    margin-top: 10px;
+    text-align: center;
+    color: #fb9e1b;
+    padding-top: 1.3rem;
+    line-height: 0.35rem;
+}
+
+.getszhibi {
+    width: 60%;
+    margin: 0 auto;
+    padding-left: 10px;
+}
+
+.tpgift span {
+    display: block;
+}
+
+.tpgift .get-hd {
+    font-size: 0.24rem;
+}
+
+.tpgift .zbs {
+    font-size: 0.28rem;
+}
+
+.sgdays {
+    text-align: center;
+    padding: 0.2rem 0;
+    margin-bottom: 0;
+}
+
+.orge-day {
+    color: #ff5237;
+}
+
+.wisdom-list {
+    width: 100%;
+    padding: 0.1rem 0.2rem;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+    .wisdom-list ul li {
+        display: inline-block;
+        border: #c8c8c8 solid 1px;
+        border-radius: 3px;
+        padding: 0 0 0.08rem 0;
+        margin-right: 0.05rem;
+        width: 0.7rem;
+        text-align: center;
+        position: relative;
+    }
+
+    .wisdom-list ul {
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .wisdom-list .plusnumber {
+        display: block;
+        color: #c8c8c8;
+        font-size: 0.2rem;
+        margin: 0;
+        padding: 0;
+        line-height: 0.35rem;
+    }
+
+    .wisdom-list ul li .sg-finsh {
+        display: none;
+        position: absolute;
+        background-image: url('../../../image/activity/201709/mask/chanys.png');
+        background-size: 100%;
+        width: 0.23rem;
+        height: 0.23rem;
+        right: -2px;
+        bottom: -5px;
+    }
+
+    .wisdom-list ul li i {
+        display: block;
+        width: 0.25rem;
+        height: 0.26rem;
+        background-image: url('../../../image/activity/201709/mask/zbgry.png');
+        background-size: 100%;
+        margin: 0 auto;
+    }
+
+    .wisdom-list ul li:last-child {
+        margin-right: 0;
+    }
+
+.total-days {
+    width: 70%;
+    margin: 0.2rem auto 0.3rem auto;
+    overflow: hidden;
+}
+
+    .total-days h3 {
+        display: inline-block;
+        font-size: 0.24rem;
+        color: #a1a1a1;
+        text-align: center;
+        width: 50%;
+        float: left;
+    }
+
+    .total-days:before {
+        content: "";
+        display: inline-block;
+        background: #ddd;
+        height: 1px;
+        width: 25%;
+        float: left;
+        margin-top: 0.25rem;
+    }
+
+    .total-days:after {
+        content: "";
+        display: inline-block;
+        background: #ddd;
+        height: 1px;
+        width: 25%;
+        float: left;
+        margin-top: 0.25rem;
+    }
+
+.sign-button {
+    background: #fb9e1b;
+    border-radius: 3px;
+    width: 90%;
+    margin: 0.2rem auto 0.4rem auto;
+    text-align: center;
+    color: #fff;
+    font-size: 0.3rem;
+    padding: 0.2rem 0;
+}
+
+.wisdom-list .cur-color {
+    color: #ff6900;
+}
+
+.wisdom-list ul li .finsh-show {
+    display: block;
+}
+
+.wisdom-list .curzhibi {
+    background-image: url('../../../image/activity/201709/mask/zborg.png');
+}
+
+.status-ok {
+    background: #a4a4a4;
+    color: #c6c6c6;
+}
+
+.total-gobel {
+    width: 4.08rem;
+    height: 1.78rem;
+    margin: .2rem auto;
+}
+
+    .total-gobel img {
+        width: 100%;
+    }
+
+.getticks {
+    font-size: 0.34rem;
+    color: #ff5237;
+    margin: 0.2rem;
+    text-align: center;
+}
+
+.award {
+    font-size: 0.22rem;
+    color: #6f6f6f;
+    text-align: center;
+    margin-bottom: .4rem;
+}

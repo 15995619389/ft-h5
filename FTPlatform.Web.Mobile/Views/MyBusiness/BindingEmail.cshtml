@@ -1,0 +1,81 @@
+﻿@{
+    ViewBag.Title = "绑定邮箱验证";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <style>
+        html {
+            background: #f4f4f4;
+        }
+
+        .text {
+            margin: 0.40rem 0px;
+        }
+
+        input[type=text] {
+            border-left: 0px solid #ddd;
+            border-right: 0px solid #ddd;
+            border-radius: 1px;
+        }
+
+        .mui-btn {
+            text-align: center;
+            width: 94%;
+            margin: 0.40rem auto;
+            display: block;
+        }
+
+        html {
+            background: #fff;
+        }
+
+        .mui-bar-nav .mui-pull-right {
+            font-size: 17px;
+            padding-top: 15px;
+            color: #007aff;
+        }
+
+        .successful {
+            border-top: 1px solid #ddd;
+            padding-top: 1.50rem;
+        }
+
+            .successful img {
+                width: 2.10rem;
+                height: 2.10rem;
+                margin: 0 auto;
+            }
+
+            .successful p {
+                font-size: 0.30rem;
+                color: #434343;
+                text-align: center;
+                margin-top: 0.50rem;
+                margin-bottom: 0px;
+            }
+
+            .successful span {
+                display: block;
+                margin: 0 auto;
+                font-size: 0.26rem;
+                color: #969696;
+                text-align: center;
+            }
+    </style>
+}
+@section foot{
+    <script src="~/dist/member.bindingemail.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <h1 class="mui-title">绑定邮箱验证</h1>
+</header>
+<div id="success">
+    <input type="hidden" value="@ViewBag.email" id="email" />
+    <input type="hidden" value="@ViewBag.uid" id="uid" />
+    <input type="hidden" value="@ViewBag.code" id="code" />
+    <div class="mui-content" style="background: #fff;">
+        <div class="successful">
+            <p>验证中…………</p>
+        </div>
+    </div>
+</div>

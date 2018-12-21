@@ -1,0 +1,576 @@
+﻿body {
+}
+
+.mui-bar-tab ~ .mui-content {
+    margin-bottom: 40px;
+}
+
+.order_state {
+    height: 1.56rem;
+    width: 100%;
+    background: url(../../image/high/state.png) no-repeat;
+    background-size: 100% 100%;
+    line-height: 1.56rem;
+    padding-left: 5%;
+    color: #fff;
+    margin-bottom: 0.20rem;
+}
+
+.AfterSale_box, .user_info, .invoice_info, .PlaceOrder, .AfterSale_box, .shipping_box {
+    overflow: hidden;
+    padding: 0.20rem;
+    background: #fff;
+    margin-bottom: 0.20rem;
+}
+
+.goods_content {
+    overflow: hidden;
+    margin-bottom: 0.20rem;
+}
+
+.user_info h3 {
+    font-size: 0.28rem;
+    margin: 0;
+    margin-left: 6%;
+}
+
+    .user_info h3 span {
+        font-size: 0.28rem;
+        margin-right: 10px;
+        display: inline-block;
+        line-height: 21px;
+    }
+
+.user_address {
+    overflow: hidden;
+    width: 100%;
+    margin-top: 0.10rem;
+}
+
+    .user_address li {
+        overflow: hidden;
+        float: left;
+        color: #666;
+        font-size: 0.26rem;
+    }
+
+.address_bg {
+    margin-top: 0.10rem;
+    width: 0.24rem;
+    height: 0.28rem;
+}
+
+.user_address li:first-child {
+    width: 5%;
+}
+
+.user_address li:nth-child(2) {
+    width: 95%;
+    line-height: 0.36rem;
+}
+
+.invoice_left, .AfterSale_left {
+    float: left;
+    height: 100%;
+    width: 5%;
+    margin-top: 5px;
+}
+
+.invoice_right, .AfterSale_right {
+    float: left;
+    width: 94%;
+    overflow: hidden;
+}
+
+.shipping_box img {
+    width: 0.27rem;
+    height: 0.24rem;
+    float: left;
+    margin-top: 0.10rem;
+    margin-right: 5px;
+}
+
+.express_no {
+    font-size: 0.28rem;
+    color: #0f59c6;
+}
+
+.invoice_bg {
+    width: 0.27rem;
+    height: 0.29rem;
+}
+
+.invoice_right li, .PlaceOrder li, .AfterSale_right li {
+    font-size: 0.28rem;
+    color: #444;
+}
+
+.AfterSale_left span {
+    display: block;
+    width: 0.26rem;
+    height: 0.26rem;
+    line-height: 0.26rem;
+    text-align: center;
+    font-size: 0.20rem;
+    color: #fff;
+    background: #0e5bb5;
+    border-radius: 50%;
+}
+
+.PlaceOrder li {
+    padding-left: 6%;
+}
+
+.oTitle {
+    padding: 0.20rem;
+    background: #fff;
+}
+
+    .oTitle .mui-ellipsis {
+        width: 70%;
+        float: left;
+        font-size: 0.30rem;
+        margin: 0px 0px;
+        color: #444;
+    }
+
+.mui-ellipsis i {
+    display: inline-block;
+    width: 0.34rem;
+    height: 0.30rem;
+    background: url(../../image/high/user_img.png) no-repeat;
+    background-size: 100% 100%;
+    margin-right: 0.10rem;
+}
+
+.oSpan {
+    float: right;
+    color: #ff6525;
+    font-size: 0.28rem;
+}
+
+.goods_info {
+    overflow: hidden;
+    padding: 0.20rem;
+    height: auto;
+}
+
+.goods_img {
+    width: 1.58rem !important;
+    height: 1.58rem !important;
+    float: left;
+}
+
+.goods_right {
+    overflow: hidden;
+    float: right;
+    width: 70%;
+}
+
+.goods_title {
+    overflow: hidden;
+    font-size: 0.28rem;
+    color: #444;
+    line-height: 0.40rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+    margin-bottom: 0.20rem;
+    height: 0.80rem;
+}
+
+.goods_content .price {
+    padding: 0.20rem;
+    overflow: hidden;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.price span {
+    font-size: 0.28rem;
+    color: #444;
+    float: right;
+    margin-left: 15px;
+}
+
+    .price span:first-child span {
+        color: #ff6525;
+        margin-left: 0;
+    }
+
+.seller_info {
+    padding: 0.20rem;
+    overflow: hidden;
+    background: #fff;
+}
+
+    .seller_info h3 {
+        color: #444;
+        overflow: hidden;
+        width: 100%;
+        font-size: 0.30rem;
+    }
+
+.seller_text {
+    text-indent: 2em;
+    font-size: 0.26rem;
+    color: #444;
+    border: none;
+    padding: 0.10rem 0;
+    margin-bottom: 0;
+}
+
+.mui-bar-tab a {
+    display: block;
+    /*float:left;*/
+    text-align: center;
+    line-height: 50px;
+    font-size: 0.30rem;
+}
+/*-取消订单-*/
+.mui-bar-tab .cancel {
+    background: #fff;
+    color: #444;
+}
+/*-支付-*/
+.mui-bar-tab .play {
+    background: #0e5bb5;
+    color: #fff;
+}
+/*-申请售后、评价、删除订单-*/
+.mui-bar-tab .applyAfterSale, .mui-bar-tab .appraise_nav, .mui-bar-tab .deleting {
+    background: #0e5bb5;
+    color: #fff;
+}
+
+.mui-bar-tab .applyAfterSale {
+    background: #ff7d01;
+}
+
+.mui-bar-tab .deleting {
+    background: red;
+}
+/*-催货  确认收货-*/
+.mui-bar-tab .expediting, .mui-bar-tab .confirm_goods {
+    width: 100%;
+    background: #0e5bb5;
+    color: #fff;
+}
+
+.mui-bar-tab {
+    display: -webkit-box;
+}
+
+    .mui-bar-tab > a {
+        -webkit-box-flex: 1;
+        -moz-box-flex: 1;
+        -ms-box-flex: 1;
+        -o-box-flex: 1;
+        box-flex: 1;
+        width: 100%;
+    }
+
+    .mui-bar-tab a {
+        -webkit-box-flex: 1;
+        text-align: center;
+    }
+
+
+/*------评价----*/
+.appraise_content, .appraise_ul, .ApplyAfterSale {
+    overflow: hidden;
+    width: 100%;
+}
+
+.appraise_ul {
+    background: #fff;
+}
+
+    .appraise_ul li {
+        padding: 0.20rem;
+        border-bottom: 1px solid #ddd;
+        overflow: hidden;
+        font-size: 0.28rem;
+        color: #444;
+    }
+
+        .appraise_ul li:last-child {
+            border-bottom: none;
+        }
+
+        .appraise_ul li span {
+            display: inline-block;
+            float: left;
+        }
+
+        .appraise_ul li i {
+            margin-top: 5px;
+            display: inline-block;
+            float: left;
+            width: 0.30rem;
+            height: 0.28rem;
+            background: url('../../image/high/no.png') no-repeat;
+            background-size: 100% 100%;
+        }
+
+        .appraise_ul li .appraise_ok {
+            background: url('../../image/high/yes.png') no-repeat;
+            background-size: 100% 100%;
+        }
+
+    .appraise_ul textarea, .note_info textarea {
+        font-size: 0.28rem;
+        padding: 0.20rem 0;
+        line-height: 0.40rem;
+        text-indent: 2em;
+        border: none;
+    }
+
+.submit_appraise, .submit_apply {
+    position: absolute;
+    bottom: 1.00rem;
+    width: 96%;
+    left: 2%;
+    background: #0e5bb5;
+    border: 1px solid #0e5bb5;
+}
+/*---申请售后---*/
+.ApplyAfterSale {
+}
+
+    .ApplyAfterSale .goods_info {
+        overflow: hidden;
+        padding: 0.20rem;
+        height: auto;
+        background: #fff;
+        margin-bottom: 0.20rem;
+    }
+
+    .ApplyAfterSale .goods_img {
+        width: 1.58rem !important;
+        height: 1.58rem !important;
+        float: left;
+    }
+
+    .ApplyAfterSale .goods_right {
+        overflow: hidden;
+        float: right;
+        width: 70%;
+    }
+
+    .ApplyAfterSale .goods_title {
+        overflow: hidden;
+        font-size: 0.28rem;
+        color: #444;
+        line-height: 0.40rem;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        margin-bottom: 0.20rem;
+    }
+
+    .ApplyAfterSale .goods_status {
+        overflow: hidden;
+    }
+
+        .ApplyAfterSale .goods_status span {
+            font-size: 0.26rem;
+            color: #999;
+        }
+
+        .ApplyAfterSale .goods_status .money {
+            float: left;
+        }
+
+        .ApplyAfterSale .goods_status .time {
+            float: left;
+            margin-right: 10px;
+        }
+
+    .ApplyAfterSale .apply_content {
+        overflow: hidden;
+        padding: 0.20rem;
+        background: #fff;
+    }
+
+    .ApplyAfterSale .apply_btn, .ApplyAfterSale .note_info {
+        overflow: hidden;
+        padding: 0.10rem 0;
+    }
+
+        .ApplyAfterSale .apply_btn botton {
+            padding: 4px 20px;
+            font-size: 0.28rem;
+            margin-right: 5px;
+        }
+
+        .ApplyAfterSale .apply_btn .btn_color {
+            color: #ff6525;
+            border: 1px solid #ff6525;
+        }
+
+        .ApplyAfterSale .note_info h3 {
+            font-size: 0.28rem;
+            color: #444;
+        }
+/*--卖家--*/
+.BuyerEvaluation {
+    border-top: 1px solid #ddd;
+    overflow: hidden;
+    padding: 0.20rem;
+    background: #fff;
+}
+
+.EvaluationBox {
+    font-size: 0.28rem;
+    color: #444;
+    overflow: hidden;
+}
+
+    .EvaluationBox span {
+        float: left;
+        display: inline-block;
+        margin-right: 5px;
+    }
+
+    .EvaluationBox i {
+        width: 0.24rem;
+        height: 0.23rem;
+        display: block;
+        float: left;
+        margin-right: 0.03rem;
+        background: url('../../image/high//scoring_bg1.png') no-repeat;
+        background-size: 100% 100%;
+        margin-top: 0.10rem;
+    }
+
+    .EvaluationBox .oTime {
+        font-size: 0.24rem;
+        color: #999;
+        float: right;
+    }
+
+#DeliverGoodmask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #333;
+    opacity: 0.5;
+}
+
+/*卖家  物流*/
+.DeliverGoods {
+    padding: 0.20rem;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 6.00rem;
+    height: 3.60rem;
+    margin-left: -3.00rem;
+    margin-top: -1.80rem;
+    background: #fff;
+    z-index: 1000;
+    border-top: 2px solid #0c4ca3;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+    .DeliverGoods h3 {
+        overflow: hidden;
+        margin-bottom: 0.20rem;
+    }
+
+        .DeliverGoods h3 span {
+            float: right;
+            font-size: 0.30rem;
+            width: 0.50rem;
+            text-align: center;
+        }
+
+.logistics_box {
+    overflow: hidden;
+    font-size: 0.28rem;
+    color: #444;
+    margin-top: 0.10rem;
+}
+
+    .logistics_box span {
+        display: inline-block;
+        float: left;
+    }
+
+    .logistics_box input[type='text'] {
+        padding: 0;
+        height: auto;
+        float: left;
+        font-size: 0.28rem;
+        width: 74%;
+        margin-bottom: 0.20rem;
+    }
+
+.logistics_btn {
+    overflow: hidden;
+    margin-top: 0.20rem;
+}
+
+    .logistics_btn button {
+        width: 46%;
+        float: left;
+        margin: 0;
+    }
+
+    .logistics_btn .mui-btn-blue {
+        background: #0c4ca3;
+        border: 1px solid #0c4ca3;
+    }
+
+    .logistics_btn button:last-child {
+        float: right;
+        color: #444;
+    }
+/*---买家评分--*/
+.BuyersEvaluation{
+        overflow:hidden;
+        padding:0.20rem;
+        overflow:hidden;
+        background:#fff
+    }
+.Evaluation_five{
+    overflow:hidden;
+    width:100%;
+}
+    .Evaluation_five span{
+        font-size:0.28rem;
+        color:#444;
+        display:inline-block;
+        float:left
+    }
+    .Evaluation_five i{
+        width: 0.24rem;
+        height: 0.23rem;
+        display: block;
+        float: left;
+        margin-right: 0.03rem;
+        background: url('../../image/high/scoring_bg1.png') no-repeat;
+        background-size: 100% 100%;
+        margin-top: 5px;
+    }
+    .Evaluation_text{
+        font-size:0.28rem;
+        color:#969696;
+        overflow:hidden;
+        line-height:0.40rem
+    }
+    .mui-ellipsis .company_img{
+            display: inline-block;
+        width: 0.34rem;
+        height: 0.30rem;
+        background:url("../../image/high/shop.png") no-repeat;
+        background-size: 100% 100%;
+        margin-right: 0.10rem;
+    }

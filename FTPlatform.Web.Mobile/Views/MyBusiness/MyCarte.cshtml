@@ -1,0 +1,50 @@
+﻿
+@{
+    ViewBag.Title = "名片详情";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+    <link rel="stylesheet" href="/Content/css/myBusiness/basicInformation/MyBusinessCard.css" />
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+        <h1 class="mui-title">名片详情</h1>
+    </header>
+    <div class="mui-content" style="background: #fff" v-cloak>
+        <input type="hidden" id="id" value="@ViewBag.id" />
+        <div class="BusinessCard">
+            <div class="personal">
+                <div class="personal_box">
+                    <img v-lazy="carte.AvatarUrl!=null?carte.AvatarUrl:'/Content/image/m_user_default400.png'" class="name_bg" v-on:click="ShowPreview" />
+                    <div class="personal_right">
+                        <a href="/mybusiness/updatemycarte" class="modification" id="update"></a>
+                        <h3>{{carte.RealName}}</h3>
+                        <p class="introduce">{{carte.Signature}}</p>
+                    </div>
+                </div>
+                <div class="business_box">
+                    <p class="business_title">主要优势：</p>
+                    <p class="business_content">{{carte.BusinessScope}}</p>
+                </div>
+                <div class="toglle">
+                    <i></i>
+                </div>
+                <div class="Specific">
+                    <div class="Specific_up">
+                        <span v-if="carte.Position!=null"><i class="i1"></i>{{carte.Position}}</span>
+                        <span v-if="carte.BusCategory!=null"><i class="i2"></i>{{carte.BusCategory}}</span>
+                        <span style="color: #666;"><i class="i3"></i><a v-bind:href="'tel:'+carte.Mobile">{{carte.Mobile}}</a></span>
+                    </div>
+                    <div class="Specific_down">
+                        <span v-if="carte.GetCompanyName"><i class="i2-1"></i>{{carte.GetCompanyName}}</span>
+                        <span v-if="carte.Email!=null"><i class="i2-2"></i><a v-bind:href="'mailto:'+carte.Email">{{carte.Email}}</a></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div v-if="Preview" class="ft-img-preview" v-on:click="ClosePreview">
+            <img v-bind:src="carte.AvatarUrl!=null?carte.AvatarUrl:'/Content/image/m_user_default400.png'" />
+        </div>
+    </div>
+
+@section foot{
+    <script src="~/dist/member.cartedetail.bundle.js"></script>
+        }

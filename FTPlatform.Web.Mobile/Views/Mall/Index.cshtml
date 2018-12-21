@@ -1,0 +1,363 @@
+﻿
+@{
+    ViewBag.Title = "智币商城_首页";
+    Layout = "~/Views/Shared/_LayoutMall.cshtml";
+}
+<style type="text/css">
+    [v-cloak] {
+        display: none !important;
+    }
+
+    .ft-tab {
+        padding-bottom: 0.05rem;
+    }
+
+    .mui-focusin > .mui-bar-header-secondary, .mui-focusin > .mui-bar-nav {
+        position: fixed !important;
+    }
+    /*--新增搜索的css---*/
+    .mui-bar-tab {
+        padding-top: 0.05rem;
+    }
+
+    .head_box {
+        padding: 0 10px;
+        height: 0.9rem;
+    }
+
+    .mui-content {
+        padding-top: 0.9rem;
+    }
+
+    .shop-search {
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        position: fixed;
+        display: none;
+    }
+
+    .oHeader1 {
+        width: 100%;
+        height: 100%;
+        position: relative;
+    }
+
+    .search {
+        position: absolute;
+        top: 9px;
+        right: 0px;
+        height: 27px;
+        width: 92%;
+        border: 1px solid #ddd;
+        border-radius: 12px;
+    }
+
+    .shop-search input[type=text] {
+        width: 88%;
+        padding: 0 0;
+        text-align: center;
+        font-size: 0.26rem;
+        line-height: 25px;
+        height: 25px;
+        border: none;
+        margin-bottom: 0;
+        margin-left: 3%;
+    }
+
+    .on_seek {
+        width: 0.5rem;
+        height: 100%;
+        position: absolute;
+        right: 0.11rem;
+    }
+
+    .head_box a {
+        color: #666;
+    }
+
+    .seek_img {
+        width: 0.25rem;
+        height: 0.25rem;
+        margin: auto;
+        margin-top: 6px;
+    }
+
+    .Commodity-box {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        margin-top: 30px;
+        padding: 20px;
+    }
+
+    .shop-title {
+        font-size: 0.30rem;
+        color: #666;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .HotCommodity, .recent-list, .recent-list ul {
+        overflow: hidden;
+        width: 100%;
+        margin-top: 5px;
+    }
+
+        .HotCommodity ul li {
+            height: 0.56rem;
+            text-align: left;
+            line-height: 0.56rem;
+            border: none;
+            margin-right: 3%;
+            margin-bottom: 10px;
+            color: #969696;
+            border-radius: 5px;
+            float: left;
+        }
+
+            .HotCommodity ul li a {
+                color: #969696;
+                padding: 2px 5px;
+                display: block;
+                background: #f0f2f5;
+                text-align: center;
+                border-radius: 5px;
+                font-size: 0.26rem;
+            }
+
+    .Commodity-box .recent-inner {
+        overflow: hidden;
+    }
+
+        .Commodity-box .recent-inner .search-tit {
+            color: #666;
+            font-size: 0.30rem;
+            float: left;
+        }
+
+        .Commodity-box .recent-inner .del-icon {
+            width: 0.25rem;
+            height: 0.26rem;
+            display: inline-block;
+            background: url(/content/image/del.png) no-repeat;
+            background-size: 0.25rem 0.26rem;
+            float: left;
+        }
+
+    .Commodity-box .recent-list {
+        width: 100%;
+        overflow: hidden;
+    }
+
+        .Commodity-box .recent-list ul span {
+            float: left;
+            height: 0.46rem;
+            text-align: left;
+            line-height: 0.46rem;
+            border: none;
+            margin-right: 3%;
+            color: #969696;
+            font-size: 0.26rem;
+        }
+
+    .delete-item {
+        background: #444;
+        opacity: 0.8;
+        border-radius: 5px;
+        position: absolute;
+        top: 1.8rem;
+        width: 60%;
+        margin: 0 auto;
+        color: #fff;
+        text-align: center;
+        left: 20%;
+        padding: 0.3rem;
+        box-sizing: border-box;
+        display: none;
+    }
+
+        .delete-item h4 {
+            font-weight: 500;
+            font-size: 0.28rem;
+        }
+
+        .delete-item .delete-btngroup {
+            width: 100%;
+            margin: 0 auto;
+            margin-top: 0.4rem;
+        }
+
+            .delete-item .delete-btngroup a {
+                display: inline-block;
+                width: 40%;
+                color: #fff;
+                font-size: 0.3rem;
+            }
+
+    .search-Zindex {
+        z-index: 10;
+        display: block;
+    }
+
+    .content-display {
+        display: none;
+    }
+
+    .star_model {
+        margin-bottom: 50px;
+        background: #fff;
+    }
+    /*.body-overflow{
+        overflow:hidden
+    }
+    .body-position{
+        position:fixed;
+        overflow:hidden;
+        height:100%
+    }*/
+</style>
+<!---商城搜索--->
+<div id="vuediv" v-cloak>
+    <div class="shop-search">
+        <div class="mui-bar mui-bar-nav">
+            <div class="oHeader1">
+                <a href="javascript:" id="searchback" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+                <div class="search retrie" style="float: left;">
+                    <input id="txt_searchbar" type="text" placeholder="" class="seek search-inpt">
+                    <a class="on_seek" id="onSersh"><img src="/content/image/seek_top.png" class="seek_img"></a>
+                </div>
+            </div>
+        </div>
+        <div class="Commodity-box">
+            <!------历史搜索----->
+            <div class="recent-box" style="display:none">
+                <div class="recent-inner">
+                    <span class="search-tit" style="width: 95%;">最近搜索</span>
+                    <a href="javascript:"><span class="del-icon"><i></i></span></a>
+                </div>
+                <div class="recent-list">
+                    @*<ul>
+                            <span><a href="javascript:">fdfgdsfg</a></span>
+                        </ul>*@
+                </div>
+            </div>
+            <div class="HotCommodity">
+                <h3 class="shop-title">热门商品</h3>
+                <ul>
+                    <li v-for="key in hotSearchKeys"><a href="javascript:" v-on:click="searchhotkey(key.value)">{{key.name}}</a></li>
+                    @*<li><a href="javascript:">电子书阅读器</a></li>
+                        <li><a href="javascript:">小米新款移动电源</a></li>
+                        <li><a href="javascript:">神州十号飞船模型</a></li>
+                        <li><a href="javascript:">三网通（100元话费）</a></li>
+                        <li><a href="javascript:">三网通（50元话费）</a></li>*@
+                </ul>
+            </div>
+            <!---清空历史记录弹窗--->
+            <div class="delete-item">
+                <h4>确定要清空搜索记录吗？</h4>
+                <div class="delete-btngroup">
+                    <a href="javascript:">是</a>
+                    <a href="javascript:">否</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mui-content body_content l-scrollable" >
+        @*<section class="shop-banner">
+                <img src="/content/image/shop/shop-banner.png" onclick="" />
+            </section>*@
+        <div class="mui-slider">
+            <div class="mui-slider-group mui-slider-loop">
+                <template v-if="advmodels.length>0">
+                    <div class="mui-slider-item mui-slider-item-duplicate" v-if="index==(advmodels.length-1)" v-for="(ban,index) in advmodels">
+                        <a v-bind:href="ban.RedirectUrl">
+                            <img v-bind:src="ban.AdvUrl" />
+                        </a>
+                    </div>
+
+                    <div class="mui-slider-item" v-for="ban in advmodels">
+                        <a  v-bind:href="ban.RedirectUrl">
+                            <img v-bind:src="ban.AdvUrl" />
+                        </a>
+                    </div>
+                    <div class="mui-slider-item mui-slider-item-duplicate" v-if="index==0" v-for="(ban,index) in advmodels">
+                        <a v-bind:href="ban.RedirectUrl">
+                            <img v-bind:src="ban.AdvUrl" />
+                        </a>
+                    </div>
+                </template>
+                <template v-else>
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="/content/image/shop/shop-banner.png" />
+                        </a>
+                    </div>
+                    <div class="mui-slider-item">
+                        <a href="#">
+                            <img src="/content/image/shop/shop-banner.png" />
+                        </a>
+                    </div>
+                    <div class="mui-slider-item mui-slider-item-duplicate">
+                        <a href="#">
+                            <img src="/content/image/shop/shop-banner.png" />
+                        </a>
+                    </div>
+                </template>
+            </div>
+        </div>
+        <!--兑换清单-->
+        <section class="convert-wrap">
+            <div class="left-incon"></div>
+            <div class="right-text" style="height: 0.5rem;line-height: 0.46rem;margin-top:0.6em">
+                @*<marquee direction="up" scrolldelay="1000" style="margin-top: 5px; height: 24px;">
+                        <ul>
+                            <li v-for="fo in odfrom">
+                                <span class="news_text">用户：{{fo.UserName}} {{fo.ModityName}}</span>
+                            </li>
+                        </ul>
+                    </marquee>*@
+                <ul>
+                    <li v-for="fo in odfrom">
+                        <span class="news_text">用户：{{fo.UserName}} {{fo.ModityName}}</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <!--智币商品 -->
+        <section class="star_model">
+            <div class="model_title">
+                <h3><span>智币商品</span></h3>
+                <a href="/mall/List" class="more_viw">更多 ></a>
+            </div>
+            <ul class="mui-row model_gird">
+                <li class="mui-col-sm-6 mui-col-xs-6" style="border-bottom: #ddd solid 1px; border-right: #ddd solid 1px;" v-for="mod in modity">
+                    <a href="javascript:;" v-on:click="hrefDetail(mod.ModityCode)">
+                        <div class="zb-probox">
+                            <div class="product-pic">
+                                <img v-bind:src="mod.ImgUrl" style="width: 2.3rem;height: 2.3rem;" />
+                            </div>
+                            <div class="product-tit">{{mod.ModityName}}</div>
+                            <div class="price"><small>¥</small>{{mod.Price}}</div>
+                            <div class="zhibi-dt">兑换智币：{{mod.FactScore}}@*<del>{{mod.ComputeScore}}</del>*@</div>
+                            <div class="hot-tb" v-show="mod.IsNoRecommend">HOT</div>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </div>
+</div>
+<!----js------>
+@section foot{
+    <script src="~/dist/mall.Index.bundle.js"></script>
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script>
+        var gallery = mui('.mui-slider');
+        gallery.slider({
+            interval: 5000,
+        });
+    </script>
+}
+

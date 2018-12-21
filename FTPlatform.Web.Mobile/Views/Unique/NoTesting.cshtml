@@ -1,0 +1,117 @@
+﻿@{
+    ViewBag.Title = "无损检测";
+    ViewBag.Description = "提供综合性无损检测项目服务，包括超声、射线、磁粉、涡流、着色渗透激光全息、声发射、工业CT、检漏、红外等检测方法以及设备。";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/check/check.css" rel="stylesheet" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+}
+
+<header class="mui-bar mui-bar-nav head_box head-secd">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+    <h1 class="mui-title">无损检测</h1>
+    <a class="return share-button" v-on:click="SharePage"></a>
+</header>
+
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br>
+            电话：400-920-2025/ 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content soul_content l-scrollable">
+    <rightsidebar></rightsidebar>
+    <section class="mid-banner">
+        <img src="/content/image/check/w-baner1.png" />
+    </section>
+    <!-- 失效分析整体解决方案服务-->
+    <section class="solution-wrap">
+        <h3>无损检测整体解决方案服务</h3>
+        <ul class="soul-list">
+            <li>
+                <b>检测方法及设备</b>
+                <p>提供综合性无损检测项目服务，包括超声、射线、磁粉、涡流、着色渗透激光全息、声发射、工业CT、检漏、红外等检测方法以及设备。</p>
+                <b>提供改进方案</b>
+                <p>为客户提供无损检测方法以及结果分析，根据结果提供客户产品、工艺、设备等改进方案。</p>
+                <b>为客户定制方案</b>
+                <p>为客户提供高端无损检测设备定制方案。</p>
+                <b>为客户提供集成方案</b>
+                <p>为客户提供在线检测整体集成方案。</p>
+            </li>
+        </ul>
+    </section>
+    <section class="sec-banner">
+        <img src="/content/image/check/w-banner2.png" />
+    </section>
+    <!-- 我们的优势-->
+    <section class="solution-wrap">
+        <h3>我们的优势</h3>
+        <div class="advent-box">
+            <h4>技术优势</h4>
+            <ul class="ness-list">
+                <li><span>具备大型复杂结构件无损检测技</span></li>
+                <li><span>金属材料及其制品无损检测，具有发现0.1mm当量缺陷的能力</span></li>
+                <li><span>在线检测技术方面，具备无损检测新方法的工程化开发应用技术</span></li>
+                <li><span>具备激光散斑、超声等特种高端无损检测设备研制技术</span></li>
+            </ul>
+        </div>
+        <div class="advent-box">
+            <h4>资源优势</h4>
+            <ul class="ness-list">
+                <li><span>提供无损检测的高端检测设备资源</span></li>
+                <li><span>具备高端无损检测设备研发的技术团队</span></li>
+                <li><span>具备国内无损检测相关实验室以及院校实验室资源数据库等</span></li>
+            </ul>
+        </div>
+    </section>
+    <!--服务流程-->
+    <section class="solution-wrap sever-step">
+        <h3>服务流程</h3>
+        <div class="step-wrap">
+            <div class="step-text talk">
+                <h5>发起咨询</h5>
+                <p>Initiate consultation</p>
+            </div>
+            <div class="step-text online">
+                <h5>在线答疑</h5>
+                <p>Online answering</p>
+            </div>
+            <div class="step-text agency">
+                <h5>推荐机构</h5>
+                <p>Recommended institutions</p>
+            </div>
+            <div class="step-text confirm">
+                <h5>客户确认</h5>
+                <p>client confirmation</p>
+            </div>
+            <div class="step-text Sign">
+                <h5>签订协议</h5>
+                <p>Sign the agreement</p>
+            </div>
+            <div class="step-text Track">
+                <h5>项目进度跟踪</h5>
+                <p>Project progress tracking</p>
+            </div>
+            <div class="step-text examine">
+                <h5>审核与发证</h5>
+                <p>Audit and certification</p>
+            </div>
+        </div>
+    </section>
+    <!--合作伙伴-->
+    <section class="solution-wrap parter">
+        <h3>合作伙伴</h3>
+        <div class="part-logo">
+            <span><img src="/content/image/check/ht-logo.png"></span>
+            <span><img src="/content/image/check/kxy-logo.png"></span>
+        </div>
+    </section>
+</div>
+<share ref="share"></share>

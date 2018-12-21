@@ -1,0 +1,205 @@
+﻿@{
+    ViewBag.Title = "飞天众智全新手机版正式上线  体验有好礼";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/css/activity/201709/sepactivy.css" rel="stylesheet" />
+
+<header class="mui-bar mui-bar-nav head_box">
+    <a href="javascript:window.history.go(-1);" class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">飞天众智全新手机版正式上线...</h1>
+    <div class="backhome"><a href="/"><i></i></a></div>
+</header>
+<div class="mui-content">
+    <input type="hidden" id="ActId" value="4062" />
+    <section class="banner">
+        <img src="~/Content/image/activity/201709/banneract.png" />
+    </section>
+    <section class="actconnter">
+        <!--签到有礼-->
+        <div class="catogy-model sign">
+            <h1>签到有礼</h1>
+            <div class="sin-rules"><i></i><span><a href="javascript:;" id="sign-rule" v-on:click="CheckinRule">签到规则 </a></span></div>
+            <div class="getzb">
+                <div class="list weeks">连续签到<b>1</b>周</div>
+                <div class="list getsonline">可获得</div>
+                <div class="list zbticks"></div>
+            </div>
+            <p class="intro-text">飞天众智全新手机版正式上线！这次还不想来亲自体验一下吗？只要在手机版上连续签到一周，便可轻松获得254枚智币和千元业务抵扣券。</p>
+            <div class="signbtn"><a href="javascript:;" id="nowsign" v-on:click="NowsignOpen">立即签到</a></div>
+        </div>
+        <!--体验有礼-->
+        <div class="catogy-model experience" style="margin-bottom:0;">
+            <h1>体验有礼</h1>
+            <p class="intro-text">活动期间成功发布需求，在原有<br />会员体系基础上</p>
+            <p class="gobel-text"><b>+200</b>智币</p>
+            <div class="signbtn"><a href="/demand/publish">发布需求</a></div>
+        </div>
+        <div class="stairway">
+            <i class="left-way"></i>
+            <i class="right-way"></i>
+        </div>
+        <div class="catogy-model experience" style="margin-bottom:0;">
+            <p class="intro-text" style="padding-top:0.8rem;">活动期间成功发布技术推荐，在<br />原有会员体系基础上</p>
+            <p class="gobel-text"><b>+200</b>智币</p>
+            <div class="signbtn"><a href="/techshare/publish">发布技术推荐</a></div>
+        </div>
+        <div class="stairway">
+            <i class="left-way"></i>
+            <i class="right-way"></i>
+        </div>
+        <div class="catogy-model experience">
+            <p class="intro-text" style="padding-top:0.8rem;">活动期间成功申请成为供方，在<br />原有会员体系基础上</p>
+            <p class="gobel-text"><b>+100</b>智币</p>
+            <div class="signbtn"><a href="/expert/applysupplier" id="sply">申请供方</a></div>@*/expert/applysupplier*@
+        </div>
+        <!--活动规则-->
+        <section class="rules-model">
+            <div class="rules-main">
+                <div class="tuletit">
+                    <h1>活动细则</h1>
+                </div>
+                <div class="infos">
+                    <p><span class="numbers">1、</span> <span class="tster">连续签到7天获赠的业务抵扣券为随机发送；</span></p>
+                    <p><span class="numbers">2、</span><span class="tster">活动期间，发布的有效需求越多，可获得的智币越多，上不封顶；</span></p>
+                    <p><span class="numbers">3、</span><span class="tster">活动期间，所有加赠智币将在2017年12月31日24点清空，请及时兑换礼品；</span></p>
+                    <p>
+                        <span class="numbers">4、</span><span class="tster">
+                            凡是被本站定义为恶意用户的注册用户，不得参与本次活动；
+                        </span>
+                    </p>
+                    <p>
+                        <span class="numbers">5、</span><span class="tster">
+                            本次活动期间发布的需求必须是真实有效的，不得转载、杜撰、拼凑等；
+                        </span>
+                    </p>
+                    <p>
+                        <span class="numbers">6、</span><span class="tster">
+                            本次活动期间如发现恶意注册，如：用虚拟手机进行注册、恶意软件注册、拒绝服务请求等情况，将不予以兑换任何礼品；
+                        </span>
+                    </p>
+                    <p>
+                        <span class="numbers">7、</span><span class="tster">
+                            本次活动参与人数较多，如有任何变动请留意官网公告，不再另行通知；
+                        </span>
+                    </p>
+                    <p>
+                        <span class="numbers">8、</span><span class="tster">在法律允许范围内，本次活动最终解释权及法律追责权归飞天众智平台所有；</span>
+                    </p>
+                    <p><span class="numbers">9、</span><span class="tster">活动期间有任何问题，请垂询：400-920-2025或发送邮件至 market@techina2025.com。</span></p>
+                </div>
+            </div>
+        </section>
+        <div class="footer-bg">
+            <div class="gobel"></div>
+            <div class="sm-car"></div>
+        </div>
+    </section>
+    <!--签到规则弹窗-->
+    <div class="sign-box">
+        <div class="mask"></div>
+        <div class="Signpop">
+            <div class="pop-title">
+                <h3>签到规则</h3>
+                <div class="mui-icon-close close" v-on:click="CloseOpen('sign-box')">
+                    <i></i>
+                </div>
+                <div class="wavyline"></div>
+            </div>
+            <div class="pop-body">
+                <div class=text>
+                    1、活动期间，用户登录或注册后，在手机版每日签到，可额外获得智币；签到第1天赠送2智币，连续签到第2天赠送4智币，连续签到第3天赠送8智币，连续签到第4天赠送16智币，连续签到第5天赠送32智币，连续签到第6天赠送64智币，连续签到第7天送128智币和业务抵扣券；<br />
+                    2、如果连续签到中断，则下次签到奖励从第1天开始算起；<br />
+                    3、每位用户每天可签到1次。
+                </div>
+                <div class="btgobel"></div>
+            </div>
+        </div>
+    </div>
+    <!--立即签到弹窗-->
+    <div class="immed-sign">
+        <div class="mask"></div>
+        <div class="Signpop">
+            <div class="pop-title">
+                <div class="tpgift">
+                    <div class="getszhibi">
+                        <span class="get-hd">已获得</span>
+                        <span class="zbs"><b v-text="scoreActNumber">0</b>智币</span>
+                    </div>
+                </div>
+                <div class="mui-icon-close close" v-on:click="CloseOpen('immed-sign')">
+                    <i></i>
+                </div>
+                <div class="wavyline"></div>
+            </div>
+            <div class="pop-body">
+                <p class="sgdays">每天签到送智币，<br />连续签满 <span class="orge-day">7</span> 天加送业务抵扣券</p>
+                <div class="wisdom-list">
+                    <ul>
+                        @*<li>
+                            <span class="plusnumber">+2</span>
+                            <i></i>
+                            <div class="sg-finsh"></div>
+                        </li>
+                        <li>
+                            <span class="plusnumber">+4</span>
+                            <i></i>
+                            <div class="sg-finsh"></div>
+                        </li>
+                        <li>
+                            <span class="plusnumber">+8</span>
+                            <i></i>
+                            <div class="sg-finsh"></div>
+                        </li>
+                        <li>
+                            <span class="plusnumber">+16</span>
+                            <i></i>
+                            <div class="sg-finsh"></div>
+                        </li>
+                        <li>
+                            <span class="plusnumber">+32</span>
+                            <i></i>
+                            <div class="sg-finsh"></div>
+                        </li>
+                        <li>
+                            <span class="plusnumber">+64</span>
+                            <i></i>
+                            <div class="sg-finsh"></div>
+                        </li>
+                        <li>
+                            <span class="plusnumber">+128</span>
+                            <i></i>
+                            <div class="sg-finsh"></div>
+                        </li>*@
+                    </ul>
+                </div>
+                <div class="total-days">
+                    <h3>已连续签到<span v-text="checkinNumber"></span> 天</h3>
+                </div>
+                <div class="sign-button" id="sigclick" v-on:click="SigCheckin">今日签到</div>
+            </div>
+        </div>
+    </div>
+    <!--连续签到7天弹窗-->
+    <div class="complete-box">
+        <div class="mask"></div>
+        <div class="Signpop">
+            <div class="pop-title">
+                <h3>连续签到7天</h3>
+                <div class="mui-icon-close close" v-on:click="CloseOpen('complete-box')">
+                    <i></i>
+                </div>
+                <div class="wavyline"></div>
+            </div>
+            <div class="pop-body">
+                <div class="total-gobel">
+                    <img src="~/Content/image/activity/201709/mask/zhi.png" />
+                </div>
+                <p class="getticks" id="SevenPrize" style="font-size:0.31rem"></p>
+                <p class="award">所获奖励可在我的奖品中查看</p>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="~/Content/js/Pages/Act/SepActivity.js"></script>
+
+

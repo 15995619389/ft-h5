@@ -1,0 +1,558 @@
+html,
+body {
+    height: 100%;
+}
+
+.return_a {
+    height: 100%;
+    width: 1.0rem;
+    color: #686868;
+    display: block;
+    text-align: center;
+    position: relative;
+}
+
+.return_a img {
+    position: absolute;
+    top: 0.30rem;
+    left: 0.30rem;
+    width: 0.30rem;
+    height: 0.30rem;
+    display: block;
+}
+
+.technology {
+    width: 100%;
+    height: 40px;
+    position: relative;
+    background: #fff;
+    z-index: 4;
+}
+
+.options {
+    width: 100%;
+    height: auto;
+}
+
+.options_top {
+    width: 100%;
+    height: 0.65rem;
+    background: #f5f5f5;
+    border-top: 1px solid #dddddd;
+}
+
+.mui-table-view-cell:after {
+    left: 0px;
+}
+
+.view_title {
+    width: 100%;
+    min-height: 0.6rem;
+}
+
+.title_left {
+    width: 60%;
+    float: left;
+    font-size: 0.28rem;
+    color: #444444;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    line-height: 0.38rem
+}
+
+.year {
+    float: left;
+    width: 40%;
+    color: #969696;
+    text-align: right;
+    margin-top: 0.05rem;
+    font-size: 0.20rem;
+}
+
+.introduce {
+    font-size: 13px;
+    color: #666666;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: box;
+    display: -webkit-box;
+    line-clamp: 2;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 20px;
+    letter-spacing: 0px;
+    height: 38px;
+}
+
+.content_body {
+    float: left;
+    width: 64%;
+    height: 100%;
+}
+
+.apply_base {
+    width: 100%;
+}
+
+.apply_base li {
+    float: left;
+}
+
+.apply_base li:nth-child(2) {
+    float: right
+}
+
+.apply_img {
+    width: 0.20rem;
+    height: 0.22rem;
+    float: left;
+    margin-right: 0.05rem;
+    margin-top: 0.15rem;
+}
+
+.apply_base li span {
+    color: #969696;
+    font-size: 0.24rem;
+}
+
+.focus_img {
+    width: 0.25rem;
+    height: 0.22rem;
+    float: left;
+    margin-right: 0.05rem;
+    margin-top: 0.16rem;
+}
+
+.mui-btn-block {
+    width: 92%;
+    margin: 0 auto;
+    margin-bottom: 100px;
+}
+
+.mui-table-view {
+    display: none;
+}
+
+
+
+
+
+.cataloglist dt {
+    margin-top: 0.05rem;
+}
+
+.technology div {
+    text-align: center;
+    line-height: 40px;
+    border-top: 1px solid #ddd;
+    font-size: 14px;
+}
+
+
+
+
+.results_box {
+    width: 100%;
+    height: auto;
+    /*overflow: hidden;*/
+    display: none;
+    /*position: relative;*/
+}
+
+/*------行业解决方案------------*/
+
+.one,
+.two {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.one {
+    border-top: 1px solid #ddd;
+}
+
+.mui-table-view:before {
+    height: 0px;
+}
+
+.mui-table-view-cell>a:not(.mui-btn) {
+    white-space: normal;
+}
+
+.mui-media-body {
+    font-size: 0.34rem;
+    color: #444444;
+    line-height: 0.40rem;
+}
+
+.mui-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+
+.mui-ellipsis {
+    white-space: normal;
+}
+
+.expect {
+    margin-top: 2.50rem;
+    background: #f2f1f7;
+    height: auto;
+    overflow: hidden;
+}
+
+.expect p {
+    font-size: 0.28rem;
+    color: #cccccc;
+    text-align: center;
+}
+
+.expect img {
+    width: 1.15rem;
+    height: 0.97rem;
+    display: block;
+    margin: 0 auto;
+}
+
+
+/*-------修改的-------*/
+
+.nav_table {
+    font-size: 13px;
+    color: #595757;
+    width: 100%;
+    background: #f5f5f5;
+    height: 40px;
+    position: absolute;
+    z-index: 3;
+    border-bottom: 1px solid #ddd;
+}
+
+.nav_table li {
+    width: 33.33%;
+    font-size: 13px;
+    color: #595757;
+    float: left;
+    text-align: center;
+    line-height: 40px;
+}
+
+.nav_table li:nth-child(1) {
+    padding-left: 5%;
+}
+
+.nav_table li:nth-child(2) {
+    padding-left: 8%;
+}
+
+.nav_table li:nth-child(3) {
+    padding-left: 10%;
+}
+
+.sSpan {
+    float: left;
+}
+
+.up {
+    width: 0.30rem;
+    overflow: hidden;
+    height: auto;
+    margin: 0 auto;
+    display: inline-block;
+    float: left;
+    margin-top: 0.25rem;
+    margin-left: 0.10rem;
+}
+
+.nav_table .mui-icon-arrowup,
+.nav_table .mui-icon-arrowdown {
+    font-size: 0.30rem;
+    width: 0.40rem;
+    height: 0.22rem;
+    line-height: 0.20rem;
+}
+
+.up span {
+    width: 100%;
+    float: left;
+}
+
+.screen_bg {
+    display: block;
+    width: 0.25rem;
+    height: 0.20rem;
+    margin-top: 0.1rem;
+    background: url(/Content/image/screening.png) no-repeat center center;
+    background-size: 0.25rem 0.20rem;
+    margin-left: 0.05rem;
+}
+
+
+/*----底部选项卡------*/
+
+.ft-tab .mui-tab-item {
+    color: #444;
+}
+
+.ft-tab .tab-list {
+    overflow: visible;
+}
+
+.mui-bar-tab .nav-tab-item {
+    display: table-cell;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #444;
+    z-index: 8;
+}
+
+.ft-tab .mui-active {
+    color: #0e5bb5 !important;
+}
+
+.ft-tab .icon-home {
+    background: url(/Content/image/home11.png) no-repeat;
+    width: 0.48rem;
+    height: 0.47rem;
+    background-size: 0.48rem 0.47rem;
+}
+
+.ft-tab .tab-icon {
+    margin-bottom: 0.15rem;
+    position: relative;
+    z-index: 20;
+    top: 3px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: Muiicons;
+    font-size: 0.24px;
+    font-weight: 400;
+    font-style: normal;
+    display: inline-block;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ft-tab .mui-tab-label {
+    display: block;
+    font-size: 0.24rem;
+}
+
+.ft-tab .mui-active .icon-home {
+    background: url(/Content/image/home-cur.png) no-repeat;
+    width: 0.52rem;
+    height: 0.47rem;
+    background-size: 0.52rem 0.47rem;
+}
+
+.ft-tab .icon-pull {
+    background: url(/Content/image/plus_sign.png) no-repeat;
+    width: 1.16rem;
+    height: 1.16rem;
+    background-size: 1.16rem 1.16rem;
+}
+
+.ft-tab .pu-icon {
+    width: 1.16rem !important;
+    height: 1.16rem !important;
+    top: -0.2rem;
+}
+
+.ft-tab .icon-resouce {
+    background: url(/Content/image/classify.png) no-repeat;
+    width: 0.46rem;
+    height: 0.45rem;
+    background-size: 0.46rem 0.45rem;
+}
+
+.ft-tab .mui-active .icon-resouce {
+    background: url(/Content/image/noun-bl.png) no-repeat;
+    width: 0.46rem;
+    height: 0.45rem;
+    background-size: 0.46rem 0.45rem;
+}
+
+/*-------筛选侧边栏--------*/
+
+.mask_box {
+    position: absolute;
+    left: 0px;
+    top: 0.00rem;
+    height: 100%;
+    width: 100%;
+    background: #333;
+    opacity: 0.5;
+    filter: alpha(opacity:50);
+}
+
+#side {
+    width: 0%;
+    position: fixed;
+    right: 0px;
+    height: 100%;
+    z-index: 1000;
+    overflow: hidden;
+}
+
+.screening_box {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    height: 100%;
+    width: 90%;
+}
+
+.screening_right {
+    float: right;
+    width: 100%;
+    height: 93%;
+    background: #fff;
+}
+
+.teamwork {
+    width: 100%;
+    overflow: hidden;
+    background: #fff;
+    padding: 0.20rem 2%;
+}
+
+.screening_right .teamwork:nth-child(1) {
+    border-bottom: 0.16rem solid #f5f5f5;
+}
+
+.teamwork h3 {
+    font-size: 0.30rem;
+    color: #666666;
+}
+
+.teamwork_nav {
+    overflow: hidden;
+    height: auto;
+}
+
+.teamwork_nav li {
+    font-size: 0.28rem;
+    width: 33.33%;
+    float: left;
+    margin: 0.10rem 0px;
+    color: #666;
+    text-align: center;
+}
+
+.footer_btn {
+    width: 100%;
+    height: 100%
+}
+
+.footer_btn button {
+    width: 50%;
+    text-align: center;
+    float: left;
+    border-radius: 0px;
+    height: 0.80rem;
+    padding: 0px 0px;
+    border: none;
+    line-height: 0
+}
+
+.reset {
+    background: #dddddd;
+}
+
+.determine {
+    background: #0e5bb5;
+    border: 1px solid #0e5bb5;
+    color: #fff;
+}
+
+.mui-table-view .mui-media-object {
+    max-width: 32%;
+    height: 1.76rem;
+    width: 100%;
+}
+
+.mui-table-view-cell>a:not(.mui-btn) {
+    white-space: normal;
+}
+
+.nav_table .active {
+    color: #ff6525;
+}
+
+.teamwork_nav .active {
+    color: #ff6525;
+}
+
+.screen_bg2 {
+    background: url(/Content/image/screening_bg.png) no-repeat;
+    background-size: 0.25rem 0.2rem;
+}
+
+.mui-scroll-wrapper {
+    min-height: 8.00rem;
+    overflow: visible;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+.mui-table-view,
+.results_box {
+    display: block;
+}
+
+.mui-content {
+    position: absolute;
+    top: 44px;
+    bottom: 44px;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+    width: 100%;
+}
+
+.teamwork {
+    padding-left: 7%;
+}
+
+.teamwork_nav li {
+    text-align: left;
+}
+
+.body-overflow {
+    position: fixed;
+    width: 100%
+}
+
+/* susining added */
+.tab-title {
+    color: #969696;
+    position: relative;
+}
+.tab-list{
+    width: 100%;
+    z-index: 9999;
+    position: absolute;
+    top: 39px;
+    opacity: 0.7;
+    filter: alpha(opacity=70);
+    overflow: hidden;
+    background: #363636;
+}
+.tab-list li{
+    text-align: center;
+    color: #fff;
+    z-index: 104;
+    font-size: 0.28rem;
+    line-height: 0.60rem;
+}

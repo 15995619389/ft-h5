@@ -1,0 +1,49 @@
+._nc .stage2 .textbox .placeholder {
+    left: 68px
+}
+
+._nc .stage2 .textbox .code {
+    border-left: #184998 solid 1px
+}
+
+._nc .stage1 .slider {
+    width: 80%;
+    height: 100%;
+    touch-action: none;
+    font-size: 16px;
+    margin: 0 auto;
+}
+
+._nc .stage2 .icon.tip {
+    top: 17px
+}
+
+._nc .stage2 .icon.clear {
+    top: 15px
+}
+
+._nc .stage2 .icon.refresh {
+    top: 17px
+}
+
+.mui-input-group .mui-input-row:after {
+    right: 15px
+}
+
+.mui-input-group .mui-input-row:last-child::after {
+    right: 0;
+    left: 0
+}
+
+._nc .stage2 .textbox .code {
+    width: 80px !important;
+    right: 45px !important
+}
+
+._nc .stage2 .textbox .input {
+    width: 44% !important
+}
+
+._nc .stage2 .icon.clear {
+    left: 48% !important
+}

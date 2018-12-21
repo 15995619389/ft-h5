@@ -1,0 +1,302 @@
+.mui-bar{
+	background: #fff;
+	box-shadow: none;
+}
+.regist-warp {
+	width: 100%;
+	margin-top: 0.2rem;
+}
+.login-form{
+	background: none;
+}
+.regist-warp .input-box {
+	background: #fff;
+	width: 100%;
+}
+.head_box{
+	height: auto;
+}
+.regist-warp .mui-input-row label {
+	width: 5%;
+	color: #d90000;
+	position: relative;
+	padding: 20px 15px;
+}
+.regist-warp .mui-input-row input {
+	width: 90%;
+	color: #0d0d0d;
+	font-size: 16px;
+	height: 1.1rem;
+}
+.head_box {
+	padding: 0;
+}
+.head_box a {
+	color: #666;
+}
+.code {
+	display: inline-block;
+	position: absolute;
+	top: 0.25rem;
+	right: 20px;
+	z-index: 1;
+	font-size: 0.24rem;
+	border-radius: 3px;
+	padding: 5px;
+	border: #184998 solid 1px;
+	color: #0e5bb5;
+	text-align: center;
+    line-height:0.3rem;
+}
+
+.regist-warp .rdaio-row {
+	background: #efeff4;
+	border-top: 0;
+	width: 100%;
+	border-bottom: 0!important;
+	overflow: hidden;
+}
+.rdaio-row span {
+	width: 50%;
+	float: left;
+}
+
+.regist-warp .rdaio-row [type='radio'] {
+	position: inherit;
+	margin-top: 0.20rem;
+}
+
+.regist-warp .rdaio-row .inner-check {
+	width: 90%;
+	float: right;
+}
+._nc .stage1 .icon{
+    bottom:0 !important
+}
+.regist-warp .rdaio-row input {
+	width: 12%;
+	float: left;
+}
+.regist-warp .rdaio-row label {
+	width: 80%;
+	float: left;
+	color: #666;
+	padding: 0.1rem;
+	line-height: 0.6rem;
+	font-size: 0.28rem;
+}
+.login-form .mui-input-row{
+	height: 1.1rem;
+    line-height:1.1rem;
+	
+}
+.mui-radio input[type='radio']:before,
+.mui-checkbox input[type='checkbox']:before {
+	font-size: 0.4rem;
+    width:0.30rem;
+    height:0.30rem;
+    display:block
+}
+
+.error-notice {
+	color: #ed0000;
+	font-size: 0.24rem;
+	float: left;
+	padding-left: 0.1rem;
+}
+.erro-pub{
+	padding-left: 0.3rem;
+	margin-top: 0.2rem;
+	line-height: 0.3rem;
+}
+.regist-warp .login-btn {
+	display: block;
+	line-height: .88rem;
+	height: .88rem;
+	color: #fff;
+	text-align: center;
+	background: #0e5bb5;
+	border-radius: 0.08rem;
+	width: 95%;
+	margin: 0.5rem auto 0 auto;
+	font-size: 0.36rem;
+}
+.regist-warp .longin-row{
+	background: #efeff4;
+	text-align: center;
+	overflow: hidden;
+	font-size: 0.28rem;
+}
+.mui-input-group:after{
+	height: 0;
+}
+/*登录页*/
+.moblie{
+	background: url(../../image/moblie.png) no-repeat;
+	width: 0.22rem;
+	height: 0.34rem;
+	background-size: 100%;
+	display: block;
+}
+.lock{
+	background: url(../../image/lock.png) no-repeat;
+	width: 0.24rem;
+	height: 0.34rem;
+	background-size: 100%;
+	display: block;
+}
+._nc .stage1 .slider{
+	box-shadow: none!important;
+	border: #bbb solid 1px;
+	height: 44px!important;
+	background-color: #efeff4!important;
+	
+}
+._nc .stage1{
+	margin-top: 0.2rem;
+	height: 44px;
+}
+._nc .stage1 .button{
+	background: #d7d7d7;
+}
+._nc .stage1 .button{
+	background-color: #d7d7d7!important;
+	height: 42px!important;
+}
+._nc .icon-slide-arrow{
+	color: #787878!important;
+}
+._nc .stage1 .label{
+	line-height: 44px!important;
+	height: 44px!important;
+	text-align: left!important;
+	padding-left: 70px;
+	box-sizing: border-box;
+	color: #bbb!important;
+}
+._nc .icon{
+	height: 0.4rem!important;
+	line-height: 0.4rem!important;
+}
+._nc .stage1 .track div{
+	line-height: 42PX!important;
+	height: 42PX!important;
+}
+.und-paspot{
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 0.3rem;
+    overflow:hidden;
+}
+.und-paspot a{
+	display: inline-block;
+	float: left;
+	text-align: left;
+	font-size: 0.28rem;
+	color: #666;
+}
+.und-paspot .forget-psword{
+	text-align: right;
+    float:right;
+}
+.quick-login{
+	width: 95%;
+	margin: 0 auto;
+	margin-top: 1.5rem;
+    border-top: 1px solid #d7d7d7;
+    position: relative;
+    padding-top: .21rem	
+}
+
+.quick-login h4 {
+    position: absolute;
+    top: -.3rem;
+    left: 50%;
+    padding: .05rem .15rem;
+    color: #969696;
+    font-size: 0.3rem;
+    background: #efeff4;
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%);
+}
+.quick-login .wenxin-link i{
+	display: block;
+	background: url(../../image/weixin.png) no-repeat;
+	width: 0.86rem;
+	height: 0.86rem;
+	background-size: 0.86rem 0.86rem;
+	margin: 0 auto;
+	margin-top: 0.3rem;
+}
+.pret{
+	background: url(../../image/soft.png) no-repeat;
+	width: 0.26rem;
+	height: 0.3rem;
+	background-size: 100% 100%;
+}
+.regist-warp .mui-input-row .range{
+	width: 90%;
+	float: right;
+}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{
+    color:#184998!important;
+}
+.login-form
+@media only screen and (-webkit-device-pixel-ratio: 2) and (max-device-height: 568px) and (min-device-width: 320px)
+._nc .stage1 .icon {
+    bottom: 0px !important;
+}
+.mui-input-row .mui-input-clear~.mui-icon-clear{
+    top:20px !important;
+}
+/*------飞天协议---------*/
+.ft-protocol{
+    color:#0e5bb5;
+}
+.p-title{
+    font-size:0.28rem;
+    margin-top:0.20rem;
+    margin-bottom:0
+}
+.UserAgreement{
+    display:none;
+    width:100%;
+    height:auto;
+    z-index:11;
+    overflow:auto;
+    background:#fff;
+}
+.Agreement-content{
+    margin-top:0.20rem;
+    overflow:hidden;
+    height:auto;
+    background:#fff;
+    border-top:1px solid #ddd;
+    padding:0.20rem 2%
+}
+.SpecialNote{
+    font-size:0.28rem;
+    color:#666
+}
+.SpecialNote i{
+    display:block;
+    width:.12rem;
+    height:.12rem;
+    background:#0e5bb5;
+    float:left;
+    margin-top:0.08rem;
+    margin-right:0.10rem
+}
+.UserAgreement .mui-content p{
+    color:#666;
+    font-size:0.26rem
+}
+.Agreement-list{
+    margin-bottom:0
+}
+.hide{
+    display:none
+}
+.show{
+    display:block
+}

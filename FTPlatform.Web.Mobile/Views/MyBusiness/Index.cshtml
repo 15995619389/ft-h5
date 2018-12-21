@@ -1,0 +1,168 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    ViewBag.title = "我的";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/myBusiness/my.css" />
+}
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/"></a>
+    <h1 class="mui-title">我的</h1>
+</header>
+<div class="mui-content l-scrollable" v-cloak>
+    <div class="my_data">
+        <div class="data_box">
+            <div class="user_bg">
+                <img v-bind:src="user.AvatarUrl!=null?user.AvatarUrl:'/Content/image/m_user_default400.png'" class="portrait">
+            </div>
+            <div class="data_right">
+                <div class="information">
+                    <p style="display:flex">账户名：<span>{{user.UserName}}</span></p>
+                    <a href="/mybusiness/basicinformation">更多基本信息&nbsp;></a>
+                </div>
+                <ul class="name">
+                    <li class="name1">用户名：{{user.RealName}}</li>
+                    <li class="members">
+                        <img src="/content/image//members_bg.png" />
+                        <div class="rank">会员等级：<span>{{user.UserLevel!=null?user.UserLevel.Name:"智童"}}</span></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <ul class="mui-table-view" style="margin: 10px 0px;">
+        <li class="mui-table-view-cell odd-li" onclick="location.href='/demand/publishdemand'">
+            <img src="/content/image//myNeeds.png" class="myIcon" />
+            <span class="mui-navigate-right">我的需求</span>
+            <span class="mui-badge mui-badge-primary" v-show="Dcount>0">{{Dcount<99?Dcount:'...'}}</span>
+        </li>
+        <li class="mui-table-view-cell odd-li" onclick="location.href = '/expert/expersolutiondemand'">
+            <img src="/content/image//myButt.png" class="myButt" />
+            <span class="mui-navigate-right">我的对接</span>
+            <span class="mui-badge mui-badge-success" v-show="Bcount>0">{{Bcount<99?Bcount:'...'}}</span>
+        </li>
+    </ul>
+    <ul class="mui-table-view mybox">
+        <li class="mui-table-view-cell mui-collapse">
+            <img src="/content/image//recommend.png" class="recommend" />
+            <a style="cursor:pointer" class="mui-navigate-right">我的技术推荐</a>
+            <ul class="mui-table-view mui-table-view-chevron all-li">
+                <li class="mui-table-view-cell " onclick="location.href = '/techshare/releasetechnology'">
+                    <span class="mui-navigate-right" style="width:100%">发布技术管理</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/techshare/sbutment'" style="width:100%">
+                    <span class="mui-navigate-right" style="width:100%">对接技术管理</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/techshare/techshareconsult'">
+                    <span class="mui-navigate-right" style="width:100%">我的咨询</span>
+                </li>
+            </ul>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <img src="/content/image//myPanent.png" class="recommend" style="height:0.41rem" />
+            <a style="cursor:pointer" class="mui-navigate-right">我的技术专利</a>
+            <ul class="mui-table-view mui-table-view-chevron all-li">
+                <li class="mui-table-view-cell " onclick="location.href = '/patent/releaseadministerpatent'">
+                    <span class="mui-navigate-right" style="width:100%">发布专利管理</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/patent/buttjointpanent'" style="width:100%">
+                    <span class="mui-navigate-right" style="width:100%">对接专利管理</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/patent/orderform'">
+                    <span class="mui-navigate-right" style="width:100%">我的专利订单</span>
+                </li>
+            </ul>
+        </li>
+        <!--买家中心-->
+        <li class="mui-table-view-cell mui-collapse">
+            <img src="~/content/image/high/buyer_icon.png" class="recommend" style="height:0.41rem" />
+            <a style="cursor:pointer" class="mui-navigate-right">买家中心</a>
+            <ul class="mui-table-view mui-table-view-chevron all-li">
+                <li class="mui-table-view-cell " onclick="location.href = '/buyer/address'">
+                    <span class="mui-navigate-right" style="width:100%">收货地址</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/buyer/invoice'" style="width:100%">
+                    <span class="mui-navigate-right" style="width:100%">我的发票</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/buyer/order'">
+                    <span class="mui-navigate-right" style="width:100%">我的订单</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/buyer/advice'">
+                    <span class="mui-navigate-right" style="width:100%">我的咨询</span>
+                </li>
+            </ul>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <img src="~/content/image/high/seller_icon.png" class="seller_icon" />
+            <a style="cursor:pointer" class="mui-navigate-right">卖家中心</a>
+            <ul class="mui-table-view mui-table-view-chevron all-li">
+                <li class="mui-table-view-cell" v-show="!user.IsMerchant" onclick="location.href = '/seller/settled'">
+                    <span class="mui-navigate-right" style="width:100%">申请入驻</span>
+                </li>
+                <li v-show="user.IsMerchant" class="mui-table-view-cell" onclick="location.href = '/seller'">
+                    <span class="mui-navigate-right" style="width:100%">卖家首页</span>
+                </li>
+                <li v-show="user.IsMerchant" class="mui-table-view-cell" onclick="location.href = '/seller/publishgood'">
+                    <span class="mui-navigate-right" style="width:100%">发布商品</span>
+                </li>
+                <li v-show="user.IsMerchant" class="mui-table-view-cell" onclick="location.href = '/seller/good'">
+                    <span class="mui-navigate-right" style="width:100%">我的商品</span>
+                </li>
+                <li v-show="user.IsMerchant" class="mui-table-view-cell" onclick="location.href = '/seller/order'">
+                    <span class="mui-navigate-right" style="width:100%">订单管理</span>
+                </li>
+                <li v-show="user.IsMerchant" class="mui-table-view-cell" onclick="location.href = '/seller/consultme'">
+                    <span class="mui-navigate-right" style="width:100%">咨询我的</span>
+                </li>
+            </ul>
+        </li>
+        <li class="mui-table-view-cell mui-collapse">
+            <img src="/content/image/myCircle.png" class="myButt" />
+            <a style="cursor:pointer" class="mui-navigate-right right-list">我的圈子</a>
+            <span class="mui-badge mui-badge-primary" v-show="(Mcount+RMcount+FBcount)>0" style="right:57px">{{(Mcount+RMcount+FBcount)<99?Mcount+RMcount+FBcount:'…'}}</span>
+            <ul class="mui-table-view mui-table-view-chevron all-li">
+                <li class="mui-table-view-cell" onclick="location.href = '/mybusiness/usermessage'">
+                    <span class="mui-navigate-right" style="width:100%">历史消息</span>
+                    <span class="mui-badge mui-badge-primary" v-show="Mcount>0">{{Mcount<99?Mcount:'…'}}</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/mybusiness/myattention'">
+                    <span class="mui-navigate-right" style="width:100%">我的关注</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/expert/minereservation'">
+                    <span class="mui-navigate-right" style="width:100%">我的预约</span>
+                    <span class="mui-badge mui-badge-primary" v-show="RMcount>0">{{RMcount<99?RMcount:'...'}}</span>
+                </li>
+                <li class="mui-table-view-cell" onclick="location.href = '/feedback/myfeedback'">
+                    <span class="mui-navigate-right" style="width:100%">我的反馈</span>
+                    <span class="mui-badge mui-badge-primary" v-show="FBcount>0">{{FBcount<99?FBcount:'...'}}</span>
+                </li>
+            </ul>
+        </li>
+    </ul>
+    <ul class="mui-table-view" style="margin-top: 10px;margin-bottom: 10px;color: #0d0d0d;">
+        <li class="mui-table-view-cell odd-li" onclick="location.href = '/agent/index?'+window.location.href">
+            <img src="/content/image//myWisdom.png" class="myWisdom" />
+            <span class="mui-navigate-right">技术合伙人</span>
+        </li>
+        <li class="mui-table-view-cell odd-li" onclick="location.href = '/act/myprize'">
+            <img src="/content/image//myPrize.png" class="myPrize" />
+            <span class="mui-navigate-right">我的奖品</span>
+        </li>
+        <li class="mui-table-view-cell odd-li" onclick="location.href = '/mall/scoregold'">
+            <img src="/content/image//myMoney.png" class="myPrize" />
+            <span class="mui-navigate-right">我的智币</span>
+        </li>
+        <li v-show="user.UserType==2" class="mui-table-view-cell odd-li" onclick="location.href = '/mybusiness/companyinfo'">
+            <img src="/content/image//enterprise.png" class="myPrize" />
+            <span class="mui-navigate-right">企业信息</span>
+        </li>
+        <li v-show="user.UserType==1" class="mui-table-view-cell odd-li" onclick="location.href = '/mybusiness/updatecompany'">
+            <img src="/content/image//enterprise.png" class="myPrize" />
+            <span class="mui-navigate-right">成为企业用户</span>
+        </li>
+    </ul>
+    <button type="button" class="mui-btn mui-btn-blue" id="exit" v-on:click="logout()">退出</button>
+</div>
+@section foot{
+    <script src="~/dist/member.index.bundle.js"></script>
+}

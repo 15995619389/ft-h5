@@ -1,0 +1,231 @@
+html{
+	background: #f2f1f7;
+}
+.wisdom_title{
+	width: 100%;
+	overflow: hidden;
+	padding: 8px 10px;
+	height: auto;
+	font-size: 0.26rem;
+	color: #444;
+	border-top: 1px solid #ddd;
+	background: #f2f1f7;
+}
+.wisdom_title li{
+	float: left;
+}
+.wisdom_title li:nth-child(1){
+	width: 60%;	
+}
+.wisdom_title li:nth-child(2){
+	float: right;
+	width: 35%;		
+	color: #0e5bb5;
+}
+.wisdom_title li img{
+	display: block;
+	width: 0.24rem;
+	height: 0.24rem;
+	float: left;
+    margin-top: 1px;
+    margin-right: 3px;		
+}
+.friends_table{
+	border-top: 1px solid #ddd;
+	border-bottom: 1px solid #ddd;
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+	background: #fff;
+}
+.friends_table li{
+	width: 33.33%;
+	height:0.90rem ;
+	line-height: 0.90rem;
+	font-size: 14px;
+	color: #444;
+	text-align: center;
+	float: left;
+	position: relative;
+}
+.friends_table .text_color{
+	color: #ff6525;
+}
+.friends_table li:nth-child(1){
+	border-right:1px solid #ddd;
+}
+.friends_table li:nth-child(2){
+	border-right:1px solid #ddd;
+}
+.mui-content .friends_table li i{
+	display: none;
+	width: 70%;
+	height: 1px;
+	background: #ff6525;
+	position: absolute;
+	bottom: 0px;
+	left: 15%;
+}
+/**/
+.friends_content{
+	width: 100%;
+	display: none;
+}
+.result_content {
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    background: #fff;
+    margin-bottom: 15px;
+   border-bottom: 1px solid #ddd; 
+}
+.result_content1 {
+	width: 100%;	 
+}
+.state_box{
+	 height: auto;    
+}
+.date_title {
+	 overflow: hidden;
+	 padding: 0.15rem 4%;
+   	border-bottom: 1px solid #ddd;
+    font-size: 14px;
+    color: #969696;
+}
+.date {
+    display: block;
+    float: right;
+    font-size: 14px;
+    color: #969696;
+}
+
+.p_title {
+    overflow: hidden;
+    height: auto;
+    padding: 10px 4%;
+}
+.p_title p {
+    width: 60%;
+    font-size: 0.30rem;
+    color: #0e5bb5;
+    float: left;
+}
+.oSpan{
+	float: right;
+	color: #ff6525;
+	font-size: 0.28rem;
+}
+p{
+	margin-bottom: 0px;
+}
+.footer_number{
+	overflow: hidden;
+	 padding: 0.15rem 4%;
+}
+.footer_number li{
+	width: 50%;
+	float: left;
+	color: #969696;
+	font-size: 0.26rem;
+	float: left;
+}
+.footer_number li img{
+	display: block;
+	float: left;
+	width: 0.26rem;
+	height: 0.26rem;
+	margin-right: 3px;    	
+}
+
+/*----------*/
+body{
+	line-height: 1;
+}
+.ft-tab {
+    background: #fff;
+    /*padding-bottom: 0.10rem;*/
+    box-sizing: border-box;
+}
+.ft-tab .mui-tab-item {
+    color: #444;
+}
+.ft-tab .mui-active {
+    color: #0e5bb5!important;
+}
+.ft-tab .tab-icon {
+    margin-bottom: 0.15rem;
+    width: 0.46rem;
+    height: 0.46rem;
+    position: relative;
+    z-index: 20;
+    top: 3px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: Muiicons;
+    font-size: 0.24px;
+    font-weight: 400;
+    font-style: normal;
+    /* line-height: 1; */
+    display: inline-block;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+.ft-tab .icon-update {
+    background: url(../../../image/up-s.png) no-repeat center center;
+    width: 0.5rem;
+    height: 0.5rem;
+    background-size: 0.5rem 0.5rem;
+    margin: 0 auto;
+    margin-bottom: 0.15rem;
+}
+.ft-tab .icon-update {
+    background: url(../../../image/up-s.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .mui-active .icon-update {
+    background: url(../../../image/up.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .mui-tab-label {
+    display: block;
+    font-size: 0.24rem;
+}
+.ft-tab .icon-reward {
+    background: url(../../../image/ax-re.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .mui-active .icon-reward {
+    background: url(../../../image/ax-big.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .icon-manger {
+    background: url(../../../image/reo.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+.ft-tab .mui-active .icon-manger {
+    background: url(../../../image/reo-bl.png) no-repeat;
+    width: 0.4rem;
+    height: 0.4rem;
+    background-size: 0.4rem 0.4rem;
+}
+/*---------*/
+.mui-bar-tab .nav-tab-item {
+    display: table-cell;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #929292;
+}

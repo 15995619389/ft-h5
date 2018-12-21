@@ -1,0 +1,11 @@
+bin/
+obj/
+*.user
+packages/
+.vs/
+node_modules/
+npm-debug.log
+debug.log
+*.suo
+dist/
+FTPlatform.Web.Mobile/src/components/category-picker-temp/category-picker-temp.js

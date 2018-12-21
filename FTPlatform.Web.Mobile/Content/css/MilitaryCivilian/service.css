@@ -1,0 +1,90 @@
+/*----顶部需求-----*/
+.mui-bar {
+    height: 44px;
+    background: #fff;
+}
+.oHeader1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
+.cataloglist {
+    background: url(../../image/rectangular.png) no-repeat scroll right center transparent;
+    background-size: 0.25rem 0.15rem;
+}
+.cataloglist .area .slide li {
+    line-height: 25px;
+    color: #f1f1f1;
+}
+.on_seek {
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0.11rem;
+}
+
+
+/*-----------*/
+html{
+	background: #f2f1f7;
+}
+.space_box{
+	padding: 10px 3%;
+	height: auto;
+	overflow: hidden;
+	background: #fff;
+border-top: 1px solid #ddd;	
+border-bottom: 1px solid #ddd;	
+margin-bottom: 10px;
+}
+.content{
+	float: left;
+	width: 62%;
+	height: auto;
+	overflow: hidden;	
+} 
+.space_box a{
+	display: block;
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.content h3{
+	color: #444444;
+	font-size: 0.32rem;	
+	margin: 0.15rem 0px;
+}
+.content p{
+	font-size: 0.28rem;
+	color: #969696;
+	margin-bottom: 0px;
+    line-height: 0.40rem;
+    overflow: hidden;
+  	text-overflow: ellipsis;
+  	display: -webkit-box;
+  	-webkit-line-clamp: 3;
+  	-webkit-box-orient: vertical;	
+}
+.space_box img{
+	display: block;
+	float: right;
+	width: 2.66rem;
+	height: 2.00rem;
+}
+.expect{
+	margin-top:2.50rem ;
+	background: #f2f1f7;
+	height: auto;
+	overflow: hidden;
+}
+.expect p{
+	font-size: 0.28rem;
+	color: #cccccc;text-align: center;
+}
+.expect img{
+	width: 1.15rem;
+	height: 0.97rem;
+	display: block;
+	margin: 0 auto;
+}

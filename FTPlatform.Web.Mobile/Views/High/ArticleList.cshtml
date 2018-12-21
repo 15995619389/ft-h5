@@ -1,0 +1,140 @@
+﻿
+@{
+    ViewBag.Title = "工业精品-商品首页";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="/Content/css/results/conversion.css" />
+}
+@section foot
+{
+    <script src="~/dist/high.list.bundle.js"></script>
+}
+<style>
+    .teamwork_nav span {
+        display: block;
+        font-size: 0.28rem;
+        float: left;
+        padding: 0.10rem 0.20rem;
+        margin: 0.10rem 0.35rem 0.10rem 0;
+        color: #666;
+        width: 27%;
+        text-align: center;
+        border: 1px solid #ddd;
+        border-radius: 3px;
+    }
+
+    .teamwork:last-child span {
+        width: 35%;
+    }
+
+    .teamwork_nav .active {
+        color: #0e5bb5;
+        border-color: #0e5bb5;
+    }
+
+    .screening_right .teamwork {
+        border-bottom: 0.16rem solid #f5f5f5;
+    }
+
+    .nav_table {
+        border-top: 1px solid #ddd;
+    }
+    .p_text{
+        overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    white-space: normal;
+    margin-top: 0.10rem;
+    font-size: 0.26rem;
+    line-height: 0.36rem;
+    height:1.08rem;
+    color:#8f8f94;
+    text-align:left
+}
+.company_name{
+    overflow:hidden;
+    font-size:0.24rem;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+    height:0.32rem;
+   line-height:0.32rem;
+}
+.mui-table-view .mui-media-object{
+    max-width:2.201rem;
+    width:2.201rem;
+    height: 2.201rem;
+}
+</style>
+<div id="container" v-cloak>
+    <header class="oHeader mui-bar mui-bar-nav">
+        <searchbar ref="searchbar"></searchbar>
+    </header>
+    <foot_item ref="footitem"></foot_item>
+    <div class="mui-content" style="position:fixed">
+        <div>
+            <div class="options">
+                <ul class="nav_table">
+                    <li v-on:click="TechDes(1)">
+                        <span class="sSpan" v-bind:class="{active:(searchmodel.sortType==1||searchmodel.sortType==2)}">发布时间</span>
+                        <span class="up" style="margin-top: 0.2rem;">
+                            <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(searchmodel.sortType==2)}"></span>
+                            <span class="mui-icon mui-icon-arrowdown " v-bind:class="{active:(searchmodel.sortType==1)}"></span>
+                        </span>
+                    </li>
+                    <li v-on:click="TechDes(2)">
+                        <span class="sSpan" v-bind:class="{active:(searchmodel.sortType==3||searchmodel.sortType==4)}">销量</span>
+                        <span class="up" style="margin-top: 0.2rem;">
+                            <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(searchmodel.sortType==4)}"></span>
+                            <span class="mui-icon mui-icon-arrowdown" v-bind:class="{active:(searchmodel.sortType==3)}"></span>
+                        </span>
+                    </li>
+                    <li v-on:click="TechDes(3)">
+                        <span class="sSpan" v-bind:class="{active:(searchmodel.sortType==5||searchmodel.sortType==6)}">浏览量</span>
+                        <span class="up" style="margin-top: 0.2rem;">
+                            <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(searchmodel.sortType==6)}"></span>
+                            <span class="mui-icon mui-icon-arrowdown" v-bind:class="{active:(searchmodel.sortType==5)}"></span>
+                        </span>
+                    </li>
+                </ul>
+            </div>
+            <!--下拉刷新容器-->
+            <scroller ref="scroller_patent" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" style="margin-top:40px;">
+                <!--数据列表-->
+                <ul class="mui-table-view " style="display: block;">
+                    <li class="mui-table-view-cell mui-media" v-for="highsdata in highSList">
+                        <a v-bind:href="'/higharticle/'+ highsdata.Id">
+                            <img class="mui-media-object mui-pull-left" v-lazy="highsdata.ImgUrl">
+                            <div class="content_body">
+                                <div class="view_title">
+                                    <h3 class="title_left">{{highsdata.Name}}</h3>
+                                    @*<p class="year">2017-4-01</p>*@
+                                </div>
+                                <p class="p_text">{{highsdata.Introduction}}</p>
+                                <p class="company_name">{{highsdata.CompanyName}}</p>
+                            </div>
+                        </a>
+                    </li>
+                    <li class="mui-table-view-cell mui-media" v-for="highdata in highList">
+                        <a v-bind:href="'/higharticle/'+ highdata.Id">
+                            <img class="mui-media-object mui-pull-left" v-lazy="highdata.ImgUrl">
+                            <div class="content_body">
+                                <div class="view_title">
+                                    <h3 class="title_left">{{highdata.Name}}</h3>
+                                    @*<p class="year">2017-4-01</p>*@
+                                </div>
+                                <p class="p_text">{{highdata.Introduction}}</p>
+                                <p class="company_name">{{highdata.CompanyName}}</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </scroller>
+        </div>
+    </div>
+    <rightsidebar></rightsidebar>
+</div>
+

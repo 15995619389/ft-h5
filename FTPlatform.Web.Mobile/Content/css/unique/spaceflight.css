@@ -1,0 +1,357 @@
+/*----预约----*/
+.side-bar {
+    position: fixed;
+    top: 65%;
+    right: 0;
+    background: url(../../image/advice-bg.png) no-repeat;
+    width: 2.08rem;
+    height: 0.88rem;
+    background-size: 2.08rem 0.88rem;
+    color: #fff;
+     line-height: 0.30rem;
+      z-index: 999;
+}
+.side-bar a {
+    display: block;
+    color: #fff;
+    font-size: 0.24rem;
+    width: 50%;
+    margin-left: 0.9rem;
+    margin-top: 0.2rem;
+    line-height: 0.30rem;
+}
+/*---------*/
+html{
+	background: #fff;
+}
+.right_iocn img{
+	    display: block;
+    width: 20px;
+    height: 20px;
+    margin-top: 3px;
+}
+.space_bg{
+	display: block;
+	width: 100%;
+	height: 3.00rem;
+}
+.CompanyName{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 10px;
+}
+.CompanyName h3 {
+    font-size: 0.34rem;
+    color: #0e5bb5;
+    text-align: center;
+}
+.division {
+    width: 2.18rem;
+    height: 0.13rem;
+    margin: 0 auto;
+    display: block;
+    margin-top: 7px;
+}
+.platform_text,.platform_text2{
+    padding: 0px 3%;
+    font-size: 0.28rem;
+    color: #404040;
+    margin-top: 15px;
+}
+.introduce{
+    height: auto;
+    position: relative; 
+    padding: 0 3%;
+    margin-bottom: 10px;    
+}
+.introduce_bg{	
+	position: absolute;
+	top: 0px;
+	left: 1.45rem;
+    width: 3.8rem;
+    height: 4.0rem;
+}
+.introduce p{	
+	line-height:1.00rem;
+	color: #595757;
+	font-size:0.30rem ;
+	margin-bottom: 0px;
+}
+.p_text{
+	width: 63%;
+	margin: 0 auto;
+	text-align: right;
+}
+.introduce .p_text1{
+	width: 102%;
+	margin: 0 auto;
+	text-align: right;
+}
+.introduce .p_text2{
+	line-height: 0.20rem;
+}
+.introduce .p_text3{
+	line-height: 1.20rem;
+	width: 93%;
+	margin: 0 auto;
+	text-align: right;
+}
+.introduce .p_text4{
+	line-height: .95rem;
+	width: 80%;
+	margin: 0 auto;
+	text-align: right;
+}
+.platform_text3{
+	padding: 0px 3%;
+    font-size: 0.30rem;
+    color: #0e5bb5;
+    margin-bottom: 0.30rem;
+}
+.features{
+	padding: 10px 6%;
+	margin:  0 auto;
+	overflow: hidden;
+}
+.features li{
+	width: 50%;
+	float: left;
+	overflow: hidden;
+    margin-bottom: 10px;
+}
+.features_img{
+	width: 100%;
+	height: 1.31rem;
+		
+}
+.features_img img{
+	display: block;
+	width: 1.32rem;
+	height: 1.31rem;
+	margin: 0 auto;	
+}
+.li2 .features_img img{
+	display: block;
+	width: 1.26rem;
+	height: 1.25rem;
+	margin: 0 auto;	
+}
+.features li p{
+	    width: 95%;
+    margin: 0 auto;
+    color: #595757;
+    font-size: 0.30rem;
+    text-align: center;
+    line-height: 18px;
+    margin-top: 0.20rem;
+}
+.biotechnology{
+	overflow: hidden;
+	height: auto;
+	padding: 0.20rem 3%;
+	
+}
+.biotechnology li{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.biotechnology li span{
+	display: block;
+	float: left;
+	width: 0.35rem;
+	height: 0.35rem;
+	border-radius: 50%;
+	color: #fff;
+	text-align: center;
+	line-height: 0.35rem;
+	font-size: 0.24rem;
+	background: #3359a7;
+	margin-top: 0.05rem;
+}
+.biotechnology_text{
+	width: 94%;
+	float: right;
+	font-size: 0.30rem;
+	color: #3f3f3f;
+	    margin-bottom: 5px;
+}
+.DNA{
+	display: block;
+	width: 100%;
+	height: 3.00rem;
+}
+.classify,.classify_two{
+	height: auto;
+	overflow: hidden;
+	width: 7.09rem;
+	margin:  0 auto;
+}
+.classify li{
+	float: left;
+	height: 1.36rem;
+	width:1.66rem;	
+}
+.classify .li_border{
+	border:0.08rem solid #f5f5f5;
+	height: 1.36rem;
+	width: 1.88rem;
+}
+.li_border img{
+	display: block;
+	margin: 0 auto;
+	width:1.72rem;
+	height: 1.20rem;
+}
+.classify_two li{
+	float: left;
+	height:1.23rem ;
+	width: 1.86rem;
+}
+.classify_two .li_border1{
+	border:0.08rem solid #f5f5f5;
+	height: 1.23rem;
+	width: 1.68rem;
+}
+.classify_two li p,.classify li p{
+	font-size: 0.26rem;
+	color: #595757;
+	margin-left: 0.20rem;
+	margin-bottom: 0px;
+	line-height: 0.40rem;
+}
+.classify_two li p{
+	text-align: right;
+	margin-right: 0.20rem;
+	margin-left: 0.00rem;
+}
+.li_border1 img{
+	display: block;
+	margin: 0 auto;
+	width:1.53rem;
+	height: 1.07rem;
+}
+.Contact-msge{
+	margin-top:5PX
+}
+.mui-bar {
+    height: 44px;
+}
+/*---航天体验园----*/
+.Experience_list_img{
+    width:7.10rem;
+    height:2.73rem;
+    margin:0.20rem auto
+}
+.Experience_img{
+    width:7.08rem;
+    height:3.12rem;
+    margin:0.20rem auto
+}
+.Experience_ul {
+    overflow:hidden;
+    padding:0.40rem 0.20rem;
+    height:auto
+}
+.Experience_ul li{
+    float:left;
+    width:3.49rem;
+    height:2.28rem;
+    margin-right:0.12rem;
+    margin-bottom:0.12rem
+}
+.Experience_ul li:nth-child(even){
+    margin-right:0;
+}
+.Experience_ul li img{
+    width:100%;
+    height:100%
+}
+/*--钱学森论坛--*/
+.bbs_img1{
+    width:7.10rem;
+    height:3.49rem;
+    margin:0.20rem auto
+}
+.bbs-backgroundImg{
+    width:7.10rem;
+    height:3.74rem;
+    margin:0.20rem auto
+}
+.bbs-footer-content{
+    width:7.10rem;
+    height:3.74rem;
+    margin:0.20rem auto;
+    position:relative
+}
+.bbs-left{
+    position:absolute;
+    top:0.50rem;
+    left:0.20rem
+}
+.bbs-right{
+    position:absolute;
+    top:40%;
+    right:0.20rem
+}
+.bbs-left_content{
+    position:relative;
+    width:auto;
+    height:auto
+}
+.bbs-left_content p{
+    font-size:0.20rem;
+    color:#0c4ca3;
+    background:#fff;
+    padding:0.10rem;
+    line-height:0.30rem;
+    margin-bottom:0
+}
+.bbs-left_content i{
+    display:block;
+    height:0.42rem;
+    width:1px;
+    background:#fff
+}
+.bbs-left_content span{
+    display:block;
+    width:0.10rem;
+    height:0.10rem;
+    background:#ff7d01;
+    border-radius:50%;
+    margin-left:-0.05rem
+}
+/*---院士工作站--*/
+.ws-img{
+    width:7.10rem;
+    height:3.00rem;
+    margin:0 auto
+}
+.ws-ul{
+    overflow:hidden;
+    padding:0 3%;
+    margin-bottom:0.30rem;
+    margin-top:0.10rem
+}
+.ws-ul i{
+    display:block;
+    width:0.10rem;
+    height:0.10rem;
+    background:#0c4ca3;
+    border-radius:50%;
+    float:left;
+    margin-right:0.20rem;
+    margin-top:0.15rem
+}
+.ws-ul li{
+     color: #0c4ca3;
+     overflow:hidden
+}
+.ws-ul li p{
+    float:left;
+    width:95%;
+    color: #404040;
+    font-size: 0.28rem;
+    margin-bottom:0
+}

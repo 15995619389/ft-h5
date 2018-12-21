@@ -1,0 +1,139 @@
+﻿@{
+    ViewBag.Title = "技术需求";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/Components/SearchBar/SearchBar.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/content/css/Header_title.css" />
+    <link href="/content/css/demand/demandLibrary.css" rel="stylesheet" />
+    <link href="~/Content/css/demand/demandFilter.css" rel="stylesheet" />
+    <link href="~/Content/css/demand/DemandList.css" rel="stylesheet" />    
+}
+@section foot
+{
+    <script src="~/dist/demand.list.bundle.js"></script>
+}
+
+<div id="container" style="height:100%;width:100%">
+    <header class="oHeader mui-bar mui-bar-nav">
+        <searchbar></searchbar>
+    </header>
+    <foot ref="foot"></foot>
+    <rightsidebar v-cloak></rightsidebar>
+    <div class="mui-content">
+        <div id="demand-sort-bar">
+            <div class="sort-bar-item" v-on:click="Sort(0)" style="padding-left:3%">
+                <span class="text-time" v-bind:class="{active:(param.sortName==0)}">发布时间</span>
+                <span class="up">
+                    <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(param.sortName==0&&param.sortDirection==1)}"></span>
+                    <span class="mui-icon mui-icon-arrowdown" v-bind:class="{active:(param.sortName==0&&param.sortDirection==0)}"></span>
+                </span>
+            </div>
+            <div class="sort-bar-item" v-on:click="Sort(1)">
+                <span class="text-time" v-bind:class="{active:(param.sortName==1)}">投入预算</span>
+                <span class="up">
+                    <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(param.sortName==1&&param.sortDirection==1)}"></span>
+                    <span class="mui-icon mui-icon-arrowdown" v-bind:class="{active:(param.sortName==1&&param.sortDirection==0)}"></span>
+                </span>
+            </div>
+            <div class="sort-bar-item" v-bind:class="{active:dockStatusPannel}" v-on:click="DockStatus">
+                <span class="text-time">对接状态</span>
+                <span class="trigon" v-bind:class="{trigon1:dockStatusPannel}"></span>
+            </div>
+            <div class="sort-bar-item" v-on:click="FiltPannel">
+                <span class="text-time">筛选</span>
+                <div><i class="screen_bg"></i></div>
+            </div>
+        </div>
+        <ul class="docking_state" v-if="dockStatusPannel">
+            <li v-bind:class="{text_color:(param.dockStatus==null)}" v-on:click="DockSort(null)">全部</li>
+            <li v-bind:class="{text_color:(param.dockStatus==0)}" v-on:click="DockSort(0)">未对接</li>
+            <li v-bind:class="{text_color:(param.dockStatus==1)}" v-on:click="DockSort(1)">竞标中</li>
+            <li v-bind:class="{text_color:(param.dockStatus==2)}" v-on:click="DockSort(2)">对接成功</li>
+            <li v-bind:class="{text_color:(param.dockStatus==3)}" v-on:click="DockSort(3)">对接完成</li>
+        </ul>
+        <scroller ref="scroller" v-bind:on-refresh="Search" v-bind:on-infinite="Append" style="padding-top:0.88rem;">
+            <ul class="mui-table-view" v-cloak>
+                <li class="mui-table-view-cell mui-media" v-bind:demandId="demand.Id" v-on:click="Detail(demand.Id)" v-for="demand in demands">
+                    <a href="javascript:;">
+                        <div class="mui-media-body">
+                            <p class="research_title">
+                                <span class="oSpan">{{demand.Title}}
+                                </span>
+                                <span v-if="demand.IsExpire||demand.DockingStatus==3||demand.AuditingStatus==10" class="not_docking">对接完成</span>
+                                <span v-else class="not_docking">{{dockStatus[demand.DockingStatus]}}</span>
+                            </p>
+                            <p class="mui-ellipsis">{{demand.Description|html}}</p>
+                            <ul class="research_footer">
+                                <li class="">
+                                    <img src="/content/image//money.png" class="money">
+                                    <p>投入预算：<span>{{demand.InputBudget|InputBudget}}</span></p>
+                                </li>
+                                <li>
+                                    <img src="/content/image//attention.png" class="focus_img">
+                                    <p>关注数：<span>{{demand.FollowNum}}</span></p>
+                                </li>
+                                <li class="year">{{(demand.PublishTime? demand.PublishTime:demand.CreateTime)|formatDate}}</li>
+                            </ul>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </scroller>
+        <div id="demand-filt-panel" v-if="filtPannel" v-cloak>
+            <div class="shadow" v-on:click="HidePannel"></div>
+            <div class="content">
+                <div class="filts">
+                    <div class="filt-interval filt">
+                        <p class="filt-title">投入预算</p>
+                        <div class="service_checkbox">
+                            <div class="radio radio_box">
+                                <div class="mui-input-row mui-radio mui-left">
+                                    <label>&lt;1万</label>
+                                    <input type="radio" value="1" v-model="param.inputBudget">
+                                </div>
+                                <div class="mui-input-row mui-radio mui-left">
+                                    <label>1~10万</label>
+                                    <input type="radio" value="2" v-model="param.inputBudget">
+                                </div>
+                                <div class="mui-input-row mui-radio mui-left">
+                                    <label>10~50万</label>
+                                    <input type="radio" value="3" v-model="param.inputBudget">
+                                </div>
+                                <div class="mui-input-row mui-radio mui-left">
+                                    <label>50~200万</label>
+                                    <input type="radio" value="4" v-model="param.inputBudget">
+                                </div>
+                                <div class="mui-input-row mui-radio mui-left">
+                                    <label>&gt;200万</label>
+                                    <input type="radio" value="5" v-model="param.inputBudget">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filt-attention filt">
+                        <p class="filt-title">关注度</p>
+                        <ul>
+                            <li v-bind:class="{chosen:(param.maxFollowNum==0)}" v-on:click="ChangeFollowNum(null,0)">未关注</li>
+                            <li v-bind:class="{chosen:(param.minFollowNum==1)}" v-on:click="ChangeFollowNum(1,1)">1个关注</li>
+                            <li v-bind:class="{chosen:(param.minFollowNum==5)}" v-on:click="ChangeFollowNum(5,null)">&ge;5个关注</li>
+                        </ul>
+                    </div>
+                    <div class="filt-publish filt">
+                        <p class="filt-title">发布时间</p>
+                        <ul>
+                            <li value="7" v-bind:class="{chosen:(param.DateRange==7)}" v-on:click="ChangeDateRange(7)">一周之内</li>
+                            <li value="14" v-bind:class="{chosen:(param.DateRange==14)}" v-on:click="ChangeDateRange(14)">两周之内</li>
+                            <li value="30" v-bind:class="{chosen:(param.DateRange==30)}" v-on:click="ChangeDateRange(30)">一月之内</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="btns">
+                    <button type="button" class="mui-btn reset" v-on:click="ResetFilt">重置</button>
+                    <button type="button" class="mui-btn determine" v-on:click="ConfirmFilt">确定</button>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

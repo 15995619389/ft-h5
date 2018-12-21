@@ -1,0 +1,91 @@
+﻿ @{
+        ViewBag.Title = ViewBag.type==1?"真实姓名修改":ViewBag.type==2?"联系方式修改":"工作单位修改";
+        Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+      }
+    <style>
+        html {
+            background: #f4f4f4;
+        }
+
+        .name {
+            margin-top: 0.30rem;
+            overflow: hidden;
+            height: auto;
+        }
+
+        input[type=text] {
+            border: none;
+            border-bottom: 1px solid #ddd;
+            border-top: 1px solid #ddd;
+            border-radius: 1px;
+            margin-bottom: 0px;
+            font-size: 0.34rem;
+        }
+
+        .note {
+            padding: 0px 3%;
+            color: #ed0000;
+            font-size: 0.26rem;
+        }
+
+        p, body {
+            line-height: 0.40rem;
+        }
+
+        button {
+            width: 94%;
+            display: block;
+            margin: 0 auto;
+            text-align: center;
+            margin-left: 3%;
+        }
+    </style>  
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/basicinformation"></a>
+        @if (ViewBag.type == 1)
+        {
+        <h1 class="mui-title">用户名修改</h1>
+        }
+        @if (ViewBag.type == 2)
+        {
+            <h1 class="mui-title">联系方式修改</h1>
+        }
+        @if (ViewBag.type == 3)
+        {
+            <h1 class="mui-title">工作单位修改</h1>
+        }
+
+    </header>
+    <div class="mui-content" style="background: #f4f4f4;">
+        <input type="hidden" id="type" value="@ViewBag.type" />
+        <div class="name">
+            @if (ViewBag.type == 1)
+            {
+                <input type="text" id="rn" maxlength="10" placeholder="请输入您的真实你姓名" value="@ViewBag.content" />
+            }
+            else if (ViewBag.type == 3)
+            {
+                <input type="text" id="rn" maxlength="16" placeholder="请输入您的工作单位名称" value="@ViewBag.content" />
+            }
+            else
+            {
+            <input type="text" id="rn" maxlength="16" placeholder="请输入您的联系方式" value="@ViewBag.content"/>
+            }
+        </div>
+        @if (ViewBag.type == 1)
+        {
+        <p class="note"><span>*</span>备注：保证您姓名的真实性有助于您在平台享受更好的服务</p>
+        }
+        @if (ViewBag.type == 2)
+        {
+            <p class="note"><span>*</span>备注：保证您联系方式的真实性有助于您在平台享受更好的服务</p>
+        }
+        @if (ViewBag.type == 3)
+        {
+            <p class="note"><span>*</span>备注：保证您工作单位的真实性有助于您在平台享受更好的服务</p>
+        }
+        <button type="button" class="mui-btn mui-btn-blue" id="save">保存</button>
+    </div>
+@section foot{
+<script src="~/dist/member.editbasic.bundle.js"></script>
+    }

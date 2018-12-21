@@ -1,0 +1,111 @@
+﻿
+@{
+    ViewBag.Title = "工业精品-店家首页";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="/Content/css/results/conversion.css" />
+    <link rel="stylesheet" href="~/Content/css/high/shopindex.css"/>
+}
+@section foot
+{
+    <script src="~/dist/high.shopindex.bundle.js"></script>
+}
+
+<div id="container" v-cloak>
+    <header class="oHeader mui-bar mui-bar-nav header_show">
+        <searchbar ref="searchbar"></searchbar>
+    </header>
+    <div class="mui-content" style="position:fixed;top:0;">
+        <div>
+            <div class="aaa" style="position:absolute;width:100%;">
+                <div class="shop_box">
+                    <div class="shop_info">
+                        <img v-if="shop.merchantimg!=''" v-lazy="shop.merchantimg"  class="user_img" />
+                        <img v-else  src="/Content/image/ft_dynameic_bg.png" class="user_img" />
+                        <div class="shop_right">
+                            <h3 class="shop_name">{{shop.merchantname}}</h3>
+                            <div class="shop_footer">
+                                <span class="score">
+                                    评分:
+                                    <template v-if="shop.score==1">
+                                        <i></i>
+                                    </template>
+                                    <template v-if="shop.score==2">
+                                        <i></i>
+                                        <i></i>
+                                    </template>
+                                    <template v-if="shop.score==3">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </template>
+                                    <template v-if="shop.score==4">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </template>
+                                    <template v-if="shop.score>=5">
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                        <i></i>
+                                    </template>
+                                </span>
+                                <span>联系人：{{shop.contact}}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="options">
+                    <ul class="nav_table" style="position:relative">
+                        <li v-on:click="TechDes(1)">
+                            <span class="sSpan" v-bind:class="{active:(searchmodel.sortType==1||searchmodel.sortType==2)}">发布时间</span>
+                            <span class="up" style="margin-top: 0.2rem;">
+                                <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(searchmodel.sortType==2)}"></span>
+                                <span class="mui-icon mui-icon-arrowdown " v-bind:class="{active:(searchmodel.sortType==1)}"></span>
+                            </span>
+                        </li>
+                        <li v-on:click="TechDes(2)">
+                            <span class="sSpan" v-bind:class="{active:(searchmodel.sortType==3||searchmodel.sortType==4)}">销量</span>
+                            <span class="up" style="margin-top: 0.2rem;">
+                                <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(searchmodel.sortType==4)}"></span>
+                                <span class="mui-icon mui-icon-arrowdown" v-bind:class="{active:(searchmodel.sortType==3)}"></span>
+                            </span>
+                        </li>
+                        <li v-on:click="TechDes(3)">
+                            <span class="sSpan" v-bind:class="{active:(searchmodel.sortType==5||searchmodel.sortType==6)}">浏览量</span>
+                            <span class="up" style="margin-top: 0.2rem;">
+                                <span class="mui-icon mui-icon-arrowup" v-bind:class="{active:(searchmodel.sortType==6)}"></span>
+                                <span class="mui-icon mui-icon-arrowdown" v-bind:class="{active:(searchmodel.sortType==5)}"></span>
+                            </span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!--下拉刷新容器-->
+            <scroller ref="scroller_patent" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" style="margin-top:160px;">
+                <!--数据列表-->
+                <ul class="mui-table-view " style="display: block;">
+                    <li class="mui-table-view-cell mui-media" v-for="article in shoparticle">
+                        <a v-bind:href="'/higharticle/'+ article.Id">
+                            <img class="mui-media-object mui-pull-left" v-lazy="article.ImgUrl">
+                            <div class="content_body">
+                                <div class="view_title">
+                                    <h3 class="title_left">{{article.Name}}</h3>
+                                </div>
+                                <p class="p_text">{{article.Introduction}}</p>
+                                <p class="company_name">{{article.CompanyName}}</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </scroller>
+        </div>
+    </div>
+</div>
+

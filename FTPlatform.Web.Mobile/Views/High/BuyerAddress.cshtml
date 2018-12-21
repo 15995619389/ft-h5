@@ -1,0 +1,121 @@
+﻿
+@{
+    ViewBag.Title = "收货地址";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+
+    <link rel="stylesheet" href="~/Content/css/high/buyeraddress.css" />
+}
+@section foot
+{
+    <script src="~/dist/high.buyeraddress.bundle.js"></script>
+    <script src="~/Content/js/Pages/highcity/Popt.js"></script>
+    <script src="~/Content/js/Pages/highcity/cityJson.js"></script>
+    <script src="~/Content/js/Pages/highcity/citySet.js"></script>
+}
+
+<div id="container" v-cloak>
+    <!--收货地址-->
+    <div class="takeAddress" v-show="AddressType=='TakeAddress'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+            <h1 class="mui-title">收货地址</h1>
+            <a class="administer" v-on:click="TakeManageShow">管理</a>
+        </header>
+        <div class="mui-content l-scrollable" style="background:#fff">
+            <ul class="address_wrap" v-if="TakeModel.length>0">
+                <li v-for="address in TakeModel">
+                    <div class="name_box">
+                        <strong>{{address.Consignee}}</strong>
+                        <strong>{{address.Telephone}}</strong>
+                    </div>
+                    <p class="address_text">
+                        <span class="defaultAddress" v-if="address.IsDefault">[默认地址]</span>
+                        <span class="specificAddress">{{address.Address}}</span>
+                    </p>
+                </li>
+            </ul>
+            <ul class="address_wrap addressNoData" v-else>
+                <li>
+                    暂无更多数据
+                </li>
+                @*<li>                  
+                    <a onclick="location.href = '/buyer/newaddress'" class="NewAddress">新增收货地址</a>                    
+                </li>*@
+            </ul>
+        </div>
+    </div>
+    <!--管理收货地址-->
+    <div class="AdministerAddress" v-show="AddressType=='AdministerAddress'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="TakeAddressShow"></a>
+            <h1 class="mui-title">管理收货地址</h1>
+        </header>
+        <div class="mui-content l-scrollable" style="padding-bottom:55px">
+            <div>
+                <ul class="govern">
+                    <li v-for="(Administer,index) in TakeModel">
+                        <div class="name_box">
+                            <strong>{{Administer.Consignee}}</strong>
+                            <strong>{{Administer.Telephone}}</strong>
+                        </div>
+                        <p class="address_text">
+                            <span class="specificAddress">{{Administer.Address}}</span>
+                        </p>
+                        <div class="select_address">
+                            <div class="radio" style="float:left" v-on:click="Default(Administer.Id,index)">
+                                <i v-bind:class="{user_chekbox:(Administer.IsDefault)}"></i>
+                                <span v-bind:class="{text_color:(Administer.IsDefault)}">默认地址</span>
+                            </div>
+                            <div class="list_btn">
+                                <button type="button" class="mui-btn mui-btn-gray mui-btn-outlined" v-on:click="Deleting(Administer.Id)">删除</button>
+                                <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="EditAddress(Administer.Id)">编辑</button>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav class="mui-bar mui-bar-tab">
+            <a style="display:block;color:#fff" v-on:click="SkipAdd">新增收货地址</a>
+        </nav>
+    </div>
+    <!--编辑地址-->
+    <div class="editAddress" v-show="AddressType=='EditAddress'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="TakeManageShow"></a>
+            <h1 class="mui-title">编辑收货地址</h1>
+        </header>
+        <div class="mui-content">
+            <ul class="edit_ul">
+                <li>
+                    <span>收货人：</span>
+                    <input type="text" v-model.trim="EditModel.Consignee" />
+                </li>
+                <li>
+                    <span>手机号码：</span>
+                    <input type="text" style="width:80%" v-model.trim="EditModel.Telephone" id="phone" />
+                </li>
+                <li>
+                    <span>所在地区：</span>
+                    <div class="city"><input id="city" value="" placeholder="请选择" v-model="EditModel.AddressText" readonly="readonly" /><em>&gt;</em></div>
+                    <input type="hidden" id="ProvinceId" v-model="EditModel.ProvinceId" />
+                    <input type="hidden" id="ProvinceName" v-model="EditModel.ProvinceName" />
+                    <input type="hidden" id="CityId" v-model="EditModel.CityId" />
+                    <input type="hidden" id="CityName" v-model="EditModel.CityName" />
+                    <input type="hidden" id="DistrictId" v-model="EditModel.DistrictId" />
+                    <input type="hidden" id="DistrictName" v-model="EditModel.DistrictName" />
+                </li>
+                <li>
+                    <textarea type="text" placeholder="需填写详细地址" class="detailAddress" rows="2" v-model.trim="EditModel.AddressDetails"></textarea>
+                </li>
+            </ul>
+            <button type="button" class="mui-btn mui-btn-blue mui-btn-block" id="determine" v-on:click="AddressPost">确&nbsp;&nbsp;&nbsp;定</button>
+        </div>
+    </div>
+    <div id="mask" v-on:click="maskHide"></div>
+</div>
+<script type="text/javascript">
+
+</script>

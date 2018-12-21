@@ -1,0 +1,63 @@
+﻿
+@{
+    ViewBag.Title = "动态详情";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link href="~/Content/css/ft_dynamic/dynamicDetails.css" rel="stylesheet" />
+    <script src="~/Content/Plugins/layer/layui.all.js"></script>
+}
+<style>
+    [v-cloak] {
+        display: none !important;
+    }
+    .Tabs-content   span a{
+        word-break:break-word;
+        text-decoration:underline;
+        color:#0e5bb5;
+    }
+    .Tabs-content p  span a,.mui-content .Tabs-content p  a span,.Tabs-content p a{
+        word-break:break-word;
+        text-decoration:underline;
+        color:#0e5bb5 !important;
+        width:100%;
+        display:block
+    }
+    strong{
+        color:#404040
+    }
+    .Tabs-content p span{
+        display:block
+    }
+</style>
+<div id="container">
+    <header class="mui-bar mui-bar-nav" style="background: #fff;border-bottom:1px solid #ddd ">
+        <a href="javascript:;" onclick="javascript:history.back(-1);" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">动态详情</h1>
+    </header>
+    <div class="mui-content l-scrollable" v-cloak>
+        <div class="content_title" v-if="tabs.Source==''|| tabs.Source==null">{{tabs.Title}}</div>
+        <div class="content_title" v-else>{{tabs.Source}}：{{tabs.Title}}</div>
+        <div class="source_box">
+            <div class="source">
+                <span class="source_text">来源</span>
+                <span class="source_firm">{{tabs.Source}}</span>
+            </div>
+            <div class="time">
+                <span>{{tabs.CreateTime|formatDate}}</span>
+            </div>
+        </div>
+        <div v-html="tabs.Content" class="Tabs-content" style="height:100%"></div>
+        <div class="footer_bt" style="display:none" id="ShowBotton">
+            <button type="button" class="mui-btn  mui-btn-outlined" style="float:left;background-color:#ccc;" v-if="preId=='' || preId==null">上一篇</button>
+            <button type="button" class="mui-btn  mui-btn-outlined" style="float:left;" v-on:click="UpRoDownSheet(preId,1)" v-bind:tid="preId" v-else>上一篇</button>
+            <button type="button" class="mui-btn  mui-btn-outlined" style="float:right;background-color:#ccc;" v-if="nextId=='' || nextId==null">下一篇</button>
+            <button type="button" class="mui-btn  mui-btn-outlined" style="float:right;" v-on:click="UpRoDownSheet(nextId,2)" v-bind:tid="nextId" v-else>下一篇</button>
+        </div>
+    </div>
+</div>
+
+@section foot{
+    <script src="~/dist/new.detail.bundle.js"></script>
+}

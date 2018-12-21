@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "票数排行榜";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="~/Content/css/ftTwoYears/success.css" />
+}
+<style type="text/css">
+    [v-cloak] {
+        display: none !important;
+    }
+</style>
+<header class="mui-bar mui-bar-nav">
+    <a href="javascript:history.go(-1);" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">票数排行榜</h1>
+</header>
+<nav class="mui-bar mui-bar-tab">
+    <a class="nav-tab-item a_left" href="/">
+        <span class="home_bg"></span>
+        <span class="mui-tab-label">返回首页</span>
+    </a>
+
+    <a class="nav-tab-item a_right" href="/act/ftsecondindex">
+        参加其他有奖活动
+    </a>
+</nav>
+<div class="mui-content l-scrollable" style="background:#ffd03a" v-cloak>
+    <ul class="vote_ul" style="padding: 0.20rem 0.19rem 0;">
+        <li v-for="(anm,index) in ActNewModes">
+            <a v-bind:href="'/news/detail/'+ anm.NewsId" class="img_a" style="position:relative">
+                <img v-bind:src="anm.H5ImgUrl" class="li_left" />
+                <i v-bind:class="[(index==0?'i_bg1':''),(index==1?'i_bg2':''),(index==2?'i_bg3':'')]"></i>
+            </a>
+            <div class="li_right">
+                <a v-bind:href="'/news/detail/'+ anm.NewsId" class="h3_a">
+                    <h3 class="h3_title">{{anm.Title}}</h3>
+                </a>
+                <div class="li_bottom">
+                    <div class="piao">
+                        <span class="ranking">{{anm.ActNo}}</span>
+                        <i class="oi"></i>
+                        <span class="vote_number">当前票数：<span>{{anm.TicketNumber}}</span></span>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>
+@section foot{
+    <script src="~/dist/act.ftleaderboard.bundle.js"></script>
+}

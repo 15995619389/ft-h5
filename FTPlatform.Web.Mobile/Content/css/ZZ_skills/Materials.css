@@ -1,0 +1,304 @@
+/*----预约----*/
+.side-bar {
+    position: fixed;
+    top: 40%;
+    right: 0;
+    background: url(../../image/advice-bg.png) no-repeat;
+    width: 2.08rem;
+    height: 0.88rem;
+    background-size: 2.08rem 0.88rem;
+    color: #fff;
+     line-height: 0.30rem;
+     z-index: 999;
+}
+.side-bar a {
+    display: block;
+    color: #fff;
+    font-size: 0.24rem;
+    width: 50%;
+    margin-left: 0.9rem;
+    margin-top: 0.2rem;
+    line-height: 0.30rem;
+}
+/*---------*/
+html{
+	background: #fff;
+}
+p{
+	margin-bottom: 0px;
+	line-height: 0.40rem;
+}
+.right_iocn img{
+    display: block;
+    width: 20px;
+    height: 20px;
+}
+.cooperation{
+	width: 100%;
+	height:3.00rem;
+	overflow: hidden;
+	position: relative;
+	border-top:1px solid #ddd ;
+}
+.cooperation img{
+	display: block;
+	width: 100%;
+	height: 3.00rem;	
+}
+.cooperation_left{
+	position: absolute;
+	top: .90rem;
+    left: 0.25rem;
+	height: auto;
+	overflow: hidden;
+}
+.cooperation_left h3,.cooperation_right h3{
+	color: #fff;
+	font-size: 0.34rem;
+	margin-bottom: 0.20rem;
+}
+.cooperation_left p,.cooperation_right p{
+	font-size: 0.24rem;
+	color: #fff;
+	text-align: center;
+	line-height: 0.30rem;
+}
+.cooperation_right{
+	position: absolute;
+	top: 0.80rem;
+	right: 0.40rem;
+	height: auto;
+	overflow: hidden;
+}
+.CompanyName {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top: 10px;
+        margin-bottom: 0.20rem;
+}
+.CompanyName h3 {
+    font-size: 0.34rem;
+    color: #0e5bb5;
+    text-align: center;
+}
+.division {
+    width: 2.18rem;
+    height: 0.13rem;
+    margin: 0 auto;
+    display: block;
+    margin-top: 7px;
+}
+.one {
+    padding: 0 3%;
+    height: auto;
+    overflow: hidden;
+}
+.knowledge {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 0.20rem;
+}
+.knowledge_title {
+    font-size: 0.30rem;
+    color: #0e5bb5;
+}
+.knowledge_content {
+    font-size: 0.28rem;
+    color: #3f3f3f;
+}
+.mechanism {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-bottom: 0.20rem;
+    padding-left: 2%;
+}
+.mechanism li {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.five {
+    width: 4%;
+    float: left;
+    display: block;
+    height: auto;
+    padding-top: 0.15rem;
+}
+.five i {
+    display: block;
+    width: 0.10rem;
+    height: 0.10rem;
+    border-radius: 50%;
+    background: #0e5bb5;
+}
+.mechanism li p {
+    width: 96%;
+    float: right;
+    overflow: hidden;
+    height: auto;
+}
+.platform_text {
+    font-size: 0.28rem;
+    color: #404040;
+    margin-bottom: 0px;
+    line-height: 0.42rem;
+}
+.plan_bg{
+	width: 100%;
+	height: 3.00rem;
+	overflow: hidden;
+}
+.one .oH3{
+	font-size: 0.34rem;
+	color: #3f3f3f;
+	font-weight: 600;
+	margin-bottom: 0.20rem;
+}
+.one em{
+	display: block;
+	width: 100%;
+	font-size: 0.30rem;
+	margin: 0.10rem 0px;
+}
+.leadingCases{
+	width: 100%;
+	height: 13.11rem;
+	overflow: hidden;
+	background: url(../../image/ZZ_skills/leadingCases.png) no-repeat;
+	background-size: 100% 13.11rem;
+	position: relative;
+	margin-bottom: 0.20rem;
+}
+.icon_img {
+    width: 0.54rem;
+    height: 0.54rem;
+    display: block;
+    position: absolute;
+    top: -15px;
+    left: 46%;
+}
+.CompanyName11 {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 0.40rem 0px;
+}
+.CompanyName11 h3 {
+    font-size: 0.34rem;
+    color: #fff;
+    text-align: center;
+}
+.leadingCases_ul{
+	padding: 0px 3% ;
+	overflow: hidden;
+	height: auto;
+}
+.leadingCases_ul li{
+	padding: 0.30rem 0px;
+	overflow: hidden;
+	height: auto;
+	border-bottom:1px dashed  #fff ;	
+}
+.leadingCases_ul li:nth-last-child(1){
+	border-bottom:0px dashed  #fff ;	
+}
+.leadingCases_ul li img{
+	float: left;
+	display: block;
+	width: 1.37rem;
+	height: 1.37rem;
+}
+.Cases_right{
+	width: 77%;
+	overflow: hidden;
+	height: auto;
+	float: right;
+}
+.Cases_right em{
+	font-size: 0.30rem;
+	display: block;
+	width: 100%;
+	color: #fff;
+	margin: 0.05rem 0px;
+}
+.Cases_right p{
+	color: #fff;
+	font-size: 0.26rem;
+	line-height: 0.34rem;
+}
+.direction{
+	padding:0px 3%;
+	height: auto;
+	overflow: hidden; 
+}
+.direction em{
+	display: block;
+	width: 100%;
+	color: #0e5bb5;
+	font-size: 0.32rem;
+}
+.direction_box {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom: 0.20rem;
+}
+.direction_box em {
+    display: block;
+    width: 100%;
+    font-size: 0.30rem;
+    margin: 0.10rem 0px;
+    overflow: hidden;
+    height: auto;
+}
+.emOne{
+	display: block;
+	width: 0.30rem;
+	height: 0.27rem;
+	float: left;
+	background: url(../../image/ZZ_skills/em1.png) no-repeat;
+	background-size: 0.30rem 0.27rem;
+	margin-top: 0.05rem;
+	margin-right: 0.10rem;	
+}
+.emTwo{
+	width: 0.18rem;
+	height: 0.29rem;
+	float: left;
+	margin-top: 0.03rem;
+	margin-right: 0.22rem;	
+}
+.emThree{
+	width: 0.26rem;
+	height: 0.26rem;
+	float: left;
+	margin-top: 0.08rem;
+	margin-right: 0.14rem;	
+}
+.emFour{
+	width: 0.24rem;
+	height: 0.28rem;
+	float: left;
+	margin-top: 0.09rem;
+	margin-right: 0.09rem;	
+}
+.emFive{
+	width: 0.23rem;
+	height: 0.29rem;
+	float: left;
+	margin-top: 0.12rem;
+	margin-right: 0.08rem;
+}
+.emSix{
+	width: 0.30rem;
+	height: 0.27rem;
+	float: left;
+	margin-top: 0.05rem;
+	margin-right: 0.10rem;
+}
+
+
+

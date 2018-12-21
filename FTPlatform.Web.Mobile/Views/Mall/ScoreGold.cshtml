@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "我的智币";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/score/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/score/smart.css" rel="stylesheet" />
+    <style>
+        .coin-total .zb-numbers {
+            padding: 35px 20px
+        }
+
+        .coin-total .detail-tit:before {
+            content: "";
+            display: inline-block;
+            background: #ddd;
+            height: 1px;
+            width: 37%;
+            margin-right: 5px;
+        }
+
+        .coin-total .detail-tit:after {
+            content: "";
+            display: inline-block;
+            background: #ddd;
+            height: 1px;
+            width: 37%;
+            margin-left: 5px;
+        }
+    </style>
+}
+@section foot{
+    <script src="~/dist/mall.myscoregold.bundle.js"></script>
+    <script>
+        $(function () {
+            $(".ft-tab a").removeClass("mui-active");
+            $(".ft-tab").find("a").eq(2).addClass("mui-active");
+            $(".ft-tab a").eq(0).attr("href", "/mall");
+            $(".ft-tab a").eq(0).find("span").eq(1).html("商城首页")
+        })
+    </script>
+}
+<header class="mui-bar mui-bar-nav head_box head-secd" style="border-bottom: #ddd solid 1px;">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+    <h1 class="mui-title">我的智币</h1>
+</header>
+<div class="mui-content body_content" v-cloak>
+    <foot></foot>
+    <!--智币使用-->
+    <section class="coin-total">
+        <div class="top-wrap">
+            <div class="zb-numbers">
+                <p>智币</p>
+                <p class="zb-nub" style="margin-left: -18.7px;width: 2rem;" v-html="score"></p>
+            </div>
+            <div class="zbbtn-groups">
+                <a href="/mall/golditail" class="zbsm">智币说明</a>
+                <a href="/mall/getgold" class="zqzb">赚取智币</a>
+            </div>
+        </div>
+        <div style="background:#fff;padding:10px;box-sizing:border-box;">
+            <h4 class="detail-tit" style="margin-bottom:10px;">智币明细</h4>
+        </div>
+        <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" class="mui-scroll" style="top:280px" v-cloak>
+            <div class="detail-list" v-for="r in record">
+                <div class="time-box">
+                    <span>发生日期：{{r.RecordedTime|formatDate}}</span>
+                    <span v-if="r.Type>0&&r.ExpirationTime!=null">到期日期：{{r.ExpirationTime|formatDate}}</span>
+                </div>
+                <div class="act-box">
+                    <div class="act-lt">
+                        <h4>{{r.Source}}</h4>
+                        <p>余额 {{r.Total}}</p>
+                    </div>
+                    <div class="act-rt">
+                        {{r.Type|type}}{{r.Amount}}
+                    </div>
+                </div>
+            </div>
+        </scroller>
+    </section>
+</div>

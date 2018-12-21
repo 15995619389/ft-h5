@@ -1,0 +1,630 @@
+﻿.labaHeader .mui-pull-right {
+    margin-top: 14px;
+}
+.mui-pull-right img {
+    width: 18px;
+    height: 17px;
+}
+.laba_content .content{
+    width:100%;
+    height:11.18rem;
+    background:url("../../../image/activity/laba/index_banner.png") no-repeat;
+    background-size:100% 100%; 
+}
+.laba_content .rules{
+    width:100%;
+    height:1.00rem;
+    overflow:hidden
+}
+.laba_content .rules img{
+    width:0.53rem;
+    height:0.89rem;
+    float:right;
+    margin-right:5%
+}
+.index_textbg{
+    margin:0 auto;
+    width:6.35rem;
+    height:2.88rem
+}
+.laba_content .index_bg{
+    width:6.57rem;
+    height:4.56rem;
+    margin:.40rem auto .60rem
+}
+.participate{
+    width:3.32rem;
+    height:0.84rem;
+    text-align:center;
+    font-size:0.28rem;
+    line-height:0.84rem;
+    margin:0 auto;
+    background:url("../../../image/activity/laba/participate_btn.png") no-repeat;
+    background-size:100% 100%;
+    color:#bb1c18;
+    font-weight:600
+}
+.laba_content #mask{
+    position:fixed;
+}
+.laba_content .share-show{
+    margin-left:-10px
+}
+/*-活动规则-*/
+.rules_box{
+   position:fixed;
+   top:50%;
+   left:50%;
+   margin-left:-3.365rem;
+   margin-top:-4.96rem;
+   width:6.73rem;
+   height:9.92rem;
+   background:url("../../../image/activity/laba/act_rules.png") no-repeat;
+   background-size:100% 100%;
+   z-index:1000;
+   display:none
+}
+.rules_box ul{
+    position:relative;
+    width:5.73rem;
+    margin:0 auto;
+    margin-top:1.71rem;
+    height:8.00rem;
+    overflow:auto
+}
+.rules_box li{
+    font-size:0.26rem;
+    line-height:0.38rem;
+    color:#fff9b9;
+}
+.rules_box img{
+    width:0.70rem;
+    height:0.70rem;
+    position:absolute;
+    right:-0.10rem;
+    top:-0.15rem
+}
+/*---我的腊宝--*/
+.laba_content .my_content{
+    width:100%;
+    height:9.85rem;
+    background:url("../../../image/activity/laba/datail_bg.png") no-repeat;
+    background-size:100% 100% ;
+    margin-top:-0.80rem;
+    padding-top:1.60rem
+}
+.laba_content .content_title{
+    margin: -1.5rem auto 1.00rem;
+    width:1.60rem;
+    height:0.37rem
+}
+.my_content .bag_title{
+    width:6.00rem;
+    height:0.83rem;
+    margin:0 auto 0.15rem;
+}
+.my_content .bag_title img{
+    width:6.00rem;
+    height:0.83rem;
+}
+.laba_content .my_content .pirze_box{
+    height:3.73rem;
+    width:6.10rem;
+    margin-left:1.00rem;
+    position:relative
+}
+.pirze_box .bracelet{
+    width:1.61rem;
+    height:2.36rem;
+    position:absolute;
+    left:0.10rem;top:0.50rem;
+}
+.laba_content .pirze_box p{
+    margin:0;
+    position:absolute;
+    width:2.85rem;
+    height:3.47rem;
+    transform-origin:50%100%;
+    -webkit-transform-origin:50%100%;
+}
+.laba_content .pirze_box .results_box{
+    width:4.30rem;
+    height:1.19rem;
+    position:absolute;
+    left:46%;
+    bottom:0;
+    margin-left:-2.15rem;
+    background:url("../../../image/activity/laba/results_bg.png") no-repeat;
+    background-size:100% 100%;
+    z-index:10
+}
+.pirze_box .sports{
+	animation:sports .s infinite linear;
+	-webkit-animation:sports .2s infinite linear;
+}
+.results_box .results_number{
+    width:2.26rem;
+    height:0.59rem;
+    margin-top:0.60rem;
+    margin-left:0.90rem;
+    background:url("../../../image/activity/laba/results_number.png") no-repeat;
+    background-size:100% 100%;
+    font-size:0.26rem;
+    text-align:center;
+    color:#f8ef8b;
+    line-height:0.55rem;
+}
+.pirze_box .raffle_box{
+    position:absolute;
+    right:0;
+    top:0.40rem;
+}
+.pirze_box .raffle_content{
+    width:2.31rem;
+    height:1.77rem;
+    background:url("../../../image/activity/laba/raffle_bg.png") no-repeat;
+    background-size:100% 100%
+}
+.raffle_content .raffle_num{
+    display:inline-block;
+    height:0.50rem;
+    width:0.50rem;
+    text-align:center;
+    background:#c91717;
+    line-height:0.44rem;
+    text-align:center;
+    font-size:0.22rem;
+    color:#fff;
+    border-radius:50%;
+    border:1px solid #fab54e;
+    margin-left:1.00rem;
+    margin-top:-0.20rem;
+    /*position:absolute;
+    right:0;
+    top:-0.10rem*/
+}
+.raffle_content .raffle_img{
+    position:absolute;
+    left:30%;
+    top:0;
+    display:none
+}
+.raffle_content .raffle_img img{
+    width:1.14rem;
+    height:1.40rem;
+}
+.raffleYes{
+    margin-top:-0.55rem
+}
+.raffle_content .raffle_no,.raffle_content .raffle_yes{
+    width:1.63rem;
+    height:0.58rem;
+    line-height:0.58rem;
+    text-align:center;
+    font-size:0.26rem;
+    position:absolute;
+    bottom: -0.40rem;
+    left: -0.20rem;
+}
+.raffle_content .raffle_no{
+     background:url("../../../image/activity/laba/raffle_no.png") no-repeat;
+    background-size:100% 100%;
+}
+.raffle_content .raffle_yes{
+    background:url("../../../image/activity/laba/participate_btn.png") no-repeat;
+    background-size:100% 100%;
+    color:#bb1c18;   
+}
+.bag_content{
+    width:6.15rem;
+    height:auto;
+    /*overflow:hidden;*/
+    margin:0.30rem auto 0;
+}
+.bag_content li{
+    float:left;
+    width:1.34rem;
+    margin-right:0.26rem;
+    margin-bottom:0.20rem;
+    position:relative
+}
+.bag_content li:nth-child(4){
+    margin-right:0
+}
+.bag_content li:last-child{
+    margin-right:0
+}
+.bag_content li img{
+    width:1.07rem;
+    height:1.31rem;
+}
+.bag_content li div{
+    position:relative;
+    display:none;
+}
+.bag_content li div span{
+    position:absolute;
+    right:0;
+    display: inline-block;
+    height: 0.48rem;
+    width: 0.48rem;
+    text-align: center;
+    background: #c91717;
+    line-height: 0.44rem;
+    font-size: 0.22rem;
+    color: #fff;
+    border-radius: 50%;
+    border: 1px solid #fab54e;
+}
+.addOne{
+    position:absolute;
+    top:35%;
+    left:20%;
+    color:#5d2b05;
+    font-size:0.32rem;
+    font-weight:bold;
+    z-index:999;
+}
+.laba_content .footer_nav{
+    width:4.90rem;
+    height:auto;
+    overflow:hidden;
+    margin:0 auto 0;
+}
+.laba_content .footer_nav a{
+    display:inline-block;
+    width:2.30rem;
+    height:0.61rem;
+    color:#bb1c18;
+    font-size:0.28rem;
+    text-align:center;
+    line-height:0.61rem;
+    font-weight:600;
+    float:left;
+    background:url("../../../image/activity/laba/footer_btn.png") no-repeat;
+    background-size:100% 100%;
+}
+ .laba_content .footer_nav a:last-child{
+    float:right
+}
+/*-小福袋运动-*/
+@-moz-keyframes tada{
+    0%{-webkit-transform:scale(1); bottom: 0;}
+    25%{-webkit-transform:scale(0.9) rotate(-3deg); bottom: 8px;}
+    50%{-webkit-transform:scale(1.2) rotate(3deg); bottom: 0;}
+    75%{-webkit-transform:scale(1.2) rotate(-3deg); bottom: 8px;}
+    100%{-webkit-transform:scale(1) rotate(0); bottom: 0;}
+   }
+
+  @-webkit-keyframes tada{
+    0%{-webkit-transform:scale(1); bottom: 0;}
+    25%{-webkit-transform:scale(0.9) rotate(-3deg); bottom: 8px;}
+    50%{-webkit-transform:scale(1.2) rotate(3deg); bottom: 0;}
+    75%{-webkit-transform:scale(1.2) rotate(-3deg); bottom: 8px;}
+    100%{-webkit-transform:scale(1) rotate(0); bottom: 0;}
+  }
+  @keyframes tada{
+    0%{-webkit-transform:scale(1); bottom: 0;}
+    25%{-webkit-transform:scale(0.9) rotate(-3deg); bottom: 8px;}
+    50%{-webkit-transform:scale(1.2) rotate(3deg); bottom: 0;}
+    75%{-webkit-transform:scale(1.2) rotate(-3deg); bottom: 8px;}
+    100%{-webkit-transform:scale(1) rotate(0); bottom: 0;}
+  }
+ .dyn{
+  -webkit-animation: tada 1s .2s ease both;
+  -moz-animation: tada 1s .2s ease both;
+   animation: tada 1s .2s ease both;
+}
+/*拆福袋*/
+@-webkit-keyframes sports {
+    0%{
+        -webkit-transform: rotate(5deg) translate3d(0,0,0)
+    }
+    50%{
+        -webkit-transform: rotate(-5deg) translate3d(0,0,0)
+    }
+    100%{
+        -webkit-transform: rotate(5deg) translate3d(0,0,0)
+    }
+}
+@-moz-keyframes sports {
+	0% {
+		transform: rotate(5deg) translate3d(0,0,0)
+	}
+
+	50% {
+		transform: rotate(-5deg) translate3d(0,0,0)
+	}
+
+	100% {
+		transform: rotate(5deg) translate3d(0,0,0)
+	}
+}
+
+@-ms-keyframes sports {
+	0% {
+		transform: rotate(5deg) translate3d(0,0,0)
+	}
+
+	50% {
+		transform: rotate(-5deg) translate3d(0,0,0)
+	}
+
+	100% {
+		transform: rotate(5deg) translate3d(0,0,0)
+	}
+}
+@keyframes sports {
+	0% {
+		transform: rotate(5deg) translate3d(0,0,0)
+	}
+
+	50% {
+		transform: rotate(-5deg) translate3d(0,0,0)
+	}
+
+	100% {
+		transform: rotate(5deg) translate3d(0,0,0)
+	}
+}
+/*----*/
+.fudai_box{
+    position: absolute;
+    top: 50%;
+    left: 44%;
+    margin-left: -1.425rem;
+    margin-top: -1.735rem;
+    width: 2.85rem;
+    height: 3.47rem;
+}
+.fudai_box .split_bag_no{
+    background:url("../../../image/activity/laba/noClick_bg.png") no-repeat;
+    background-size:100% 100%;
+}
+.fudai_box .split_bag_yes{
+    background:url("../../../image/activity/laba/yesClick_bg.png") no-repeat;
+    background-size:100% 100%;
+}
+
+
+.fudai_box .bag{
+    display:none;
+    position:absolute;
+    width:2.85rem;
+    height:3.47rem;
+}
+.fudai_box  #bag1{
+    background:url("../../../image/activity/laba/bag1.png") no-repeat;
+    background-size:100% 100%
+}
+.fudai_box  #bag2{
+    background:url("../../../image/activity/laba/bag2.png") no-repeat;
+    background-size:100% 100%
+}
+.fudai_box  #bag3{
+    background:url("../../../image/activity/laba/bag3.png") no-repeat;
+    background-size:100% 100%
+}
+.fudai_box  #bag4{
+    background:url("../../../image/activity/laba/bag4.png") no-repeat;
+    background-size:100% 100%
+}
+.fudai_box  #bag5{
+    background:url("../../../image/activity/laba/bag5.png") no-repeat;
+    background-size:100% 100%
+}
+.fudai_box  #bag6{
+    background:url("../../../image/activity/laba/bag6.png") no-repeat;
+    background-size:100% 100%
+}
+.fudai_box  #bag7{
+    background:url("../../../image/activity/laba/bag7.png") no-repeat;
+    background-size:100% 100%
+}
+.fudai_box  #bag8{
+    background:url("../../../image/activity/laba/bag8.png") no-repeat;
+    background-size:100% 100%
+}
+/*------集福锦囊-----*/
+.my_content .list{
+    width:6.72rem;
+    height:auto;
+    margin:1.70rem auto 0;
+    overflow:hidden
+}
+.my_content .list li{
+    text-align:center;
+    width:3.29rem;
+    height:2.04rem;
+    float:left;
+    margin-right:0.14rem;
+    margin-bottom:0.32rem;
+}
+.my_content .list li div{
+    width:3.29rem;height:1.81rem;
+    background:url("../../../image/activity/laba/li_bg.png") no-repeat;
+    background-size:100% 100%;
+    margin-top: -0.35rem;
+    z-index: 9;
+    padding-top: 0.20rem;
+}
+.my_content .list li:nth-of-type(even){
+    margin-right:0
+}
+.my_content .list li .li_title{
+    width:1.41rem;
+    height:0.62rem;
+    margin:0 auto
+}
+.my_content .list li a{
+    display:inline-block;
+    background:url("../../../image/activity/laba/participate_btn.png") no-repeat;
+    background-size:100% 100%;
+    padding:0.04rem 0.20rem;
+    font-size:0.24rem;
+    color:#bb1c18;
+    margin:0 auto;
+    margin-top:0.05rem
+}
+.list p{
+    font-size:0.24rem;
+    color:#f9d78a;
+    text-align:center;
+    margin:0;
+    line-height: 0.34rem;
+    padding:0.20rem 0.15rem 0;
+}
+
+.my_content .list .li_seven{
+    width:5.73rem;
+    height:2.04rem;
+    margin-left:10%;
+    position:relative
+}
+.my_content .list .li_seven div{
+    width:4.20rem;
+    position: absolute;
+    left: 11%;
+    margin-top: 0.3rem;
+    z-index:9
+}
+.my_content .list li.li_seven .li_title{
+    position: absolute;
+    left: 35%;
+    top: 0;
+    z-index:10
+}
+.li_seven_bg{
+    width:100%;
+    height:0.79rem;
+    position:absolute;
+    top: 45%;
+    left: -0.20rem;
+}
+/*----弹窗----*/
+.draw_model{
+    display:none;
+    position:fixed;
+    top:50%;
+    left:50%;
+    width:6.73rem;
+    height:7.22rem;
+    margin-left:-3.365rem;
+    margin-top:-3.61rem;
+    background:url("../../../image/activity/laba/draw_model_bg.png") no-repeat;
+    background-size:100% 100%;
+    z-index:1000
+}
+.my_gift{
+    height:6.98rem;
+    margin-left:-3.49rem;
+    background:url("../../../image/activity/laba/myGift_bg.png") no-repeat;
+    background-size:100% 100%;
+}
+.my_gift .zhibi{
+    margin:0.90rem auto 0.60rem !important
+}
+.my_gift .con_text{
+    height:2.90rem;
+    overflow:auto;
+    padding:0 0.50rem;
+}
+.my_gift .con_text li a{
+     color:#ffd580;
+    font-size:0.28rem;
+}
+.my_gift .con_text li{
+    margin-bottom:0.15rem;
+    color:#ffd580;
+    font-size:0.28rem;
+    line-height:0.40rem;
+}
+.con_text .nologoin{
+    margin:0;
+    font-size:0.28rem;
+    color:#ffd580;
+    margin-top:1.00rem;
+    text-align:center
+}
+.con_text .nologoin a{
+    color:#000
+}
+.my_gift .model_content .fonter_btn{
+    height:auto
+}
+.my_gift .model_content .chai_bag{
+    position:inherit;
+    bottom:-0.50rem;
+}
+.model_content{
+    height:100%;
+    width:100%;
+    position:relative;
+}
+.model_content .zhibi {
+        width:2.91rem;
+        height:0.42rem;
+        margin:0.90rem auto 0.80rem;
+}
+.con_text{
+    overflow:hidden;
+    height:auto;width:100%;
+}
+.con_text h3{
+    margin:0 auto;
+    width:1.40rem;
+    height:0.41rem;
+    background:url("../../../image/activity/laba/congratulations.png") no-repeat;
+    background-size:100% 100%;
+}
+.con_text .weCome{
+    margin:0.40rem auto 0;
+     width:3.33rem;
+     background:url("../../../image/activity/laba/weCome.png") no-repeat;
+     background-size:100% 100%;
+}
+.con_text p{
+    margin:0;
+    text-align:center
+}
+.con_text .pText1{
+    display:block;
+    text-align:center;
+    font-size:0.30rem;
+    color:#fff9b9;
+    margin:0.20rem auto
+}
+.con_text .pText2{
+    font-size:0.28rem;
+    color:#ffd580;
+    line-height:0.40rem;
+    margin:0 auto 0.30rem;
+}
+.con_text .pText2 a{
+    color:#ffd580
+}
+.model_content .fonter_btn{
+    width:3.07rem;
+    height:1.91rem;
+    margin:0 auto;
+    position:relative
+}
+.model_content .lion_bg{
+    width:1.66rem;
+    height:1.80rem;
+    margin:0 auto;
+    z-index:1
+}
+.model_content .chai_bag{
+    display:block;
+    width:3.18rem;
+    height:0.79rem;
+    text-align:center;
+    line-height:0.79rem;
+    font-size:0.30rem;
+    font-weight:600;
+    color:#bb1c18;
+    background:url("../../../image/activity/laba/participate_btn.png") no-repeat;
+    background-size:100% 100%;
+    position:absolute;bottom:-0.10rem;z-index:10
+}

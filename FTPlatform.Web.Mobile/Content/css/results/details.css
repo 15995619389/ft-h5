@@ -1,0 +1,295 @@
+html,
+body {
+	background: #fff;
+}
+
+.mui-pull-right img {
+	width: 0.35rem;
+	height: 0.30rem;
+}
+
+.mui-pull-right {
+	margin-top: 0.3rem;
+}
+
+.details_img {
+	width: 100%;
+	height: 3.25rem;
+}
+
+.mui-bar-nav {
+	top: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+
+.details_body {
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 0.2rem
+}
+
+.details_content {
+	width: 100%;
+	margin: 0 auto;
+}
+
+.details_content h3 {
+	font-size: 0.32rem;
+}
+
+.from {
+	width: 100%;
+	height: 0.6rem;
+	margin-top: 0.2rem;
+}
+
+.patent {
+	width: 50%;
+	float: left;
+	font-size: 0.32rem;
+	color: #444444;
+}
+
+.patent span {
+	display: block;
+	float: left;
+	line-height: 0.6rem;
+}
+
+.patent input {
+	width: 60%;
+	height: 0.6rem;
+	float: left;
+	margin-bottom: 0px;
+	padding: 5px
+}
+
+.patent .type {
+	width: 52%
+}
+
+.research {
+	width: 100%;
+	border-bottom: 1px solid #dddddd;
+	margin-top: 0.4rem;
+}
+
+.research_bt {
+	width: 100%;
+	height: auto;
+}
+
+.research_bt p {
+	font-size: 0.26rem;
+	color: #444444;
+}
+
+.mui-btn {
+	margin-bottom: 0.2rem;
+}
+
+.bt button {
+	width: 49%;
+	float: left;
+	color: #fff;
+    border:none;
+}
+
+.bt {
+    height: 1.20rem;
+    position: fixed;
+    bottom: 0;
+    display: block;
+    width: 96%;
+	height: 1.00rem;
+}
+
+.popup {
+	width: 80%;
+	height: 1.50rem;
+	background: #fff;
+}
+
+#mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: #333;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	display: none;
+}
+
+
+/*--------弹窗----------*/
+
+#mask {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 999;
+	background: #333;
+	opacity: 0.5;
+	filter: alpha(opacity=50);
+	display: none;
+}
+
+.popup {
+	position: fixed;
+    top:50%;
+	left: 50%;
+	width: 80%;
+	height: 4.20rem;
+	z-index: 1000;
+	display: none;
+	background: #fff;
+	border-radius: 10px;
+    margin-left:-40%;
+    margin-top:-2.10rem
+}
+
+.btn_box {
+	width: 100%;
+	margin: 0 auto;
+	height: 0.5rem;
+	background: #fff;
+	border-radius: 10px;
+}
+
+.btn {
+	width: 10%;
+	height: 0.5rem;
+	float: right;
+	text-align: center;
+	line-height: 0.50rem;
+	color: #333;
+}
+
+.p_text {
+	width: 100%;
+	margin: .80rem auto;
+	color: #f19149;
+	font-size: 0.30rem;
+	text-align: center;
+}
+
+.btn_footer {
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+}
+
+.btn_footer button {
+	width: 40%;
+	float: left;
+	font-size: 0.30rem;
+	text-align: center;
+	background: #007AFF;
+}
+
+.btn_footer1 {
+	width: 80%;
+	margin: 0 auto;
+	padding-left: 12%;
+}
+
+.btn_footer1 .confirm {
+	margin-right: 5%;
+}
+
+.textarea {
+	width: 90%;
+	min-height: 1.8rem;
+	margin-top: 5px;
+	margin-left: 5%;
+}
+
+.popup_consult {
+	position: fixed;
+    top:50%;
+	left: 50%;
+	width: 80%;
+	height: 4.20rem;
+	z-index: 1000;
+	display: none;
+	background: #fff;
+	border-radius: 10px;
+    margin-left:-40%;
+    margin-top:-2.10rem
+}
+
+.btn_footer .confirm_consult {
+	width: 75%;
+	margin-left: 5%;
+}
+/*-------表格--------*/
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	border: solid #dddddd;
+	border-width: 1px 1px 1px 1px;
+	margin-top: 10px;
+}
+.table th,
+.table td {
+	border: solid #dddddd;
+	border-width: 0 1px 1px 0;
+	padding: 2px;
+	font-size: 0.26rem;
+	color: #444444;
+	height: 0.80rem;
+}
+.research_title{
+	width: 100%;
+	height: 15px;
+	font-size: 15px;
+	color: #1761ad;	
+	line-height: 0.30rem;
+	margin-bottom: 15px;
+}
+.research_title i{
+	display: block;
+	width: 4px;
+	height: 15px;
+	background: #1761ad;
+	float: left;
+	margin-right: 0.15rem;
+}
+
+.details_body ul li{
+    font-size:0.28rem
+}
+.mui-content{
+    padding-bottom:1.20rem
+}
+.Iwant {
+    position: fixed;
+    bottom: -1%;
+    width: 100%;
+    padding:0 2%
+}
+.Iwant a {
+    background: #dadada;
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+}
+.mui-btn-blue{
+    background:#0e5bb5 !important;
+    border-color:#0e5bb5 !important
+}
+/*------文件预览--------*/
+.FilePreview{
+    background:#333;
+    width:100%;
+    overflow:hidden;
+    height:auto;
+    display:none
+}

@@ -1,0 +1,48 @@
+html{
+	background: #fff;
+}
+p,body{
+	line-height: 0.40rem;
+}
+p{
+	margin-bottom: 0px;
+}
+.problem{
+	background: #f2f1f7;
+	padding: 0.20rem 0px;
+	height: auto;
+	overflow: hidden;
+}
+.problem_title,.description{
+	padding: 0.20rem 3%;
+	overflow: hidden;
+	height: auto;
+	border-top:1px solid #ddd;
+	font-size: 0.32rem;
+	color: #0e5bb5;
+	background: #fff;
+}
+
+.problem_title img {
+    display: block;
+    width: .33rem;
+    height: .30rem;
+    float: left;
+   margin-right: 3%;
+    margin-top: 0.05rem;
+}
+.description_title{
+	color: #0e5bb5;
+	font-size: 0.36rem;
+	width: 100%;
+	margin-bottom: 0.20rem;
+}
+.text{
+	font-size: 0.28rem;
+	color: #444444;
+}
+.CustomerFeedback{
+	background: #fff;
+	overflow: hidden;
+	height: auto;
+}

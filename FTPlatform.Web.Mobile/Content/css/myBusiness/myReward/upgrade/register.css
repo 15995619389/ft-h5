@@ -1,0 +1,274 @@
+html {
+	background: #f2f1f7;
+}
+
+.prompt {
+	width: 100%;
+	height: 0.80rem;
+	background: #fff8e6;
+}
+
+.prompt {
+	margin: 0 auto;
+	text-align: center;
+	font-size: 0.20rem;
+	color: #e0983a;
+	line-height: 0.80rem;
+	border-bottom: 1px solid #f2e9b8;
+	border-top: 1px solid #f2e9b8;
+}
+
+.user_content {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	margin: 15px 0px;
+}
+.mui-off-canvas-right {
+    background: #fff;
+    width: 100%;
+    box-shadow: none;
+}
+.mui-table-view-cell>a:not(.mui-btn) {
+	color: #444444;
+}
+
+.oSpan {
+	color: #b90000;
+	margin-top: 0.05rem;
+	display: block;
+	float: left;
+	width: 3%;
+}
+
+.mui-table-view-cell:after {
+	left: 0px;
+}
+
+.oli {
+	position: relative;
+	overflow: hidden;
+	padding: 5px 15px;
+	color: #444;
+	font-size: 0.32rem;
+	border-bottom: 1px solid #ddd;
+}
+
+.unitId {
+	float: left;
+	font-size: 0.32rem;
+	margin-top: 0.15rem;
+}
+
+.oli .radio {
+	width: 50%;
+	float: right;
+}
+
+.oli .radio div:nth-child(1) {
+	width: 53%;
+	float: left;
+}
+
+.mui-input-row {
+	clear: none;
+}
+
+.mui-checkbox.mui-left label,
+.mui-radio.mui-left label {
+	padding-right: 0px;
+	padding-left: 0.75rem;
+	/* padding-top: 5px; */
+	padding-bottom: 5px;
+}
+
+.mui-checkbox label,
+.mui-radio label {
+	padding-right: 0px;
+}
+
+.mui-checkbox.mui-left input[type=checkbox],
+.mui-radio.mui-left input[type=radio] {
+	left: 15px;
+}
+
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+	width: 0.38rem;
+	height: 0.38rem;
+	top: 9px;
+}
+
+.mui-checkbox input[type=checkbox]:before,
+.mui-radio input[type=radio]:before {
+	font-size: 0.38rem;
+}
+
+.oli .radio div:nth-child(2) {
+	width: 42%;
+	float: left;
+}
+
+.odiv {
+	width: 50%;
+	overflow: hidden;
+	height: auto;
+	float: left;
+	margin-top: 0.13rem;
+}
+
+.upload {
+	overflow: hidden;
+	height: auto;
+	padding: 15px 30px;
+	background: #fff;
+	border-bottom: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+}
+
+.upload_bg {
+	float: left;
+	width: 1.24rem;
+	height: 1.24rem;
+	background: #f4f4f4;
+	position: relative;
+}
+
+.file {
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 1.24rem;
+	height: 1.24rem;
+	filter: alpha(opacity: 0);
+	opacity: 0;
+}
+.upload_bg img{
+	display: block;
+	width: 1.24rem;
+	height: 1.24rem;
+}
+.text_span{
+	float: left;
+	height: 1.24rem;
+	line-height: 1.24rem;
+	color: #8f8f8f;
+}
+.location{
+	border-bottom: 1px solid #ddd;
+	border-top:1px solid #ddd ;
+	margin-top:15px ;
+	margin-bottom: 15px;
+	background: #fff;
+	overflow: hidden;
+	height: auto;
+}
+.location .odiv{
+	width: 56%;
+	overflow: hidden;
+	height: auto;
+	float: left;
+	margin-top: 0.13rem;
+}
+.location .oli .radio {
+	width: 44%;
+	float: right;
+}
+.synopsis {
+	border-bottom: 1px solid #ddd;
+	border-top:1px solid #ddd ;
+    padding: 8px 4%;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+    margin-bottom: 10px;
+}
+.field_box {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.field_prompt {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+.field_title {
+    width: 29%;
+    font-size: 0.32rem;
+    color: #444;
+    text-align: center;
+    float: left;
+}
+.field_text {
+    float: right;
+    width: 71%;
+}
+textarea {
+    padding: 0px 5px;
+    font-size: 0.32rem;
+    color: #444;
+    min-height: 1.5rem;
+    border: none;
+}
+.prompt_span {
+    display: block;
+    width: 0.30rem;
+    height: 0.30rem;
+    float: left;
+    line-height: 0.30rem;
+    background: #ff6525;
+    text-align: center;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.26rem;
+    margin-top: 0.1rem;
+    margin-right: 5px;
+}
+.prompt_span2 {
+    font-size: 0.26rem;
+    color: #ff6525;
+}
+.science{
+	    border-bottom: 1px solid #ddd;
+	border-top:1px solid #ddd ;
+	 padding: 8px 4%;
+    height: auto;
+    overflow: hidden;
+    background: #fff;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+.science .field_title{
+	width: 38%;
+}
+.science .field_text{
+	width: 62%;
+}
+.submit{
+	width: 94%;
+	margin: 0  auto;
+	 margin-bottom: 20px;
+}
+.mui-btn-block{
+	padding: 5px 0px;
+}
+input[type=text]{
+	font-size: 0.32rem;
+    width: 76%; 
+    height: 21px;
+    margin-bottom: 0px;
+    padding: 0px 0px;
+    -webkit-user-select: text;
+    border-radius: 0px;
+    color: #444;
+    border: none;
+}
+.call_title {
+	font-size: 0.34rem;
+	color: #444;
+	text-align: center;
+	width: 100%;
+	padding: 11px 0px;
+	border-bottom: 1px solid #ddd;
+}

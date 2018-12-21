@@ -1,0 +1,472 @@
+﻿body {
+}
+.division{
+    margin-top:15px;
+}
+.introduced-list{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    overflow:hidden;
+}
+.introduced-list ul li{
+    overflow:hidden;
+    width:100%;
+    margin-bottom:8px;
+}
+.introduced-list ul li:before{
+    content:"";
+    display:inline-block;
+    float:left;
+    color: #0c4ca3;
+    width: 5px;
+    height: 5px;
+    background-color: #0c4ca3;
+    border-radius: 50%;
+    margin-top:8px;
+}
+.introduced-list ul li span{
+    color: #595757;
+    font-size: 14px;
+    float:left;
+    display:inline-block;
+    width:98%;
+    padding-left:10px;
+    box-sizing:border-box;
+}
+.space_bg img{
+    width:100%;
+    height:3rem;
+}
+.trait-box{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    text-align:center;
+}
+.trait-box h4{
+    color:#0e5bb5;
+    font-size:0.26rem;
+    margin-bottom:0.4rem;
+    text-align:left;
+}
+.trait-box ul li{
+    display:inline-block;
+    margin-right:0.35rem;
+}
+.trait-box ul li .bypl{
+    display:block;
+    width:0.73rem;
+    height:0.73rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/zicon1.png');
+    background-size:100% 100%;
+    margin:0 auto;
+}
+.trait-box ul li .byfd{
+    display:block;
+    width:0.57rem;
+    height:0.73rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/zincon2.png');
+    background-size:100% 100%;
+    margin:0 auto;
+}
+.trait-box ul li .profi{
+    display:block;
+    width:0.49rem;
+    height:0.69rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/zicon3.png');
+    background-size:100% 100%;
+    margin:0 auto;
+}
+.trait-box ul li .stabilize{
+    display:block;
+    width:0.62rem;
+    height:0.63rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/zicon4.png');
+    background-size:100% 100%;
+    margin:0 auto;
+}
+.trait-box ul li span{
+    color:#0e5bb5;
+    font-size:0.24rem;
+}
+.approach-text{
+    text-align:left;
+    color:#3f3f3f;
+    font-size:0.26rem;
+    margin:10px 0;
+}
+.flow-box{
+    width:100%;
+    overflow:hidden;
+    text-align:center;
+}
+.flow-box ul li{
+     display:inline-block;
+     margin-right:0.6rem;
+     margin-top:0.3rem;
+     height:auto;
+}
+.flow-box ul li .cire-icn{
+    width:1.3rem;
+    height:1.3rem;
+    border-radius:50%;
+    border:#ddd solid 1px;
+    margin:0 auto;
+    vertical-align:text-top;
+}
+.flow-box ul li .cire-icn .yzfc{
+    display:block;
+    width:0.62rem;
+    height:0.63rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/zicon5.png');
+    background-size:100% 100%;
+    margin:15px auto;
+}
+.flow-box ul li .cire-icn .tkhj{
+    display:block;
+    width:0.34rem;
+    height:0.36rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/zicon6.png');
+    background-size:100% 100%;
+    margin:25px auto;
+}
+.flow-box ul li .cire-icn .zzyc{
+    display:block;
+    width:0.26rem;
+    height:0.46rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/sl.png');
+    background-size:100% 100%;
+    margin:25px auto;
+}
+.flow-box ul li .cire-icn .filt{
+    display:block;
+    width:0.38rem;
+    height:0.36rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/yaw.png');
+    background-size:100% 100%;
+    margin:25px auto;
+}
+.flow-box ul li .cire-icn .foster{
+    display:block;
+    width:0.34rem;
+    height:0.34rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/yqu.png');
+    background-size:100% 100%;
+    margin:25px auto;
+}
+
+.flow-box ul li .fl-text{
+    font-size:0.24rem;
+    color:#0e5bb5;
+    text-align:center;
+    line-height:0.28rem;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    height: 30px;
+    min-height:30px;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-top:0.1rem;
+    vertical-align:text-top;
+}
+.technology-wrap{
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+}
+.gene-ty{
+    display:block;
+     width:100%;
+     background-image: url('../../image/MilitaryCivilian/breeding/blu-bg.png');
+     background-size:100%;
+     padding:40PX;
+     height:6.7rem;
+     padding-bottom:30px;
+     box-sizing:border-box;
+     position:relative;
+     margin-top:10px;
+}
+.wht-text{
+    width:94%;
+    margin:0 auto;
+    left:3%;
+    border:#fff solid 2px;
+    padding:0.3rem;
+    box-sizing:border-box;
+    z-index:33;
+    position:absolute;
+    bottom:-0.35rem;
+    top:30px;
+}
+.wht-text h3{
+    font-size:0.28rem;
+    color:#fff;
+    font-weight:bold;
+}
+.wht-text p{
+    color:#fff;
+    margin-bottom:3px;
+}
+.space-tly{
+  background:#0f3858;
+  color:#fff;
+  z-index:32;
+  padding-top:10px;
+}
+.arrows{
+    width:0.13rem;
+    height:0.29rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/jt.png');
+    background-size:100%;
+    margin:0 auto;
+    margin-top:10px;
+}
+.mutation{
+    border:none;
+    padding:20px 30px;
+}
+.mutation h3{
+    font-size:0.28rem;
+    color:#fff;
+    font-weight:bold;
+    margin-bottom:0.3rem;
+}
+.mutation p{
+    color:#fff;
+    margin-bottom:3px;
+}
+.projectlist{
+    width:100%;
+    padding:10px 5px 10px 15px;
+    box-sizing:border-box;
+    margin-top:10px;
+    overflow:hidden;
+}
+.projectlist ul li{
+    display:block;
+}
+.projectlist ul li .proicon{
+    width:13%;
+    float:left;
+    padding-top:5px;
+    text-align:right;
+}
+.projectlist ul li .proicon .matrix{
+    display:block;
+    width:0.65rem;
+    height:0.65rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/bicon1.png');
+    background-size:100%;
+}
+.projectlist ul li .proicon .logo{
+    display:block;
+    width:0.63rem;
+    height:0.63rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/bicon2.png');
+    background-size:100%;
+}
+.projectlist ul li .proicon .park{
+    display:block;
+    width:0.48rem;
+    height:0.64rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/bicon3.png');
+    background-size:100%;
+}
+.projectlist ul li .proicon .town{
+    display:block;
+    width:0.65rem;
+    height:0.61rem;
+    background-image: url('../../image/MilitaryCivilian/breeding/bicon4.png');
+    background-size:100%;
+}
+.projectlist ul li .protext{
+    width:85%;
+    float:left;
+}
+.projectlist ul li .protext h4{
+    font-size:0.26rem;
+    font-weight:600;
+    color:#3f3f3f;
+    line-height:0.3rem;
+}
+.projectlist ul li .protext p{
+    color:#3f3f3f;
+}
+/*-----修改-------*/
+p{
+    font-size:0.28rem
+}
+.wht-text p{
+    line-height:0.38rem;
+    font-size:0.28rem
+}
+.mutation p{
+    line-height:0.38rem
+}
+.defence-list{
+    padding:10px 3%
+}
+.defence-list .approach-text{
+    margin:0
+}
+.defence-list .space_bg{
+    margin-top:15px
+}
+.defence-list .defence-ul{
+    width:100%;
+    overflow:hidden;
+}
+.defence-list .defence-ul li{
+    padding:10px 0;
+    overflow:hidden;
+    margin-bottom:0;
+    border-bottom:1px solid #ddd;
+    position:relative
+}
+.defence-list ul li:before{
+    width:0;
+    height:0
+}
+.step-left{
+    width:12%;
+    float:left;
+    height:100%;
+    padding-left:2%
+}
+.step-left h3{
+    font-size:0.40rem;
+    color:#595757;
+    margin:0
+}
+.step-right {
+    width:88%;
+    float:right;
+    height:100%
+}
+.step-i{
+    display:block;
+    position:absolute;
+    bottom:0;
+    left:0;
+    width:0.54rem;
+    height:1px;
+    background:#0c4ca3
+}
+.CompanyName h3{
+    font-size:0.30rem
+}
+.step-right h3{
+    font-size:0.30rem;
+    color:#0e5bb5;
+    margin:0.05rem 0 0.15rem 0;
+}
+.step-right p{
+    margin-bottom:0;
+    font-size:0.26rem;
+    color:#3f3f3f
+}
+/*-----新增Dilac页面样式-------*/
+.dilac-wrap p{
+    color:#3f3f3f;
+    font-size:0.24rem;
+    line-height:0.34rem;
+    margin-bottom:0.1rem;
+}
+.meaning-wrap{
+    padding:0;
+    background:url("../../image/recommend/blu-bg.png");
+    width:100%;
+    height:7.37rem;
+    padding:0.5rem 0;
+    box-sizing:border-box;
+    background-size:100% 100%;
+    margin-bottom:0.25rem;
+}
+.meaning-wrap ul{
+    width:100%;
+    margin:0 auto;
+    overflow:hidden;
+    padding:0 0.1rem;
+    box-sizing:border-box;
+}
+.meaning-wrap ul li{
+   width:50%;
+   float:left;
+   color:#fff;
+   text-align:center;
+   padding-bottom:0.2rem;
+   box-sizing:border-box;
+}
+.meaning-wrap ul li .icon-mean{
+   width:1.05rem;
+   height:1.05rem;
+   display:block;
+   margin:0.3rem auto 0.3rem auto;
+}
+.meaning-wrap ul li h4{
+    font-size:0.28rem;
+    color:#fff;
+    margin:0.2rem 0 0.15rem 0;
+}
+.meaning-wrap ul li p{
+    color:#fff;
+    font-size:0.22rem;
+    line-height:0.24rem;
+    min-height:0.72rem;
+    padding:0 0.2rem;
+}
+.meaning-wrap ul li .icon-mean i{
+    display:block;
+}
+.meaning-wrap ul li .icon-mean .admin{
+      background:url("../../image/recommend/ic1.png");
+      width:1.05rem;
+      height:1.05rem;
+      background-size:100% 100%;
+}
+.meaning-wrap ul li .icon-mean .prots{
+      background:url("../../image/recommend/ic2.png");
+      width:1.05rem;
+      height:1.05rem;
+      background-size:100% 100%;
+}
+.meaning-wrap ul li .icon-mean .line{
+      background:url("../../image/recommend/ic3.png");
+      width:1.05rem;
+      height:1.05rem;
+      background-size:100% 100%;
+}
+.meaning-wrap ul li .icon-mean .gover{
+      background:url("../../image/recommend/ic4.png");
+      width:1.05rem;
+      height:1.05rem;
+      background-size:100% 100%;
+}
+.sever-wrap{
+      background:url("../../image/recommend/sevbg.png");
+      width:100%;
+      height:4.5rem;
+      background-size:100% 100%;
+      position:relative;
+      margin-top:0.2rem;
+}
+.sever-wrap .sevtext-a{
+    position:absolute;
+    left:0.5rem;
+    top:0.85rem;
+    width:4.26rem;
+    font-size:0.22rem;
+    color:#fff;
+    line-height:0.32rem;
+}
+.sever-wrap .sevtext-b{
+    position:absolute;
+    right:0.65rem;
+    top:2.50rem;
+    width:4.26rem;
+    font-size:0.22rem;
+    color:#fff;
+    line-height:0.32rem;
+}

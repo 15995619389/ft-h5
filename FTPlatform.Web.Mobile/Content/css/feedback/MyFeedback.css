@@ -1,0 +1,97 @@
+html{
+	background: #f2f1f7;
+}
+p,body{
+	line-height: 0.40rem;
+}
+p{
+	margin-bottom: 0px;
+}
+.mui-table-view{
+    background:none 
+}
+.feedback{
+	padding:0.20rem 3%;
+	overflow: hidden;
+	height: auto;
+	margin-bottom: 0.20rem;
+	background: #fff;	
+}
+.feedback:nth-child(1){
+	border-top:1px solid #ddd;
+}
+.research_title,.Serial{
+    font-size: 0.30rem;
+    color: #444444;
+    padding-bottom: 10px;
+}
+.not_docking {
+    float: right;
+    color: #ff6525;
+}
+.time,.examine{
+	float: right;
+    color: #444444;
+}
+.examine{
+    border:1px solid ;
+    border-radius:16px;
+    padding:1px 4px;
+    font-size:0.26rem
+}
+.division{
+	float: right;
+	margin: 0px 5px;
+    font-size: 0.20rem;
+}
+.Iwant {
+    position: fixed;
+    bottom: 0%;
+    width: 100%;
+     z-index:1000;
+}
+.Iwant a {
+    width: 94%;
+    height: auto;
+    overflow: hidden;
+    display: block;
+   margin:0 auto
+}
+.mui-btn-block {
+    margin-bottom: 0px;
+}
+.mui-btn-blue{
+    background:#0e5bb5;
+    border-color:#0e5bb5
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

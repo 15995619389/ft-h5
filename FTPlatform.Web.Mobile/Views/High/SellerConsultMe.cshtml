@@ -1,0 +1,77 @@
+﻿
+@{
+    ViewBag.Title = "咨询我的";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/content/css/high/buyeradvice.css" />
+}
+@section foot{
+    <script src="~/dist/high.consultme.bundle.js"></script>
+}
+<style>
+    #mask {
+        position: fixed;
+    }
+</style>
+<div id="container" v-cloak>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+        <h1 class="mui-title">咨询我的</h1>
+    </header>
+    <div class="mui-content l-scrollable">
+        <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" style="top:44px;position:fixed">
+            <div class="advice_box" v-for="consult in consultations">
+                <div class="goods_info">
+                    <img v-lazy="consult.productimg" class="goods_img" v-on:click="ProductSkip(consult.productid)" />
+                    <div class="goods_right">
+                        <p class="goods_title">{{consult.productname}}</p>
+                        <p style="font-size: 0.26rem;color: #999;">X{{consult.purchasecount}}</p>
+                        <div class="goods_status">
+                            <span class="money" v-if="consult.saleprice=='0.00'">面议</span>
+                            <span class="money" v-else>￥{{consult.saleprice}}</span>
+                            <span class="time">{{consult.createtime}}</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="problem_wrap">
+                    <div class="problem_box">
+                        <span>咨询问题：</span>
+                        <div class="problem_text">{{consult.contentnub}}</div>
+                    </div>
+                </div>
+                <ul class="reply_footer">
+                    <li v-show="!consult.isreply">
+                        <button class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="ReplyShow(consult.id)">立即回复</button>
+                    </li>
+                    <li v-show="consult.isreply">
+                        <button class="mui-btn mui-btn-gray mui-btn-outlined" v-on:click="CheckReply(consult.replynub)">查看回复</button>
+                    </li>
+                </ul>
+            </div>
+        </scroller>
+    </div>
+    <!--遮罩层-->
+    <div id="mask" style="display:none"></div>
+    <!--立即回复-->
+    <div class="pop_model" id="Immediate" style="display:none">
+        <h3 v-on:click="ReplyHide"><span>X</span></h3>
+        <h4>请输入您的回复内容：</h4>
+        <div class="check_btn">
+            <textarea placeholder="请输入您的回复内容" rows="4" v-model="replyModel.replyNub"></textarea>
+        </div>
+        <div class="Quotation_btn">
+            <button class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="ReplyPost">提交</button>
+        </div>
+    </div>
+    <!--查看回复-->
+    <div class="pop_model" id="Reply" style="display:none">
+        <h3 v-on:click="ReplyHide"><span>X</span></h3>
+        <div class="problem_wrap">
+            <div class="reply_box">
+                <span>回复内容：</span>
+                <span class="reply_text">{{replyModel.replyNub}}</span>
+            </div>
+        </div>
+    </div>
+</div>

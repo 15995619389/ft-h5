@@ -1,0 +1,70 @@
+html{
+	background: #fff;
+}
+p,body{
+	line-height: 0.40rem;
+}
+p{
+	margin-bottom: 0px;
+}
+.feedback{
+	padding:0.20rem 3%;
+	overflow: hidden;
+	height: auto;
+	margin-bottom: 0.20rem;
+	background: #fff;	
+}
+.feedback:nth-child(1){
+	border-top:1px solid #ddd;
+}
+.research_title,.Serial{
+    font-size: 0.30rem;
+    color: #444444;
+    padding-bottom: 10px;
+}
+.not_docking {
+    float: right;
+    color: #ff6525;
+}
+.time,.examine{
+	float: right;
+    color: #444444;
+}
+.division{
+	float: right;
+	margin: 0px 5px;
+    font-size: 0.20rem;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

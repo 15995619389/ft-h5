@@ -1,0 +1,112 @@
+html {
+    background: #f2f1f7;
+}
+/*------修改头部-----*/
+
+.mui-bar {
+    height: 44px;
+    background: #fff;
+}
+.oHeader1 {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+.search {
+    position: absolute;
+    top: 9px;
+    right: 0px;
+    height: 27px;
+    width: 92%;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+}
+.cataloglist {
+    background: url(../../image/rectangular.png) no-repeat scroll right center transparent;
+    background-size: 0.25rem 0.15rem;
+    float: left;
+    width: 1.20rem;
+    height: 100%;
+    padding: 0 0;
+    padding-left: 0.30rem;
+    color: #969696;
+}
+#area{
+	font-size: 0.28rem;
+}
+.on_seek {
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0.11rem;
+}
+.cataloglist dt {
+     margin-top: 0px; 
+}
+.seek_img {
+    width: 0.25rem;
+    height: 0.25rem;
+    margin: auto;
+    margin-top: 6px;
+}
+.mui-bar-nav~.mui-content {
+    padding-top: 44px;
+}
+/*----------*/
+.mui-table-view{
+	border-top:1px solid #ddd ;
+}
+.one,.two{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.two{
+	margin-top: 0.20rem;
+}
+.mui-ellipsis{
+	overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+}
+.mui-ellipsis{
+	white-space: normal;
+	margin-top: 0.10rem;    
+}
+.mui-table-view-cell>a:not(.mui-btn){
+	white-space:normal
+}
+.mui-table-view .mui-media-object{
+	width:2.66rem ;
+	height: 2.00rem;
+	max-width:2.66rem
+}
+p{
+	line-height: 0.40rem;
+	font-size: 0.30rem;	
+}
+.mui-media-body{
+	font-size: 0.34rem;
+	color: #444444;
+	line-height: 0.48rem;
+}
+/*-----更多-----*/
+.expect {
+    margin-top: 2.50rem;
+    background: #f2f1f7;
+    height: auto;
+    overflow: hidden;
+}
+.expect p {
+    font-size: 0.28rem;
+    color: #cccccc;
+    text-align: center;
+}
+.expect img {
+    width: 1.15rem;
+    height: 0.97rem;
+    display: block;
+    margin: 0 auto;
+}

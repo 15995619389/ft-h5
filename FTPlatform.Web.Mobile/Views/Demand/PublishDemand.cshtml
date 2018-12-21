@@ -1,0 +1,107 @@
+﻿@{
+    ViewBag.title = "我的需求";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/myBusiness/myNeed/MyNeeds.css" rel="stylesheet" />
+}
+@section foot{
+    <script src="~/dist/demand.mylist.bundle.js"></script>
+}
+<div id="container">
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness"></a>
+        <h1 class="mui-title">我的需求</h1>
+    </header>
+    <div class="mui-content mui-scroll-wrapper">
+        <div style="position:absolute;z-index:9;width:100%">
+            <ul class="content_nav">
+                <li v-on:click="Filt(null)" v-bind:class="{text_color:(param.status==null)}">全部</li>
+                <li v-on:click="Filt(DemandStatus.Draft)" v-bind:class="{text_color:(param.status==DemandStatus.Draft)}">待提交</li>
+                <li v-on:click="Filt(DemandStatus.Aduiting)" v-bind:class="{text_color:(param.status==DemandStatus.Aduiting)}">待审核</li>
+                <li v-on:click="Filt(DemandStatus.AduitSuccess)" v-bind:class="{text_color:(param.status==DemandStatus.AduitSuccess)}">已发布</li>
+                <li v-on:click="Filt(DemandStatus.Docked)" v-bind:class="{text_color:(param.status==DemandStatus.Docked)}">对接中</li>
+                <div class="right_iocn" v-on:click="ToggleMoreStatusPanel" id="rightiocn"><img src="/Content/image/myClassify.png" /></div>
+            </ul>
+            <ul class="allProject" v-show="IsMoreStatusPanelVisibale">
+                <li v-on:click="Filt(DemandStatus.Term)" v-bind:class="{text_color:(param.status==DemandStatus.Term)}">终止</li>
+                <li v-on:click="Filt(6)" v-bind:class="{text_color:(param.status==6)}">项目进行中</li>
+                <li v-on:click="Filt(DemandStatus.Finished)" v-bind:class="{text_color:(param.status==DemandStatus.Finished)}">项目已完成</li>
+                <li v-on:click="Filt(DemandStatus.Evaluated)" v-bind:class="{text_color:(param.status==DemandStatus.Evaluated)}">已评价</li>
+            </ul>
+        </div>
+        <scroller ref="scroller" v-bind:on-refresh="Search" v-bind:on-infinite="Append" class="mui-scroll" v-cloak style="top:85px">
+            <ul class="mui-table-view " style="margin-bottom:50px">
+                <li class="mui-table-view-cell mui-media" v-for="need in demands">
+                    <div class="mui-media-body" name="dl">
+                        <p class="research_title"><span style="float:left">需求编号：</span><span class="oSpan">{{need.Id}}</span><span class="not_docking">{{need.AuditingStatus|fAuditingStatus}}</span></p>
+                        <div v-on:click="Detail(need)" class="project_content" v-bind:id="need.Id">
+                            <p class="content_title">
+                                <span class="title_left">{{need.Title}}</span>
+                                <span class="title_right">{{need.CreateTime|FormatDate}}</span>
+                            </p>
+                            <p class="genre">
+                                类型：<span>
+                                    <template v-if="need.BusinessNewCategory!=null&&need.BusinessNewCategory.BusinessClassLevelName1!=null">
+                                        {{need.BusinessNewCategory.BusinessClassLevelName1}}
+                                    </template>
+                                </span>
+                            </p>
+                            <p class="genre">投入预算：<span>{{InputBudget[need.InputBudget-1]}}</span></p>
+                        </div>
+                        <div class="title_footer" data-box="1" v-if="IsButtonBoxVisibale(1,need)">
+                            <div style="display:inline" data-box="2" v-if="IsButtonBoxVisibale(2,need)">
+                                <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="Edit(need)">编辑</button>
+                                <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="ShowPanel(1,need)">删除</button>
+                                <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="ShowPanel(3,need)">提交</button>
+                            </div>
+                            <button v-if="IsButtonVisiable(ButtonTypes.ChangeSupplier,need)" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="UnsupportOperation(need)">更换供应商</button>
+                            <button v-if="IsButtonVisiable(ButtonTypes.ChooseSupplier,need)" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="UnsupportOperation(need)">指定唯一供应商</button>
+                            <button v-if="IsButtonVisiable(ButtonTypes.AuditContract,need)" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="UnsupportOperation(need)">审核合同</button>
+                            <button v-if="IsButtonVisiable(ButtonTypes.ApplyTermination,need)" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="ShowPanel(2,need)">申请终止</button>
+                            <button v-if="IsButtonVisiable(ButtonTypes.Pay,need)" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="UnsupportOperation(need)">支付款项</button>
+                            <button v-if="IsButtonVisiable(ButtonTypes.ConfirmFinish,need)" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="UnsupportOperation(need)">项目确认完成</button>
+                            <button v-if="IsButtonVisiable(ButtonTypes.Critique,need)" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="Critique(need)">评价</button>
+                            <button v-if="IsButtonVisiable(ButtonTypes.ConfirmPayment,need)" type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="ShowPanel(6,need)">确认付款</button>
+                        </div>
+                        <div class="title_footer" data-box="3" v-if="IsButtonBoxVisibale(3,need)">
+                            <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="ShowPanel(4,need)">确认终止</button>
+                            <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="ShowPanel(5,need)">拒绝终止</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </scroller>
+    </div>
+    <div v-show="IsPanelVisiable" style="position:fixed;top:0;bottom:0;left:0;right:0;z-index:20;" v-cloak>
+        <div id="mask" v-show="IsPanelVisiable" style="display:block"></div>
+        <div class="popup" id="del">
+            <div class="btn_box">
+                <span style="margin-left: 20px;">提示</span>
+                <a class="bttn disappear" v-on:click="Cancel">X</a>
+            </div>
+            <p class="p_text" v-html="PanelMessage"></p>
+            <div class="btn_footer">
+                <div class="btn_footer1">
+                    <button type="button" class="mui-btn mui-btn-blue mui-btn-block confirm " v-on:click="Confirm">确定</button>
+                    <button type="button" class="mui-btn  mui-btn-block cancel disappear" style="background: #ddd;" v-on:click="Cancel">取消</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div v-show="IsUnsupportPanelVisiable" style="position:fixed;top:0;bottom:0;left:0;right:0;z-index:20;" v-cloak>
+        <div id="mask" v-show="IsUnsupportPanelVisiable" style="display:block"></div>
+        <div class="popup" v-cloak>
+            <div class="btn_box">
+                <span style="margin-left: 20px;">提示</span>
+                <a class="bttn disappear" v-on:click="Cancel">X</a>
+            </div>
+            <p class="p_text">非常抱歉，更多操作请至飞天众智电脑端网站进行。给您带来不便敬请谅解。</p>
+            <div class="btn_footer">
+                <div class="btn_footer1">
+                    <button type="button" style="margin-left:35px" class="mui-btns mui-btn-blue mui-btn-block disappear" v-on:click="Cancel">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

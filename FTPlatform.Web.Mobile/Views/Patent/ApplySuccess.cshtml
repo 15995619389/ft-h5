@@ -1,0 +1,26 @@
+﻿
+@{
+    ViewBag.Title = "申请成功";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="/content/css/pulli.css" />
+    <link href="~/Content/css/demand/Successful.css" rel="stylesheet" />
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a href="/Patent/" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">申请成功</h1>
+</header>
+<div class="mui-content" style="background: #fff;">
+    <div style="border-top:1px solid #ddd ;">
+        <div class="success">
+            <img src="~/Content/image/Apply_bg.png">
+            <p style="text-align:center;color:#444;margin-top:0.20rem;font-size:0.28rem">申请交易专利成功，平台将会在24小时内联系您，期间请保持手机畅通.</p>
+        </div>
+        <div class="btn-needs">
+            <a href="/demand/"><button type="button" class="mui-btn" style="background:none;border:1px solid #0e5bb5;color:#0e5bb5">我的专利交易</button></a>
+            <a href="/Patent/"><button type="button" class="mui-btn" style="background:none;color:#666;border:1px solid #ddd">发现更多专利</button></a>
+        </div>
+    </div>
+</div>

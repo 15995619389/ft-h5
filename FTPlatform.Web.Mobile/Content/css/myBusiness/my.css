@@ -1,0 +1,283 @@
+.my_data{
+	width: 100%;
+	height: 1.75rem;
+	padding-top: 0.32rem;
+	background: url(../../image/my_bg.png) no-repeat center center;
+}
+.data_box{
+	width: 94.5%;
+	margin-left: 4%;
+	height: 1.10rem;	
+}
+.portrait{
+	width: 1.10rem;
+	height: 1.10rem;
+    border-radius:50%;
+	background-size: 1.10rem 1.10rem;
+    z-index:9
+}
+.data_right{
+	width: 81.4%;
+    height: 100%;
+    float: left;
+    margin-left: 3%;
+}
+.information,.name{
+	width: 100%;
+	height: 50%;
+	position: relative;	
+}
+.information p{
+	width: 65%;
+	float: left;
+	font-size: 0.30rem;
+	color: #fff;
+}
+.information p span{
+	float: left;
+}
+.information a{
+	display: block;
+	float: right;
+	font-size: 0.28rem;
+	color: #fff;
+	text-align: right;
+}
+.name li{
+	float: left;
+	width: 53%;
+}
+.name li:nth-child(2){
+    float:right;
+    width:47%
+}
+.name .name1{
+	float: left;
+	font-size: 0.30rem;
+	color: #fff;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+.members{
+	height: 0.40rem;
+	background: #206d9d;
+	border-radius: 10px;
+}
+.members img{
+	display: block;
+	width: 0.30rem;
+	height: 0.30rem;
+	float: left;
+	margin-top: 0.05rem;
+    margin-left: 4%;	
+}
+.rank{
+	float: left;
+	margin-left: 0.1rem;
+	font-size: 0.26rem;
+    line-height: 0.4rem;
+    color: #fff;	
+}
+.mui-badge {
+     font-size: 12px; 
+    /* line-height: 1; */
+    display: inline-block;
+    padding: 0px 0px;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    line-height: 20px;
+    border-radius:50%;
+}
+.mui-badge-blue, .mui-badge-primary {
+    color: #fff;
+    background-color:red;
+}
+.mui-table-view {    
+    color: #444444;
+}
+.mui-table-view-cell>.mui-badge{
+	right: 47px;
+}
+.myIcon{
+	width: 0.36rem;
+	height: 0.39rem;
+	float: left;
+	display: block;
+    margin-top: 0.05rem;
+    margin-right: 3%    	
+}
+.myButt{
+	width: 0.36rem;
+	height: 0.36rem;
+	float: left;
+	display: block;
+    /*margin-top: 0.05rem;*/
+    margin-right: 3%    
+}
+.recommend{
+	width: 0.37rem;
+	height: 0.38rem;
+	float: left;
+	display: block;
+    margin-top: 0.04rem;
+    margin-right: 3%
+}
+.myWisdom{
+	width: 0.35rem;
+	height: 0.37rem;
+	float: left;
+	display: block;
+    margin-top: 0.05rem;
+    margin-right: 3%
+}
+.myPrize{
+	width: 0.36rem;
+	height: 0.33rem;
+	float: left;
+	display: block;
+    margin-top: 0.05rem;
+    margin-right: 3%
+}
+/*.mui-table-view-cell {
+    position: relative;
+    overflow: hidden;
+    padding: 11px 10px;
+    -webkit-touch-callout: none;
+}*/
+.mui-navigate-right:after, .mui-push-right:after {
+    right: 0px;
+    content: '\e583';
+}
+.mui-table-view-cell:after {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 38px;
+    height: 1px;
+    content: '';
+    -webkit-transform: scaleY(.5);
+    transform: scaleY(.5);
+    background-color: #c8c7cc;
+}
+/*.mui-table-view-cell>a:not(.mui-btn) {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    color: inherit;
+    width: 91%;
+    float: left;
+    font-size: 0.32rem;
+}*/
+.mui-table-view-cell.mui-collapse .mui-table-view {
+    margin-top: 30px;
+}
+.mui-table-view-cell.mui-collapse .mui-table-view .mui-table-view-cell {
+    padding-left: 43px;
+    background-position: 31px 100%;
+}
+.mui-table-view-cell.mui-collapse .mui-table-view .mui-table-view-cell:after{
+	left: 42px;
+}
+.mui-collapse-content .mui-table-view{
+	color: #666;
+}
+/*-------*/
+/*.mui-table-view-cell.mui-collapse .mui-collapse-content{
+	    margin: 0px -15px -11px;
+    padding: 0px 15px;
+}*/
+.mui-table-view-cell.mui-collapse .mui-table-view{
+	margin-bottom: 0px;
+}
+.mui-table-view-cell.mui-collapse .mui-table-view{
+	margin-bottom: 0px;
+	margin-top: 0px;
+}
+/*----*/
+.mui-table-view-cell.mui-active{
+    background-color:#fff
+}
+.user_bg{
+    float: left;
+    width: 1.10rem;
+    height: 1.10rem;
+    border-radius: 50%;
+    display: inline-block;
+    overflow: hidden;
+    z-index: 1;
+}
+.mui-table-view-cell>a:not(.mui-btn).mui-active{
+    background:#fff
+}
+.mui-navigate-right{
+    position: relative;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    color: inherit;
+    
+    width:91%;
+    font-size: 0.32rem;
+}
+/*------htmlÒÆ¹ýÀ´css------*/
+#exit{
+	width: 100%;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	border-top:1px solid #ddd;
+	border-radius:0px ;
+	text-align: center;
+	color:#fff;
+    background:#0e5bb5;
+	padding: 11px 0px;
+	font-size: 0.32rem;
+}
+     .mui-table-view>li:not(.mui-btn).mui-active{background-color:#eee}
+     .mui-table-view>li:not(.mui-btn).mui-active a{padding-bottom:19px}
+      /*.mui-collapse .mui-navigate-right:after{
+         top:43%
+     }*/
+     .all-li .mui-navigate-right:after{
+         right:15px
+     }
+     .odd-li{
+         width:97%
+     }
+    .mybox .mui-table-view-cell>.mui-badge{
+        right:100px
+    }
+    .mybox .all-li.mui-table-view-cell>.mui-badge{
+        right:27px
+    }
+    .mui-table-view-cell.mui-collapse.mui-active{
+        padding-bottom:0
+    }
+    .mui-collapse:after{
+        right:3%
+    }
+
+.mui-collapse-content li {
+    background: #fff
+}
+
+.mui-table-view-cell.mui-collapse .mui-table-view .mui-table-view-cell {
+    width: 100%;
+    box-sizing: border-box;
+}
+.seller_icon{
+    width:0.36rem;
+    height:0.32rem;
+        float: left;
+    display: block;
+    margin-top: 0.04rem;
+    margin-right: 3%;
+}

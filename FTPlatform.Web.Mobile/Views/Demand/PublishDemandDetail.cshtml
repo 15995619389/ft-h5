@@ -1,0 +1,187 @@
+﻿@{
+    ViewBag.title = "需求详情";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}  
+ @section head{
+    <link rel="stylesheet" href="/Content/css/myBusiness/myNeed/NeedDetails.css" />
+<style>
+    .ssssss{
+        margin-left:5px
+    }
+</style>
+     }
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+        <h1 class="mui-title">需求详情</h1>
+    </header>
+    <div class="mui-content l-scrollable" style="background: #fff;"  v-cloak>
+        <ul class="need_title">
+            <li class="text_color">需求<i></i></li>
+            <li>详情<i></i></li>
+            <li>对接人</li>
+        </ul>
+        <div class="needs_box" style="display: block;">
+            <img v-bind:src="demand.ImgUrl" class="myNeeds_bg" />
+            <ul class="needsData">
+                <li>
+                    <span>需求标题</span>
+                    <span class="ospan">{{demand.Title|subl}}</span>
+                </li>
+                <li>
+                    <span>期望完成时间</span>
+                    <span>{{ExpectedFinishTime[demand.ExpectedFinishTime]}}</span>
+                </li>
+                <li>
+                    <span>发布状态</span>
+                    <span>{{demand.AuditingStatus|as}}</span>
+                </li>
+                <li>
+                    <span>需求标签:</span>
+                    <span class="ospan">{{category|subl}}</span>
+                </li>
+                <li>
+                    <span>需求发布状态</span>
+                    <span>{{demand.PublishStatus|ps}}</span>
+                </li>
+                <li>
+                    <span>投入预算</span>
+                    <span>{{InputBudget[demand.InputBudget]}}</span>
+                </li>
+                <li>
+                    <span>需求类型</span>
+                    <span >{{RequirementTypeView|subl}}</span>
+                </li>
+                <li>
+                    <span>需求解决方式</span>
+                   <span>{{SolutionView|subl}}</span></p>
+                </li>
+            </ul>
+        </div>
+        <!------详情------->
+        <div class="needs_box">
+            @*<img v-bind:src="demand.ImgUrl" class="myNeeds_bg" />*@
+            <ul class="details">
+                <li>
+                    <div class="research_title"><i></i>需求背景及成因</div>
+                    <p>{{demand.BackgroundCauses}}</p>
+                </li>
+                <li>
+                    <div class="research_title"><i></i>现状描述</div>
+                    <p v-html="demand.Description"></p>
+                </li>
+                <li>
+                    <div class="research_title"><i></i>当前参数</div>
+                    <p>{{demand.ArgsDesc}}</p>
+                </li>
+                <li>
+                    <div class="research_title"><i></i>期望要求</div>
+                    <p>{{demand.ExpectDesc}}</p>
+                </li>
+                <li>
+                    <div class="research_title"><i></i>预期参数</div>
+                    <p>{{demand.AnticipateDesc}}</p>
+                </li>
+            </ul>
+        </div>
+        <!-----对接人------->
+
+        <div class="needs_box" v-if="SolveList!=null&&SolveList.length!=0">
+            @*<img v-bind:src="demand.ImgUrl" class="myNeeds_bg" />*@
+            <!-------------------从上一级页面判断如果是：指定唯一供应商的状态该显示下面这个div----------------------->
+            <div id="supplier" v-if="SolveModel!=null&&demand.DockingStatus<2">
+                <div class="DockingPeople">
+                    <div class="content">
+                        <div class="name_box">
+                            <span class="name" v-on:click="ExpertDetail(SolveModel.ExpertModel.ExpertID)">{{SolveModel.ButtName}}</span>
+                            <span class="time">{{SolveModel.CreateTime|formatDate}}</span>
+                            <span class="only">唯一供应商</span>
+                        </div>
+                        <p class="state_content">大致解决方法：{{SolveModel.Solution}}</p>
+                        <div class="contact_time">方便联系时间：<span>{{SolveModel.StartTime|formatDate}}</span>&nbsp;-&nbsp;<span>{{SolveModel.EndTime|formatDate}}</span></div>
+                    </div>
+                    <ul class="supplier_box">
+                        <li style="width:35%">
+                            <img src="/Content/image/BasicInformation/phone.png" class="phone" />
+                            <span style="margin-left: -0.3rem;"><a href="tel:400-920-2025" style="color:black">400-920-2025</a></span>
+                        </li>
+                        <li style="width:65%">
+                            <img src="/Content/image/BasicInformation/email.png" class="email" />
+                            <span><a href="mailto:service@techina2025.com" style="color:black">service@techina2025.com</a></span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!------------从上一级页面判断如果是：已在对接中的状态下该显示下面这个div------------->
+            <div id="docking" v-if="demand.DockingStatus<2">
+                <div class="DockingPeople" v-for="item in SolveList" v-if="item.Status==0">
+                    <div class="content">
+                        <div class="name_box">
+                            <span class="name"  v-on:click="ExpertDetail(item.ExpertModel.ExpertID)">{{item.UserModel == null ? "" : item.UserModel.RealName}}</span>
+                            <span class="time">{{item.CreateTime|formatDate}}</span>
+                            <span class="state" v-if="item.Status!=5">{{Status[item.Status<3?item.Status:item.Status<7?3:item.Status-3]}}</span>
+                            <span class="state" v-else>对接成功</span>
+</div>
+                        <p class="state_content">大致解决方法：{{item.Solution}}</p>
+                        <div class="contact_time">方便联系时间：<span>{{item.StartTime|formatDate}}</span>&nbsp;-&nbsp;<span>{{item.EndTime|formatDate}}</span></div>
+                    </div>
+                    <ul class="supplier_box">
+                        <li style="width:35%">
+                            <img src="/Content/image/BasicInformation/phone.png" class="phone" />
+                            <span style="margin-left: -0.3rem;"><a href="tel:400-920-2025" style="color:black">400-920-2025</a></span>
+                        </li>
+                        <li style="width:65%">
+                            <img src="/Content/image/BasicInformation/email.png" class="email" />
+                            <span><a href="mailto:service@techina2025.com" style="color:black">service@techina2025.com</a></span>
+                        </li>
+                    </ul>
+                    <div class="supplier_btn">
+                        <button type="button" v-on:click="show()" class="mui-btn mui-btn-blue">指定唯一供应商</button>
+                    </div>
+                </div>
+            </div>
+           
+            <!---------------从上一级页面判断如果是：已经指定好了供应商该显示下面这个div--------------------->
+            <div id="OnlySupplier">
+                <div id="docking" v-if="demand.DockingStatus>1">
+                    <div class="DockingPeople" v-for="item in SolveList">
+                        <div class="content">
+                            <div class="name_box">
+                                <span class="name" v-on:click="ExpertDetail(item.ExpertModel.ExpertID)">{{item.UserModel == null ? "" : item.UserModel.RealName}}</span>
+                                <span class="time">{{item.CreateTime|formatDate}}</span>
+                                <span class="state"  v-if="item.Status!=5">{{Status[item.Status<3?item.Status:item.Status<7?3:item.Status-3]}}</span>
+                                <span class="state" v-else>对接成功</span>
+                            </div>
+                            <p class="state_content">大致解决方法：{{item.Solution}}</p>
+                            <div class="contact_time">方便联系时间：<span>{{item.StartTime|formatDate}}</span>&nbsp;-&nbsp;<span>{{item.EndTime|formatDate}}</span></div>
+                        </div>
+                        <ul class="supplier_box">
+                            <li style="width:35%">
+                                <img src="/Content/image/BasicInformation/phone.png" class="phone" />
+                                <span style="margin-left: -0.3rem;"><a href="tel:400-920-2025" style="color:black">400-920-2025</a></span>
+                            </li>
+                            <li style="width:65%">
+                                <img src="/Content/image/BasicInformation/email.png" class="email" />
+                                <span><a href="mailto:service@techina2025.com" style="color:black">service@techina2025.com</a></span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="mask"></div>
+        <div class="popup" id="only" style="display:none">
+            <div class="btn_box">
+                <span style="margin-left: 20px;">提示</span>
+                <a class="bttn disappear">X</a>
+            </div>
+            <p class="p_text">非常抱歉，更多操作请至飞天众智官网进行。给您带来不便敬请谅解</p>
+            <div class="btn_footer">
+                <div class="btn_footer1">
+                    <button type="button" style="margin-left:35px" class="mui-btns mui-btn-blue mui-btn-block disappear">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+@section foot{
+    <script src="~/dist/demand.publishdemnddetail.bundle.js"></script>
+}

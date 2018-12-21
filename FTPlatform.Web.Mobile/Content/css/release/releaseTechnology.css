@@ -1,0 +1,540 @@
+html {
+	background: #f4f4f4;
+}
+
+.need_name {
+	padding: 0px 3%;
+	border-top: 1px solid #ddd;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.name_title {
+	width: 100%;
+	padding: 10px 0px;
+	color: #bbbbbb;
+	border-bottom: 1px solid #ddd;
+	overflow: hidden;
+}
+
+.oSpan {
+	color: #b90000;
+	margin-top: 0.05rem;
+	display: block;
+	float: left;
+	width: 3%;
+	margin-right: 0.05rem;
+}
+
+input[type=text] {
+	/*width: 73%;*/
+	float: right;
+	margin-bottom: 0px;
+	padding: 0;
+	height: 20px;
+	border: none;
+	color: #444;
+	font-size: 15px;
+}
+
+.upload_img {
+	width: 100%;
+	padding-top: 20px;
+	position: relative;
+}
+
+#textfield {
+	display: block;
+	width: 1.40;
+	height: 1.40rem;
+}
+
+.file {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 1.40rem;
+	height: 1.40rem;
+	filter: alpha(opacity: 0);
+	opacity: 0;
+}
+
+.img_hint {
+	padding: 5px 0px;
+	color: #d90000;
+	font-size: 0.26rem;
+}
+
+.needs {
+	padding: 0px 3%;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.need_form {
+	padding-bottom: 15px;
+	background: #fff;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+}
+
+.form_title {
+	width: 100%;
+	padding: 10px 0px;
+	color: #444444;
+	font-size: 0.34rem;
+}
+
+.service_checkbox {
+	width: 100%;
+	overflow: hidden;
+	color: #444;
+}
+
+.service_checkbox div {
+	float: left;
+	width: 33.33%;
+}
+
+.mui-input-row {
+	clear: none;
+}
+
+.service_checkbox div:nth-child(odd) {
+	position: relative;
+	float: left;
+	width: 33.33%;
+}
+
+.service_checkbox div:nth-child(even) {
+	position: relative;
+	float: left;
+	width: 33.33%;
+}
+
+.mui-checkbox input[type=checkbox]:before,
+.mui-radio input[type=radio]:before {
+	font-size: 0.34rem;
+}
+
+.mui-checkbox label,
+.mui-radio label {
+	padding-right: 0px;
+}
+
+.mui-checkbox.mui-left label,
+.mui-radio.mui-left label {
+	padding-right: 0px;
+	padding-left: 0.50rem;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	font-size: 0.26rem;
+}
+
+.mui-checkbox input[type=checkbox],
+.mui-radio input[type=radio] {
+	width: 0.38rem;
+	height: 0.38rem;
+	top: 0.0rem;
+}
+
+
+/*.mui-checkbox.mui-left input[type=checkbox], .mui-radio.mui-left input[type=radio] {
+    left: 15px;
+}*/
+
+.mui-checkbox.mui-left input[type=checkbox],
+.mui-radio.mui-left input[type=radio] {
+	left: 0.10rem;
+}
+
+.span1 {
+	float: left;
+	width: 30%;
+	font-size: 0.34rem;
+}
+
+/*.from_label {
+	color: #666666;
+}*/
+
+.need_text {
+	width: 94%;
+	background: #f4f4f4;
+	margin-left: 6%;
+	margin-top: 5px;
+}
+
+.need_form textarea {
+	padding: 5px 5px;
+	font-size: 0.32rem;
+	color: #444;
+	min-height: 1.5rem;
+	border: none;
+	background: #f4f4f4;
+}
+
+.service_checkbox div:nth-child(1) {
+	width: 35%;
+}
+
+.service_checkbox div:nth-child(4) {
+	width: 35%;
+}
+
+.service_checkbox div:nth-child(2) {
+	width: 35%;
+}
+
+.service_checkbox div:nth-child(5) {
+	width: 35%;
+}
+
+.service_checkbox div:nth-child(3) {
+	width: 30%;
+}
+
+.service_checkbox div:nth-child(6) {
+	width: 30%;
+}
+
+.completionTime {
+	padding-bottom: 15px;
+	background: #fff;
+	width: 100%;
+}
+
+.needs_bg {
+	padding: 0px 3%;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.needs_bg_text {
+	padding: 5px 5px;
+	font-size: 0.32rem;
+	color: #444;
+	min-height: 2rem;
+	border: none;
+}
+
+.enterprise {
+	padding: 0px 3%;
+	background: #fff;
+	margin-bottom: 10px;
+}
+
+.select_label {
+	padding: 0px 3%;
+	background: #fff;
+}
+
+.label_box {
+	width: 100%;
+	height: 33px;
+}
+
+.label_fill {
+	float: left;
+	border: 1px solid #dddddd;
+	width: 70%;
+	height: 100%;
+    font-size:0.24rem;
+    line-height:33px;
+    overflow:hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.label_box .mui-btn {
+	float: right;
+	width: 28%;
+	padding: 6px 0px;
+	text-align: center;
+}
+
+.footer_bt {
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+	margin-top: 20px;
+	padding-bottom: 50px;
+}
+
+
+
+/*.footer_bt button:nth-child(1) {
+	float: left;
+}
+
+.footer_bt button:nth-child(2) {
+	float: right;
+}*/
+
+.label_color {
+	color: #0e5bb5;
+}
+
+.mui-content .select_label .aa {
+	color: #444;
+}
+
+.mui-content .select_label .label_color {
+	color: #0e5bb5;
+}
+
+.aa {
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	font-size: 0.26rem;
+	position: relative;
+	margin-bottom: 0.05rem;
+}
+
+input[type=radio] {
+	width: 0.30rem;
+	height: 0.30rem;
+	position: absolute;
+	top: 0.10rem;
+	left: 2px;
+}
+
+.aa span {
+	margin-left: 0.4rem;
+}
+
+.mui-content .needs .need_form .service_checkbox .label_color {
+	color: #0e5bb5;
+}
+
+.mui-content .select_label .bb .label_color {
+	color: #0e5bb5;
+}
+
+.left_list li {
+	font-size: 0.32rem;
+}
+
+.right_list button {
+	width: 100%;
+	margin-top: 0.40rem
+}
+
+
+/*-----修改------*/
+
+.sidebar_left {
+	display: none;
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 998;
+}
+
+.three_label div {
+	display: block;
+	width: 33.33%;
+	text-align: center;
+	font-size: 0.24rem;
+	float: left;
+	background: #fff;
+	height: 0.60rem;
+	line-height: 0.60rem;
+	border: 1px solid #f5f5f5;
+	color: #666;
+}
+
+.two_label div {
+	display: block;
+	width: 33.33%;
+	text-align: center;
+	font-size: 0.28rem;
+	float: left;
+	background: #fff;
+	height: 0.80rem;
+	line-height: 0.80rem;
+	border: 1px solid #f5f5f5;
+	color: #666;
+}
+
+.left_list li:nth-child(1) {
+	border-top: 0px solid #ddd;
+}
+
+.oul1,
+.oul2,
+.oul3,
+.oul4,
+.oul5,
+.oul6,
+.oul7 {
+	display: none;
+}
+/*--------------------*/
+.prompt{
+				width: 1.00rem;
+				height: 0.5rem;
+				background: #666666;
+				opacity: 0.4;
+				text-align: center;
+				font-size: 0.28rem;
+				color: #fff;
+				line-height: 0.50rem;
+			}
+			/*------------------*/
+			#dialogBg {
+			    width: 100%;
+			    height: 100%;
+			    background: #000000;
+			    opacity: .5;
+			    filter: alpha(opacity=50);
+			    position: fixed;
+			    top: 0;
+			    left: 0;
+			    z-index: 9999;
+			    display: none;
+			}
+			#dialog {				
+			    width: 300px;
+			    height: 180px;
+			    margin: 0 auto;
+			    display: none;
+			    position: fixed;
+			    top: 50%;
+			    left: 50%;
+			    margin: -90px 0 0 -150px;
+			    z-index: 10000;
+			    border: 1px solid #ccc;
+			    border-radius: 5px;			   
+			}
+			.aaa{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				width: 100%;
+				height: 100%;
+				opacity:0.4;
+				filter: alpha(opacity=40);
+				background: #000;
+			}
+			.claseDialogBtn{
+				float: right;
+				width: 25px;
+				display: block;
+				margin-right: 0px;
+				margin-top: 2px;
+			}
+			#dialog p{
+				margin: 45px 0px;
+				color: #fff;
+				font-size: 14px;
+				text-align: center;
+			}
+			.button{
+				padding:0px 8%;				
+			}
+			.button button{
+				width: 48%;
+				float: left;
+			}
+			.button button:nth-child(2){
+				float: right;
+			}
+			
+
+.footer_bt a{
+	display: block;
+	overflow: hidden;
+	height: auto;
+	float: left;
+	width: 48%;
+}
+.footer_bt a button{
+	width: 100%;
+}
+.footer_bt a:nth-child(1) {
+	float: left;
+}
+
+.footer_bt a:nth-child(2) {
+	float: right;
+}
+
+ .select_label .label_color, .completionTime .service_checkbox .label_color{
+      color:#0e5bb5
+ }
+ /**-------input--------**/
+ .mui-btn-blue{
+     background:#0e5bb5;
+     border-color:#0e5bb5
+ }
+header{
+	position: fixed;
+	z-index: 10;
+	right: 0;
+	left: 0;
+    top:0;
+	height: 44px;
+	padding-right: 10px;
+	padding-left: 10px;
+}
+.header-a{
+	margin-right: -10px;
+	margin-left: -10px;
+	padding:10px;
+	font-size: 24px;
+	position: relative;
+	z-index: 20;
+	font-family: Muiicons;
+	font-weight: 400;
+	font-style: normal;
+	line-height: 1;
+	display: inline-block;
+	text-decoration: none;
+	-webkit-font-smoothing: antialiased;
+	float: left;
+}
+
+#container .mui-content{
+   position: absolute;
+   width:100%;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+}
+header,main {
+    display: block;
+}
+.fixed-height{
+    position:fixed;
+	height:0;
+	width: 100%;
+}
+.cropper-bg{
+    width:100% !important;
+    height:100% !important
+}
+/*---提示----*/
+.prompt-box {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background: #fff8e6;
+    padding: 5px 0px;
+    border-top: 1px solid #f2e9b8;
+}
+.prompt_text {
+    width: 79%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 13px;
+}
+.prompt_text img {
+    float: left;
+    display: block;
+    width: 0.28rem;
+    height: 0.30rem;
+    margin-top: 0.07rem;
+}

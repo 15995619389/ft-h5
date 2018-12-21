@@ -1,0 +1,128 @@
+﻿
+@{
+    ViewBag.Title = "成功案例投票";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="~/Content/css/ftTwoYears/success.css" />
+}
+<div id="act">
+    <header class="mui-bar mui-bar-nav">
+        <a href="javascript:history.go(-1);" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">飞天众智两周年惊喜等你领取!</h1>
+        <a class="mui-icon-right-nav mui-pull-right" id="shareTenAct"><img src="/Content/image/recommend/reback.png" v-on:click="SharePage"></a>
+    </header>
+    <div class="mui-content l-scrollable" v-cloak>
+        <div class="banner_box">
+            <img src="~/Content/image/ftTwoyears/banner.png" class="banner_bg" />
+            <img src="~/Content/image/ftTwoyears/banner-footer.png" class="banner_bg2" />
+        </div>
+        <div class="success">
+            <img src="~/Content/image/ftTwoyears/success_bg.png" class="text_bg" />
+            <div class="time-box">
+                <p class="time" id="timer">投票剩余时间：<span>00</span>小时<span>00</span>分<span>00</span>秒</p>
+                <p>注：每人每天可投2票，手机H5端及电脑端平台均可投票</p>
+            </div>
+            <ul class="vote_ul">
+                <li v-for="NewsModel in ActNewsModels">
+                    <a v-bind:href="'/news/detail/'+ NewsModel.NewsId" class="img_a">
+                        <img v-bind:src="NewsModel.H5ImgUrl" class="li_left" />
+                    </a>
+                    <div class="li_right">
+                        <a v-bind:href="'/news/detail/'+ NewsModel.NewsId" class="h3_a">
+                            <h3 class="h3_title">{{NewsModel.Title}}</h3>
+                        </a>
+                        <div class="li_bottom">
+                            <div class="piao">
+                                <span class="ranking">{{NewsModel.ActNo}}</span>
+                                <i class="oi"></i>
+                                <span class="vote_number">当前票数：<span>{{NewsModel.TicketNumber}}</span></span>
+                            </div>
+                            <div v-if="NewsModel.IsVote">
+                                <button type="button" class="mui-btn mui-btn-gray">已投票</button>
+                            </div>
+                            <div v-else>
+                                <button type="button" class="mui-btn mui-btn-yellow" v-on:click="ActUserVoteConfirm(NewsModel.NewsId)">+投票</button>
+                            </div>
+
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <!-------遮罩层 mask------------>
+        <div id="mask"></div>
+        <div class="draw_model" id="pop_one_add">
+            <div class="pop_bg"></div>
+            <span class="span_colse" v-on:click="IsOpenWindow('pop_one_add',false)"></span>
+            <p class="pop_text" id="z_text"></p>
+            <p class="pop_text"></p>
+            <div class="pop_btn">
+                <a href="javascript:;" v-on:click="IsOpenWindow('pop_one_add',false)" style="margin-left:1.20rem">确&nbsp;&nbsp;定</a>
+                <a href="javascript:;" style="display:none"></a>
+            </div>
+        </div>
+
+        <div class="draw_model" id="pop_one">
+            <div class="pop_bg"></div>
+            <span class="span_colse" v-on:click="IsOpenWindow('pop_one',false)"></span>
+            <p class="pop_text">您目前尚未登录</p>
+            <p class="pop_text">需要登录之后方可参与投票</p>
+            <div class="pop_btn">
+                <a href="javascript:;" onclick="location.href = '/passport/login?returnurl=' + encodeURIComponent('/act/ftsuccess')" style="margin-left:1.20rem">确&nbsp;&nbsp;定</a>
+                <a href="javascript:;" style="display:none"></a>
+            </div>
+        </div>
+        <!------弹窗3   投票给案例--------------->
+        <div class="draw_model" id="pop_three">
+            <div class="pop_bg"></div>
+            <span class="span_colse" v-on:click="IsOpenWindow('pop_three',false)"></span>
+            <p class="pop_text">确认投票给此案例吗？</p>
+            <p class="pop_text">确认将消耗掉您1次投票机会</p>
+            <div class="pop_btn">
+                <a href="javascript:;" v-on:click="ActUserVoteYes">确&nbsp;&nbsp;认</a>
+                <a href="javascript:;" style="float:right" v-on:click="IsOpenWindow('pop_three',false)">取&nbsp;&nbsp;消</a>
+            </div>
+        </div>
+        <!------弹窗4   还剩1次投票机会，继续投票------>
+        <div class="draw_model" id="pop_four">
+            <div class="pop_bg"></div>
+            <span class="span_colse" v-on:click="IsOpenWindow('pop_four',false)"></span>
+            <p class="pop_text">投票已提交</p>
+            <p class="pop_text">今天您还剩余1次投票机会，欢迎您继续为您喜欢的案例投票。</p>
+            <div class="pop_btn">
+                <a href="javascript:;" v-on:click="IsOpenWindow('pop_four',false)">继续投票</a>
+                <a href="/act/ftleaderboard" style="float:right">查看票数排行</a>
+            </div>
+        </div>
+        <!------弹窗5   投票次数用完，明日再投------>
+        <div class="draw_model" id="pop_five" style="height:5.60rem;margin-top:-2.80rem;">
+            <div class="pop_bg"></div>
+            <span class="span_colse" v-on:click="IsOpenWindow('pop_five',false)"></span>
+            <p class="pop_text">投票已提交</p>
+            <p class="pop_text">您今天的投票限额已用完，请您明日再投。欢迎您继续参加其他有奖活动。</p>
+            <div class="hint"><img src="~/Content/image/ftTwoyears/hint.png" /><p>小贴士：呼朋唤友一起投票吧，这样获奖概率更高哦。</p></div>
+            <div class="pop_btn">
+                <a href="/act/ftleaderboard">查看票数排行</a>
+                <a href="/act/ftsecondindex" style="float:right">参加其他有奖活动</a>
+            </div>
+        </div>
+        <!------弹窗6   投票失败----------------->
+        <div class="draw_model" id="pop_six" style="height:5.60rem;margin-top:-2.80rem">
+            <div class="pop_bg"></div>
+            <span class="span_colse" v-on:click="IsOpenWindow('pop_six',false)"></span>
+            <p class="pop_text">投票失败</p>
+            <p class="pop_text">您今天的投票限额已用完，请您明日再投。欢迎您继续参加其他有奖活动。</p>
+            <div class="hint11"><i></i><p>小贴士：每天都投票的用户，很容易获奖哦</p></div>
+            <div class="pop_btn">
+                <a href="/act/ftleaderboard">查看票数排行</a>
+                <a href="/act/ftsecondindex" style="float:right">参加其他有奖活动</a>
+            </div>
+        </div>
+        <share ref="share"></share>
+    </div>
+</div>
+@section foot{
+    <script src="~/dist/act.ftsuccess.bundle.js"></script>
+}

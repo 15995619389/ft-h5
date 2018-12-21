@@ -1,0 +1,62 @@
+﻿@{
+    ViewBag.Title = "历史消息";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/myBusiness/basicInformation/HistoryMessage.css" />
+    <style>
+        .mui-btn-outlined.mui-btn-yellow {
+            color: #ff6525
+        }
+
+        .mui-btn-yellow {
+            border: 1px solid #ff6525
+        }
+    </style>
+}
+@section foot{
+    <script src="~/dist/member.usermessage.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/"></a>
+    <h1 class="mui-title">历史消息</h1>
+</header>
+<div class="mui-content" v-cloak>
+    <div style="position:fixed;z-index:9;width:100%">
+        <ul class="content_nav">
+            <li class="text_color" v-on:click="ChangeType(0)">全部</li>
+            <li v-on:click="ChangeType(4)">我的需求</li>
+            <li v-on:click="ChangeType(5)">我的对接</li>
+            <li v-on:click="ChangeType(3)">我的名片</li>
+            <div class="right_iocn"><img src="/Content/image/myClassify.png" /></div>
+        </ul>
+        <ul class="allProject">
+            <li v-on:click="ChangeType(2)">关注提醒</li>
+        </ul>
+    </div>
+    <!----全部----->
+    <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" class="mui-scroll" v-cloak>
+        <div class="project" style="display: block;top:1.78rem;">
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-media" v-for="um in UserMessage">
+                    <a href="javascript:;">
+                        <img class="mui-media-object mui-pull-left" v-lazy="um.Image!=null?um.Image:'/Content/image/m_user_default400.png'">
+
+                        <div class="mui-media-body" v-bind:id="um.Id">
+                            <p class="mui-ellipsis" v-html="um.Content"></p>
+                            <button type="button" v-if="um.MessageType==2||um.MessageType==6" v-on:click="ReadMessage(um)" class="mui-btn mui-btn-yellow mui-btn-outlined myAttention">查看</button>
+                            <button type="button" v-if="um.MessageType==4||um.MessageType==5" v-on:click="ReadMessage(um)" class="mui-btn mui-btn-yellow mui-btn-outlined up_look">去看看</button>
+                            <button type="button" v-if="um.MessageType==3&&um.Information==0" class="mui-btn mui-btn-yellow mui-btn-outlined" v-on:click="Receive(um)">接受</button>
+                            <button type="button" v-if="um.MessageType==3&&um.Information==0" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="ReJect(um)">拒接</button>
+                            <button type="button" v-if="um.MessageType==3&&um.Information==1" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="Look(um)">已接受</button>
+                            <button type="button" v-if="um.MessageType==3&&um.Information==-1" class="mui-btn mui-btn-blue mui-btn-outlined" @*v-on:click="Look(um)"*@>已拒接</button>
+                            <span class="read" v-if="um.Status==1">已读</span>
+                            <span class="unread" v-if="um.Status==0">未读</span>
+
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </scroller>
+</div>

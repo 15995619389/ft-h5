@@ -1,0 +1,30 @@
+﻿@{
+    ViewBag.Title = "技术成果转化";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/Content/css/results/conversion.css" />
+    <link href="~/Content/css/unique/sortbar.css" rel="stylesheet" />
+}
+@section foot
+{
+    <script src="~/dist/techshare.list.bundle.js"></script>
+}
+<header class="oHeader mui-bar mui-bar-nav">
+    <searchbar v-bind:stype="2"></searchbar>
+</header>
+<div class="mui-content" v-cloak>
+    <div class="technology" style="z-index:9">
+        <div style="width: 100%;" v-on:click="ToggleTab">
+            技术成果转化·<span id="tab-title">{{ Tabs[$route.name]}}</span><span class="mui-icon mui-icon-arrowdown"></span>
+        </div>
+        <ul v-show="IsTabVisible" class="tab-list">
+            <li v-on:click="GoSubView('recommend')">技术推荐</li>
+            <li v-on:click="GoSubView('spacetech')">航天技术</li>
+            <li v-on:click="GoSubView('solutions')">行业解决方案</li>
+        </ul>
+    </div>
+    <!-- 路由视图 -->
+    <router-view></router-view>
+</div>
+<rightsidebar></rightsidebar>

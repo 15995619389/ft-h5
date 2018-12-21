@@ -1,0 +1,155 @@
+html{
+	background: #fff;
+	
+}
+p,body{
+	line-height: 0.40rem;
+}
+p{
+	margin-bottom: 0px;
+}
+.BusinessCard{
+	border-top:1px solid #ddd;
+	padding: 0.20rem 3%;
+	overflow: hidden;
+	height: auto;
+}
+.personal{
+	border: 1px solid #8eadd2;
+	overflow: hidden;
+	height: auto;
+	padding: 0.10rem;
+}
+.personal_box{
+	height: auto;
+	overflow: hidden;
+}
+.name_bg{
+	width: 1.48rem;
+	height: 1.88rem;
+	float: left;
+}
+.personal_right{
+	width: 76%;
+	height: auto;
+	overflow: hidden;
+	float: right;
+	position: relative;	
+}
+ 
+.modification,a:link{
+	width: 0.36rem;
+	height: 0.34rem;
+	display: block;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	background: url(../../../../image/BasicInformation/modification.png) no-repeat;
+	background-size: 0.36rem 0.34rem;
+}
+.personal_right h3{
+	font-size: 0.34rem;
+	width: 100%;
+	padding: 0.10rem 0px;
+}
+.introduce,.business_content{
+	font-size: 0.28rem;
+	color: #666666;
+	    margin-bottom: 0.10rem;
+}
+.business_title{
+	font-size: 0.30rem;
+	color: #0e5bb5;
+}
+.Specific{
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+	padding: 0.20rem 0px;
+}
+.Specific_up,.Specific_down{
+	width: 100%;
+	overflow: hidden;
+	height: auto;
+}
+.Specific_up span,.Specific_down span{
+	font-size: 0.28rem;
+	color: #666666;	
+	float: left;
+	margin-right: 0.20rem;
+}
+
+.Specific_up span i{
+	margin-top: 0.07rem;
+	margin-right: 0.02rem;
+}
+.Specific_down span i{
+	margin-top: 0.05rem;
+	margin-right: 0.04rem;
+}
+.Specific_up span:nth-child(1) i{
+	width: 0.18rem;
+	height: 0.21rem;
+	background: url(../../../../image/BasicInformation/schooling.png) no-repeat;
+	background-size: 0.18rem 0.21rem;
+	float: left;
+	
+}
+.Specific_up span:nth-child(2) i{
+	width: 0.22rem;
+	height: 0.22rem;
+	background: url(../../../../image/BasicInformation/genre.png) no-repeat;
+	background-size: 0.22rem 0.22rem;
+	float: left;
+	
+}
+.Specific_up span:nth-child(3) i{
+	width: 0.22rem;
+	height: 0.22rem;
+	background: url(../../../../image/BasicInformation/phone.png) no-repeat;
+	background-size: 0.22rem 0.22rem;
+	float: left;
+}
+.Specific_down span:nth-child(1) i{
+	width: 0.19rem;
+	height: 0.23rem;
+	background: url(../../../../image/BasicInformation/school.png) no-repeat;
+	background-size: 0.19rem 0.23rem;
+	float: left;	
+	margin-top: 0.10rem;		
+}
+.Specific_down span:nth-child(2) i{
+	width: 0.24rem;
+	height: 0.16rem;
+	background: url(../../../../image/BasicInformation/email.png) no-repeat;
+	background-size: 0.24rem 0.16rem;
+	float: left;
+	margin-top: 0.14rem;	
+}
+.business_box{
+	padding-left: 24%;
+	overflow: hidden;
+	height: auto;
+}
+.toglle{
+	padding: 0.40rem 3%;
+	padding-left: 24%;
+	overflow: hidden;
+	height: auto;
+	border-bottom: 1px dashed #ddd;
+	position: relative;
+}
+.toglle i{
+	position: absolute;
+	right: 0.40rem;
+	top: 43%;
+	display: block;
+	width: 0;
+    height: 0;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 8px solid #ffaf79;
+}
+.ddd{
+	display: none;
+}

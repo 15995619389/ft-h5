@@ -1,0 +1,73 @@
+﻿
+.mui-content{
+    background:#fff;   
+}
+.mui-bar-nav{
+    background: #fff;border-bottom:1px solid #ddd
+}
+.user_info{
+    overflow:hidden;
+    width:100%;
+}
+.user_info li{
+    border-bottom:1px solid #ddd;
+    padding:0.20rem 2%;
+    overflow:hidden
+}
+.user_info li span{
+    display:block;
+    float:left
+}
+.user_info li .ospan{
+    color: #b90000;
+    margin-top: 0.05rem;
+    width: 3%;
+    margin-right: 0.05rem;
+}
+.user_info li .span_text{
+    font-size:0.28rem;
+    color:#444
+}
+ input[type=text]{
+     float:left;
+     height:auto;
+     margin-bottom:0;
+     padding:0;
+     font-size:0.28rem;
+     color:#444;
+     border:none
+ }
+ .user_info li .name{
+     width:80%;    
+ }
+   .user_info li .phone{
+     width:76%;    
+ }
+  .user_info li .number{
+     width:68%;    
+ }
+  .user_info li .consulting_content{
+      font-size:0.28rem;
+      color:#444;
+      padding:0 0.20rem;
+      margin:0;
+      border:none;
+      line-height:0.38rem
+  }
+  .submit{
+      position:absolute;
+      bottom:1.00rem;
+      padding:0 2%;
+      width:100%;
+      overflow:hidden
+  }
+  .submit span{
+      padding:0.20rem 0;
+      text-align:center;
+      display:block;
+      width:100%;
+      font-size:0.28rem;
+      color:#fff;
+      background:#0e5bb5;
+      border-radius:5px
+  }

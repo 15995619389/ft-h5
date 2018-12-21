@@ -1,0 +1,138 @@
+html{
+	background: #f2f1f7;
+}
+.user{
+    margin: 10px 0px;	
+}
+input[type=text]{
+	font-size: 0.32rem;
+    width: 76%; 
+    height: 21px;
+    margin-bottom: 0px;
+    padding: 0px 0px;
+    -webkit-user-select: text;
+    border-radius: 0px;
+    color: #444;
+    border: none;
+}
+.user_img{
+	display: block;
+	border-radius: 50%;
+	width: .80rem;
+	height: 0.80rem;
+	float: right;
+	margin-right: 25px;
+	/*background: url(../../../img/docking_bg.png) no-repeat center center;
+	background-size:0.80rem 0.80rem;*/
+}
+.mui-table-view-cell>a:not(.mui-btn) {
+    line-height: 0.75rem;
+	color: #444444;    
+}
+.mui-table-view-cell:after{
+	left: 0px;
+}
+.userName{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+}
+.oSpan{
+    color: #b90000;
+    margin-top: 0.05rem;
+    display: block;
+    float: left;
+    width: 3%;	
+}
+.name,.phone,.industry,.unit,.demand,.level,.my_money{
+	float:right;
+	margin-right: 25px;
+	color: #b2b3b5;
+    text-align:right;
+}
+.industry{
+    width:66%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+.email{
+	float:right;
+	margin-right: 15px;
+	color: #b90000;
+}
+
+.user .mui-table-view-cell{
+	padding: 7.5px 15px;
+}
+.userName .mui-table-view-cell{
+	padding: 7.5px 15px;
+}
+.uesrUnit{
+	width: 100%;
+	margin: 15px 0px;
+}
+.supplier{
+	float:right;
+	margin-right: 25px;
+	color: #cb5151;
+}
+.password{
+	float:right;
+	margin-right: 25px;
+	color: #b2b3b5;
+}
+.unit{
+	width: 49%;
+	overflow: hidden;
+	white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.prompt{
+	width: 100%;
+	height: auto;
+	overflow: hidden;
+	background: #fff8e6;
+	padding: 15px 0px;
+	margin-bottom: 20px;
+	border-bottom: 1px solid #f2e9b8;
+	border-top: 1px solid #f2e9b8;
+}
+.prompt_text{
+	width: 85%;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 0.26rem;
+}
+.prompt_text img{
+	float: left;
+	display: block;
+	width:0.28rem ;
+	height: 0.30rem;
+    margin-top: 0.07rem;	
+}
+#fileField{
+	position: absolute;
+	right: 0.5rem;
+	/*width: 1.50rem;*/
+	padding: 5px;
+	filter: alpha(opacity: 0);
+    opacity: 0;
+}
+
+#avatarInput {
+    position: absolute;
+    right: 0;
+    width: 1.52rem;
+    padding: 5px;
+    filter: alpha(opacity: 0);
+    opacity: 0;
+}
+
+.mui-table-view-cell {
+    font-size: 0.30rem
+}
+
+.mui-navigate-right {
+    padding: 7px 15px
+}

@@ -1,0 +1,35 @@
+﻿@{
+    ViewBag.Title = "对接技术管理";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/Content/css/myBusiness/myRecommended/technologyManage.css" />
+}
+<header class="mui-bar mui-bar-nav">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/index"></a>
+    <h1 class="mui-title">对接技术管理</h1>
+</header>
+<div class="mui-content" v-cloak>
+    <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" class="mui-scroll">
+        <div>
+            <ul class="mui-table-view">
+                <li class="mui-table-view-cell mui-media" v-if="ts!=null" v-for="ts in tech" v-on:click="Detail(ts.Id)">
+                    <a>
+                        <img class="mui-media-object mui-pull-left" v-lazy="ts.ImgUrl">
+                        <div class="mui-media-body">
+                            <div class="oTitle">
+                                <p class="mui-ellipsis">{{ts.Title}}</p>
+                                <span class="oSpan">已申请</span>
+                            </div>
+                            <p class="mui-ellipsis">{{ts.Feature|removeHTMLTag}}</p>
+                            <p class="date">{{ts.CreateTime|formatDate}}</p>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </scroller>
+</div>
+@section foot{
+    <script src="~/dist/tech.sbutment.bundle.js"></script>
+}

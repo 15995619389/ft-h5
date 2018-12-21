@@ -1,0 +1,419 @@
+﻿.mui-bar-tab{
+    height:40px
+}
+.mui-title ul{
+    width:100%;
+    height:100%;
+    overflow:hidden
+}
+.mui-title ul li{
+    width:33.33%;
+    height:100%;
+    float:left;
+    font-size:18px
+}
+.mui-pull-right{
+    margin-top:14px
+}
+.mui-pull-right img{
+    width: 19.5px;
+    height: 15px;
+}
+.mui-title ul .text_color{
+    color:#0e5bb5
+}
+.mui-bar-nav~.mui-content{
+    background:#fff
+}
+/*---轮播---*/
+.roasting{
+    width:100%;
+    overflow:hidden;
+    height:5.00rem;
+    position:relative
+}
+.roasting ul{
+
+}
+.datail_content,.appraise_content{
+    overflow:hidden;
+    padding:0.23rem;
+    height:auto;
+   
+}
+.datail_content{
+    padding:0.10rem 0.23rem;
+border-bottom:0.20rem solid #f5f5f5;
+}
+.em_title,.company_name{
+    display: block;
+    width: 100%;
+    font-size: 0.30rem;
+    line-height:0.40rem;
+    color:#3f3f3f
+}
+.money{
+    color:#ff6300;
+    font-size:0.30rem;
+    font-weight:800;
+    margin:0.05rem auto;
+}
+.goods_info ,.company_box,.appraise{
+    overflow:hidden;
+    width:100%;
+}
+.goods_info li{
+    font-size:0.28rem;
+    color:#929292;
+    width:28%;
+    float:left;
+    line-height:0.40rem
+}
+.goods_info li:nth-child(1){
+ width:44%;
+}
+.goods_info li:nth-child(2){
+ text-align:center
+}
+.goods_info li:last-child{
+ text-align:right
+}
+.company_img{
+    width:1.25rem;
+    height:1.25rem;
+    float:left;
+    margin-right:0.20rem
+}
+.company_info{
+    float:left;
+    width:79%;
+    overflow:hidden
+}
+.company_name{
+    margin-bottom:0
+}
+.company_ul{
+    font-size:0.26rem;
+    color:#656565;
+    overflow:hidden;
+    margin-top:0.20rem
+}
+.company_ul li{
+    width:50%;
+    float:left
+}
+.company_ul li:first-child{
+    width:60%;
+}
+.company_ul li:last-child{
+    width:40%
+}
+    .company_ul li i {
+        width: 0.24rem;
+        height: 0.23rem;
+        display: block;
+        float: left;
+        margin-right:0.03rem;
+        background: url('../../image/high/scoring_bg1.png') no-repeat;
+        background-size:100% 100%;
+        margin-top: 0.05rem;
+    }
+.company_ul li span{
+    display:block;float:left
+}
+.all_goods{
+    margin:0.20rem auto 0.05rem;
+    display:block;
+    width:3.84rem;
+    height:0.71rem;
+    border:1px solid #c1c1c1;
+    border-radius:5px;
+    text-align:center;
+    font-size:0.28rem;
+    
+}
+.all_goods span{
+    float:left;
+    color:#656565;
+    line-height:0.71rem;
+}
+    .all_goods i {
+        margin: 0.23rem 0.10rem 0 0.60rem;
+        display: block;
+        height: 0.24rem;
+        width: 0.29rem;
+        float: left;
+        background: url('../../image/high/all_shop.png') no-repeat;
+        background-size:100% 100%;
+    }
+.h3_title{
+    font-size:0.30rem;
+    color:#444;
+    border-bottom:1px solid #ddd;
+    margin:0;
+    padding-bottom:0.20rem;
+}
+.appraise_title{
+    font-size:0.30rem;
+    color:#444;
+    margin:0;
+    padding-bottom:0.20rem;
+}
+.h3_title span,.appraise_title span{
+    display:block;
+    width:0.04rem;
+    height:0.28rem;
+    background:#1b5bbc;
+    float:left;
+    margin-right:0.10rem
+}
+.remark_text{
+    margin-top:0.23rem;
+    margin-bottom:0;
+    font-size:0.26rem;
+    color:#3f3f3f;
+    line-height:0.38rem;
+}
+.datail_content .remark_text img{
+    width:100%;
+    height:auto;
+}
+.datail_content .remark_text table{
+    width:100% !important
+}
+.datail_content .remark_text table tr span{
+    font-size:0.28rem
+}
+.appraise li{
+    overflow:hidden;
+    width:100%;
+    padding:0.20rem 0;
+    border-top:1px solid #ddd
+}
+.user_info{
+    overflow:hidden;
+    height:auto;
+    margin-bottom:0.10rem
+}
+.user_left{
+    overflow:hidden;
+    height:auto;
+    float:left
+}
+.user_img{
+    width:0.51rem;
+    height:0.51rem;
+    float:left;
+    border-radius:50%
+}
+.phone{
+    font-size:0.28rem;
+    float:left;
+    margin:0 0.10rem;
+}
+.stars{
+    float:left;
+
+}
+.stars i{
+     width: 0.24rem;
+    height: 0.23rem;
+    display: block;
+    float: left;
+    margin-right: 0.03rem;
+    background: url('../../image/high/scoring_bg1.png') no-repeat;
+    background-size:100% 100%;
+    margin-top: 0.05rem;
+}
+.time{
+    font-size:0.24rem;
+    color:#a1a1a1;
+    float:right
+}
+.appraise_text{
+    margin-bottom: 0;
+    font-size: 0.26rem;
+    color: #3f3f3f;
+    line-height: 0.38rem;
+}
+.louti{
+    width:100%;
+    overflow:hidden
+}
+/*------底部选项卡-------*/
+.mui-bar{
+    border-bottom:1px solid #ddd
+}
+.mui-bar a:nth-child(1){
+    border-right:1px solid #ddd;
+}
+.mui-bar a:nth-child(2){
+    border-right:1px solid #ddd;
+}
+.mui-bar-tab{
+    line-height:21px
+}
+.mui-bar-tab .mui-tab-item .mui-icon~.mui-tab-label{
+    font-size:0.26rem
+}
+.mui-bar-tab .mui-tab-item{
+    height:50px;
+    width:20%
+}
+.mui-bar-tab .mui-tab-item:last-child{
+    width:40%
+}
+.one_nav .icon-attention {
+    background: url('../../image/high/attention.png') no-repeat;
+    background-size:100% 100%;
+    width:15.8px;
+    height:12px
+}
+.one_nav .icon-concerned{
+    display:block;
+    background: url('../../image/heart.png') no-repeat;
+    background-size:100% 100%;
+    width:0.34rem;
+    height:0.26rem;
+    margin:0 auto;
+    margin-top:10px
+}
+
+
+
+.one_nav .icon-shop{
+    background: url('../../image/high/shop.png') no-repeat;
+    background-size:100% 100%;
+    width:16px;
+    height:12px;
+}
+
+.money_show  .icon-consulting{
+    display:block;
+    background: url('../../image/high/consulting.png') no-repeat;
+    background-size:100% 100%;
+    width:14.5px;
+    height:12.8px;
+    margin:0 auto;
+    margin-top:6px
+}
+
+.one_nav{
+    width:20%;
+    height:40px;
+    float:left
+}
+.one_nav li span{
+    display:block;
+    margin:0 auto;
+    margin-top:7px
+}
+.one_nav li{
+    overflow:hidden;
+    /*height:25px;*/
+    font-size:12px;
+    text-align:center; 
+    color:#666;
+    border-right:1px solid #ddd
+}
+.money_show ul li{
+    /*height:25px;*/
+    overflow:hidden;
+    font-size:12px;
+    text-align:center; 
+    color:#666;
+}
+.money_show p{
+    width:70%;float:left;
+    line-height:40px;
+    background:#fe6400;
+    color:#fff;
+    font-size:16px;
+    text-align:center
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ .buy{
+    background:#fe6400;
+    color:#fff;
+    font-size:16px
+}
+.money_show{
+    display:block;
+    overflow:hidden;
+    width:60%;
+    height:40px
+}
+.meeting_show{
+    overflow:hidden;
+    width:100%;
+    background: #fe6400;    
+}
+#a1{
+    width:30%;
+    float: left;
+    padding-left:8%
+}
+#a2{
+        width: 49%;
+    float: left;
+}
+.meeting_show{
+    font-size: 16px;
+    height:40px;
+    line-height:40px;
+    text-align:center;
+    background:#fe6400;
+    color:#fff;
+    width:60%;
+    float:left
+}
+.moreAppraise{
+    font-size: 0.28rem;
+    line-height: 0.66rem;
+    height: 0.66rem;
+    color: #252525;
+    border: 1px solid #d7d7d7;
+    border-radius: 3px;
+    text-align:center;
+    margin:0.50rem auto;
+}
+.mui-slider .mui-slider-group .mui-slider-item img{
+    height:7.500rem !important
+}
+
+/*促销*/
+.promotions{
+        display: inline-block;
+        font-size: 0.24rem;
+        font-weight: 100;
+        border: 1px solid #ff6300;
+        padding: 0 0.20rem;
+        line-height:0.40rem
+    }
+    .originalPrice{
+        overflow:hidden;
+        font-size:0.28rem;
+        color:#969696;
+        margin-bottom:0;
+    }
+    .originalPrice span{
+        text-decoration:line-through
+    }
+.remark_text img{
+    width:100% !important
+}

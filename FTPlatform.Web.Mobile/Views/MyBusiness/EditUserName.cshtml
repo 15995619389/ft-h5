@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "账户名修改";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+    <link href="/Content/css/login/login.css" rel="stylesheet" />
+    <link href="/Content/css/activity/hotact.css" rel="stylesheet" />
+    <script type="text/javascript" charset="utf‐8" src="//g.alicdn.com/sd/nch5/index.js?t=1486519858472"></script>
+
+    <header class="mui-bar mui-bar-nav head_box">
+        <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="/mybusiness/basicinformation"></a>
+        <h1 class="mui-title">账户名修改</h1>
+    </header>
+    <!--登陆-->
+    <div class="mui-content body_content">
+        <section class="regist-warp">
+            <form class="mui-input-group login-form">
+                <div class="input-box" style="border-bottom: none;">
+                    <div class="mui-input-row ful-row">
+                        <div class="bef-text">原账户</div>
+                        <div class="aft-text" style="color: #444;">@ViewBag.username</div>
+                    </div>
+                    <div class="mui-input-row ful-row">
+                        <div class="bef-text" style="width:20%;">密码</div>
+                        <div class="aft-text" style="width:80%;"><input type="password" id="Password" style="color: #444; padding-left: 0;"></div>
+                    </div>
+                    <div class="mui-input-row ful-row">
+                        <div class="bef-text" style="width:20%;">新手机号</div>
+                        <div class="aft-text" style="width:80%;"><input type="text" id="Mobile" style="color: #444;padding-left: 0;"></div>
+                    </div>
+                </div>
+                <div class="mui-radio rdaio-row" style="display:none">
+                    <div class="error-notice erro-pub">账号已绑定请选择其他手机号</div>
+                </div>
+                <div class="" style="margin-bottom:20px; padding:0;">
+                    <div class="ln2">
+                        <div id="dom_id" style="height:35px;"></div>
+                    </div>
+                </div>
+                <div class="mui-input-row ful-row" style="background: #fff; margin-top: 10px;">
+
+                    <div class="bef-text" style="width:20%;">验证码</div>
+                    <div class="aft-text" style="width:80%;"><input type="text" id="Code" style="color: #444; padding-left: 0;"></div>
+                    <span><a href="#" class="code" id="SendValCode" >获取验证码</a></span>
+                </div>
+                <div class="longin-row">
+                    <a class="login-btn" id="Submit">提交</a>
+                </div>
+            </form>
+            </section>
+        <input type='hidden' id='afs_scene' name='afs_scene' />
+        <input type='hidden' id='afs_token' name='afs_token' />
+
+        <input type='hidden' id='csessionid' name='csessionid' />
+        <input type='hidden' id='sig' name='sig' />
+        <input type='hidden' id='token' name='token' />
+        <input type='hidden' id='scene' name='scene' />
+    </div>
+@section foot{
+<script src="~/dist/member.editusername.bundle.js"></script>
+    <script>
+			var nc_appkey = 'FFFF0000000001687A53'; //
+			var nc_scene = 'login_h5'; //
+			var nc_token = [nc_appkey, (new Date()).getTime(), Math.random()].join(':');
+			var nc_option = {
+				renderTo: '#dom_id', //渲染到该DOM ID指定的Div位置
+				appkey: nc_appkey,
+				scene: nc_scene,
+				token: nc_token,
+				trans: '{"name1":"FFFF0000000001687A53"}', //测试用，特殊nc_appkey时才生效，正式上线时请务必要删除；code0:通过;code100:点击验证码;code200:图形验证码;code300:恶意请求拦截处理
+				callback: function(data) { // 校验成功回调
+					document.getElementById('csessionid').value = data.csessionid;
+					document.getElementById('sig').value = data.sig;
+					document.getElementById('token').value = nc_token;
+					document.getElementById('scene').value = nc_scene;
+				},
+				error: function(s) {},
+				verifycallback: function(data) {
+					if(data.code == "200") {}
+				}
+			};
+			NoCaptcha.init(nc_option);
+			NoCaptcha.setEnabled(true);
+    </script>
+    }
+
+

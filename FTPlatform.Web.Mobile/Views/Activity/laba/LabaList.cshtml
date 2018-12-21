@@ -1,0 +1,240 @@
+﻿
+@{
+    ViewBag.Title = "腊八集八宝  飞天送大礼";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+@section head{
+    <link rel="stylesheet" href="~/Content/css/activity/laba/LabaIndex.css" />
+}
+
+
+<div id="container">
+    <share ref="share"></share>
+    <header class="mui-bar mui-bar-nav" style="z-index:12;background: #fff;">
+        <a href="/Activity/LabaDatail" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+        <h1 class="mui-title">腊八集八宝  飞天送大礼</h1>
+    </header>
+    <div class="mui-content l-scrollable laba_content">
+        <div class="content" style="padding-top:0.26rem;height:auto;padding-bottom:0.60rem">
+            <div class="my_content" style="margin-top:0;height:11.74rem;">
+                <img src="~/Content/image/activity/laba/jifu.png" class="content_title" />
+                <ul class="list">
+                    <li>
+                        <img src="~/Content/image/activity/laba/jin1.png" class="li_title" />
+                        <div>
+                            <p style="margin:0.15rem 0">每天首次登录可得3个福袋</p>
+                            <a href="javascript:;" onclick="H5LabaList.LoginDown()">马上登录，GO</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="~/Content/image/activity/laba/jin2.png" class="li_title" />
+                        <div>
+                            <p>每成功发布1条需求，<br />可得3个福袋</p>
+                            <a href="javascript:;" onclick="H5LabaList.fbSkip('demand')">发布需求，GO</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="~/Content/image/activity/laba/jin3.png" class="li_title" />
+                        <div>
+                            <p>每成功发布1条技术推荐，<br />可得3个福袋</p>
+                            <a href="javascript:;" onclick="H5LabaList.fbSkip('techshare')">发布技术，GO</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="~/Content/image/activity/laba/jin4.png" class="li_title" />
+                        <div>
+                            <p>每成功邀请1个好友注册，<br />可得1个福袋</p>
+                            <a href="javascript:;" onclick="H5LabaList.solicit()">邀请好友，GO</a>
+                        </div>
+                    </li>
+                    <li>
+                        <img src="~/Content/image/activity/laba/jin5.png" class="li_title" />
+                        <div>
+                            <p>邀请的好友每成功发布1条需求，可得1个福袋</p>
+                            @*<a href="javascript:;" onclick="call()">复制链接发送给好友</a>*@
+                        </div>
+                    </li>
+                    <li>
+                        <img src="~/Content/image/activity/laba/jin6.png" class="li_title" />
+                        <div>
+                            <p>提交并成功申请成为供方，<br />可得3个福袋</p>
+                            <a href="javascript:;" onclick="H5LabaList.fbSkip('expert')">申请成为供方，GO</a>
+                        </div>
+                    </li>
+                    <li class="li_seven">
+                        <img src="~/Content/image/activity/laba/li_seven.png" class="li_seven_bg" />
+                        <img src="~/Content/image/activity/laba/jin7.png" class="li_title" />
+                        <div>
+                            <p>在工业精品内购买任何产品并完成线上支付的，每单可得3个福袋</p>
+                            <a href="/higharticle/">购买工业精品，GO</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div id="mask"></div>
+    <div class="draw_model" id="domMessage12" style="height:5.22rem">
+        <div class="model_content">
+            <div class="con_text" style="margin-top: 5em;">
+                <strong class="pText1" id="lintText">复制下面链接发送给好友注册<br>即可获得福袋+1</strong>
+                <p class="pText2" id="pcontent"></p>
+            </div>
+            <div class="fonter_btn" style="height:0.6rem">
+                <span class="chai_bag close" id="buttonText">关闭</span>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mark" class="mark" onclick="H5LabaList.markHide()"></div>
+<div class="right-sharing" style="display:none;" id="fxdiv">
+    <img src="~/Content/image/share/right-sharing.png" class="right-bg" />
+    <p>点击右上角,</p>
+    <p>分享到微信好友、朋友圈或QQ</p>
+</div>
+<style type="text/css">
+    .right-sharing {
+        z-index: 111;
+        position: fixed;
+        top: 10px;
+        right: -5%;
+    }
+
+        .sharing-hint p, .right-sharing p {
+            overflow: hidden;
+            height: auto;
+            width: 78%;
+            font-size: 16px;
+            margin: 0 auto;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 10px;
+            font-family: 'new-fontSize';
+            line-height: 20px;
+        }
+
+        .right-sharing p {
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+    .mark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 130%;
+        z-index: 999;
+        background: #333;
+        opacity: 0.5;
+        filter: alpha(opacity=50);
+        display: none;
+        z-index: 12;
+    }
+</style>
+
+@section foot{
+    @*<script src="~/dist/activity.luck.bundle.js"></script>*@
+
+}
+<script src="~/Content/js/jquery-1.11.0.min.js"></script>
+<script src="~/src/modules/StorageService.js"></script>
+<script src="~/src/modules/FilterService.js"></script>
+<script src="~/src/modules/ApiClient.js"></script>
+<script src="~/Content/js/Pages/Mall/nativeShare.js-master/NativeShare2.js"></script>
+
+<script type="text/javascript">
+    $(function () {
+
+        // H5LabaList.OpenBlackUI("");
+    });
+    var nativeShare = new NativeShare()
+    var shareData = {
+        title: '腊八集八宝 飞天送大礼 小伙伴邀你一起集宝啦',
+        desc: '腊八一过，农历新年马上就要来临了，飞天众智平台提前送上新年祝福，集齐八种不同的腊宝，即有好礼赠送，百分百中奖哦~赶快叫上好友一起有“福”同享！',
+        link: location.href,
+        icon: '',//'https://pic3.zhimg.com/v2-080267af84aa0e97c66d5f12e311c3d6_xl.jpg',
+        // 不要过于依赖以下两个回调，很多浏览器是不支持的
+        success: function () {
+            // alert('success')
+        },
+        fail: function () {
+            // alert('fail')
+        }
+    }
+    nativeShare.setShareData(shareData)
+
+    function call(command) {
+        try {
+            var ua = window.navigator.userAgent.toLowerCase();
+            if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                H5LabaList.markShow();
+            } else {
+                nativeShare.call(command);
+            }
+        } catch (err) {
+            alert("浏览器版本暂不支持！");
+        }
+    }
+    var H5LabaList = {
+        LoginDown: function () {
+            if (!ApiClient.IsLogin()) {
+                location.href = "/passport/login?returnurl=/Activity/LabaList";
+            }
+        },
+        solicit: function () {
+            var user = ApiClient.GetCurrentUser();
+            if (user == null) {
+                $("#lintText").html("登录或注册后才能执行此操作.");
+                $("#pcontent").html("");
+                $("#buttonText").html("<a href=\"/passport/login?returnurl=/Activity/LabaList\">马上登录</a>")
+                H5LabaList.OpenBlackUI("domMessage12");
+            } else {
+                $("#lintText").html("复制下面链接发送给好友注册<br>即可获得福袋+1.");
+                $("#pcontent").html(window.location.host + "/passport/<br />register/" + user.UserName);
+                $("#buttonText").html("<a onclick=\"H5LabaList.CloseBlackUI('domMessage12');\">关闭</a>");
+                H5LabaList.OpenBlackUI("domMessage12");
+            }
+        },
+        OpenBlackUI: function (DomeId) {
+            $("#mask").show();
+            $("#" + DomeId).show();
+        },
+        CloseBlackUI: function (DomeId) {
+            $("#mask").hide();
+            $("#" + DomeId).hide();
+            return false;
+        },
+        markShow: function () {
+            $("#mark").show();
+            $("#fxdiv").show();
+        },
+        markHide: function () {
+            $("#mark").hide();
+            $("#fxdiv").hide();
+        },
+        fbSkip: function (mdel) {
+            switch (mdel) {
+                case "demand":
+                    if (!ApiClient.IsLogin())
+                        location.href = "/passport/login?returnurl=/demand/publish";
+                    else
+                        location.href = "/demand/publish";
+                    break;
+                case "techshare":
+                    if (!ApiClient.IsLogin())
+                        location.href = "/passport/login?returnurl=/techshare/publish";
+                    else
+                        location.href = "/techshare/publish";
+                    break;
+                case "expert":
+                    if (!ApiClient.IsLogin())
+                        location.href = "/passport/login?returnurl=/expert/applysupplier";
+                    else
+                        location.href = "/expert/applysupplier";
+                    break;
+            }
+        }
+    }
+</script>

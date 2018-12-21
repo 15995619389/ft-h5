@@ -1,0 +1,29 @@
+﻿@{
+    ViewBag.Title = "支付成功";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/shop/smart.css" rel="stylesheet" />
+    <style>
+        html {
+            background: #fff
+        }
+    </style>
+}
+<header class="mui-bar mui-bar-nav head_box head-secd" style="border-bottom: #ddd solid 1px;">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="/mall/orderfromindex"></a>
+    <h1 class="mui-title">支付成功</h1>
+</header>
+<div class="mui-content whit-content">
+    <!--支付成功-->
+    <section class="pay-subox">
+        <img src="~/Content/image/shop/robot.png" style="margin:0 auto" />
+        <h4>支付成功</h4>
+        <p>平台将会尽快给您发货，请耐心等待。</p>
+        <div class="order-btn">
+            <a href="/mall/orderfromindex" class="ord-mager">订单管理</a>
+            <a href="/mall/index" class="shop-index">商城首页</a>
+        </div>
+    </section>
+</div>

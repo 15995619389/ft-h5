@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "供方资料";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<style>
+    html {
+        background: #fff;
+    }
+
+    p, body {
+        line-height: 0.40rem;
+    }
+
+    p {
+        margin-bottom: 0px;
+    }
+
+    .supplier_box {
+        overflow: hidden;
+        height: auto;
+        margin-top: 0.20rem;
+        background: #fff;
+        border-top: 1px solid #ddd;
+    }
+
+    .mui-table-view-cell > a:not(.mui-btn) {
+        font-size: 0.30rem;
+    }
+
+    .mui-navigate-right span {
+        width: 60%;
+        overflow: hidden;
+        float: right;
+        margin-right: 25px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+</style>
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/mybusiness/basicinformation"></a>
+    <h1 class="mui-title">供方资料</h1>
+</header>
+<div class="mui-content" style="background:#f2f1f7" v-cloak>
+    <div class="supplier_box">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell" v-on:click="EditSupplier(1)">
+                <a class="mui-navigate-right">
+                   擅长领域<span>{{expert.ScientificContent|removeHTMLTag}}</span>
+                </a>
+            </li>
+            <li class="mui-table-view-cell" v-on:click="EditSupplier(2)">
+                <a class="mui-navigate-right" id="PersonExplain">
+                    <span style="width:20%;float:left">个人简介</span><span>{{expert.PersonExplain|removeHTMLTag}}</span>
+                </a>
+            </li>
+            @*<li class="mui-table-view-cell" v-for="p in expert.PatentedList" v-on:click="EditPatent(p.Id)">
+                <a class="mui-navigate-right">
+                    专利信息<span>{{p.ParentedName}}</span>
+                </a>
+            </li>*@
+        </ul>
+    </div>
+</div>
+@section foot{
+    <script src="~/dist/expert.supplierdetail.bundle.js"></script> 
+}

@@ -1,0 +1,240 @@
+p, body {
+    line-height: 0.40rem;
+}
+
+p {
+    margin-bottom: 0px;
+}
+
+html {
+    background: #fff;
+}
+
+.mui-pull-right img {
+    width: 19.5px;
+    height: 15px;
+}
+
+.mui-pull-right {
+    margin-top: 0.3rem;
+}
+
+.details_img {
+    width: 100%;
+    height: 3.25rem;
+}
+
+.mui-bar-nav {
+    top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.details_img {
+    width: 100%;
+    height: 3.25rem;
+}
+
+.details_box {
+    padding: 0px 2%;
+    height: auto;
+    overflow: hidden;
+}
+
+.em_title {
+    display: block;
+    width: 100%;
+    font-size: 0.30rem;
+    margin: 0.20rem 0px;
+}
+
+.details_p, .details_content, .details_content li, .recommend {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+    .details_content li {
+        border-bottom: 1px solid #ddd;
+    }
+
+        .details_content li:nth-last-child(1) {
+            border-bottom: 0px solid #ddd;
+        }
+
+        .details_content li p {
+            margin: 0.20rem 0px;
+        }
+
+.d_p_text {
+    font-size: 0.28rem;
+    color: #444444;
+}
+
+.logoin {
+    font-size: 0.28rem;
+}
+
+.developmentBg {
+    width: 100%;
+    height: 0.64rem;
+    font-size: 0.30rem;
+    color: #0e5bb5;
+    line-height: 0.64rem;
+    padding-left: 0.10rem;
+    background: #f5f5f5;
+    margin: 0.20rem 0px;
+}
+
+.recommend li {
+    float: left;
+    width: 49.3%;
+    height: auto;
+    overflow: hidden;
+    margin-bottom:0.15rem
+}
+
+    .recommend li:nth-child(even) {
+        float: right;
+    }
+
+    .recommend li img {
+        height: 2.50rem;
+        width:100%;
+        background-size:100%
+    }
+
+.recommend_text {
+    font-size: 0.28rem;
+    color: #444444;
+    margin: 0.10rem 0px;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+
+.recommend_p {
+    font-size: 0.24rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-height: 0.35rem;
+    height:0.70rem;
+}
+
+.research_footer11 {
+    width: 100%;
+    margin-top: 5px;
+    height: auto;
+    overflow: hidden;
+}
+
+.research_footer1 li:nth-child(1) {
+    width:70%;
+    float:left;
+    font-size:0.18rem;
+    margin-bottom: 0rem
+}
+.research_footer1 li p{
+    font-size:0.18rem;
+    
+}
+ .research_footer1 li:nth-child(even){
+            width:30%;
+            float:right;
+            margin-bottom: 0rem
+        }
+.research_footer1 li {
+    float: left;
+    width: 38%;
+}
+
+.recommend li .money {
+    float: left;
+    width: 0.20rem;
+    height: 0.20rem;
+    margin-top: 0.12rem;
+    margin-right: 0.04rem;
+}
+
+.recommend li .focus_img {
+    width: 0.20rem;
+    height: 0.17rem;
+    float: left;
+    margin-right: 0.05rem;
+    margin-top: 0.12rem;
+}
+
+.research_footer1 li p {
+    float: left;
+    color: #969696;
+    font-size: 0.18rem;
+}
+
+.Iwant {
+   position:fixed;
+   bottom:1px;
+   width:96%;
+}
+ .Iwant a {
+        width: 100%;
+        height: 0.80rem;
+        line-height:0.58rem;
+        overflow: hidden;
+        display: block;
+        font-size:0.3rem;
+    }
+ .mui-btn-block{
+     margin-bottom:0px
+ }
+ .details_content li .d_p_text:nth-child(2){
+     text-indent:2em
+ }
+ /*------*/
+ .d_p_text p{
+     color:#444
+ }
+ .d_p_text strong{
+     font-weight:400;
+     font-size:0.28rem
+ }
+ /*------htmlÒÆ¹ýÀ´µÄcss-----*/
+      .money-tb {
+    font-size: 0.17rem;
+    color: #969696;
+    box-sizing: border-box;
+    float: left;
+    display: inline-block;
+
+}
+
+   .research_footer1  .focus:before{
+    content: "";
+    display: inline-block;
+    background: url(/Content/image/ax.png) no-repeat;
+    width: 0.17rem;
+    height: 0.14rem;
+    background-size: 100% 100%;
+}
+    .money-tb:before {
+    content: "";
+    display: inline-block;
+    background: url(/Content/image/money.png) no-repeat 0 0;
+    width: 0.17rem;
+    height: 0.17rem;
+    margin-top:0.06rem;
+    background-size: 100% 100%;
+}
+    .focus {
+    padding-right: 0;
+}
+    .mui-btn-blue{
+        background:#0e5bb5;
+        border-color:#0e5bb5;
+        color:#fff !important
+    }
+    .mui-btn-gray{
+        background:#dadada;
+    }

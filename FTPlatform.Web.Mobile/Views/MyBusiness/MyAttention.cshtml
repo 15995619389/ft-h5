@@ -1,0 +1,86 @@
+﻿@{
+    ViewBag.Title = "我的关注";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+<link rel="stylesheet" href="/Content/css/myBusiness/myAttention.css" />
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+    <h1 class="mui-title">我的关注</h1>
+</header>
+<div class="mui-content mui-scroll-wrapper" v-cloak>
+    <ul class="attention" style="background: #fff;">
+        <li class="text_color">需求</li>
+        <li>专家/机构</li>
+        <li>技术</li>
+    </ul>
+    <!------需求------->
+    <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" class="mui-scroll" v-cloak style="top:90px">
+        <div class="problem" style="display: block;">
+            <div class="feedback" v-for="demand in DemandAttention" v-on:click="DemandDetail(demand.Id)">
+                <p class="research_title" v-bind:value="demand.Id">{{demand.Title|removeHTMLTag|length}}<span class="not_docking">{{demand.AuditingStatus|status}}</span></p>
+                <p class="Serial">
+                    所属行业：<span class="industry">{{demand.BusinessClassName}}</span> 发布时间：
+                    <span class="time">{{demand.PublishTime|formatDate}}</span>
+                </p>
+                <ul class="research_footer">
+                    <li class="">
+                        <img src="/Content/image/money.png" class="money">
+                        <p>投入预算：<span>{{InputBudget[demand.InputBudget-1]}}</span></p>
+                    </li>
+                    <li>
+                        <img src="/Content/image/attention.png" class="focus_img">
+                        <p>关注度：<span>{{demand.FollowNum}}</span></p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!------专家/机构--------->
+        <div class="problem">
+            <div class="feedback" v-for="expert in ExpertAttention">
+                <ul class="research_footer experts">
+                    <li>
+                        <img src="/Content/image/attention.png" class="focus_img">
+                        <p>关注数：<span>{{expert.Attention}}</span></p>
+                    </li>
+                    <li>
+                        <p>@*编号：<span>{{expert.Id}}</span>*@</p>
+                    </li>
+                </ul>
+                <ul class="personal">
+                    <li v-on:click="ExpertDetail(expert.ExpertID)">
+                        <h3 class="name" v-bind:value="expert.ExpertID">{{expert.ExpertName}}</h3>
+                        <p>所属行业：<span>{{expert.ExpertType}}</span></p>
+                        <p>是否交换名片：<span class="NotExchange">{{expert.IsCarte|cs}}</span></p>
+                    </li>
+                    <li>
+                        <p style="float:right">会员等级：<span>{{expert.ExpertRemark}}</span></p>
+                        <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="EUnFollow(expert.UserID)">取消关注</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!------技术--------->
+        <div class="problem">
+            <div class="feedback_box" v-for="tech in TechAttention">
+                <ul class="feedback_left" v-on:click="TechDetail(tech.TechShareModel.Id)">
+                    <p class="technology_title">{{tech.TechShareModel.Title|removeHTMLTag|length}}</p>
+                    <ul class="research_footer technology">
+                        <li>
+                            <p>发布时间：<span>{{tech.TechShareModel.PblishTime|formatDate}}</span></p>
+                        </li>
+                        <li>
+                            <img src="/Content/image/attention.png" class="focus_img">
+                            <p>关注数：<span>{{tech.TechShareModel.GetTechFollow|num}}</span></p>
+                        </li>
+                    </ul>
+                </ul>
+                <ul class="technology_btn">
+                    <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="TUnFollow(tech.Id)">取消关注</button>
+                </ul>
+            </div>
+        </div>
+    </scroller>
+</div>
+@section foot{
+    <script src="~/dist/member.myattention.bundle.js"></script>
+}

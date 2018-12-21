@@ -1,0 +1,173 @@
+﻿@{
+    ViewBag.Title = "创新能力提升";
+    ViewBag.Description = "专利、商标、版权、计算机软件、植物新品种、集成电路设计图等知识产权的申请。";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/unique/TechnologyInnovation.css" rel="stylesheet" />
+    <style>
+        .botm-bg {
+            height: 44px;
+        }
+
+        .Contact-msge {
+            margin-top: 8px;
+        }
+    </style>
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/"></a>
+    <h1 class="mui-title">科技创新能力提升</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage"><img src="~/Content/image/recommend/reback.png" /></a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content l-scrollable" style="background: #fff;margin-bottom: 0.60rem;">
+    <rightsidebar></rightsidebar>
+    <img src="~/Content/image/EnterpriseService/innovation_bg.png" class="space_bg" />
+    <div class="CompanyName">
+        <h3>我们的服务</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <div class="one">
+        <h3 class="one_box">01 知识产权服务</h3>
+        <div class="knowledge">
+            <p class="knowledge_title">知识产权申请</p>
+            <p class="knowledge_content">专利、商标、版权、计算机软件、植物新品种、集成电路设计图等知识产权的申请。</p>
+        </div>
+        <div class="knowledge">
+            <p class="knowledge_title">知识产权保护</p>
+            <p class="knowledge_content">商标检索、专利战略分析、专利地图分析、专利专题分析、专利法律状态分析、专利法律状态检索、专利侵权分析、情报定制、同族专利检索等。</p>
+        </div>
+        <div class="knowledge">
+            <p class="knowledge_title">知识产权使用</p>
+            <ul class="mechanism">
+                <li>
+                    <div class="five"><i></i></div>
+                    <p class="platform_text"><span>自主实施</span>：自主知识产权分析。</p>
+                </li>
+                <li>
+                    <div class="five"><i></i></div>
+                    <p class="platform_text"><span>专利许可、转让</span>：同族专利分析、专利法律状态分析、专利查新、专利价值评估。</p>
+                </li>
+                <li>
+                    <div class="five"><i></i></div>
+                    <p class="platform_text"><span>知识产权金融（贷款）</span>：同族专利分析、专利法律状态分析、专利查新、专利价值评估。</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="one">
+        <h3 class="one_box">02 科技政策服务</h3>
+        <div class="knowledge">
+            <p class="knowledge_title">高新技术企业认定</p>
+            <p class="knowledge_content">完善建立企业研发管理制度、研发组织构架搭建、研发检测设备的推荐与采购、产学研合作关系的建立、知识产权的转让与价值评估、科技查新以及申报材料的汇编等。</p>
+        </div>
+        <div class="knowledge">
+            <p class="knowledge_title">高新成果转化认定</p>
+            <p class="knowledge_content">专利转让与价值评估、科技查新及申报材料的汇编。</p>
+        </div>
+        <div class="knowledge">
+            <p class="knowledge_title">科技项目申报</p>
+            <p class="knowledge_content">市级科技、工业及信息化发展专项；省级科技、工业及信息化发展专项；“十三五”国家科技重大专项、国家重点研发计划、国家技术创新引领计划。</p>
+        </div>
+    </div>
+    <div class="one">
+        <h3 class="one_box">03 情报数据研究服务</h3>
+        <div class="knowledge">
+            <p class="knowledge_title">科技查新</p>
+            <p class="knowledge_content">科技立项、成果鉴定、高新技术成果转化、重点新产品申报、创新基金申报、高新技术企业认定、引进技术吸收与创新、奖励申报、863计划、973计划、火炬计划、专利查新等，相关服务还包括引文检索、文献普查等。</p>
+        </div>
+        <div class="knowledge">
+            <p class="knowledge_title">行业情报及技术趋势研究报告制定</p>
+            <p class="knowledge_content">为客户提供行业方向性专利趋势简报、专利地图及最新研发趋势研究与分析报告。</p>
+        </div>
+        <div class="knowledge">
+            <p class="knowledge_title">专题文献索引</p>
+            <p class="knowledge_content">根据用户需求，为用户提供特定主题的专题信息。信息成果的形式可以是相关文献的文摘、书目索引或文献资料汇编。</p>
+        </div>
+        <div class="knowledge">
+            <p class="knowledge_title">企业并购无形资产法律风险与价值评估分析报告研究</p>
+            <p class="knowledge_content">客户提供在并购或被并购过程中，专利等无形资产的所属权法律风险分析以及无形资产价值及价格评估。</p>
+        </div>
+        <div class="knowledge">
+            <p class="knowledge_title">专利战略的制定与实施</p>
+            <p class="knowledge_content">为客户提供专利发展战略咨询。</p>
+        </div>
+        <div class="knowledge">
+            <p class="knowledge_title">科技成果产业化融资价值分析</p>
+            <p class="knowledge_content">对科技成果产业化寻求融资或者投资方对意向投资团队无形资产产业化价值进行专利和技术路线上的评估，提供决策参考。</p>
+        </div>
+    </div>
+    <div class="we_superiority">
+        <img class="icon_img" src="~/Content/image/all/icon_img.png">
+        <div class="CompanyName11">
+            <h3>我们的优势</h3>
+        </div>
+        <ul class="superiority_box">
+            <li>
+                <img src="~/Content/image/EnterpriseService/superiority_one.png" class="superiority_one" />
+                <p>专业的知识产权顾<br />问团队</p>
+            </li>
+            <li>
+                <img src="~/Content/image/EnterpriseService/superiority_two.png" class="superiority_two" />
+                <p>资深的情报数据分<br />析研究团队</p>
+            </li>
+            <li>
+                <img src="~/Content/image/EnterpriseService/superiority_three.png" class="superiority_three" />
+                <p>庞大的科研文献索<br />引数据库</p>
+            </li>
+            <li>
+                <img src="~/Content/image/EnterpriseService/superiority_four.png" class="superiority_four" />
+                <p>完善的科技创新能<br />力提升服务与支持</p>
+            </li>
+        </ul>
+    </div>
+
+    @*---------------*@
+    <section class="solution-wrap sever-step">
+        <h3>服务流程</h3>
+        <img src="~/Content/image/serve-footer.png" class="serve-footer" />
+        @*<div class="step-wrap">
+                <div class="step-text talk">
+                    <h5>免费咨询</h5>
+                    <p>Free consultation</p>
+                </div>
+                <div class="step-text online">
+                    <h5>业务跟进</h5>
+                    <p>Business follow up</p>
+                </div>
+                <div class="step-text agency">
+                    <h5>需求诊断</h5>
+                    <p>Demand diagnosis</p>
+                </div>
+                <div class="step-text confirm">
+                    <h5>方案报价</h5>
+                    <p>Program offer</p>
+                </div>
+                <div class="step-text Sign">
+                    <h5>签订协议</h5>
+                    <p>Signed a tripartite agreement</p>
+                </div>
+                <div class="step-text Track">
+                    <h5>项目推进</h5>
+                    <p>Project promotion</p>
+                </div>
+                <div class="step-text examine">
+                    <h5>后续跟踪</h5>
+                    <p>Follow-up</p>
+                </div>
+            </div>*@
+    </section>
+</div>
+<share ref="share"></share>
+

@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "智币商城_更多";
+    Layout = "~/Views/Shared/_ProductMall.cshtml";
+}
+<link href="~/Content/css/myBusiness/myPrize/activity.css" rel="stylesheet" />
+<link href="~/Content/css/search/demandDown.css" rel="stylesheet" />
+<link rel="stylesheet" href="/content/css/shop/smart.css" />
+<link rel="stylesheet" href="/content/css/shop/product.css" />
+
+<style type="text/css">
+    [v-cloak] {
+        display: none !important;
+    }
+
+    .layui-layer {
+        background-color: #fff;
+    }
+
+    .layui-layer-hui .layui-layer-content {
+        background-color: rgba(0,0,0,.6);
+    }
+
+    .mui-pull-top-pocket {
+        margin-top: -2em;
+    }
+    .mui-pull-bottom-pocket {
+        margin-bottom:1em;
+    }
+    .online_teb{
+        padding-bottom:0.35rem
+    }
+    .mui-pull-bottom-pocket{
+            margin-bottom: 1.0rem;
+    }
+    .mui-bar-nav~.mui-content{
+        padding-top:44px;
+    }
+    .mui-focusin > .mui-bar-header-secondary, .mui-focusin > .mui-bar-nav {
+        position: fixed !important;
+    }
+    .prize_tab{
+        position:fixed
+    }
+    .activtiy_box .state li:nth-child(1){
+        width:20%
+    }
+    .activtiy_box .state li:nth-child(2){
+        width:23%
+    }
+    .activtiy_box .state li:nth-child(3){
+        width:32%
+    }
+
+</style>
+<div class="mui-content" style="">
+    <ul class="prize_tab">
+        <li class="text_color">商品类型</li>
+        <li>所需智币</li>
+    </ul>
+    <div class="activtiy_box" style="height:30px;">
+        <ul class="activtiy" style="background-color:#fff">
+            <li class="text_color" style="width:33%; text-align: center;line-height:30px" v-on:click="SearchType(0)">全部</li>
+            <li style="width:33%;text-align: center;line-height:30px" v-on:click="SearchType(1)">实物</li>
+            <li style="width:33%;text-align: center;line-height:30px" v-on:click="SearchType(3)">充值卡</li>
+        </ul>
+    </div>
+    <div class="activtiy_box vilg" style="height:30px;">
+        <ul class="state" style="background-color:#fff">
+            <li v-on:click="SearchArry(0)">全部</li>
+            <li v-on:click="SearchArry('0-5000')">0-5000</li>
+            <li v-on:click="SearchArry('5000-50000')">5000-50000</li>
+            <li v-on:click="SearchArry('50000-50000000')">&gt;50000</li>
+        </ul>
+    </div>
+    <div class="activtiy_content mui-scroll-wrapper" style="display: block;position: fixed;margin-top:115px" id="pullrefresh">
+        <!------全部------->
+        <div class="online_teb mui-scroll" style="display: block;" v-cloak>
+            <section class="star_model">
+                <ul class="mui-row model_gird">
+                    <li class="mui-col-sm-6 mui-col-xs-6" style="border-bottom: #ddd solid 1px; border-right: #ddd solid 1px;" v-for="mod in modityAttry">
+                        <a href="avascript:;" id="ModityCode" v-bind:code="mod.ModityCode">
+                            <div class="zb-probox">
+                                <div class="product-pic">
+                                    <img v-bind:src="mod.ModityImg.Url+mod.ModityImg.ImgName+mod.ModityImg.ImgFix" style="width: 2.3rem;height: 2.3rem;" />
+                                </div>
+                                <div style="width:100%;padding-left:10px;box-sizing:border-box;">
+                                    <div class="product-tit">{{mod.ModityName}}</div>
+                                    <div class="price"><small>¥</small>{{mod.Price}}</div>
+                                    <div class="zhibi-dt">兑换智币：{{mod.FactScore}}@*<del>{{mod.ComputeScore}}</del>*@</div>
+                                    <div class="hot-tb" v-show="mod.IsNoRecommend">HOT</div>
+                                </div>
+                            </div>
+                        </a>
+                    </li>
+
+                </ul>
+            </section>
+        </div>
+    </div>
+
+</div>
+@section foot{
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/Content/Plugins/layer/layui.all.js"></script>
+    <script src="~/dist/mall.list.bundle.js"></script>
+    <script type="text/javascript">
+        $(function () {
+            $(".ft-tab a").removeClass("mui-active");
+            $(".ft-tab").find("a").eq(2).addClass("mui-active");
+            $(".ft-tab a").eq(0).attr("href", "/mall");
+            $(".ft-tab a").eq(0).find("span").eq(1).html("商城首页")
+            //点击活动与状态切换
+            $(".mui-content .prize_tab li").click(function () {
+                $(this).addClass("text_color").siblings().removeClass("text_color");
+                $(".mui-content .activtiy_box").css("display", "none").eq($(this).index()).css("display", "block");
+                //$(".mui-content .activtiy_content").css("display", "none").eq($(this).index()).css("display", "block");
+            })
+            //点击线上与线下活动切换
+            $(".mui-content .activtiy_box .activtiy li").click(function () {
+                $(this).addClass("text_color").siblings().removeClass("text_color");
+                //$(".online_teb").css("display", "none").eq($(this).index()).css("display", "block");
+            })
+            //点击5个状态切换
+            $(".mui-content .activtiy_box .state li").click(function () {
+                $(this).addClass("text_color").siblings().removeClass("text_color");
+                //$(".mui-content .activtiy_content .online_teb_box").css("display", "none").eq($(this).index()).css("display", "block");
+            })
+            /*-----input时出现全键盘--focus、blur禁止滑动------*/
+            $(".search_box input").bind("focus", function () {
+                $("body").on("touchmove", function (e) {
+                    e.preventDefault();
+                });
+            }).bind('blur', function () {
+                $("body").off("touchmove");
+            });
+        })
+    </script>
+
+}
+
+

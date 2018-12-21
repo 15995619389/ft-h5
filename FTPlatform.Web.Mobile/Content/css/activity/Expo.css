@@ -1,0 +1,140 @@
+﻿body {
+    color:#3f3f3f;
+}
+.exresult-text{
+    font-size:13px;
+    line-height:20px;
+    color:#3f3f3f;
+    text-indent:20px;
+}
+.expinfo p{
+    color:#3f3f3f;
+    font-size:13px;
+   
+}
+.expinfo li{
+    display:block;
+}
+.expinfo li h4{
+    display:block;
+    color:#0e5bb5;
+    font-size:14px;
+}
+.expinfo li p {
+    width:100%;
+    overflow:hidden;
+}
+.expinfo li p span{
+    float:left;
+}
+.floor-plan img{
+    width:100%;
+    height:4.73rem;
+}
+.side-bar a{
+   display: block;
+    color: #fff;
+    font-size: 0.24rem;
+    width: 60%;
+    margin-left: 0.9rem;
+    margin-top: 0.15rem!important;
+    line-height: 0.28rem!important;
+}
+/*参展申请*/
+.mui-content .top-notice{
+    background:#fff8e6;
+    width:100%;
+    padding:10px;
+    box-sizing:border-box;
+    color:#e0983a;
+    font-size:12px;
+}
+.user_content{
+    margin:12px 0;
+}
+.mui-content .top-notice i {
+        display: inline-block;
+        background: url('../../image/tan.png') no-repeat;
+        width: .24rem;
+        height: .24rem;
+        background-size:100%;
+        margin-right:5px;
+        margin-top:2px;  
+}
+.user_content .applyform li{
+        width:100%;
+        overflow:hidden;
+        line-height:30px;
+        padding:8px 0px 8px 10px;
+ }
+.user_content .applyform li .befor-name{
+    width:30%;
+    float:left;
+    font-size:0.28rem;
+}
+.user_content .applyform li .enter-text{
+    width:70%;
+    float:left;
+}
+.oSpan{
+    color: #b90000;
+    margin-top: 0.05rem;
+    display: block;
+    float: left;
+    width:auto;
+}
+.radio-group {
+    float:left;
+    display:inline-block;
+    margin-bottom:0.2rem;
+    margin-right:0.2rem;
+}
+.radio-group label{
+    padding:0!important;
+    display:inline-block;
+    float:left;
+    width:auto;
+    font-size:0.28rem;
+    margin-top:3PX;
+    color:#444;
+}
+.radio-group input[type=radio]{
+    float:left;
+    position:initial;
+    display:inline-block;
+    height:0.6rem;
+    margin-right:1px;
+}
+.user_content .applyform li .narrow{
+    width:25%;
+}
+.mui-content .apy-btn{
+    width:95%;
+    margin:0 auto;
+    background:#184997;
+    border-radius:3px;
+    height:0.8rem;
+    text-align:center;
+    margin-bottom:.5rem;
+}
+.mui-content .apy-btn a{
+    display:block;
+    color:#fff;
+    font-size:.28rem;
+    line-height:0.8rem;
+}
+
+.mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before{
+    color:#a5a7a8;
+    font-size:0.34REM;
+}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before{
+    color:#184998;
+}
+.user_content .applyform .specli{
+    padding:8px 0 0 10px;
+    line-height:40px;
+}
+.Contact-msge{
+    margin-top:2px;
+}

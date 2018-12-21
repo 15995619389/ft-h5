@@ -1,0 +1,296 @@
+﻿@{
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    ViewBag.Title = "发布技术专利";
+}
+
+@section head{
+    <link href="/content/css/pulli.css" rel="stylesheet" />
+    <link href="/content/css/label.css" rel="stylesheet" />
+    <link href="/content/css/release/releaseTechnology.css" rel="stylesheet" />
+    <style>
+        .upload_img > div {
+            float: left;
+            margin-right: 10px;
+        }
+
+            .upload_img > div.img-block {
+                position: relative;
+            }
+
+                .upload_img > div.img-block span {
+                    position: absolute;
+                    right: -0.20rem;
+                    top: -0.20rem;
+                    color: red;
+                    font-size: 0.60rem;
+                    height: .5rem;
+                    width: 0.5rem;
+                    text-align: center;
+                }
+
+            .upload_img > div > img {
+                height: 1.40rem;
+            }
+
+        .img_hint {
+            clear: both;
+        }
+        .img_hint span{
+            color: #b90000;
+            margin-top: 0.05rem;
+            display: block;
+            float: left;
+            width: 3%;
+            margin-right: 0.05rem;
+            font-size: 0.34rem;
+        }
+        .need_text{
+            width:100%;
+            margin-left:0
+        }
+        .money-box{
+            width:100%;
+            overflow:hidden;
+            margin-bottom:10px;
+            height:33px;
+            line-height:27px
+        }
+        .money-box .money{
+            float:left;
+            width:70%;
+            padding:0.20rem;
+            border:1px solid #ddd ;
+            height:100%
+        }
+        .needs_bg{
+            overflow:hidden
+        }
+        .mui-checkbox input[type=checkbox], .mui-radio input[type=radio]{
+            top:0.02rem
+        }
+        .patent_radio{
+            margin-bottom:10px
+        }
+        .wap_tol ul li span {
+            position: absolute;
+            top: -13px;
+            right: -10px;
+            color: red;
+            font-size: 0.60rem;
+        }
+        .popup, .popup_consult {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            margin-left: -40%;
+            margin-top: -1.75rem;
+        }
+        .btn_box {
+            width: 100%;
+            margin: 0 auto;
+            height: 0.5rem;
+            background: #fff;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 0.28rem;
+            color: #666;
+        }
+        .btn_footer button {
+            width: 75%;
+            font-size: 0.30rem;
+            text-align: center;
+            background: #007AFF;
+        }
+        .btn {
+            width: 10%;
+            height: 0.5rem;
+            float: right;
+            text-align: center;
+            line-height: 0.50rem;
+            color: #333;
+        }
+        .label_fill{
+            padding:0 10px;
+            font-size:14px
+        }
+        input[type=text]{
+            font-size:0.30rem
+        }
+        .needs_bg_text{
+            text-indent:2em
+        }
+
+    </style>
+}
+
+@section foot
+{
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/dist/patent.publish.bundle.js"></script>
+}
+
+<div id="container" v-cloak>
+    <image-uploader ref="uploader"></image-uploader>
+    @*<category-picker ref="catepicker"></category-picker>*@
+    <mt-datetime-picker ref="dateTimepicker1" v-on:confirm="GetApplyTime" v-bind:start-date="StartDate" v-bind:end-date="EndDate" type="date" year-format="{value} 年" month-format="{value} 月" date-format="{value} 日">
+    </mt-datetime-picker>
+    <header class="" style="background: #fff;border-bottom: none;">
+        <a class="mui-icon-arrowleft mui-pull-left header-a" href="javascript:window.history.go(-1);"></a>
+        <h1 class="mui-title">{{PageTitle}}</h1>
+    </header>   
+    
+    <form class="mui-content l-scrollable" style="top:44px">
+        <div class="prompt-box" style="display:none;">
+            <p class="prompt_text"><img src="~/Content/image/all/prompt_icon.png">请至基本信息完善资料后再进行发布技术</p>
+        </div>
+        <div class="need_name">
+            <div class="name_title">
+                <em class="oSpan">*</em><input type="text"  placeholder="专利名称" style="width:95%;" v-model.trim="publishmodel.PatentName"/>
+            </div>
+            <div class="completionTime ">
+                <div class="form_title">
+                    <span class="oSpan">*</span>专利类型
+                </div>
+                <div class="service_checkbox patent_radio">
+                    <div class="mui-input-row mui-radio mui-left" style="width:50%">
+                        <label class="from_label">外观设计专利</label>
+                        <input  value="1" type="radio" v-model="publishmodel.PatentType">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left" style="width:50%">
+                        <label class="from_label">实用新型专利</label>
+                        <input  value="2" type="radio" v-model="publishmodel.PatentType">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left" style="width:50%">
+                        <label class="from_label">发明专利</label>
+                        <input  value="3" type="radio" v-model="publishmodel.PatentType">
+                    </div>
+                </div>
+                <div class="form_title" style="border-top:1px solid #ddd">
+                    <span class="oSpan">*</span>应用行业
+                </div>
+                <div class="label_box" id="pickCategory">
+                    <div class="label_fill">{{publishmodel.Industry}}</div>
+                    <button type="button" class="mui-btn mui-btn-blue" v-on:click="PickCategory">选择标签</button>
+                </div>
+            </div>
+            <div class="upload_img" style="padding-top:0">
+                <template v-if="publishmodel.FTPatentImgModel.PatentCertificate==''">
+                    <img src="../../Content/image/firstFigure.png" id="textfield" v-on:click="UploadImage">
+                </template>
+                <div class="wap_tol" style="margin-top:10px" >
+                    <ul>
+                        <li v-if="publishmodel.FTPatentImgModel.PatentCertificate!=''" style="position:relative;width:142px">
+                            <img v-on:click="UploadImage" id="ImgUrl" v-bind:src="domain+publishmodel.FTPatentImgModel.PatentCertificate" alt="" width="142" height="142" />
+                            <span v-on:click="RemoveImage">×</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="img_hint"><span>*</span>您可以上传一张首图</div>
+        </div>
+        <div class="needs">
+            <div class="need_form" style="border-bottom:none">
+                <div class="name_title">
+                    <em class="oSpan">*</em>
+                    <span style="font-size: 0.30rem;color: #666;">专利号</span>
+                    <input type="text" v-model.trim="publishmodel.FTPatentImgModel.PatentNo" style="text-align:left;width: 76%;"  >
+                </div>
+                <div class="name_title">
+                    <em class="oSpan">*</em>
+                    <span style="font-size: 0.30rem;color: #666;">授权日期</span>
+                    <span v-on:click="openPicker1" style="text-align: left;width: 76%;display:block;height:20px;float:right;color:#444;font-size:0.30rem">{{publishmodel.AppliTime}}</span>
+                </div>
+                <div class="form_title">
+                    <span class="oSpan">*</span>专利状态
+                </div>
+                <div class="service_checkbox patent_radio">
+                    <div class="mui-input-row mui-radio mui-left" style="width:50%">
+                        <label class="from_label">申请中</label>
+                        <input  value="1" type="radio" v-model="publishmodel.PatentStatus">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left" style="width:50%">
+                        <label class="from_label">授权</label>
+                        <input  value="3" type="radio" v-model="publishmodel.PatentStatus">
+                    </div>
+                    <div class="mui-input-row mui-radio mui-left" style="width:50%">
+                        <label class="from_label">证书</label>
+                        <input  value="4" type="radio" v-model="publishmodel.PatentStatus">
+                    </div>
+                </div>
+                <div class="form_title" style="border-top:1px solid #ddd">
+                    <span class="oSpan">*</span>交易方式
+                </div>
+                <div class="service_checkbox">
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" >转让</label>
+                        <input value="1" type="checkbox" name="TradeMode" v-model="publishmodel.TradeMode">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" >普通许可</label>
+                        <input value="2" type="checkbox" name="TradeMode" v-model="publishmodel.TradeMode">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" >独占许可</label>
+                        <input value="3" type="checkbox" name="TradeMode" v-model="publishmodel.TradeMode">
+                    </div>
+                    <div class="mui-input-row mui-checkbox mui-left">
+                        <label class="from_label" >排他许可</label>
+                        <input value="4"  type="checkbox" name="TradeMode" v-model="publishmodel.TradeMode">
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="needs_bg">
+            <div class="form_title">
+                <span class="oSpan">*</span>拟转化金额
+            </div>
+            <div class="money-box">
+                <input type="text" class="money" pattern="[0-9]*" v-bind:disabled="checBox" v-model="publishmodel.Amount" onkeyup="(this.v = function () { this.value = this.value.replace(/[^0-9]{1,10}$/, ''); }).call(this)" onblur="this.v();" />
+                <div class="mui-input-row mui-checkbox mui-left " v-on:click="moneyCheckbox">
+                    <label class="from_label" >面议</label>
+                    <input  type="checkbox" style="margin-top:0.08rem" v-model="checBox" class="checkboxss">
+                </div>
+            </div>
+        </div>
+        <div class="needs_bg">
+            <div class="name_title">
+                <em class="oSpan">*</em><span style="font-size: 0.30rem;color: #666;">专利权人</span><input type="text" v-model.trim="publishmodel.Patentee" style="text-align: left;width: 76%;">
+            </div>
+            <div class="name_title">
+                <em class="oSpan">*</em><span style="font-size: 0.30rem;color: #666;">发明人</span><input type="text" v-model.trim="publishmodel.Inventor" style="text-align: left;width: 76%;">
+            </div>
+            <div class="form_title">
+                <span class="oSpan">*</span>专利详情
+            </div>
+            <textarea  placeholder="可填写专利摘要、技术参数、专利实施情况、项目背景、项目投资额等" class="needs_bg_text" v-model="publishmodel.PantentInfo"></textarea>
+        </div>
+        <div class="needs_bg" style="margin-bottom:0">
+            <div class="form_title">
+                <span class="oSpan"></span>备注
+            </div>
+            <textarea  placeholder="可填写特殊需求：如购买客户限定、不同交易方法价格要求、专利实施要求、专利委托时间限定等或其他您认为需要特别提醒的事项" class="needs_bg_text" v-model="publishmodel.Comment"></textarea>
+            <div class="footer_bt">
+                <a ><button type="button" class="mui-btn mui-btn-yellow" v-on:click="PostTest(1)">提交</button></a>
+                <a ><button type="button" class="mui-btn mui-btn-blue" v-on:click="PostTest(99)">保存</button></a>
+            </div>
+        </div>
+        <div id="mask"></div>
+        <!---------以保存待提交---->
+        <div class="popup">
+            <div class="btn_box">
+                请选择标签
+                <a class="btn disappear" v-on:click="Confirm">X</a>
+            </div>
+            <select v-model="publishmodel.Industry" style="width:90%;border:1px solid #ddd !important;margin:20px 5%">
+                <option v-bind:click="optionClick(item.value)" v-for="item in items" >{{item.text}}</option>
+            </select> 
+            <div class="btn_footer">
+                <div class="btn_footer1">
+                    <button type="button" class="mui-btn mui-btn-blue  confirm" v-on:click="Confirm">确定</button>
+                </div>
+            </div>
+        </div>
+    </form>
+    
+</div>

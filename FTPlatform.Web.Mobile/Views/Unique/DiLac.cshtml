@@ -1,0 +1,93 @@
+﻿@{
+    ViewBag.Title = "国防实验室认可（Dilac）咨询业务";
+    ViewBag.Description = "飞天众智（www.techina2025.com）";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/unique/spaceflight.css" />
+    <link href="~/Content/css/unique/breeding.css" rel="stylesheet" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+    <script>
+        $(function () {
+            $("#fun_navback").on("click", function () {
+                document.referrer === '' ? window.location.href = "http://" + window.location.host : window.history.go(-1);
+            });
+        });
+    </script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff; z-index:34;border-bottom:1px solid #ddd">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="fun_navback"></a>
+    <h1 class="mui-title">国防实验室认可（Dilac）咨询业务</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage"><img src="~/Content/image/recommend/reback.png" /></a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg" style="z-index:34;">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content l-scrollable" style="background: #fff;">
+    <rightsidebar></rightsidebar>
+    <div class="CompanyName">
+        <h3>什么是DILAC</h3>
+        <img src="~/Content/image/all/division.png" class="division" style="margin:0.30rem auto 0.2rem auto">
+    </div>
+    <div class="introduced-list defence-list dilac-wrap">
+        <img src="~/Content/image/recommend/DCpc1.png" class="space_bg" style="height:3.23rem;margin-top:0;margin-bottom:0.2rem;" />
+        <p>国防认可委英文名称为：Defense Science and Technology Industry Laboratory Accreditation Committee（英文缩写为：DILAC）。通常DILAC证书所指代的即是由国防科技工业实验室认可委员会颁发的实验室认可证书。</p>
+        <p>国防科技工业实验室认可委员会（简称：国防认可委）是根据《中华人民共和国认证认可条例》第七十五条的规定，于2003年12月24日，经原国防科工委正式批准设立并授权的实验室认可机构，统一负责国防科技工业检测和校准实验室认可的相关工作，下设评定委员会、申诉委员会和秘书处，并成立认可委员会专家组。实验室认可则依据该委员会《检测实验室和校准实验室认可准则》，在涵盖国家标准的基础上，突出国防科技工业对检测和校准实验室的特殊要求。</p>
+    </div>
+    <div class="CompanyName">
+        <h3>获得DILAC的意义</h3>
+        <img src="~/Content/image/all/division.png" class="division" style="margin:0.30rem auto">
+    </div>
+    <div class="meaning-wrap">
+        <ul>
+            <li style="border-right:#8fb2dc solid 1px;border-bottom:#8fb2dc solid 1px;">
+                <span class="icon-mean"><i class="admin"></i></span>
+                <h4>提高管理水平和技术能力</h4>
+                <p>可进一步提高国防科技工业产品自量检验机构的管理水平和技术能力。</p>
+            </li>
+            <li style="border-bottom:#8fb2dc solid 1px;">
+                <span class="icon-mean"><i class="prots"></i></span>
+                <h4>确保产品可靠性</h4>
+                <p>确保军工产品质量的可靠性。</p>
+            </li>
+            <li style="border-right:#8fb2dc solid 1px;">
+                <span class="icon-mean"><i class="line"></i></span>
+                <h4>加快与国际接轨</h4>
+                <p>加快实验室认可工作与国际惯例接轨的步伐。</p>
+            </li>
+            <li>
+                <span class="icon-mean"><i class="gover"></i></span>
+                <h4>赢得政府部门和社会信任</h4>
+                <p>增强实验室在校准/检测市场的竞争能力，赢得政府部门和社会各界的信任。</p>
+            </li>
+        </ul>
+    </div>
+    <div class="CompanyName">
+        <h3>如何获得DILAC资质</h3>
+        <img src="~/Content/image/all/division.png" class="division" style="margin:0.20rem auto">
+    </div>
+    <div class="introduced-list defence-list dilac-wrap">
+        <img src="~/Content/image/recommend/VCG.png" class="space_bg" style="height:3.23rem;margin-top:0;margin-bottom:0.2rem;" />
+        <p>咨询合同 > 调研策划 > 体系建立 > 体系宣贯 > 体系运行 > 管理评审 > 申请提交 >官方评审(申请材料受理、评审安排、评定与审批工作) > 后续服务 </p>
+    </div>
+    <div class="CompanyName">
+        <h3>我们的服务</h3>
+        <img src="~/Content/image/all/division.png" class="division" style="margin:0.20rem auto">
+    </div>
+    <div class="sever-wrap">
+        <div class="sevtext-a">飞天众智中国制造科技服务平台DILAC资质办理咨询项目目前已经启动。</div>
+        <div class="sevtext-b">即日起，为有意取得DILAC资质的实验室提供咨询与其他配套服务。</div>
+    </div>
+    <!--公司备案，版权所有-->
+    <footer class="company_footer" style="width:100%;height:auto;overflow:hidden;padding:0.30rem 0;background:#f4f4f4;font-size:0.24rem;text-align:center;color:#999">
+        © 2016-<span>@DateTime.Now.Year</span>飞天众智平台&nbsp;|&nbsp;<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" style="color:#999">沪ICP备16043947号-2</a>
+    </footer>
+</div>
+<share ref="share"></share>

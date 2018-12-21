@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "国防域名注册";
+    ViewBag.Description = "飞天众智（www.techina2025.com）";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/unique/spaceflight.css" />
+    <link href="~/Content/css/unique/breeding.css" rel="stylesheet" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+    <script>
+        $(function () {
+            $("#fun_navback").on("click", function () {
+                document.referrer === '' ? window.location.href = "http://" + window.location.host : window.history.go(-1);
+            });
+        });
+    </script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff; z-index:34;border-bottom:1px solid #ddd">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="fun_navback"></a>
+    <h1 class="mui-title">国防域名注册（MIL.CN）</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage"><img src="~/Content/image/recommend/reback.png" /></a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg" style="z-index:34;">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content l-scrollable" style="background: #fff;">
+    <rightsidebar></rightsidebar>
+    <div class="CompanyName" style="padding:5px 3%">
+        <h3 style="line-height:0.40rem">国防机构专属域名，安全高速解析，不受国外控制抵御黑客攻击</h3>
+        <img src="~/Content/image/defence-1.png" class="space_bg" style="margin-top:15px;height:3.20rem" />
+    </div>
+
+    <div class="CompanyName">
+        <h3>注册须知</h3>
+        <img src="~/Content/image/all/division.png" class="division" style="margin:0.30rem auto">
+        <h3>什么是域名？什么是国防(MIL.CN)域名？</h3>
+    </div>
+    <div class="introduced-list defence-list">
+        <p class="approach-text">域名类似于网络上的门牌号码，是用于识别和定位互联网上计算机的层次结构式字符标识，与该计算机的互联网协议（IP）地址相对应。但相对于IP地址而言，更便于使用者理解和记忆。</p>
+        <p class="approach-text">国防域名（MIL.CN）是经工业和信息化部批准，为我国国防单位单独设立的，具有专属性和安全性的互联网域名。</p>
+    </div>
+    <div class="CompanyName" style="padding:5px 3%">
+        <h3 style="line-height:0.40rem">MIL.CN域名的命名规则？</h3>
+    </div>
+    <div class="introduced-list defence-list">
+        <p class="approach-text">1、可以单独或组合使用中文字符、英文字母（a-z，不区分大小写）、阿拉伯数字（0-9），以及半角的连接符"-"（即中横线），不能使用空格及特殊字符（如！、$、&、?等）；</p>
+        <p class="approach-text">2、"-"不能连续出现，不能单独注册，也不能放在开头或结尾。</p>
+        <img src="~/Content/image/defence-2.png" class="space_bg" style="height:2.82rem" />
+    </div>
+    <div class="CompanyName">
+        <h3>选择国防域名有哪些优势</h3>
+    </div>
+    <div class="introduced-list defence-list">
+        <p class="approach-text">国防域名（MIL.CN）通过使用国防专用网络和严格的注册管理制度，为国防单位提供安全的域名服务，并通过国防专属域名解析系统，为国防单位的域名安全保驾护航。国防域名（MIL.CN）可以使民众可以通过域名，更直观的认定网站的归属，防止恶意网站冒充我国的国防单位。</p>
+    </div>
+    <div class="CompanyName">
+        <h3>注册流程</h3>
+        <img src="~/Content/image/all/division.png" class="division" style="margin:0.30rem auto">
+    </div>
+    <div class="introduced-list defence-list">
+        <img src="~/Content/image/defence-3.png" class="space_bg" style="height:3.20rem;margin-top:0" />
+        <ul class="defence-ul">
+            <li>
+                <div class="step-left"><h3>01</h3></div>
+                <div class="step-right">
+                    <h3>选择要注册的域名及注册年限</h3>
+                    <p>MIL.CN域名遵循"先申请先注册"的原则。</p>
+                    <p>MIL.CN域名的最高注册年限为10年，您可以自主选择域名的注册年限（以"年"为单位）。</p>
+                </div>
+                <i class="step-i"></i>
+            </li>
+            <li>
+                <div class="step-left"><h3>02</h3></div>
+                <div class="step-right">
+                    <h3>签署域名注册协议，并保留相关凭证</h3>
+                    <p>您在办理域名业务时，须与我平台签署纸质或在线注册协议或合同，并保留相关凭证，以便更好地维护您的权益。</p>
+                </div>
+                <i class="step-i"></i>
+            </li>
+            <li>
+                <div class="step-left"><h3>03</h3></div>
+                <div class="step-right">
+                    <h3>提交真实、准确、完整的注册信息和申请资料</h3>
+                    <p>您向我平台提交国防（MIL.CN）域名注册申请时，需要一并提交申请资料。资料通常包含：</p>
+                    <p>1、自然人身份证明：身份证正面（复印件或扫描件）；</p>
+                    <p>2、组织、机构身份证明：组织机构代码证（复印件或扫描件）或企业营业执照（复印件或扫描件）；</p>
+                    <p>3、其他与域名注册申请相关的资料。</p>
+                </div>
+                <i class="step-i"></i>
+            </li>
+        </ul>
+    </div>
+    <!--公司备案，版权所有-->
+    <footer class="company_footer" style="width:100%;height:auto;overflow:hidden;padding:0.30rem 0;background:#f4f4f4;font-size:0.24rem;text-align:center;color:#999">
+        © 2016-<span>@DateTime.Now.Year</span>飞天众智平台&nbsp;|&nbsp;<a href="http://www.miitbeian.gov.cn/publish/query/indexFirst.action" style="color:#999">沪ICP备16043947号-2</a>
+    </footer>
+</div>
+<share ref="share"></share>

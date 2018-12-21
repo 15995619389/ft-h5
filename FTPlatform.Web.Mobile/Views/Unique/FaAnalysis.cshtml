@@ -1,0 +1,115 @@
+﻿@{
+    ViewBag.Title = "失效分析检测";
+    ViewBag.Description = "提供材料及其产品的失效分析检测标准方法以及设备。";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="~/Content/css/gobel.css" rel="stylesheet" />
+    <link href="~/Content/css/check/check.css" rel="stylesheet" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav head_box head-secd">
+    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+    <h1 class="mui-title">失效分析检测</h1>
+    <a class="return share-button" v-on:click="SharePage"></a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br>
+            电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content soul_content l-scrollable">
+    <rightsidebar></rightsidebar>
+    <section class="mid-banner">
+        <img src="/content/image/check/aly-banner.png" />
+    </section>
+    <!-- 失效分析整体解决方案服务-->
+    <section class="solution-wrap">
+        <h3>失效分析整体解决方案服务</h3>
+        <ul class="soul-list">
+            <li>
+                <b>方法及设备</b>
+                <p>提供材料及其产品的失效分析检测标准方法以及设备。</p>
+                <b>提供技术服务</b>
+                <p>提供客户电子元器件失效分析技术服务。</p>
+                <b>成本与效率</b>
+                <p>通过实验资源的分析匹配，为客户提供成本与效率最优化方案。</p>
+                <b>技术数据分析</b>
+                <p>为客户提供失效分析检测方法以及结果分析，帮助客户进行失效机理分析并提供改进方案，以及为客户提供数据和技术分析服务。</p>
+            </li>
+        </ul>
+    </section>
+    <section class="sec-banner">
+        <img src="/content/image/check/aly-banner2.png" />
+    </section>
+    <!-- 我们的优势-->
+    <section class="solution-wrap">
+        <h3>我们的优势</h3>
+        <div class="advent-box">
+            <h4>技术优势</h4>
+            <ul class="ness-list">
+                <li><span>针对电子元器件及其它电子产品的失效分析</span></li>
+                <li><span>针对机械产品、结构系统进行失效分析</span></li>
+                <li><span>具备材料理化、失效分析、老化等性能数据库</span></li>
+                <li><span>具备失效分析、微观结构分析新技术、新方法，新技术失效机理的研究技术</span></li>
+            </ul>
+        </div>
+        <div class="advent-box">
+            <h4>资源优势</h4>
+            <ul class="ness-list">
+                <li><span>具备擅长材料以及产品失效分析的航天技术资源</span></li>
+                <li><span>具备失效分析失效机理分析的技术团队</span></li>
+                <li><span>具备国内失效分析相关实验室以及研究院所实验室资源数据库等</span></li>
+            </ul>
+        </div>
+    </section>
+    <!--服务流程-->
+    <section class="solution-wrap sever-step">
+        <h3>服务流程</h3>
+        <div class="step-wrap">
+            <div class="step-text talk">
+                <h5>发起咨询</h5>
+                <p>Initiate consultation</p>
+            </div>
+            <div class="step-text online">
+                <h5>在线答疑</h5>
+                <p>Online answering</p>
+            </div>
+            <div class="step-text agency">
+                <h5>推荐机构</h5>
+                <p>Recommended institutions</p>
+            </div>
+            <div class="step-text confirm">
+                <h5>客户确认</h5>
+                <p>client confirmation</p>
+            </div>
+            <div class="step-text Sign" style="right:0.50rem">
+                <h5>签订协议</h5>
+                <p>Sign the agreement</p>
+            </div>
+            <div class="step-text Track">
+                <h5>项目进度跟踪</h5>
+                <p>Project progress tracking</p>
+            </div>
+            <div class="step-text examine">
+                <h5>审核与发证</h5>
+                <p>Audit and certification</p>
+            </div>
+        </div>
+    </section>
+    <!--合作伙伴-->
+    <section class="solution-wrap parter">
+        <h3>合作伙伴</h3>
+        <div class="part-logo">
+            <span><img src="/content/image/check/ht-logo.png"></span>
+            <span><img src="/content/image/check/kxy-logo.png"></span>
+        </div>
+    </section>
+</div>
+<share ref="share"></share>

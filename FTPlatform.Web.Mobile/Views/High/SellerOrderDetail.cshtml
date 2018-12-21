@@ -1,0 +1,170 @@
+﻿
+@{
+    ViewBag.Title = "订单详情";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/high/buyerorderdetail.css" />
+}
+@section foot{
+    <script src="~/dist/high.sellerorderdetail.bundle.js"></script>
+}
+<style>
+    .order_state{
+        background:url("../../Content/image/high/sellerState1.png") no-repeat;
+        background-size:100% 100%;
+    }
+</style>
+<div class="container" v-cloak>
+    <!--订单详情-->
+    <div class="order_detail" v-show="Type=='orderdetail'">
+        <header class="mui-bar mui-bar-nav" style="background: #fff;">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+            <h1 class="mui-title">订单详情</h1>
+        </header>
+        <!--底部显示栏-->
+        <nav class="mui-bar mui-bar-tab" v-show="order.orderstatus==2">
+            <a class="expediting" v-on:click="Operation('deliverShow',order.ordernumber)">发货</a>
+        </nav>
+        <nav class="mui-bar mui-bar-tab" v-show="order.orderstatus==5||order.orderstatus==4">
+            <a v-show="order.orderstatus==5||order.orderstatus==4" class="deleting" v-on:click="Operation('delete',order.ordernumber)">删除订单</a>
+            <a v-show="order.orderstatus==4&&!order.iscomment" class="appraise_nav" v-on:click="Operation('appraiseShow',order.ordernumber)">评价</a>
+        </nav>
+        <div class="mui-content l-scrollable">
+            <div class="order_state">{{order.orderstatusval}}</div>
+            <!--状态售后时   显示-->
+            <div class="AfterSale_box" v-show="order.aftersaletypeval!=''||order.aftersalecontent!=''">
+                <div class="AfterSale_left"><span>!</span></div>
+                <ul class="AfterSale_right">
+                    <li>售后类型：{{order.aftersaletypeval}}</li>
+                    <li>详情：{{order.aftersalecontent}}</li>
+                </ul>
+            </div>
+            <!--状态：已发货、订单完成时  显示-->
+            <div class="shipping_box" v-show="order.orderstatus>=3&&(order.logisticscompany!=''||order.logisticsnumber!='')">
+                <img src="~/Content/image/high/shipping.png" />
+                <span class="express_no">{{order.logisticscompany}}：{{order.logisticsnumber}}</span>
+            </div>
+            <div class="user_info">
+                <h3><span>{{order.consignee}}</span><span>{{order.telephone}}</span></h3>
+                <ul class="user_address">
+                    <li><img src="/Content/image/high/address.png" class="address_bg"></li>
+                    <li class="user_auto">{{order.shippingaddress}}</li>
+                </ul>
+            </div>
+            <ul class="PlaceOrder">
+                <li>订单编号：{{order.ordernumber}}</li>
+                <li>下单时间：{{order.ordertime}}</li>
+            </ul>
+            <div class="invoice_info">
+                <div class="invoice_left">
+                    <img src="~/Content/image/high/invoice_left.png" class="invoice_bg" />
+                </div>
+                <ul class="invoice_right" v-if="order.InvoiceModel==null">
+                    <li>不开发票</li>
+                </ul>
+                <ul class="invoice_right" v-else>
+                    <li>发票类型：{{order.InvoiceModel.HeaderNumber}}</li>
+                    <li v-if="order.InvoiceModel.Type==0">发票抬头：{{order.InvoiceModel.CompanyName}}</li>
+                    <li v-if="order.InvoiceModel.Type==1">公司名称：{{order.InvoiceModel.CompanyName}}</li>
+                    <li v-if="order.InvoiceModel.Type==1||(order.InvoiceModel.Type==0&&order.InvoiceModel.TitleType==1)">纳税人识别号：{{order.InvoiceModel.TaxesNumbe}}</li>
+                    <li v-if="order.InvoiceModel.Type==1">注册地址：{{order.InvoiceModel.CompanyAddress}}</li>
+                    <li v-if="order.InvoiceModel.Type==1">注册电话：{{order.InvoiceModel.Telephone}}</li>
+                    <li v-if="order.InvoiceModel.Type==1">开户银行：{{order.InvoiceModel.OpeningBank}}</li>
+                    <li v-if="order.InvoiceModel.Type==1">开户账户：{{order.InvoiceModel.AccountNumbe}}</li>
+                </ul>
+            </div>
+            <div class="goods_content">
+                <div class="oTitle" style="overflow: hidden;" v-on:click="SkipProductUrl(order.productid)">
+                    <p class="mui-ellipsis" v-if="order.consignee!=''"><i></i>{{order.consignee}}</p>
+                    <p class="mui-ellipsis" v-else><i></i>{{order.telephone}}</p>
+                    <span class="oSpan">{{order.orderstatusval}}</span>
+                </div>
+                <div class="goods_info" v-on:click="SkipProductUrl(order.productid)">
+                    <img v-bind:src="order.productimage" class="goods_img">
+                    <div class="goods_right">
+                        <p class="goods_title">{{order.productname}}</p>
+                        <p class="mui-ellipsis" style="font-size:0.24rem;color:#999;margin-bottom:0"> 产品概述:{{order.introduction}}</p>
+                    </div>
+                </div>
+                <div class="price">
+                    <span>总价：<span>￥{{order.total}}</span></span>
+                    <span>共{{order.quantity}}件商品</span>
+                </div>
+                <div class="seller_info" v-show="order.buymessage!=''">
+                    <h3>买家留言</h3>
+                    <div class="seller_text">{{order.buymessage}}</div>
+                </div>
+            </div>
+            @*--买家评分--*@
+            <div class="BuyersEvaluation" v-if="order.CritiqueModel!=null">
+                <div class="Evaluation_five">
+                    <span>买家评分：</span>
+                    <template v-if="order.CritiqueModel.Score==1">
+                        <i></i>
+                    </template>
+                    <template v-if="order.CritiqueModel.Score==2">
+                        <i></i>
+                        <i></i>
+                    </template>
+                    <template v-if="order.CritiqueModel.Score==3">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </template>
+                    <template v-if="order.CritiqueModel.Score==4">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </template>
+                    <template v-if="order.CritiqueModel.Score>=5">
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                        <i></i>
+                    </template>
+                </div>
+                <div class="Evaluation_text">
+                    {{order.CritiqueModel.Appraise}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--评价-->
+    <div class="appraise_content" v-show="Type=='appraise'">
+        <header class="mui-bar mui-bar-nav" style="background: #fff;">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" v-on:click="PanelHide"></a>
+            <h1 class="mui-title">评价</h1>
+        </header>
+        <div class="mui-content l-scrollable">
+            <ul class="appraise_ul">
+                <li>
+                    <span>评分：</span>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=1)}" v-on:click="ChioceScore(1)"></i>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=2)}" v-on:click="ChioceScore(2)"></i>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=3)}" v-on:click="ChioceScore(3)"></i>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=4)}" v-on:click="ChioceScore(4)"></i>
+                    <i v-bind:class="{appraise_ok:(AppraiseModel.score>=5)}" v-on:click="ChioceScore(5)"></i>
+                </li>
+                <li>
+                    <span style="width:100%">评价内容：</span>
+                    <textarea placeholder="宝贝满足你的期待吗？说说你的心得吧" rows="4" v-model="AppraiseModel.appraise"></textarea>
+                </li>
+            </ul>
+            <button class="mui-btn-block mui-btn-blue mui-btn submit_appraise" v-on:click="Operation('appraisePost')">提&nbsp;&nbsp;&nbsp;交</button>
+        </div>
+    </div>
+    <!--发货-->
+    <div id="DeliverGoodmask" style="display:none"></div>
+    <div class="DeliverGoods" style="display:none">
+        <h3 v-on:click="PanelHide('deliver')"><span>X</span></h3>
+        <div class="logistics_box"><span>物流公司：</span><input type="text" v-model.trim="DeliveryModel.logisticsCompany" /></div>
+        <div class="logistics_box"><span>物流单号：</span><input type="text" v-model.trim="DeliveryModel.logisticsNumber" /></div>
+        <div class="logistics_btn">
+            <button class="mui-btn-block mui-btn mui-btn-blue" v-on:click="Operation('deliver')">确定</button>
+            <button class="mui-btn-block mui-btn mui-btn-grey" v-on:click="PanelHide('deliver')">取消</button>
+        </div>
+    </div>
+</div>

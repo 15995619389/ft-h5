@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "咨询信息";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/content/css/high/consulting.css" />
+}
+@section foot{
+    <script src="~/dist/high.articleconsulte.bundle.js"></script>
+}
+<div id="container" v-cloak>
+    <header class="mui-bar mui-bar-nav">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+        <h1 class="mui-title">咨询信息</h1>
+    </header>
+    <div class="mui-content l-scrollable">
+        <ul class="user_info">
+            <li>
+                <span class="ospan">*</span><span class="span_text">联系人：</span>
+                <input type="text" class="name" v-model.trim="consulting.UserName" />
+            </li>
+            <li>
+                <span class="ospan">*</span><span class="span_text">联系方式：</span>
+                <input type="text" class="phone" v-model.trim="consulting.UserPhone" />
+            </li>
+            <li>
+                <span class="ospan">*</span><span class="span_text">计划购买数量：</span>
+                <input type="text" class="number" v-model.trim="consulting.PurchaseCount" />
+            </li>
+            <li>
+                <span class="ospan">*</span><span class="span_text">咨询内容：</span>
+                <textarea class="consulting_content" placeholder="请输入您的咨询内容" v-model.trim="consulting.ContentNub"></textarea>
+            </li>
+        </ul>
+        <div class="submit" v-on:click="consultPost">
+            <span>提&nbsp;&nbsp;&nbsp;交</span>
+        </div>
+    </div>
+</div>

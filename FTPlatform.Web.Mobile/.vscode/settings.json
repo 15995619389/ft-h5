@@ -1,0 +1,15 @@
+{
+    "files.autoSave": "off",
+    "eslint.packageManager": "yarn",
+    "eslint.workingDirectories": [
+        
+    ],
+    "eslint.validate": [
+        "javascript",
+        "javascriptreact",
+        "vue",
+        "vue-html"
+    ],
+    "eslint.autoFixOnSave": true,
+    "vetur.format.defaultFormatter.js": "vscode-typescript"
+}

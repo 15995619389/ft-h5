@@ -1,0 +1,458 @@
+﻿.consult-panel {
+    display: none;
+}
+
+.consult-panel .shadow {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #333;
+    opacity: 0.5;
+    z-index: 999;
+}
+
+.consult-panel-content {
+    position: fixed;
+    top: 30%;
+    left: 10%;
+    width: 80%;
+    height: 4.20rem;
+    z-index: 1000;
+    background: #fff;
+    border-radius: 10px;
+}
+
+html,
+body {
+    background: #fff;
+}
+
+body {
+    line-height: 0.40rem;
+}
+
+.mui-pull-right img {
+    width: 0.35rem;
+    height: 0.30rem;
+}
+
+.mui-pull-right {
+    margin-top: 0.3rem;
+}
+
+.details_img {
+    width: 100%;
+    height: 3.25rem;
+}
+
+.mui-bar-nav {
+    top: 0;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+.details_body {
+    width: 94%;
+    margin: 0 auto;
+    margin-top: 0.2rem;
+}
+
+.details_content {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.details_content h3 {
+    font-size: 0.35rem;
+}
+
+.from {
+    width: 100%;
+    height: 0.6rem;
+    margin-top: 0.2rem;
+}
+
+.patent {
+    width: 50%;
+    float: left;
+    font-size: 0.32rem;
+    color: #444444;
+}
+
+.patent span {
+    display: block;
+    float: left;
+    line-height: 0.6rem;
+}
+
+.patent input {
+    width: 60%;
+    height: 0.6rem;
+    float: left;
+    margin-bottom: 0px;
+    padding: 5px;
+}
+
+.patent .type {
+    width: 52%;
+}
+
+.research {
+    width: 100%;
+    border-bottom: 1px solid #dddddd;
+    margin-top: 0.2rem;
+}
+
+.research_bt {
+    width: 100%;
+    height: auto;
+}
+
+.research_bt p {
+    font-size: 0.26rem;
+    color: #444444;
+    margin-bottom: 0.15rem;
+}
+
+.mui-btn {
+    margin-bottom: 0.2rem;
+}
+
+.bt button {
+    width: 49%;
+    float: left;
+    color: #fff;
+}
+
+.bt {
+    margin-top: 25px;
+}
+
+.popup {
+    width: 80%;
+    height: 1.50rem;
+    background: #fff;
+}
+
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #333;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: none;
+}
+
+
+/*--------弹窗----------*/
+
+#mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background: #333;
+    opacity: 0.5;
+    filter: alpha(opacity=50);
+    display: none;
+}
+
+.popup {
+    position: fixed;
+    top: 30%;
+    left: 10%;
+    height: 4.20rem;
+    z-index: 1000;
+    display: none;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.btn_box {
+    width: 100%;
+    margin: 0 auto;
+    height: 0.5rem;
+    background: #fff;
+    border-radius: 10px;
+}
+
+.btn {
+    width: 10%;
+    height: 0.5rem;
+    float: right;
+    text-align: center;
+    line-height: 0.50rem;
+    color: #333;
+}
+
+.p_text {
+    width: 100%;
+    margin: .80rem auto;
+    color: #f19149;
+    font-size: 0.30rem;
+    text-align: center;
+}
+
+.btn_footer {
+    width: 90%;
+    height: auto;
+    margin: 0 auto;
+}
+
+.btn_footer button {
+    width: 40%;
+    float: left;
+    font-size: 0.30rem;
+    text-align: center;
+    background: #007AFF;
+}
+
+.btn_footer1 {
+    width: 80%;
+    margin: 0 auto;
+    padding-left: 12%;
+}
+
+.btn_footer1 .confirm {
+    margin-right: 5%;
+}
+
+.textarea {
+    width: 90%;
+    min-height: 1.8rem;
+    margin-top: 5px;
+    margin-left: 5%;
+}
+
+.btn_footer .confirm_consult {
+    width: 75%;
+    margin-left: 5%;
+}
+
+
+/*-------表格--------*/
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    border: solid #dddddd;
+    border-width: 1px 1px 1px 1px;
+    margin-top: 10px;
+}
+
+.table th,
+.table td {
+    border: solid #dddddd;
+    border-width: 0 1px 1px 0;
+    padding: 2px;
+    font-size: 0.26rem;
+    color: #444444;
+    height: 0.80rem;
+}
+
+.research_title {
+    width: 100%;
+    height: 15px;
+    font-size: 15px;
+    color: #1761ad;
+    line-height: 0.30rem;
+    margin-bottom: 15px;
+}
+
+.research_title i {
+    display: block;
+    width: 4px;
+    height: 15px;
+    background: #1761ad;
+    float: left;
+    margin-right: 0.15rem;
+}
+
+
+/*-------软件定制开发服务-------*/
+
+.mui-pull-right .share_img {
+    width: 0.34rem;
+    height: 0.34rem;
+}
+
+.browse {
+    overflow: hidden;
+    height: auto;
+    padding: 0px 3%;
+}
+
+.browse li {
+    width: 33.33%;
+    float: left;
+    font-size: 0.18rem;
+    color: #666;
+}
+
+.browse li:nth-child(2) {
+    text-align: center;
+}
+
+.browse li:nth-child(3) {
+    text-align: right;
+}
+
+
+/**-----弹窗---*/
+
+.consult_content,
+.consult_name {
+    overflow: hidden;
+    height: auto;
+    width: 100%;
+    font-size: 0.28rem;
+    color: #666;
+}
+
+.consult_content span,
+.consult_name span {
+    float: left;
+    display: block;
+}
+
+.consult_content textarea {
+    height: 0.98rem;
+    width: 73%;
+    float: right;
+    margin-bottom: 0px;
+    padding: 0.10rem;
+    font-size: 0.28rem;
+    color: #444;
+}
+
+.consult_name {
+    margin-top: 0.20rem;
+}
+
+.consult_name span {
+    line-height: 0.60rem;
+}
+
+.consult_name input {
+    width: 73%;
+    float: right;
+    height: 0.60rem;
+    padding: 0px 0.10rem;
+    font-size: 0.28rem;
+    color: #444;
+    margin-bottom: 0px;
+}
+
+.btn_box {
+    height: auto;
+    width: 90%;
+    margin-top: 0.30rem;
+}
+
+.btn_box .mui-btn {
+    padding: 0.15rem;
+    display: block;
+    width: 45%;
+    float: left;
+    border-radius: 15px;
+    font-size: 0.28rem;
+}
+
+.btn_box .mui-btn:nth-child(2) {
+    float: right;
+}
+
+#sheet {
+    height: 2.20rem;
+    background: #fff;
+    padding-top: 0.30rem;
+}
+
+.jiathis_style_m {
+    z-index: 9999;
+}
+
+.share {
+    display: block;
+    font-size: 0.36rem;
+    float: left;
+    margin-top: 0.20rem;
+    margin-left: 0.20rem;
+}
+
+.cancel {
+    padding: 0.20rem 0;
+    font-size: 0.34rem;
+    text-align: center;
+    margin-top: 1.00rem;
+    color: #000;
+    border-top: 1px solid #ddd;
+}
+
+.jiathis_style_32x32 .jtico {
+    margin-right: 0.40rem;
+}
+
+.botm-bg {
+    display: block;
+    background: url(/Content/image/check/ftb-bg.png) no-repeat;
+    width: 100%;
+    height: 1.31rem;
+    background-size: 100% 1.31rem;
+}
+
+.Contact-msge .mes-icon {
+    background: url(/Content//image/check/mesg.png) no-repeat;
+    background-size: 0.43rem 0.27rem;
+}
+
+.research p,
+.research p span {
+    font-size: 0.26rem !important;
+    line-height: 0.40rem !important;
+}
+
+.research p {
+    text-indent: 2em;
+}
+
+.research .research_bt p {
+    overflow: hidden;
+    margin-left: 0px !important;
+}
+
+.research .research_bt p h3 {
+    margin-left: 0px !important;
+}
+
+.research_title p img {
+    width: 100% !important;
+}
+
+.research_title p h1 {
+    font-size: 0.28rem !important
+}
+
+.research:last-child {
+    border-bottom: none
+}
+
+.research p img {
+    width: 100% !important;
+}
+
+.research p h1 {
+    font-size: 0.28rem !important
+}
+
+.research table {
+    width:100% !important;
+}

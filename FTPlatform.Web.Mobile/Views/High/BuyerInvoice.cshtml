@@ -1,0 +1,182 @@
+﻿
+@{
+    ViewBag.Title = "发票管理";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/content/css/high/buyerinvoice.css" />
+}
+@section foot
+{
+    <script src="~/dist/high.buyerinvoice.bundle.js"></script>
+}
+<div id="container" v-cloak>
+    <!--发票信息-->
+    <div class="invoice_content" v-show="invoiceType=='invoiceList'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+            <h1 class="mui-title">发票信息</h1>
+            <a class="administer" v-on:click="ManageShow">管理</a>
+        </header>
+        <div class="mui-content l-scrollable">
+            <ul class="invoice_list" v-if="Invoices.length>0">
+                <li style="padding:0.20rem" v-for="invoicedata in Invoices">
+                    <div class="defaultAddress" v-if="invoicedata.IsDefault">[默认发票]</div>
+                    <p v-if="invoicedata.Type==1"><span>{{invoicedata.TypeVal}}</span></p>
+                    <p v-else><span>{{invoicedata.TypeVal}}</span></p>
+                    <p v-if="invoicedata.Type==0">发票抬头：<span>{{invoicedata.Title}}</span></p>
+                    <p v-if="invoicedata.Type==1">公司名称：<span>{{invoicedata.CompanyName}}</span></p>
+                    <p v-if="(invoicedata.Type==0&&invoicedata.TitleType==1)||(invoicedata.Type==1)">纳税人识别号：<span>{{invoicedata.TaxesNumbe}}</span></p>
+                    <p v-if="invoicedata.Type==1">注册地址：<span>{{invoicedata.CompanyAddress}}</span></p>
+                    <p v-if="invoicedata.Type==1">注册电话：<span>{{invoicedata.Telephone}}</span></p>
+                    <p v-if="invoicedata.Type==1">开户银行：<span>{{invoicedata.OpeningBank}}</span></p>
+                    <p v-if="invoicedata.Type==1">开户账号：<span>{{invoicedata.AccountNumbe}}</span></p>
+                </li>
+            </ul>
+            <ul class="invoice_list invoiceNoData" style="display:none">
+                <li>
+                    暂无更多数据
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--管理发票-->
+    <div class="administer_content" v-show="invoiceType=='invoiceManage'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:;" v-on:click="ListShow"></a>
+            <h1 class="mui-title">管理发票</h1>
+        </header>
+        <div class="mui-content l-scrollable" style="overflow:hidden;padding-bottom:50px">
+            <ul class="invoice_list" v-if="Invoices.length>0">
+                <li v-for="(invoiceList,index) in Invoices">
+                    <div class="invoice_con">
+                        <p v-if="invoiceList.Type==1"><span>{{invoiceList.TypeVal}}</span></p>
+                        <p v-else><span>{{invoiceList.TypeVal}}</span></p>
+                        <p v-if="invoiceList.Type==0">发票抬头：<span>{{invoiceList.Title}}</span></p>
+                        <p v-if="invoiceList.Type==1">公司名称：<span>{{invoiceList.CompanyName}}</span></p>
+                        <p v-if="(invoiceList.Type==0&&invoiceList.TitleType==1)||(invoiceList.Type==1)">纳税人识别号：<span>{{invoiceList.TaxesNumbe}}</span></p>
+                        <p v-if="invoiceList.Type==1">注册地址：<span>{{invoiceList.CompanyAddress}}</span></p>
+                        <p v-if="invoiceList.Type==1">注册电话：<span>{{invoiceList.Telephone}}</span></p>
+                        <p v-if="invoiceList.Type==1">开户银行：<span>{{invoiceList.OpeningBank}}</span></p>
+                        <p v-if="invoiceList.Type==1">开户账号：<span>{{invoiceList.AccountNumbe}}</span></p>
+                    </div>
+                    <div class="select_address">
+                        <div class="radio" style="float:left" v-on:click="invoiceDefault(invoiceList.Id,index)">
+                            <i v-bind:class="{user_chekbox:(invoiceList.IsDefault)}"></i>
+                            <span v-bind:class="{text_color:(invoiceList.IsDefault)}">设为默认</span>
+                        </div>
+                        <div class="list_btn">
+                            <button type="button" class="mui-btn mui-btn-gray mui-btn-outlined" v-on:click="Delete(invoiceList.Id)">删除</button>
+                            <button type="button" class="mui-btn mui-btn-blue mui-btn-outlined" v-on:click="UpdateShow(invoiceList.Id)">编辑</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <ul class="invoice_list invoiceNoData" style="display:none">
+                <li>
+                    暂无更多数据
+                </li>
+            </ul>
+            <nav class="mui-bar mui-bar-tab" v-on:click="AddShow">
+                新增发票信息
+            </nav>
+        </div>
+    </div>
+    <!--新增或编辑发票-->
+    <div class="Edit_invoice" v-show="invoiceType=='updateInvoice'||invoiceType=='addInvoice'">
+        <header class="mui-bar mui-bar-nav">
+            <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:;" v-on:click="ManageShow"></a>
+            <h1 class="mui-title">{{invoiceType=='updateInvoice'?"编辑发票":"新增发票"}}</h1>
+        </header>
+        <div class="mui-content l-scrollable">
+            <div class="invoice_box_one" v-show="invoiceType=='addInvoice'">
+                <h3 class="invoice_title">发票类型</h3>
+                <ul class="invoice_type">
+                    <li v-bind:class="{text_color:(InvoiceModel.Type==0)}" v-on:click="ChoiceType(0)">普通发票</li>
+                    <li v-bind:class="{text_color:(InvoiceModel.Type==1)}" v-on:click="ChoiceType(1)">增值税发票</li>
+                </ul>
+            </div>
+            <!--普通发票-->
+            <div class="ordinary_invoice" v-show="InvoiceModel.Type==0">
+                <div class="invoiceTitle" v-show="invoiceType=='addInvoice'">
+                    <h3 class="invoice_title">发票抬头</h3>
+                    <ul class="invoice_typeTwo">
+                        <li v-bind:class="{text_color:(InvoiceModel.TitleType==0)}" v-on:click="ChoiceTitleType(0)">个人</li>
+                        <li v-bind:class="{text_color:(InvoiceModel.TitleType==1)}" v-on:click="ChoiceTitleType(1)">单位</li>
+                    </ul>
+                </div>
+                <!--个人-->
+                <div class="personal_invoice" v-show="InvoiceModel.Type==0&&InvoiceModel.TitleType==0">
+                    <div class="user_name">
+                        <input type="text" v-model="InvoiceModel.HeaderNumber" placeholder="请输入发票抬头" />
+                    </div>
+                </div>
+                <!--单位-->
+                <div class="personal_invoice" v-show="InvoiceModel.Type==0&&InvoiceModel.TitleType==1">
+                    <div class="user_name">
+                        <input type="text" v-model="InvoiceModel.HeaderNumber" placeholder="请输入发票抬头" />
+                    </div>
+                    <div class="Identification">
+                        <h3 class="Identification_h3">纳税人识别号</h3>
+                        <div class="Identification_text">
+                            <input type="text" v-model="InvoiceModel.TaxesNumbe" placeholder="请输入纳税人识别号" />
+                        </div>
+                    </div>
+                </div>
+                <div class="SetUp">
+                    <span>设置为默认发票</span>
+                    <div class="radio">
+                        <input type="checkbox" v-model="InvoiceModel.IsDefault" />
+                    </div>
+                </div>
+                <div class="submint_info">
+                    <button class="mui-btn mui-btn-blue mui-btn-block" v-on:click="Post">确&nbsp;&nbsp;&nbsp;定</button>
+                </div>
+            </div>
+            <!--增值税发票-->
+            <div class="VAT_invoice" v-show="InvoiceModel.Type==1">
+                <ul>
+                    <li>
+                        <span class="oEm">*</span>
+                        <span>公司名称：</span>
+                        <input type="text" v-model="InvoiceModel.CompanyName" />
+                    </li>
+                    <li>
+                        <span class="oEm">*</span>
+                        <span>纳税人识别号：</span>
+                        <input type="text" style="width:69%" v-model="InvoiceModel.TaxesNumbe" />
+                    </li>
+                    <li>
+                        <span class="oEm">*</span>
+                        <span>注册地址：</span>
+                        <input type="text" v-model="InvoiceModel.CompanyAddress" />
+                    </li>
+                    <li>
+                        <span class="oEm">*</span>
+                        <span>注册电话：</span>
+                        <input type="text" v-model="InvoiceModel.Telephone" />
+                    </li>
+                    <li>
+                        <span class="oEm">*</span>
+                        <span>开户银行：</span>
+                        <input type="text" v-model="InvoiceModel.OpeningBank" />
+                    </li>
+                    <li>
+                        <span class="oEm">*</span>
+                        <span>开户账号：</span>
+                        <input type="text" v-model="InvoiceModel.AccountNumbe" />
+                    </li>
+                </ul>
+                <div class="SetUp">
+                    <span>设置为默认发票</span>
+                    <div class="radio">
+                        <input type="checkbox" v-model="InvoiceModel.IsDefault" />
+                    </div>
+                </div>
+                <div class="VAT_btn">
+                    <button class="mui-btn mui-btn-blue mui-btn-block" v-on:click="Post">确&nbsp;&nbsp;&nbsp;定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

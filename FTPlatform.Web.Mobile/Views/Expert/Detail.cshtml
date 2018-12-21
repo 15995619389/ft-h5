@@ -1,0 +1,158 @@
+﻿@{
+    ViewBag.title = "供方详细";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/content/css/resources/ExpertsDetails.css" />
+}
+
+<div id="container" v-cloak>
+    <popup v-model="IsPopupVisiable" position="bottom" style="width:100%;height:2.00rem;text-align:center;padding:0.40rem 0px">
+        <div>
+            <p style="margin-bottom:0.20rem" v-html="PopupMessage"></p>
+            <div>
+                <button v-on:click="HidePopup">取消</button>
+                <button v-on:click="PopupRedirect">确定</button>
+            </div>
+        </div>
+    </popup>
+    <preview ref="preview"></preview>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:history.go(-1);"></a>
+        <h1 class="mui-title">供方详细</h1>
+        <a class="mui-icon-right-nav mui-pull-right" v-on:click="attention">
+            <img v-if="!detailModel.IsFollowed" src="/Content/image/attention.png" />
+            <img v-else src="/Content/image/heart.png" />
+        </a>
+    </header>
+    <div class="mui-content l-scrollable" style="background: #fff;padding-bottom:1.00rem">
+        <div class="Experts">
+            <div class="HeadPortrait" v-on:click="ShowPreview">
+                <img v-bind:src="detailModel.User|isCheckUser" class="HeadPortrait_bg" />
+            </div>
+            <p class="name">{{detailModel.ExpertName}}</p>
+            <p class="name">
+                <template v-if="detailModel.PerOrDeptType==1">
+                    专家供方
+                </template>
+                <template v-else>
+                    企业供方
+                </template>
+            </p>
+            <p class="company" v-if="detailModel.ExpertName!=detailModel.ExpertDept">{{detailModel.User.CompanyName}}</p>
+            <p class="industry">{{detailModel.ExpertType}}</p>
+            <p class="email_box">
+                <span class="phone"><a class="phone" href="tel:400-920-2025" style="color:#fff">400-920-2025</a></span>|<span class="oEmil">
+                    <a href="mailto:service@techina2025.com" style="color:#fff">service@techina2025.com</a>
+                </span>
+            </p>
+        </div>
+        <div class="box">
+            <div class="research_title"><i></i>擅长领域</div>
+            <p v-html="detailModel.ScientificContent"></p>
+        </div>
+        <div class="box">
+            <div class="research_title">
+                <i></i>
+                <template v-if="detailModel.PerOrDeptType==1">
+                    个人介绍
+                </template>
+                <template v-else>
+                    机构介绍
+                </template>
+            </div>
+            <p v-html="detailModel.PersonExplain"></p>
+        </div>
+        <div class="box" v-if="patentlist.length>0">
+            <div class="research_title"><i></i>发明专利</div>
+            <ul>
+                <li v-for="patent in patentlist" style="margin-bottom:0.20rem">
+                    <div class="patentName">
+                        <span>专利名称</span>
+                        <span>{{patent.PatentName}}</span>
+                    </div>
+                    <div class="patentNumber">
+                        <span>专利号</span>
+                        <span>{{patent.FTPatentImgModel.PatentNo}}</span>
+                    </div>
+                    <div class="inventor">
+                        <span>发明人</span>
+                        <span>{{patent.Inventor}}</span>
+                    </div>
+                    <div class="applicationTime">
+                        <span>申请日期</span>
+                        <span>{{patent.AppliTime|formatDate}}</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div v-if="critiquelist.length>0">
+            <div class="area">
+                <div class="area_auto">
+                    <i></i>
+                    <p><img src="/Content/image/recommend/area.png" />客户评价</p>
+                    <i style="float: right;"></i>
+                </div>
+            </div>
+            <ul class="evaluation">
+                <li v-for="critique in critiquelist">
+                    <div class="assess-top">
+                        <span class="user-portrait"> <img v-bind:src="critique.UserModel|isCheckUser"></span>
+                        <span class="user-name">{{critique.UserModel.RealName | formatName}}</span>
+                        <span style="font-size:0.28rem ;">（<span class="phone11">{{critique.UserModel.Mobile | formatMobile}}</span> ）</span>
+                        <span style="float: right;" class="masonry">
+                            <template v-if="critique.ReviewLevel=='差评'">
+                                <img src="/Content/image/recommend/masonry.png" />
+                            </template>
+                            <template v-if="critique.ReviewLevel=='中评'">
+                                <img src="/Content/image/recommend/masonry.png" />
+                                <img src="/Content/image/recommend/masonry.png" />
+                            </template>
+                            <template v-if="critique.ReviewLevel=='好评'">
+                                <img src="/Content/image/recommend/masonry.png" />
+                                <img src="/Content/image/recommend/masonry.png" />
+                                <img src="/Content/image/recommend/masonry.png" />
+                            </template>
+                        </span>
+                    </div>
+                    <div class="date">
+                        @*<span class="pay_money">成交价格：20000元</span>*@
+                        <span class="pay_date">{{critique.CreateTime|formatDateLong }}</span>
+                    </div>
+                    <p class="problem">{{critique.DemandModel.Title}}</p>
+                    <p class="evaluation_p">{{critique.Appraise}}</p>
+                    <p class="huifu" style="font-size:0.28rem;color:#c7710b" v-if="critique.TargerAppraise!=''&&critique.TargerAppraise!=null">
+                        <strong>回复：</strong>{{critique.TargerAppraise}}
+                    </p>
+                </li>
+            </ul>
+        </div>
+        <div class="footer_btn">
+            <a>
+                <template v-if="detailModel.isAppointment">
+                    <button class="mui-btn mui-btn-outlined">已预约</button>
+                </template>
+                <template v-else>
+                    <button class="mui-btn mui-btn-yellow" v-on:click="appoint">预约</button>
+                </template>
+            </a>
+            <a>
+                <template v-if="detailModel.isExchangeCard=='0'">
+                    <button class="mui-btn mui-btn-blue">已申请交换名片</button>
+                </template>
+                <template v-else-if="detailModel.isExchangeCard=='1'">
+                    <button class="mui-btn mui-btn-blue">已交换</button>
+                </template>
+                <template v-else>
+                    <button class="mui-btn mui-btn-redd" v-on:click="exchange">交换名片</button>
+                </template>
+            </a>
+        </div>
+    </div>
+    <rightsidebar></rightsidebar>
+</div>
+
+@section foot{
+    <script src="~/Content/Plugins/mui/mui.min.js"></script>
+    <script src="~/dist/expert.detail.bundle.js"></script>
+}

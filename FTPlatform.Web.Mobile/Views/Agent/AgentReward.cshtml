@@ -1,0 +1,150 @@
+﻿@{
+    ViewBag.Title = "我的奖励";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+    <link href="/Content/css/intic.css" rel="stylesheet" />
+    <link href="/Content/css/recommend/recommend.css" rel="stylesheet" />
+    <style>
+        .mui-bar-nav~.mui-content{
+            padding-top:44px
+        }
+        .mui-off-canvas-wrap .mui-inner-wrap{
+            background:#f5f5f5;
+        }
+        .zb-tabs{
+            margin-bottom:0
+        }
+        .mui-pull-bottom-pocket{
+            background:#f5f5f5;
+        }
+        #app{
+            position:absolute;
+            width:100%;
+            height:100%
+        }
+    </style>
+      
+
+        <!-- 侧滑导航根容器 -->
+        <div class="mui-off-canvas-wrap">
+         <foot  v-cloak></foot> 
+            <!-- 菜单容器 -->
+            <aside class="mui-off-canvas-right" id="offCanvasSide">
+                <div class="mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                        <div class="mui-scroll">
+                            <div class="scrol-top">
+                                <a class="mui-icon mui-icon-closeempty" id="offside"><span></span></a>
+                                <h3>筛选</h3>
+                            </div>
+                            <div class="scorl-main">
+                                <form>
+                                    <div class="scrol-row">
+                                        <label>日期</label>
+                                        <div class="input-group">
+                                            <input type="date" id="data" />
+                                            <span>-</span>
+                                            <input type="date" id="data1" />
+                                        </div>
+                                    </div>
+                                    <div class="scrol-row">
+                                        <label>途径</label>
+                                        <div class="input-group">
+                                            <ul class="list">
+                                                <li>
+                                                    <label class="cur" style="margin-right: 18px;" id="all">
+                                                        <input type="hidden" value="0" />
+                                                        全部
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="hidden" value="2" />
+                                                        邀请人注册
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label style="margin-right: 18px;">
+                                                        <input type="hidden" value="5" />
+                                                        智友发布有效需求
+                                                    </label>
+                                                </li>
+                                                <li>
+                                                    <label>
+                                                        <input type="hidden" value="6" />
+                                                        智友有效解决需求
+                                                    </label>
+                                                </li>
+                                            </ul>
+
+                                        </div>
+                                    </div>
+                                    <div class="scrol-row">
+                                        <label>账号</label>
+                                        <input type="text" class="idinput" />
+                                    </div>
+                                    <div class="btn-group">
+                                        <button type="button" class="mui-btn btn-set" v-on:click="Reset()">重置</button>
+
+                                        <button type="button" class="mui-btn btn-confore" v-on:click="submit()">确认</button>
+
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </aside>
+            <!-- 主页面容器 -->
+            <div class="mui-inner-wrap" v-cloak style="margin-bottom:40px">
+                <!-- 头部标题 -->
+                <header class="mui-bar mui-bar-nav head_box head-secd">
+                    <a class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left" v-on:click="back()" href="javascript:void(0)"></a>
+                    <h3 class="mui-title left-title">技术合伙人-我的奖励</h3>
+                    <div class="explan">
+                        <a v-on:click="turn('index')">技术合伙人说明</a>
+                    </div>
+                </header>
+                <!-- 我的奖励table -->
+                <div class="mui-content">
+
+                    <section class="top-zhibi">
+                        <div class="zhibi-number">技术合伙人获取总智币：{{Score}}</div>
+                        <div class="filter">
+                            <a href="#offCanvasSide" id="ck">筛选</a>
+                        </div>
+                    </section>
+                    <scroller ref="scroller" v-bind:on-refresh="Refresh" v-bind:on-infinite="Append" class="mui-scroll" v-cloak style="top:75px">
+                        <div style="margin-bottom:24px">
+                            <section class="zhibi-info">
+                                <table class="zb-tabs">
+                                    <thead>
+                                        <tr>
+                                            <td>时间</td>
+                                            <td>账号</td>
+                                            <td>途径</td>
+                                            <td style="min-width: 60px;">收入智币</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody v-if="reward.length>0">
+                                        <tr v-for="r in reward">
+                                            <td>{{r.CreateTime|formatDate}}</td>
+                                            <td>{{r.userModel.Mobile}}</td>
+                                            @*<td>{{r.SourceType|st}}</td>*@
+                                            <td>{{r.Source|formatStatus}}</td>
+                                            <td>{{r.Amount}}</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </section>
+                        </div>
+                        </scroller>
+</div>
+            </div>
+        </div>
+
+@section foot{
+<script src="~/Content/Plugins/mui/mui.min.js"></script>
+<script src="~/dist/agent.agentreward.bundle.js"></script>
+    }

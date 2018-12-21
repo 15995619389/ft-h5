@@ -1,0 +1,348 @@
+/*----底部选项卡------*/
+.ft-tab .mui-tab-item {
+    color: #444;
+}
+
+.ft-tab .tab-list {
+    overflow: visible;
+}
+
+.mui-bar-tab .nav-tab-item {
+    display: table-cell;
+    width: 1%;
+    height: 50px;
+    text-align: center;
+    vertical-align: middle;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    color: #444;
+}
+
+side .ft-tab .mui-active {
+    color: #0e5bb5 !important;
+}
+
+.ft-tab .icon-home {
+    background: url(../../image/home11.png) no-repeat;
+    width: 0.48rem;
+    height: 0.47rem;
+    background-size: 0.48rem 0.47rem;
+}
+
+.ft-tab .tab-icon {
+    margin-bottom: 0.15rem;
+    /*width: 0.46rem;
+    height: 0.46rem;*/
+    position: relative;
+    z-index: 20;
+    top: 3px;
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: Muiicons;
+    font-size: 0.24px;
+    font-weight: 400;
+    font-style: normal;
+    /* line-height: 1; */
+    display: inline-block;
+    text-decoration: none;
+    -webkit-font-smoothing: antialiased;
+}
+
+.ft-tab .mui-tab-label {
+    display: block;
+    font-size: 0.24rem;
+}
+
+.ft-tab .mui-active .icon-home {
+    background: url(../../image/home-cur.png) no-repeat;
+    width: 0.52rem;
+    height: 0.47rem;
+    background-size: 0.52rem 0.47rem;
+}
+
+.ft-tab .icon-pull {
+    background: url(../../image/plus_sign.png) no-repeat;
+    width: 1.16rem;
+    height: 1.16rem;
+    background-size: 1.16rem 1.16rem;
+}
+
+.ft-tab .pu-icon {
+    width: 1.16rem !important;
+    height: 1.16rem !important;
+    top: -0.2rem;
+}
+
+.ft-tab .icon-resouce {
+    background: url(../../image/classify.png) no-repeat;
+    width: 0.46rem;
+    height: 0.45rem;
+    background-size: 0.46rem 0.45rem;
+}
+
+.ft-tab .mui-active .icon-resouce {
+    background: url(../../image/noun-bl.png) no-repeat;
+    width: 0.46rem;
+    height: 0.45rem;
+    background-size: 0.46rem 0.45rem;
+}
+/*=====去阴影=====*/
+.mui-bar-nav {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.mui-bar-tab .mui-tab-item {
+    height: 1.0rem;
+}
+
+    .mui-bar-tab .mui-tab-item .mui-icon {
+        width: 0.46rem;
+        height: 0.45rem;
+    }
+
+.trigon {
+    width: 0;
+    height: 0;
+    border-left: 0.1rem solid transparent;
+    border-right: 0.1rem solid transparent;
+    border-top: 0.15rem solid #bdbdbd;
+    margin-top:0.35rem
+}
+
+.trigon1 {
+    width: 0;
+    height: 0;
+    border-left: 0.1rem solid transparent;
+    border-right: 0.1rem solid transparent;
+    border-top: 0.15rem solid #ff6525;
+    margin-top:0.35rem;
+}
+
+.on_seek {
+    width: 0.5rem;
+    height: 100%;
+    position: absolute;
+    right: 0.11rem;
+}
+
+.cataloglist dt {
+    margin-top: 0.05rem;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    background: #000;
+    opacity: 0.8;
+    padding: 5px;
+    box-sizing: border-box;
+    border-radius: 3px;
+}
+
+    .slide li {
+        line-height: 0.50rem;
+        color: #f1f1f1;
+    }
+
+.seek_img {
+    width: 0.26rem;
+    height: 0.26rem;
+    margin: auto;
+    margin-top: 0.13rem;
+}
+
+.mui-bar-tab .mui-tab-item {
+    overflow: visible;
+}
+
+.home, .classify {
+    width: 0.46rem;
+    height: 0.45rem;
+}
+
+.publish {
+    width: 1.16rem;
+    height: 1.16rem;
+    position: absolute;
+    top: -0.65rem;
+    left: -0.33rem;
+}
+
+.mui-bar-tab .mui-tab-item .mui-icon ~ .mui-tab-label {
+    font-size: 0.24rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #444;
+}
+
+.home, .classify {
+    width: 0.46rem;
+    height: 0.45rem;
+}
+
+.mui-bar-tab .mui-tab-item .mui-icon ~ .mui-tab-label {
+    font-size: 0.24rem;
+    display: block;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #444;
+}
+
+.mui-bar-tab .mui-tab-item {
+    overflow: visible;
+}
+
+.publish {
+    width: 1.16rem;
+    height: 1.16rem;
+    position: absolute;
+    top: -0.65rem;
+    left: -0.33rem;
+}
+
+.research {
+    width: 100%;
+    height: auto;
+    display: none;
+}
+
+.mui-table-view-cell:after {
+    left: 0px;
+}
+
+.research_title .not_docking {
+    color: #ff6525;
+    font-size: 0.26rem;
+    float: right;
+}
+
+.mui-table-view-cell .research_title {
+    width: 100%;
+    height: auto;
+    color: #184998;
+    font-size: 0.30rem;
+    min-height: 0.55rem;
+}
+
+.oSpan {
+    color: #184998;
+    font-size: 0.30rem;
+    float: left;
+    width:80%;
+    overflow:hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap
+}
+
+.mui-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.26rem;
+    height:0.40rem
+}
+
+.research_footer {
+    width: 100%;
+    margin-top: 5px;
+}
+
+    .research_footer li {
+        float: left;
+        line-height:0.375rem
+    }
+    /*.research_footer li:nth-child(2){
+        float:right;
+        margin-right:0.15rem;
+    }*/
+        .research_footer li:nth-child(1) {
+            margin-right: 1%;
+            width: 44%
+        }
+
+.money {
+    float: left;
+    width: 0.25rem;
+    height: 0.25rem;
+    margin-top: 0.04rem;
+    margin-right: 0.04rem;
+}
+
+.research_footer li p {
+    float: left;
+    color: #969696;
+    font-size: 0.22rem;
+}
+
+.research_footer .year {
+    float: right;
+    color: #969696;
+    text-align: right;
+    font-size: 0.22rem;
+}
+
+.focus_img {
+    width: 0.25rem;
+    height: 0.22rem;
+    float: left;
+    margin-right: 0.05rem;
+    margin-top: 0.07rem;
+}
+
+.research li:last-child {
+    margin-bottom: 50px;
+}
+
+/*-----标的额区间-----------*/
+.service_checkbox {
+    width: 100%;
+    overflow: hidden;
+    color: #444;
+}
+
+.radio {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+}
+
+.needs .need_form .service_checkbox .radio_box .mui-left:nth-child(odd) {
+    float: left;
+    width: 33.33%;
+}
+
+.mui-input-row {
+    clear: none;
+}
+
+.mui-checkbox.mui-left label, .mui-radio.mui-left label {
+    padding-right: 0px;
+    padding-left: 0.50rem;
+    padding-bottom: 5px;
+    font-size: 0.30rem;
+    color: #666666;
+}
+
+.mui-checkbox.mui-left input[type=checkbox], .mui-radio.mui-left input[type=radio] {
+    left: 0.10rem;
+}
+
+.mui-checkbox input[type=checkbox], .mui-radio input[type=radio] {
+    width: 0.38rem;
+    height: 0.38rem;
+    top: 0.15rem;
+}
+
+    .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before {
+        font-size: 0.34rem;
+    }
+
+.mui-input-row {
+    width: 33%;
+    float: left;
+}
+.mui-checkbox input[type=checkbox]:checked:before, .mui-radio input[type=radio]:checked:before {
+    color: #0e5bb5;
+}

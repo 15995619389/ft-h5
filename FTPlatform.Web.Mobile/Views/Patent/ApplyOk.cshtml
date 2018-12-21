@@ -1,0 +1,47 @@
+﻿@{
+    ViewBag.Title = "申请成功";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/content/css/pulli.css" />
+    <link rel="stylesheet" href="/content/css/release/submit.css" />
+}
+<style>
+    .btn_box1{
+        overflow:hidden;
+        width:5.20rem;
+        margin:.500rem auto
+    }
+    .btn_box1 a{
+        display:block;
+        float:left;
+        width:2.30rem;
+        height:0.70rem;
+        line-height:0.70rem;
+        text-align:center;
+        font-size:0.28rem;
+        border:1px solid #ddd;
+        border-radius:3px;
+    }
+    .btn_box1 .cur{
+        border:1px solid #0e5bb5;
+        color:#0e5bb5
+    }
+    .btn_box1 a:last-child{
+        float:right
+    }
+</style>
+<header class="mui-bar mui-bar-nav aHeader" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/patent/"></a>
+    <h1 class="mui-title">申请成功</h1>
+</header>
+<div class="mui-content" style="background: #fff;">
+    <div class="box">
+        <img src="/content/image/Apply_bg.png" />
+        <p class="p_text" style="width:94%">申请交易专利成功，平台将会在24小时内联系您，期间请保持手机畅通。</p>
+        <div style="overflow:hidden" class="btn_box1">
+            <a href="/patent/buttjointpanent" class="cur">我的专利交易</a>
+            <a href="/patent">发现更多专利</a>
+        </div>
+    </div>
+</div>

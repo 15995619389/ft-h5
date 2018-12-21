@@ -1,0 +1,107 @@
+﻿body {
+}
+ .label_text {
+        width: 50%;
+        float: left;
+        font-size: 0.28rem;
+        color: #444;
+    }
+
+    .select_label {
+        float: right;
+        font-size: 0.28rem;
+        color: #444;
+    }
+
+    .li_title {
+        margin-bottom: 0.20rem;
+    }
+
+    .good_instruction {
+        padding: 0;
+        font-size: 0.28rem;
+        color: #444;
+        text-indent: 2em;
+        margin-bottom: 0;
+        border: none;
+    }
+
+    .mui-input-row {
+        float: left;
+        clear: none;
+        width: 50%;
+    }
+
+    .mui-radio .mui-left label {
+        padding-right: 0px;
+        padding-left: 0.50rem;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        font-size: 0.26rem;
+    }
+
+    .mui-radio input[type=radio] {
+        width: 0.38rem;
+        height: 0.38rem;
+        top: 0.0rem;
+    }
+
+    .mui-radio.mui-left input[type=radio] {
+        left: 0.10rem;
+    }
+
+    .mui-radio input[type=radio]:before {
+        font-size: 0.34rem;
+    }
+
+    .mui-input-row label {
+        padding: 0;
+    }
+
+    .mui-checkbox.mui-left label, .mui-radio.mui-left label {
+        padding-right: 15px;
+        padding-left: 0.55rem;
+    }
+
+    .success_ul {
+        overflow: hidden;
+        padding-top: 1.00rem;
+    }
+
+        .success_ul img {
+            margin: 0 auto 0.60rem;
+            width: 2.10rem;
+            height: 2.10rem;
+        }
+
+        .success_ul p {
+            text-align: center;
+            color: #444;
+        }
+
+        .success_ul .add_good {
+            color: #fe6400;
+            font-size: 14px;
+        }
+  .shop_info li .SellingPrice{
+      width:100%;
+      text-align:center
+  }
+  .mui-checkbox.mui-left label{
+    padding-right: 0px;
+    padding-left: 0.50rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    font-size: 0.26rem;
+} 
+  .mui-checkbox.mui-left input[type=checkbox]{
+    left: 0.10rem;
+}
+  .mui-checkbox input[type=checkbox]{
+    width: 0.38rem;
+    height: 0.38rem;
+   top: 0.02rem;
+}
+  .mui-checkbox input[type=checkbox]:before, .mui-radio input[type=radio]:before {
+    font-size: 0.34rem;
+}

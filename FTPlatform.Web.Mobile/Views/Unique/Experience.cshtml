@@ -1,0 +1,82 @@
+﻿@{
+    ViewBag.Title = "航天体验园";
+    ViewBag.Description = "";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/unique/spaceflight.css" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+    <script>
+        $(function () {
+            $("#fun_navback").on("click", function () {
+                document.referrer === '' ? window.location.href = "http://" + window.location.host : window.history.go(-1);
+            });
+        });
+    </script>
+}
+
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="fun_navback"></a>
+    <h1 class="mui-title">航天体验园</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage">
+        <img src="~/Content/image/recommend/reback.png" />
+    </a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+<div class="mui-content l-scrollable" style="background: #fff;padding-bottom:44px">
+    <rightsidebar></rightsidebar>
+    <img src="~/Content/image/MilitaryCivilian/Experience_bg.png" class="space_bg" />
+    <p class="platform_text">飞天众智集成独有的航天资源与各地政府、企业合作建立航天体验园。让游客在真实的体验中普及航天知识、传播航天文化、弘扬航天精神、提升爱国主义情怀。将航天知识及国防教育的普及过程以全新形式进行展现。</p>
+    <div class="CompanyName">
+        <h3>太空飞行体验</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <img src="~/Content/image/MilitaryCivilian/Experience_list1.png" class="Experience_list_img"/>
+    <p class="platform_text">模拟太空飞行。游客坐在“太空飞行器”内，屏幕是飞行器的前窗。整个舱会按照屏幕上显示出来的情景作为相应的运动，如冲击、振动、前倾后斜、左右颠簸等，旅游者如亲临太空飞行。</p>
+    <div class="CompanyName">
+        <h3>嫦娥奔月旅程体验</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <img src="~/Content/image/MilitaryCivilian/Experience_img1.png" class="Experience_img"/>
+    <p class="platform_text">游客乘坐“太空飞船”，模拟登月飞行。飞船外，繁星闪烁，流星穿梭。旅游者如亲临登月飞行。月球表面着陆后，游客乘坐“月球车”观赏月球地貌。游客还可以走出“月球车”，进行飞船舱外活动，体验太空行走。</p>
+    <div class="CompanyName">
+        <h3>国际空间站体验</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <img src="~/Content/image/MilitaryCivilian/Experience_list2.png" class="Experience_list_img" />
+    <p class="platform_text">在巨大的空间站模型面前，游客可以走进，体验国际空间站工作与生活。在空间站内，游客可以体验太空舱卫生间，体验太空座椅，太空食品，太空工作，太空休息等。</p>
+    <div class="CompanyName">
+        <h3>航天VR体验</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <img src="~/Content/image/MilitaryCivilian/Experience_img2.png" class="Experience_img" />
+    <p class="platform_text">结合当下最先进的VR虚拟现实设备。游客戴上VR头盔，身临其境地感受到三百六十度全景式的载人航天出征飞天任务；高空跳伞；神舟飞船返回舱飞行体验</p>
+    <div class="CompanyName">
+        <h3>模拟航天发射、交会对接体验</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <img src="~/Content/image/MilitaryCivilian/Experience_list3.png" class="Experience_list_img" />
+    <p class="platform_text">通过实物和模型，把航天发射指挥中心的操作情景展示在参观者面前，让其感同身受，亲临其境，并可直接操作指令，完全处于发射指挥现场。</p>
+    <div class="CompanyName">
+        <h3>其他体验（航天员训练、风洞、模拟射击）</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <ul class="Experience_ul">
+        <li><img src="~/Content/image/MilitaryCivilian/Experience_li1.png"/></li>
+        <li><img src="~/Content/image/MilitaryCivilian/Experience_li2.png" /></li>
+        <li><img src="~/Content/image/MilitaryCivilian/Experience_li3.png" /></li>
+        <li><img src="~/Content/image/MilitaryCivilian/Experience_li4.png" /></li>
+    </ul>
+</div>
+
+
+<share ref="share"></share>

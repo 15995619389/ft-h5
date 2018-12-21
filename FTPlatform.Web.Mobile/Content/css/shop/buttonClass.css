@@ -1,0 +1,17 @@
+﻿
+/*弹出样式*/
+.layui-layer-syclass .layui-layer-btn a {
+    background-color:#3486c4;
+    font-size: 0.9em;
+}
+.layui-layer-syclass .layui-layer-btn .layui-layer-btn1 {
+    background-color:#bcbcbc;
+    color:#fff;
+}
+.layui-layer-syclass .layui-layer-title {
+    background-color:#245cb5;
+    color:#fff;
+}
+.layer-anim {
+    background-color:#fff !important;
+}

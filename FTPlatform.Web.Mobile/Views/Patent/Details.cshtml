@@ -1,0 +1,153 @@
+﻿
+@{
+    ViewBag.Title = "专利详情";
+    ViewBag.Description = "";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="/content/css/pulli.css" />
+    <link rel="stylesheet" href="/content/css/demand/NoLogIn.css" />
+<link rel="stylesheet" href="~/content/css/panent/details.css" />
+}
+@section foot{
+    <script src="~/dist/patent.details.bundle.js"></script>
+}
+<div id="container" v-cloak>
+    <share ref="share"></share>
+    <rightsidebar></rightsidebar>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1);"></a>
+        <div class="mui-title">
+            <ul>
+                <li class="text_color">专利详情</li>
+                <li>交易流程</li>
+                <li>交易保障</li>
+            </ul>
+        </div>
+        <a class="mui-icon-right-nav mui-pull-right" v-on:click="Follow">
+            <img src="~/Content/image/recommend/reback.png" />
+        </a>
+    </header>
+    <popup v-model="IsPopupVisiable" position="bottom" style="width:100%;height:2.00rem;text-align:center;padding:0.40rem 0px">
+        <div>
+            <p style="margin-bottom:0.20rem" v-html="PopupMessage"></p>
+            <div>
+                <button v-on:click="HidePopup">取消</button>
+                <button v-on:click="PopupRedirect">确定</button>
+            </div>
+        </div>
+    </popup>
+    <preview ref="preview"></preview>
+    <div class="mui-content l-scrollable" style="background: #fff;padding-bottom:1.00rem">
+        <div class="PanentDetails_box" style="display:block">
+            <img v-on:click="ShowPreview" class="details_img" v-lazy="panentDetails.PatentCertificate"/>
+            <div class="details_box">
+                <em class="em_title">{{panentDetails.PatentName}}</em>
+                <div class="details_p">
+                    <ul class="d_p_text">
+                        <li>
+                            <div>拟转化金额：<span>{{panentDetails.PatentAmount}}</span></div>
+                            <div>申请数：<span>{{panentDetails.PatentTradeCount}}</span></div>
+                        </li>
+                        <li>
+                            <div>专利类型：<span>{{panentDetails.PatentTypeVal}}</span></div>
+                            <div>应用行业：<span>{{panentDetails.Industry}}</span></div>
+                        </li>
+                    </ul>
+                    <p class="d_p_text">交易方式：<span>{{panentDetails.TradeModeVal}}</span></p>
+                    <p class="d_p_text">
+                        专利号：<span>{{panentDetails.PatentNo}}</span>
+                    </p>
+                    <p class="d_p_text">专利状态：<span>{{panentDetails.PatentStatusVal}}</span></p>
+                    <p class="d_p_text">有效期 ：<span>{{panentDetails.Validtime}}</span></p>
+                    <p class="d_p_text">
+                        发明人：
+                        <span>{{panentDetails.Inventor}}</span>
+                    </p>
+                    <p class="d_p_text">
+                        专利权人：<span>{{panentDetails.Patentee}}</span>
+                    </p>
+                    
+                </div>
+                <div class="developmentBg" style="margin-bottom: 0px;">专利详情</div>
+                <ul class="details_content">
+                    <li style="text-indent: 2em;">
+                        {{panentDetails.PantentInfo}}
+                    </li>
+                </ul>
+                @*<div class="developmentBg" style="margin-top: 0px;">您可能感兴趣的专利！</div>
+                <ul class="recommend">
+                    <li v-for="aa in recommendUl" v-on:click="RecommendDetail(aa)">
+                        <img v-lazy="aa.PatentCertificate"/>
+                        <p class="recommend_text">{{aa.PatentName}}</p>
+                        <p class="recommend_p">{{aa.PantentInfo}}</p>
+                    </li>
+                </ul>*@
+            </div>         
+        </div>
+        @*-交易流程-*@
+        <div class="PanentDetails_box">
+            <ul class="flow_path">
+                <li><span>1.</span><div>选定所需专利，点击申请交易</div></li>
+                <li><span>2.</span><div>平台联系卖家，确认是否可交易及交易价格</div></li>
+                <li><span>3.</span><div>平台联系双方线下签约，买方支付首笔款项至平台</div></li>
+                <li><span>4.</span><div>平台将双方签字的相关材料递交国家知识产权局办理国家转让手续</div></li>
+                <li><span>5.</span><div>平台将转让证明（电子件）给买家，买方支付尾款</div></li>
+                <li><span>6.</span><div>平台将专利相关文件（纸质件）邮寄给买家，交易完成。</div></li>
+            </ul>
+        </div>
+        @*-交易保障-*@
+        <div class="PanentDetails_box">
+            <ul class="safeguard">
+                <li>
+                    <div>保障一</div>
+                    <div>通过本平台交易，确保所有交易合同及相关文件合法有效。</div>
+                </li>
+                <li>
+                    <div>保障二</div>
+                    <div>通过本平台交易，均由平台直接与买方签约付款，保障买方资金安全。</div>
+                </li>
+                <li>
+                    <div>保障三</div>
+                    <div>
+                        通过本平台交易，均由平台及委托机构代办官方手续，办理过程公开透明，进度随时查询，确保交易真实可靠。
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="Iwant" v-cloak>
+            <a v-cloak class="mui-btn  mui-btn-block" v-bind:class="[ButtonColor?'mui-btn-blue':'mui-btn-gray']" v-on:click="Solve()">{{panentDetails.ApplyStatusVal}}</a>
+        </div>
+    </div>
+   <!--提交专利用-->
+    <div id="mask" style="position:fixed" v-on:click="Hide()"></div>
+    <div class="SubPopup">
+        <div style="height:1.00rem;background:none;overflow:hidden"></div>
+        <div style="padding:0.20rem 2% 0 2%;height:4.00rem;background:#fff">
+            <div class="title_box">
+                <img class="sub_img" v-lazy="panentDetails.PatentCertificate" />
+                <p>{{panentDetails.PatentName}}</p>
+                <a class="bttn disappear" v-on:click="Hide()">X</a>
+            </div>
+            <div class="ChooseWay">
+                <p style="color:#0d0d0d">选择交易方式</p>
+                <div class="way">
+                    <template v-for="(TradeModeSpan,index) in TradeModeList" >
+                        <span  v-bind:class="{ 'active':(TradeModeId == TradeModeSpan.Id)}" v-on:click="DealWay(TradeModeSpan.Id)">{{TradeModeSpan.Value}}</span>
+                        @*<span v-if="index==1" v-bind:class="{active:(TradeModeId==2)}" v-on:click="DealWay(TradeModeSpan.Id)">{{TradeModeSpan.Value}}</span>
+                        <span v-if="index==2" v-bind:class="{active:(TradeModeId==3)}" v-on:click="DealWay(TradeModeSpan.Id)">{{TradeModeSpan.Value}}</span>
+                        <span v-if="index==3" v-bind:class="{active:(TradeModeId==4)}" v-on:click="DealWay(TradeModeSpan.Id)">{{TradeModeSpan.Value}}</span>*@
+
+
+                        @*<span v-bind:class="{active:(TradeModeId==1|| TradeModeId==2 || TradeModeId==3 || TradeModeId==4)}" v-on:click="Deal_way(TradeModeSpan.Id)">{{TradeModeSpan.value}}</span>*@
+                    </template>
+                    @*<span v-bind:class="{active:(index==0)}" v-on:click="Deal_way(TradeModeSpan.Id)" v-for="(TradeModeSpan,index) in TradeModeList">{{TradeModeSpan.value}}</span>*@
+                   
+                </div>
+            </div>
+        </div>
+        <div class="btn_FooterBox">
+              <button type="button" class="mui-btn" v-on:click="ApplyDeal()">提交</button>               
+        </div>
+    </div>
+</div>

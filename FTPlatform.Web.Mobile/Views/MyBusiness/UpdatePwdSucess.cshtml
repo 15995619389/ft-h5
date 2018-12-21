@@ -1,0 +1,50 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>密码修改成功</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+    <style>
+        html {
+            background: #fff;
+        }
+
+        .mui-bar-nav .mui-pull-right {
+            font-size: 17px;
+            padding-top: 15px;
+            color: #007aff;
+        }
+
+        .successful {
+            border-top: 1px solid #ddd;
+            padding-top: 1.50rem;
+        }
+
+            .successful img {
+                width: 2.10rem;
+                height: 2.10rem;
+                margin: 0 auto;
+            }
+
+            .successful p {
+                font-size: 0.30rem;
+                color: #434343;
+                text-align: center;
+                margin-top: 0.50rem;
+            }
+    </style>
+</head>
+<body>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" onclick="history.go(-2);"></a>
+        <h1 class="mui-title">密码修改</h1>
+        <a class="mui-icon mui-icon-right-nav mui-pull-right" onclick="history.go(-2);">完成</a>
+    </header>
+    <div class="mui-content" style="background: #fff;">
+        <div class="successful">
+            <img src="~/Content/image/passwored_ok.png" />
+            <p>您的密码已修改成功</p>
+        </div>
+    </div>
+</body>
+</html>

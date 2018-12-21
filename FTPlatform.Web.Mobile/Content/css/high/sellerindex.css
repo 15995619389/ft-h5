@@ -1,0 +1,200 @@
+﻿body {
+}
+.mui-bar{
+    border-bottom:1px solid #ddd
+}
+.basic_info {
+    overflow: hidden;
+    width: 100%;
+    padding:0.43rem;
+    height: 2.15rem;
+    background: url('../../image/high/basic_bg.png') no-repeat;
+    background-size:100% 100%;
+    margin-bottom:0.20rem
+}
+.basic_left{
+    width:1.30rem;
+    height:1.30rem;
+    border:0.05rem solid #74d7cf;
+    float:left;
+    border-radius:5px
+}
+.basic_left img{
+    width:100%;
+    height:100%;
+    border-radius:5px
+}
+.basic_right{
+    overflow:hidden;
+    width:75%;
+    float:left;
+    margin-left:0.30rem
+}
+.basic_right h3{
+    font-size:0.30rem;
+    color:#fff;
+    line-height:0.40rem
+}
+.user_info li{
+    display:inline-block;
+    float:left;
+    font-size:0.26rem;
+    color:#fff
+}
+.user_info li span{
+    display:inline-block;
+    width:0.28rem;
+    height:0.28rem;
+    margin-right:0.10rem
+}
+.user_info li:first-child{
+    margin-right:0.30rem
+}
+.user_info li:first-child span{
+    background:url('../../image/high/name_bg.png') no-repeat;
+    background-size:100% 100%
+}
+.user_info li:last-child span{
+    background:url('../../image/high/phone_bg.png') no-repeat;
+    background-size:100% 100%
+}
+.user_content,.user_list{
+    overflow:hidden;
+    height:auto;
+    background:#fff
+}
+.user_content{
+    padding:0.20rem 0;
+    margin-bottom: 0.20rem;
+}
+.user_list li{
+    padding:0.20rem 0;
+    width:33.33%;
+    float:left;
+}
+.user_list li a{
+    display:block;
+    overflow:hidden
+}
+.user_list li h3{
+    color:#1a7f9c;
+    font-size:0.30rem;
+    text-align:center;
+    font-weight:800
+}
+.user_list li p{
+    margin:0;
+    text-align:center;
+    color:#444;
+    font-size:0.30rem
+}
+.user_content .publish_goods{
+    display:block;
+    margin:0.20rem auto;
+    line-height:1.45;
+    padding:6px 0;
+    width:3.28rem;
+    border:1px solid #1a7f9c;
+    color:#1a7f9c;
+    font-size:0.30rem;
+    text-align:center;
+    border-radius:20px
+}
+/*-*/
+.mui-navigate-right {
+    position: relative;
+    display: block;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding: 0px 0px;
+    margin: 0px 0px;
+    color: #444;
+    width: 91%;
+    font-size: 0.32rem;
+}
+.mui-navigate-right:after, .mui-push-right:after {
+    right: 0px;
+    content: '\e583';
+}
+.enterprise_bg{
+    width: 0.41rem;
+    height: 0.41rem;
+    float: left;
+    display: block;
+    margin-right: 2%;
+}
+.contacts_bg{
+    width: 0.41rem;
+    height: 0.41rem;
+    float: left;
+    display: block;
+    /* margin-top: 0.05rem; */
+    margin-right: 2%;
+}
+.account_bg{
+     width: 0.41rem;
+    height: 0.41rem;
+    float: left;
+    display: block;
+    margin-right: 2%;
+}
+.mui-table-view-cell{
+    background:#fff;
+    margin-bottom:0.20rem
+}
+.mui-table-view:before,.mui-table-view:after{
+    height:0
+}
+.mui-table-view-cell:after{
+    height:0
+}
+/*--*/
+.enterprise_text{
+    height:1.00rem;
+    line-height:1.00rem;
+    padding:0 0.20rem;
+    font-size:0.28rem;
+    color:#444;
+    border-bottom:1px solid #ddd
+}
+.enterprise_text p{
+    height:1.00rem;
+    line-height:1.00rem;
+    font-size:0.28rem;
+    color:#888;
+    margin:0;
+    width:81%;
+    text-align:right;
+    float:right
+}
+.enterprise_text img{
+    width:0.70rem !important;
+    height:0.70rem !important;
+    float:right;
+    margin-top:0.13rem;
+    border-radius:50%
+}
+.others{
+    overflow:hidden;
+    padding:0 0.20rem;
+}
+.others_text{
+    height:1.00rem;
+    line-height:1.00rem;
+    font-size:0.28rem;
+    color:#444;
+}
+.others_ul{
+    overflow:hidden;
+    margin-bottom:0.30rem
+}
+.others_ul li{
+    float:left;
+    margin-right:0.20rem;
+    overflow:hidden
+}
+.others_ul li img{
+    width:1.19rem !important;
+    height:1.19rem !important;
+}

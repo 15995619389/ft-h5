@@ -1,0 +1,48 @@
+﻿@{
+    ViewBag.Title = "企业信息--填写";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+
+    <link rel="stylesheet" href="~/Content/css/myBusiness/basicInformation/EnterpriseInformation.css" />
+<style>
+    .oSpan{    
+    margin-top: 0.05rem;
+    display: block;
+    float: left;
+    width: 3%;
+    margin-right: 0.05rem;
+    }
+</style>
+    <header class="mui-bar mui-bar-nav" style="background: #fff;">
+        <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="javascript:window.history.go(-1)"></a>
+        <h1 class="mui-title">企业信息</h1>
+    </header>
+    <div class="mui-content" v-cloak>
+        <form>
+            <div class="information_box">
+                <div class="name_title">
+                    <span class="oSpan" style=" color: #b90000;">*</span>企业名称：<input type="text" id="Name"  name="Name" placeholder="请填写公司名称">
+                </div>
+                <div class="name_title">
+                    <span class="oSpan" style=" color: #b90000;">*</span>注册资金（万元）：<input id="RegisterCapital" type="text" name="RegisterCapital" placeholder="请填写金额" style="width: 55%;">
+                </div>
+
+                <div class="name_title">
+                    <span class="oSpan" style=" color: #b90000;">*</span>企业地址：<input id="Address"  name="Address" type="text" placeholder="请填写地址">
+                </div>
+
+                <div class="name_title" id="rtime" style="position:relative">
+                    <span @*style="margin-left:3%"*@>成立时间：</span><input id="RegisterTime" v-on:blur="Check()" name="RegisterTime" type="date" min="1900-01-01" placeholder="/年/月/日"  max="@DateTime.Now.ToString("yyyy-MM-dd")" style="float:right !important;text-align:right !important;position:absolute;right:0px;padding-left:40%">
+                </div>
+            </div>
+            <div class="information_box">
+                <div class="name_title">
+                    <span>职位：</span><input id="Position" name="Position" type="text" placeholder="请描述职位" >
+                </div>
+            </div>
+        </form>
+        <button type="button" class="mui-btn mui-btn-blue" v-on:click="submit()">提交</button>
+    </div>
+@section foot{
+<script src="~/dist/member.updatecompany.bundle.js"></script>
+    }

@@ -1,0 +1,401 @@
+﻿
+@{
+    ViewBag.Title = "周年庆感恩大转盘";
+    ViewBag.Description = "";
+    //Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/shop/nowacticy.css" />
+}
+<style type="text/css">
+    .layer-anim {
+        background-color: #fff !important;
+    }
+    .activity{ margin: 0 auto; position: relative; overflow: hidden;}
+        .activity ul{position: relative;padding:0}
+
+</style>
+
+@*<div v-cloak class="vue-container">*@
+<header class="mui-bar mui-bar-nav">
+    <a href="/mall/index" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">周年庆感恩大转盘</h1>
+    <a class="mui-icon-right-nav mui-pull-right" id="shareTenAct"><img src="/Content/image/recommend/reback.png"></a>
+</header>
+<div class="mui-content l-scrollable">
+    <div class="banner_box">
+        <img src="~/Content/image/activity/now_banner.png" class="now_bg" />
+        <a class="act_btn"></a>
+    </div>
+    <div class="draw-wrap">
+        <div class="draw_con">
+            <div class="draw_box">
+                <input type="hidden" id="ActId" value="4071" />
+                <div class="yellowone"></div>
+                <div class="yellowtwo"></div>
+                <div class="white"></div>
+                <div class="whitetwo"></div>
+                <div class="whitethree"></div>
+                <div class="blue"></div>
+                <img src="~/Content/image/activity/ty.png" class="ty_bg" />
+                <img src="~/Content/image/activity/cj.png" class="zp_img" id="Gyrate" />
+                <a class="draw_btn">
+                    <img class="" id="StartGame" src="~/Content/image/activity/draw.png" />
+                </a>
+                <img src="~/Content/image/activity/gift.png" class="gift_bg" />
+            </div>
+            <h3 class="draw_h3">当前累计抽奖<span>0</span>次</h3>
+        </div>
+        <div class="pyize">
+            <div class="bluetwo"></div>
+            <div class="bluethree"></div>
+            <img class="pyize-title" src="~/Content/image/activity/pyize.png" />
+            <div class="name_box">
+                <div class="right-text activity" style="height:94%" >
+                    <ul class="textlist">
+                        @*<li><span>18812345600</span><span>抽中</span>100枚智币</li>
+                            <li><span>18812345611</span><span>抽中</span>100枚智币</li>
+                            <li><span>18812345622</span><span>抽中</span>100枚智币</li>
+                            <li><span>18812345633</span><span>抽中</span>100枚智币</li>
+                            <li><span>18812345644</span><span>抽中</span>100枚智币</li>
+                            <li><span>18812345655</span><span>抽中</span>100枚智币</li>
+                            <li><span>18812345666</span><span>抽中</span>100枚智币</li>
+                            <li><span>18812345677</span><span>抽1</span>100枚智币</li>
+                            <li><span>18812345688</span><span>抽2</span>100枚智币</li>
+                            <li><span>18812345699</span><span>抽3</span>100枚智币</li>
+                            <li><span>18812345600</span><span>抽4</span>100枚智币1000元软件开发抵用券</li>*@
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="mask"></div>
+@*--弹1      活动规则--*@
+<div class="rule_box">
+    <div class="rule_cosle">
+        <img src="~/Content/image/activity/none.png" />
+    </div>
+    <ul>
+        <li>1、活动期间，用户可使用20枚智币参与1次大转盘抽奖，次数不限；</li>
+        <li>2、用户抽奖获得的实物礼品，进入会员中心点击领取，客服人员将在领取后的10个工作日内与用户联系，请保持手机畅通；</li>
+        <li>3、活动期间用户获得的智币无需申请领取，直接充值进入用户的智币账户；</li>
+        <li>4、本次活动获得的智币与目前平台会员体系产生智币不重叠；</li>
+        <li>5、本次活动获得的智币可在智币商城兑换商品，至2018年3月31日止，逾期未进行兑换的加赠智币将做清零处理；</li>
+        <li>6、本次活动获得的代金券有效期至2018年3月31日止，逾期作废；</li>
+        <li>7、凡是被本站定义为恶意用户的注册用户，不得参与本次活动；</li>
+        <li>8、本次活动期间如发现恶意注册，如：用虚拟手机进行注册用户、恶意软件注册用户、拒绝服务请求等情况，将不予以兑换任何礼品；</li>
+        <li>9、本次活动参与人数较多，如有任何变动请留意官网公告，不再另行通知；</li>
+        <li>10、在法律允许范围内，本次活动最终解释权及法律追责权归上海飞天众知科技服务有限公司所有；</li>
+        <li>11、活动期间有任何问题，请垂询：400-920-2025或发送邮件至 market@techina2025.com。本次活动加赠智币与目前平台会员体系产生的智币不重叠；</li>
+    </ul>
+</div>
+
+
+
+
+
+@*--弹窗1      消耗20枚智币--*@
+<div id="RefeereForm" class="draw_model">
+    <div class="a_colse">
+        <img src="~/Content/image/activity/none.png" class="none closeOpen" />
+    </div>
+    <div class="model_text">
+        <p>抽奖将消耗20枚智币</p>
+    </div>
+    <div class="model_btn">
+        <a href="javascript:;" onclick="GoShopTenNumber();">确认</a><a href="javascript:;" class="btnColse closeOpen">放弃</a>
+    </div>
+</div>
+@*--弹窗2      登陆继续--*@
+<div id="loginForm" class="draw_model">
+    <div class="a_colse">
+        <img src="~/Content/image/activity/none.png" class="none closeOpen" />
+    </div>
+    <div class="model_text">
+        <p>登录或注册后才能参与活动</p>
+    </div>
+    <div class="model_btn">
+        <a href="javascript:;" onclick="location.href = '/passport/login?returnurl=' + encodeURIComponent('/act/novacticy')" style="float:none;margin-left:1.5rem">确定</a>
+    </div>
+</div>
+@*--弹窗3      智币余额不足--*@
+<div id="NotEnough" class="draw_model">
+    <div class="a_colse">
+        <img src="~/Content/image/activity/none.png" class="none closeOpen" />
+    </div>
+    <div class="model_text">
+        <p>您的智币余额不足，可发布技术或需求来赢取更多智币</p>
+    </div>
+    <div class="model_btn">
+        <a href="/techshare/publish">发布技术</a><a href="/demand/publish">发布需求</a>
+    </div>
+</div>
+@*--弹窗4      再来一次--*@
+<div id="ImaHitotabi" class="draw_model">
+    <div class="a_colse">
+        <img src="~/Content/image/activity/none.png" class="none closeOpen" />
+    </div>
+    <div class="model_text">
+        <p>再来一次！大奖就在不远处！</p>
+    </div>
+    <div class="model_btn">
+        <a href="javascript:;" style="float:none;margin-left:1.5rem" class="closeOpen">确定</a>
+    </div>
+</div>
+@*--弹窗5      很遗憾--*@
+<div id="NotPrize" class="draw_model">
+    <div class="a_colse">
+        <img src="~/Content/image/activity/none.png" class="none closeOpen" />
+    </div>
+    <div class="model_text">
+        <p>很遗憾，您没有获奖，再接再励吧！</p>
+    </div>
+    <div class="model_btn">
+        <a href="javascript:;" style="float:none;margin-left:1.5rem" class="closeOpen">确定</a>
+    </div>
+</div>
+@*--弹窗6      获奖的弹窗--*@
+<div id="AchievePrize" class="draw_model">
+    <div class="a_colse">
+        <img src="~/Content/image/activity/none.png" class="none closeOpen" />
+    </div>
+    <div class="model_text">
+        <p id="prizeText"></p>
+    </div>
+    <div class="model_btn">
+        <a href="/act/myprize">我的奖品</a><a href="JavaScript:;" class="closeOpen">继续参与</a>
+    </div>
+</div>
+<div id="nativeShare" style="text-align:center;display:none"></div>
+@*@section foot{*@
+<script src="~/Content/js/jquery-1.11.0.min.js"></script>
+<script src="~/Content/Plugins/layer/layui.all.js"></script>
+<script src="~/Content/js/jQueryRotate.2.2.js"></script>
+<script src="~/Content/js/jquery.easing.min.js"></script>
+<script src="~/Content/js/Pages/Global/jquery.api.js"></script>
+@*<link href="~/Content/js/Pages/Act/liMarquee.css" rel="stylesheet" />
+<script src="~/Content/js/Pages/Act/jquery.liMarquee.js"></script>*@
+
+<link href="~/Content/js/Pages/Mall/nativeShare.js-master/nativeShare.css" rel="stylesheet" />
+<script src="~/Content/js/Pages/Mall/nativeShare.js-master/nativeShare.js"></script>
+@*<script src="~/src/pages/Act/nowacticy.js"></script>*@
+<script>
+    var isStart = false;
+    var IsShop = true;
+    $(function () {
+        /*--禁止滑动--*/
+        $("#StartGame").click(function () {
+            $("body").on("touchmove", function (e) {
+                e.preventDefault();
+            });
+        });
+        $(".a_colse img,.model_btn a").click(function () {
+            $("body").off("touchmove");
+        });
+
+
+        InitPrizeUser();
+        $(".closeOpen").click(function () {
+            var id = $(this).parent().parent().attr("id");
+            windowOpen(id, false);
+        })
+        //活动初始化
+        $("#StartGame").rotate({
+            
+            bind: {
+                click: function () {
+                    if (isStart)
+                        return;
+                    RandomPrize();
+                }
+            }
+        });
+    });
+
+    var StartGame = function (awards, angle, msg, fn) {
+        isStart = true;
+        $("#Gyrate").rotate({
+            angle: angle,
+            duration: 5000,
+            animateTo: 2880 + angle, //指针将要停止的角度 2160是因为我要让它转6圈，就是360*6得来的
+            callback: function () {
+                isStart = false;
+                IsShop = true;
+                if (typeof fn === "function")
+                    fn();
+            }
+        });
+    };
+    var RandomPrize = function () {
+        var arr = { "华为手机（飞天众智定制款）": "0-10", "再来一次": "36-62", "8枚智币": "75-102", "108枚智币": "115-140", "谢谢参与": "156-180", "68枚智币": "200-222", "1000元品牌营销服务抵扣劵": "238-260", "京东E卡经典卡100面值(实体卡)": "280-302", "1000元软件开发抵扣劵": "318-338" }
+        $.take({
+            type: "post",
+            url: "/Activities/tenmonthact?ActId=" + $("#ActId").val(),
+            success: function (result) {
+                NumberCount();
+                if (result.Flag) {
+                    var str = arr[result.Message].split('-');
+                    var jiaodu = Math.floor(Math.random() * (parseInt(str[1]) - parseInt(str[0])) + parseInt(str[0]));
+                    StartGame("", jiaodu, result.Message, function () {
+                        if (jiaodu >= 36 && jiaodu <= 62) {
+                            windowOpen("ImaHitotabi", true);
+                        } else if (jiaodu >= 156 && jiaodu <= 180) {
+                            windowOpen("NotPrize", true);
+                        } else {
+                            $("#prizeText").html("恭喜您，获得" + result.Message + "</br>请至“我的奖品”查询并使用");
+                            windowOpen("AchievePrize", true);
+                        }
+                    })
+                } else {
+                    switch (result.StausCode) {
+                        case "1"://扽路
+                            windowOpen("loginForm", true);
+                            break;
+                        case "2":
+                        case "3"://活动未开始
+                        case "999":
+                            alert(result.Message);
+                            break;
+                        case "4"://提示消耗
+                            windowOpen("RefeereForm", true);
+                            break;
+                        default:
+                            alert(result.Message);
+                    }
+                }
+            }
+        });
+    }
+    //购买
+    var GoShopTenNumber = function () {
+        if (IsShop) {
+            IsShop = false;
+            $.take({
+                type: "post",
+                url: "/Activities/tenactdraw?ActId=" + $("#ActId").val(),
+                success: function (result) {
+                    if (result.Flag) {
+                        windowOpen("RefeereForm", false);
+                        $("#StartGame").click();
+                    } else {//智币不足
+                        windowOpen("RefeereForm", false);
+                        windowOpen("NotEnough", true);
+                        IsShop = true;
+                    }
+                }
+            });
+        }
+
+    }
+
+    var InitPrizeUser = function () {//名单
+        $.take({
+            type: "post",
+            url: "/Activities/drowprizeuser?ActId=" + $("#ActId").val(),
+            success: function (result) {
+                var UserPrizeList = $(".textlist");
+                UserPrizeList.html("");
+                $.each(result, function (i, item) {
+                    UserPrizeList.append(" <li><span>" + item.Item1 + "</span><span>抽中</span>" + item.Item2 + "</li>");
+                });
+                //$('.right-text').liMarquee({
+                //    direction: 'up',
+                //    drag: false,
+                //    scrollamount: 40,
+                //    hoverstop: false
+                //})
+            },
+            complete: function () {
+            }
+        });
+        NumberCount();
+    }
+    var NumberCount = function () {//次数
+        $.take({
+            type: "post",
+            url: "/Activities/drawnumber?ActId=" + $("#ActId").val(),
+            success: function (result) {
+                $(".draw_h3>span").text(result);
+            },
+            complete: function () {
+            }
+        });
+    }
+    var windowOpen = function (Vid, IsShow) {
+        if (IsShow) {
+            $("#mask").show();
+            $("#" + Vid).show();
+        } else {
+            $("#mask").hide();
+            $("#" + Vid).hide();
+        }
+    }
+
+</script>
+<script type="text/javascript">
+    //活动规则
+    $(function () {
+        // InitPrizeUser();
+
+        $(".act_btn").click(function () {
+            $("#mask").show();
+            $(".rule_box").show();
+            $("body").on("touchmove", function (e) {
+                e.preventDefault();
+            });
+        })
+        $(".rule_cosle img").click(function () {
+            $("#mask").hide();
+            $(".rule_box").hide();
+            $("body").off("touchmove");
+        })
+
+        $("#shareTenAct").click(function () {
+            var config = {
+                url: location.href,// 分享的网页链接
+                title: '周年庆 感恩大转盘',// 标题
+                desc: '周年庆 感恩大转盘飞天众智与您 携手同行 共铸辉煌',// 描述
+                img: location.href.toLocaleLowerCase().replace("/act/novacticy", "") + '/Content/image/activity/now_banner.jpg',// 图片
+                img_title: '周年庆 感恩大转盘',// 图片标题
+                from: '飞天众智' // 来源
+            };
+            var share_obj = new nativeShare('nativeShare', config);
+            layer.open({
+                skin: 'layui-layer-syclass',
+                type: 1,
+                area: ['290px', '230px'],
+                title: "活动分享",
+                content: $("#nativeShare"),
+                end: function () {
+                    $("#nativeShare").hide();
+                }
+            });
+        });
+
+    });
+   
+</script>
+<script type="text/javascript">
+    //      中奖名单-无缝滚动
+    $(function () {
+        var listPanel = $('.activity ul');
+        var oli = $(".right-text ul li").height();
+        var nubcers = 0;//向上滚动top值
+        console.log(oli);
+        function up() {//向上滚动
+            listPanel.animate({//中奖结果               
+                'top': (nubcers - 35) + 'px'
+            }, 1000, 'linear', function () {
+                listPanel.css({'top': '0px'})
+                        .find("li:first").appendTo(listPanel);
+                up();
+            });
+        }
+        up();
+    });
+</script>
+@*}*@
+
+

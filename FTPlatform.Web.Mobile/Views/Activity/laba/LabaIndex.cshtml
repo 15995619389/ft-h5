@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "腊八集八宝  飞天送大礼";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/activity/laba/LabaIndex.css" />
+}
+<script src="~/Content/js/jquery-1.11.0.min.js"></script>
+<div id="container" class="laba_content">
+    <header class="mui-bar mui-bar-nav labaHeader" style="z-index:12" id="mui-bar">
+        <a href="/" class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left"></a>@*javascript:history.go(-1);*@
+        <h1 class="mui-title">腊八集八宝  飞天送大礼</h1>
+        <a class="mui-icon-right-nav mui-pull-right" id="shareTenAct" v-on:click="SharePage"><img src="/Content/image/recommend/reback.png"></a>
+        <input type="hidden" id="shareTitle" value="腊八集八宝 飞天送大礼 小伙伴邀你一起集宝啦" />
+        <input type="hidden" id="shareContent" value="腊八一过，农历新年马上就要来临了，飞天众智平台提前送上新年祝福，集齐八种不同的腊宝，即有好礼赠送，百分百中奖哦~赶快叫上好友一起有“福”同享！" />
+        <preview ref="preview"></preview>
+        <share ref="share"></share>
+    </header>
+    <div class="mui-content l-scrollable">
+        <div class="content">
+            <div class="rules">
+                <img src="~/Content/image/activity/laba/rules.png"/>
+            </div>
+            <img src="~/Content/image/activity/laba/index_text.png" class="index_textbg"/>
+            <img src="~/Content/image/activity/laba/index_bg.png" class="index_bg"/>
+            <div class="participate">马上参加</div>
+        </div>
+    </div>
+    <div id="mask"></div>
+    <!--活动细则-->
+    <div class="rules_box l-scrollable">
+        <img src="~/Content/image/activity/laba/close_btn.png" class="close_btn" />
+        <ul>
+            <li>1、在活动期间，每天首次登录、发布需求审核通过、发布技术推荐审核通过、成功邀请好友、工业精品频道内购买任何产品并完成线上支付，就可获得腊八福袋，每个福袋中有1个腊宝，集齐八种不同的腊宝，即可抽奖，100%中奖；</li>
+            <li>2、成功发布的需求、技术推荐、供方申请必须是活动期间创建并提交，申请将在4个工作日内审核，成功申请和发布后将短信通知领取福袋；</li>
+            <li>3、本次活动礼品为“不锈钢表带版Apple Watch”、“标准版荣耀手环3”、“耐翔（NAENY）X10音响”、“88枚智币”。所有实物奖品以最终发出的实物为准，不提供退换服务；</li>
+            <li>4、实物礼品请在2018年2月11日24点前至“会员中心--活动专区--我的奖品”中领取，逾期将被视为放弃；</li>
+            <li>5、所有活动期间加赠的智币将在2018年4月29日24点清空，请及时兑换礼品；</li>
+            <li>6、凡被本站定义为恶意用户的注册用户，不得参与本次活动；</li>
+            <li>7、本次活动期间发布的需求必须真实有效，不得转载、杜撰、拼凑等；</li>
+            <li>8、本次活动期间如发现恶意注册，如：用虚拟手机进行注册、恶意软件注册、注册手机拒绝服务请求等情况，将不予以兑换任何礼品；</li>
+            <li>9、本次活动参与人数较多，如有任何变动请留意官网公告，不再另行通知；</li>
+            <li>10、在法律允许范围内，本次活动最终解释权及法律追责权归上海飞天众知科技服务有限公司所有；</li>
+            <li style="word-wrap: break-word;word-break:break-all; width:100%;">11、活动期间有任何问题，请垂询：400-920-2025或发送邮件至 market@techina2025.com。</li>
+         </ul>
+    </div>
+</div>
+@section foot{
+    <script src="~/dist/activity.luck.bundle.js"></script>
+}
+<script>
+    $(".rules img").on("click", function () {
+        $("#mask").show();
+        $(".rules_box").show();
+    })
+    $(".close_btn").on("click", function () {
+        $("#mask").hide();
+        $(".rules_box").hide();
+    })
+    $(".participate").on("click", function () {
+        window.location.href = "/Activity/LabaDatail"
+    })
+</script>

@@ -1,0 +1,78 @@
+﻿@{
+    ViewBag.Title = "钱学森专题";
+    ViewBag.Description = "";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link rel="stylesheet" href="~/Content/css/unique/spaceflight.css" />
+}
+@section foot{
+    <script src="~/dist/unique.common.bundle.js"></script>
+    <script>
+        $(function () {
+            $("#fun_navback").on("click", function () {
+                document.referrer === '' ? window.location.href = "http://" + window.location.host : window.history.go(-1);
+            });
+        });
+    </script>
+}
+
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" id="fun_navback"></a>
+    <h1 class="mui-title">钱学森专题</h1>
+    <a class="mui-icon mui-icon-right-nav mui-pull-right right_iocn share-button" v-on:click="SharePage">
+        <img src="~/Content/image/recommend/reback.png" />
+    </a>
+</header>
+<nav class="mui-bar mui-bar-tab botm-bg">
+    <div class="Contact-msge">
+        <div class="mes-icon"><img src="~/Content/image/EnterpriseService/mesg.png" /></div>
+        <div class="mes-text">
+            更多信息以及相关业务咨询，欢迎来电、来函垂询。<br> 电话：400-920-2025 / 邮箱：te-service@techina2025.com
+        </div>
+    </div>
+</nav>
+
+<div class="mui-content l-scrollable" style="background: #fff;padding-bottom:44px">
+    <rightsidebar></rightsidebar>
+    <img src="~/Content/image/MilitaryCivilian/bbs_bg.png" class="space_bg"/>
+    <div class="CompanyName">
+        <h3>钱学森论坛</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <img src="~/Content/image/MilitaryCivilian/bbs_img1.png" class="bbs_img1"/>
+    <p class="platform_text">钱学森同志系世界著名科学家，空气动力学家，中国载人航天奠基人，中国科学院及中国工程院院士，中国两弹一星功勋奖章获得者，被誉为“中国航天之父”&nbsp;“中国导弹之父”&nbsp;“中国自动化控制之父”和“火箭之王”。钱学森论坛的前身即为其依托原航天710所创办了轰动国内外的“系统学讨论班”。飞天众智依托中国航天高端人才队伍，由80余名两院院士、高级将领、知名企业家组成的钱学森顾问委员会在各地举办钱学森论坛。<br />论坛致力于引领思想、理论、技术、工程、产业、管理、市场的全链条创新，力争成为战略思想的源泉、科学理论的前沿、技术革新的先导、产业变革的引擎、科学管理的智库、市场创新的航向、商业模式重构的策源地，为国家强盛和民族复兴发挥不可替代的关键作用。</p>
+    <div class="CompanyName">
+        <h3>钱学森论坛学院（班）</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <img src="~/Content/image/MilitaryCivilian/bbs_img2.png" class="bbs-backgroundImg"/>
+    <p class="platform_text">飞天众智依托独有的航天资源，与高等院校、中小学校共建钱学森学院（班），以探索和实践拔尖创新人才培养新模式、发挥教学改革引领示范作用。目前，西安交通大学、南京理工大学等高等院校已建有钱学森学院，全国二十多所中小学校已建成钱学森班。<br />
+      钱学森学院遵循钱学森大成智慧的教育理念和系统工程的教育思想，在课程设置、科研创新、综合素质培养以及国际视野培养等方面实施一系列的特色培养举措。通过制定大类通才与个性化等培养方案，着力培养具有“扎实的数理基础、良好的创新能力、全面的综合素质、宽广的国际视野”的拔尖创新人才，为国家和社会输送行业领军型人才。<br />
+      钱学森学院将在全院学生范围内优中选优，开办“精英领袖训练营”，通过高端培训、实践锻炼、访学交流等培养举措，培养青年精英，未来领袖。除此之外，由国内外知名专家、教育家、国际知名企业管理人员及高校领导等组成的“发展咨询委员会”也将为学院的发展及人才培养制定战略性政策，以及提供重要的咨询和建议。制定战略性政策，以及提供重要的咨询和建议。</p>
+    <div class="CompanyName">
+        <h3>建设支撑钱学森智库高端平台</h3>
+        <img src="~/Content/image/all/division.png" class="division">
+    </div>
+    <div class="bbs-footer-content">
+        <img src="~/Content/image/MilitaryCivilian/bbs_img3.png" class="bbs-backgroundImg" />
+        <div class="bbs-left">
+            <div class="bbs-left_content">
+                <p>飞天众智依托航天集成创意中心定<br />位于支撑钱学森智库建设，建设实<br />体智库，打造高端服务平台</p>
+                <i></i>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="bbs-right">
+            <div class="bbs-left_content">
+                <p>创立行业联盟，以咨询业务、信<br />息化业务为智库技术支撑，以航<br />天文化创意为智库的文化建设。</p>
+                <i></i>
+                <span></span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<share ref="share"></share>

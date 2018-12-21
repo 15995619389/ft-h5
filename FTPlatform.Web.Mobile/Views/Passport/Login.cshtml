@@ -1,0 +1,63 @@
+﻿@{
+    ViewBag.Title = "登录";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+}
+@section head{
+    <link href="/content/css/login/login.css" rel="stylesheet" />
+    <link href="/content/css/login/login.tmp.css" rel="stylesheet" />
+}
+@section foot{
+    <script type="text/javascript" charset="utf‐8" src="//g.alicdn.com/sd/nch5/index.js?t=1486519858472"></script>
+    <script src="~/dist/passport.login.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav head_box">
+    <a href="/" class="mui-icon mui-icon-arrowleft mui-icon-left-nav mui-pull-left"></a>
+    <h1 class="mui-title">登录</h1>
+</header>
+<div class="mui-content body_content" v-cloak>
+    <section class="regist-warp">
+        <form class="mui-input-group login-form">
+            @Html.AntiForgeryToken()
+            <div class="input-box">
+                <div class="mui-input-row">
+                    <label><i class="moblie"></i></label>
+                    <input v-model="form.Mobile" type="text" class="mui-input-clear" id="Mobile" maxlength="11" placeholder="请输入手机号">
+                </div>
+                <div class="mui-input-row">
+                    <label><i class="lock"></i></label>
+                    <input type="password" v-model="form.PassWord" class="mui-input-clear" id="PassWord" maxlength="16" placeholder="请输入密码">
+                </div>
+            </div>
+            <div id="huadong" class="" style="margin-bottom:10px; padding:0;display:none;">
+                <div class="ln2">
+                    <div id="dom_id" style="height:35px;"></div>
+                </div>
+            </div>
+            <div class="mui-radio rdaio-row">
+                <div v-show="IsErrorVisible" id="ErrorMsg" v-html="ErrorMsg" class="error-notice erro-pub"></div>
+            </div>
+            <div class="longin-row" style="cursor:pointer">
+                <a style="cursor:pointer" class="login-btn">登录</a>
+            </div>
+            <div class="und-paspot">
+                <a href="/passport/register">快速注册</a>
+                <a href="/passport/findpwd" class="forget-psword">忘记密码？</a>
+            </div>
+
+            <input type='hidden' id='afs_scene' name='afs_scene' />
+            <input type='hidden' id='afs_token' name='afs_token' />
+
+            <input type='hidden' id='csessionid' name='csessionid' />
+            <input type='hidden' id='sig' name='sig' />
+            <input type='hidden' id='token' name='token' />
+            <input type='hidden' id='scene' name='scene' />
+        </form>
+        <!--微信登陆-->
+        <section class="quick-login" style="display:none;">
+            <h4>使用其他方式登录</h4>
+            <a href="/passport/wechatlogin" class="wenxin-link">
+                <i></i>
+            </a>
+        </section>
+    </section>
+</div>

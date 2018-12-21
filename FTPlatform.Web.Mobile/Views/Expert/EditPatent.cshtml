@@ -1,0 +1,119 @@
+﻿@{
+    ViewBag.Title = "专利信息";
+    Layout = "~/Views/Shared/_LayoutWebpack.cshtml";
+    //未完成页面
+}
+@section head{
+    <style>
+        html {
+            background: #fff;
+        }
+
+        p,
+        body {
+            line-height: 0.40rem;
+        }
+
+        p {
+            margin-bottom: 0px;
+        }
+
+        .icon_img img {
+            width: 20px;
+            height: 18px;
+        }
+
+        .Personal_box {
+            border-top: 1px solid #ddd;
+            overflow: hidden;
+            height: auto;
+            margin-top: 0.20rem;
+            background: #fff;
+            border-top: 1px solid #ddd;
+        }
+
+        .mui-navigate-right:after, .mui-push-right:after {
+            right: 15px;
+            content: "";
+        }
+
+        button {
+            width: 100%;
+        }
+
+        .mui-navigate-right span {
+            width: 66%;
+            overflow: hidden;
+            float: right;
+            margin-right: 25px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            text-align: right;
+        }
+
+        .mui-table-view-cell > a:not(.mui-btn) {
+            font-size: 0.30rem;
+        }
+
+        .btn {
+            padding: 0 3%;
+            overflow: hidden;
+            height: auto;
+            margin-top: 0.80rem;
+        }
+
+        .mui-navigate-right input {
+            font-size: 0.32rem;
+            width: 76%;
+            height: 19px;
+            margin-bottom: 0px;
+            padding: 0px 0px;
+            -webkit-user-select: text;
+            border-radius: 0px;
+            color: #444;
+            border: none;
+            text-align: right;
+        }
+    </style>
+
+}
+@section foot{
+    <script src="~/dist/expert.editpatent.bundle.js"></script>
+}
+<header class="mui-bar mui-bar-nav" style="background: #fff;">
+    <a class="mui-icon-arrowleft mui-icon mui-icon-left-nav mui-pull-left" href="/expert/supplierdetail"></a>
+    <h1 class="mui-title">专利信息</h1>
+</header>
+<div class="mui-content" style="background: #f2f1f7;" v-cloak>
+    <input type="hidden" id="id" value="@ViewBag.id" />
+    <div class="Personal_box">
+        <ul class="mui-table-view">
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                    专利名称:<input id="ParentedName" v-bind:value="Patent.ParentedName" />
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                    专利简介:<input id="ParentedRemark" v-bind:value="Patent.ParentedRemark" />
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                    发明人:<input style="width:81%" id="ParentedHaveName" v-bind:value="Patent.ParentedHaveName" />
+                </a>
+            </li>
+            <li class="mui-table-view-cell">
+                <a class="mui-navigate-right">
+                    申请日期@*<span>{{Patent.ParentedMakeTime|formatDate}}</span>*@
+                    <input v-bind:value="Patent.ParentedMakeTime|formatDate" name="ParentedMakeTime" id="ParentedMakeTime" v-on:blur="Check()" max="@DateTime.Now.ToString("yyyy-MM-dd")" type="date" placeholder="请填写时间">
+                </a>
+            </li>
+        </ul>
+        <div class="btn">
+            <button type="button" class="mui-btn mui-btn-blue" v-on:click="Submit()">保存</button>
+        </div>
+    </div>
+</div>
+
